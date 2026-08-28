@@ -281,26 +281,51 @@
     .placeholder-tag { display: block; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin-top: 18px; }
 
     /* FAQ */
-    .faq { display: flex; flex-direction: column; gap: 10px; }
-    .faq details {
-      background: var(--bg-panel);
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+    .faq-item .faq-question {
+      font-weight: 700;
+      font-size: 15.5px;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .faq-video {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 20px;
-    }
-    .faq summary {
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 15px;
-      list-style: none;
+      background: var(--bg-panel);
+      overflow: hidden;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: center;
     }
-    .faq summary::after { content: "+"; color: var(--green); font-size: 20px; }
-    .faq details[open] summary::after { content: "−"; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq details p { color: var(--text-dim); font-size: 14px; margin-top: 12px; }
+    .faq-video .play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #06120a;
+      position: relative;
+      z-index: 1;
+    }
+    .faq-video span {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
 
     /* FINAL CHECKLIST */
     .final-box {
@@ -395,6 +420,60 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Watch Before Your Call</div>
+        <h2>Your Questions, <em style="color: var(--green); font-style: italic;">Answered.</em></h2>
+        <p>Quick videos on the questions almost everyone asks before getting started.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">What's the catch? How is this actually free?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What results can you realistically expect?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need money to begin trading this system?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I've never traded before. Is this beginner friendly?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I'm not tech savvy. Can I still do this?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I have a 9-5. Can I still make this work?</div>
+          <div class="faq-video">
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <span><!-- TODO: replace with video --></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="curriculum">
     <div class="wrap">
       <div class="section-head">
@@ -432,37 +511,6 @@
           <h3>Risk Management</h3>
           <p>Protect your capital so one bad day never becomes a blown account.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">Your Questions, Answered</div>
-        <h2>Quick answers before your call.</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>What's the catch? How is this actually free?</summary>
-          <p>No catch. The intro course is free — the onboarding call is how we make sure you're set up to actually use it.</p>
-        </details>
-        <details>
-          <summary>What results can I realistically expect?</summary>
-          <p>Results vary by effort and starting point. This is a 30-90 day process built on repeatable execution, not overnight promises.</p>
-        </details>
-        <details>
-          <summary>Do I need money to begin trading this system?</summary>
-          <p>No. You can start on a demo/sim account and learn the framework before risking real capital.</p>
-        </details>
-        <details>
-          <summary>I've never traded before. Is this beginner friendly?</summary>
-          <p>Yes. The course starts from the ground up — mindset and psychology before strategy.</p>
-        </details>
-        <details>
-          <summary>I'm not tech savvy. Can I still do this?</summary>
-          <p>Yes. Your coach walks you through the setup on the call step by step.</p>
-        </details>
       </div>
     </div>
   </section>
@@ -555,10 +603,10 @@
   <footer>
     <div class="wrap">
       <div class="links">
-        <a href="/">Home</a> <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
       </div>
       <p class="disclaimer">INCOME DISCLAIMER: The figures and student results mentioned are not typical and not guarantees of earnings. Results vary depending on individual effort, experience, background, and market conditions, and are for illustrative purposes only. Trading involves substantial risk of loss and is not suitable for every investor. This training is for educational purposes only and does not constitute financial, legal, or tax advice.</p>
-      &copy; 2026 Mind Over Market. All rights reserved.
+      &copy; 2026 <a href="/" style="color: inherit; text-decoration: none;">Mind Over Market</a>. All rights reserved.
     </div>
   </footer>
 
