@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Free Access Is Live | Mind Over Market</title>
+  <meta name="description" content="Your free Mind Over Market course access is live for the next 24 hours. Keep your phone close." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0d0b;
+      --bg-panel: #10140f;
+      --bg-panel-2: #141a12;
+      --border: #1f2b1c;
+      --green: #2ee66b;
+      --green-dim: #1c9a4a;
+      --green-glow: rgba(46, 230, 107, 0.18);
+      --text: #eef2ee;
+      --text-dim: #9aa79a;
+      --red: #ff5c5c;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% -10%, var(--green-glow), transparent 60%),
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 100% 100%, 64px 64px, 64px 64px;
+      opacity: 0.5;
+    }
+
+    .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    nav { position: relative; z-index: 2; border-bottom: 1px solid var(--border); }
+    nav .wrap { max-width: 1080px; display: flex; align-items: center; padding: 20px 24px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: var(--text); }
+    .logo img { height: 32px; width: 32px; border-radius: 6px; }
+
+    section { position: relative; z-index: 1; padding: 56px 0; }
+
+    /* URGENCY BAR */
+    .urgency-bar {
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+    .urgency-bar strong { color: var(--text); }
+    #countdown {
+      font-family: var(--mono);
+      font-weight: 700;
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    /* HERO */
+    header.hero { text-align: center; padding: 56px 0 40px; }
+    .greeting {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(28px, 4.6vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--green); }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--text-dim);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .hero-sub strong { color: var(--text); }
+
+    /* VIDEO */
+    .video-frame {
+      aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 36px;
+      box-shadow: 0 0 60px -24px var(--green-glow);
+    }
+    .play-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #06120a;
+    }
+    .video-frame span {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* SECTION HEAD */
+    .section-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .section-head h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .section-head p { color: var(--text-dim); font-size: 15.5px; }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 16px; }
+    .step-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(46,230,107,0.1);
+      border: 1px solid var(--green-dim);
+      color: var(--green);
+      font-family: var(--mono);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-row h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 6px; }
+    .step-row p { color: var(--text-dim); font-size: 14.5px; }
+
+    /* VALUE STACK */
+    .value-stack {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .value-row:last-of-type { border-bottom: none; }
+    .value-row .price { font-family: var(--mono); color: var(--text-dim); }
+    .value-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--bg-panel-2);
+      font-weight: 700;
+    }
+    .value-total .free {
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 20px;
+    }
+    .value-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-top: 16px;
+    }
+
+    /* MODULES */
+    .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .module-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+    }
+    .module-num { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 10px; }
+    .module-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .module-card p { color: var(--text-dim); font-size: 13.5px; }
+
+    /* WHY FREE */
+    .why-free {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+    }
+    .why-free p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; }
+    .why-free p:last-child { margin-bottom: 0; }
+    .why-free strong { color: var(--text); }
+
+    /* RATING */
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .stars { color: var(--green); font-size: 20px; letter-spacing: 3px; }
+    .rating-num { font-family: var(--mono); font-weight: 700; font-size: 20px; }
+    .rating-count { color: var(--text-dim); font-size: 13px; }
+
+    .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .t-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+    .t-stars { color: var(--green); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+    .t-quote { font-size: 14px; color: var(--text); margin-bottom: 16px; }
+    .t-person { display: flex; align-items: center; gap: 10px; }
+    .t-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--bg-panel-2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--green);
+    }
+    .t-name { font-size: 12.5px; font-weight: 600; }
+    .t-role { font-size: 11.5px; color: var(--text-dim); }
+    .placeholder-tag { display: block; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin-top: 18px; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 10px; }
+    .faq details {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq summary::after { content: "+"; color: var(--green); font-size: 20px; }
+    .faq details[open] summary::after { content: "−"; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq details p { color: var(--text-dim); font-size: 14px; margin-top: 12px; }
+
+    /* FINAL CHECKLIST */
+    .final-box {
+      text-align: center;
+      background: var(--bg-panel);
+      border: 1px solid var(--green-dim);
+      border-radius: 16px;
+      padding: 44px 32px;
+      box-shadow: 0 0 60px -24px var(--green-glow);
+    }
+    .final-box h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; margin-bottom: 24px; }
+    .checklist { display: inline-flex; flex-direction: column; gap: 10px; text-align: left; }
+    .checklist div { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+    .checklist .check { color: var(--green); font-weight: 700; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--text-dim);
+    }
+    footer .links { margin-bottom: 10px; }
+    footer .links a { color: var(--text-dim); text-decoration: none; margin: 0 8px; }
+    footer .links a:hover { color: var(--green); }
+    footer .disclaimer { max-width: 680px; margin: 14px auto 0; font-size: 11.5px; line-height: 1.6; color: #66756a; }
+
+    @media (max-width: 720px) {
+      .modules { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <div class="logo"><img src="/images/logo.png" alt="Mind Over Market" />Mind Over Market</div>
+    </div>
+  </nav>
+
+  <div class="urgency-bar">
+    Your coach is calling in <span id="countdown">5:00</span> from a <span id="areacode">a private</span> number — keep your phone close
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="greeting" id="greeting">Free Access Unlocked</div>
+      <h1>Your Free Course Access Is Live For The <span class="accent">Next 24 Hours.</span></h1>
+      <p class="hero-sub">Get in contact with our team right now so your free course access doesn't expire. Make sure you <strong>answer when we reach out.</strong></p>
+
+      <div class="video-frame">
+        <div class="play-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span>Watch this quick video before your coach calls</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="next">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">What Happens Next</div>
+        <h2>Here's exactly what to do now.</h2>
+      </div>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Answer The Call</h3>
+            <p>A coach is reaching out in the next 5–10 minutes. Save the number and pick up.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Get Set Up With The Right Tools</h3>
+            <p>On the call, your coach walks you through the tools and structure that make the strategy repeatable.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Get Your Free Course Access</h3>
+            <p>You get instant access to the private portal — every module and all the content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="value">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Everything You Just Unlocked</div>
+        <h2>$1,000 in value. Yours free.</h2>
+      </div>
+      <div class="value-stack">
+        <div class="value-row"><span>The Complete 10+ Hour Trading Course</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Trading Psychology &amp; Discipline Framework</span><span class="price">$200</span></div>
+        <div class="value-row"><span>Liquidity &amp; Market Structure Breakdown</span><span class="price">$100</span></div>
+        <div class="value-row"><span>Trade Journal &amp; Review Template</span><span class="price">$100</span></div>
+        <div class="value-row"><span>Weekly Live Trainings (ongoing)</span><span class="price">$100</span></div>
+        <div class="value-row"><span>Pre-Market Watchlist</span><span class="price">$50</span></div>
+        <div class="value-row"><span>Risk &amp; Position Size Calculators</span><span class="price">$50</span></div>
+        <div class="value-total"><span>Total value: $1,000</span><span class="free">FREE</span></div>
+      </div>
+      <p class="value-note">This won't be free forever. It goes back to $1,000 at some point, so grab it while it's free.</p>
+    </div>
+  </section>
+
+  <section id="curriculum">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The Full Program</div>
+        <h2>The full program you just unlocked.</h2>
+      </div>
+      <div class="modules">
+        <div class="module-card">
+          <div class="module-num">01</div>
+          <h3>Trader's Mindset</h3>
+          <p>Build the identity and discipline of someone who actually executes.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">02</div>
+          <h3>Trading Psychology</h3>
+          <p>Master your emotions so fear and greed stop wrecking good trades.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">03</div>
+          <h3>Price Action &amp; Liquidity</h3>
+          <p>Read raw price, session highs and lows, and order flow to see what the market is really doing.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">04</div>
+          <h3>Mastering The Strategy</h3>
+          <p>Drill the one repeatable setup until it becomes second nature.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">05</div>
+          <h3>Building A Trading Plan</h3>
+          <p>Turn the system into your own written, rule-based daily game plan.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">06</div>
+          <h3>Risk Management</h3>
+          <p>Protect your capital so one bad day never becomes a blown account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-free">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Real Quick</div>
+        <h2>Wait, why is this free?</h2>
+      </div>
+      <div class="why-free">
+        <p>Most people pay to get access to this exact system inside the full Mind Over Market mentorship.</p>
+        <p>We give the intro course away free because we'd rather spend time with traders who are actually going to use it. <strong>Your onboarding call is how we make sure of that</strong> — it's not a sales pitch, it's us making sure you're set up correctly from day one.</p>
+        <p>That's the whole catch. You get the course for free, and we get to work with people who are serious.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Results</div>
+        <h2>Students already getting results.</h2>
+        <p>Just a few reviews from real students inside the free course.</p>
+      </div>
+      <div class="rating-badge">
+        <span class="stars">★★★★★</span>
+        <span class="rating-num">4.9</span>
+        <span class="rating-count">500+ ratings &amp; reviews</span>
+      </div>
+      <div class="testimonials">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
+          <div class="t-person">
+            <div class="t-avatar">JD</div>
+            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
+          <div class="t-person">
+            <div class="t-avatar">MK</div>
+            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
+          <div class="t-person">
+            <div class="t-avatar">RT</div>
+            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
+          </div>
+        </div>
+      </div>
+      <span class="placeholder-tag">— replace these three cards with real testimonials —</span>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Your Questions, Answered</div>
+        <h2>Quick answers before your call.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What's the catch? How is this actually free?</summary>
+          <p>No catch. The intro course is free — the onboarding call is how we make sure you're set up to actually use it.</p>
+        </details>
+        <details>
+          <summary>What results can I realistically expect?</summary>
+          <p>Results vary by effort and starting point. This is a 30-90 day process built on repeatable execution, not overnight promises.</p>
+        </details>
+        <details>
+          <summary>Do I need money to begin trading this system?</summary>
+          <p>No. You can start on a demo/sim account and learn the framework before risking real capital.</p>
+        </details>
+        <details>
+          <summary>I've never traded before. Is this beginner friendly?</summary>
+          <p>Yes. The course starts from the ground up — mindset and psychology before strategy.</p>
+        </details>
+        <details>
+          <summary>I'm not tech savvy. Can I still do this?</summary>
+          <p>Yes. Your coach walks you through the setup on the call step by step.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="final">
+    <div class="wrap">
+      <div class="final-box">
+        <h2>That's it. Now keep your phone close.</h2>
+        <div class="checklist">
+          <div><span class="check">✓</span> $1,000 value, unlocked</div>
+          <div><span class="check">✓</span> Coached onboarding</div>
+          <div><span class="check">✓</span> Weekly live trainings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="/">Home</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Disclaimer</a>
+      </div>
+      &copy; 2026 Mind Over Market · All Rights Reserved
+      <p class="disclaimer">The figures and student results mentioned are not guarantees of earnings. Results vary depending on individual effort, experience, and market conditions, and are for illustrative purposes only. Trading involves substantial risk of loss and is not suitable for every investor. This training is for educational purposes only and does not constitute financial, legal, or tax advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var fname = params.get('fname');
+      var phone = params.get('phone');
+
+      if (fname) {
+        document.getElementById('greeting').textContent = 'Hey ' + fname + ' — Free Access Unlocked';
+      }
+
+      if (phone) {
+        var digits = phone.replace(/\D/g, '');
+        if (digits.length >= 10) {
+          var area = digits.slice(-10, -7);
+          document.getElementById('areacode').textContent = '(' + area + ')';
+        }
+      }
+
+      var seconds = 300;
+      var el = document.getElementById('countdown');
+      var timer = setInterval(function () {
+        seconds--;
+        if (seconds < 0) { clearInterval(timer); el.textContent = '0:00'; return; }
+        var m = Math.floor(seconds / 60);
+        var s = seconds % 60;
+        el.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+      }, 1000);
+    })();
+  </script>
+
+</body>
+</html>
