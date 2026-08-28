@@ -206,6 +206,57 @@
     }
     .section-head p { color: var(--text-dim); font-size: 16px; }
 
+    /* VALUE STACK */
+    .value-stack {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .value-row:last-of-type { border-bottom: none; }
+    .value-row .price { font-family: var(--mono); color: var(--text-dim); }
+    .value-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--bg-panel-2);
+      font-weight: 700;
+    }
+    .value-total .free { color: var(--green); font-family: var(--mono); font-size: 20px; }
+    .value-note { text-align: center; font-size: 13px; color: var(--text-dim); margin-top: 16px; }
+
+    /* WHY FREE */
+    .why-free {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .why-free-header { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+    .why-free-photo {
+      width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--green-dim); flex-shrink: 0;
+    }
+    .why-free-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .why-free-name { font-weight: 700; font-size: 16px; color: var(--text); }
+    .why-free-role { font-size: 13px; color: var(--green); font-family: var(--mono); }
+    .why-free p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; }
+    .why-free p:last-child { margin-bottom: 0; }
+    .why-free strong { color: var(--text); }
+
+    .cta-row { text-align: center; margin-top: 48px; }
+
     /* CURRICULUM */
     .modules {
       display: grid;
@@ -271,12 +322,22 @@
 
     form.optin {
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      gap: 14px;
       max-width: 440px;
       margin: 0 auto;
+      text-align: left;
     }
-    form.optin input {
-      flex: 1;
+    form.optin label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    form.optin input,
+    form.optin select {
+      width: 100%;
       background: var(--bg);
       border: 1px solid var(--border);
       color: var(--text);
@@ -286,16 +347,24 @@
       border-radius: 8px;
       outline: none;
     }
-    form.optin input:focus { border-color: var(--green-dim); }
-    form.optin button {
-      white-space: nowrap;
+    form.optin input:focus,
+    form.optin select:focus { border-color: var(--green-dim); }
+    .phone-row { display: flex; gap: 8px; }
+    .phone-row select { flex: 0 0 128px; }
+    .phone-row input { flex: 1; }
+    .field-error {
+      display: none;
+      font-size: 12.5px;
+      color: var(--red);
+      margin-top: 6px;
     }
+    .field-error.show { display: block; }
+    form.optin button { width: 100%; justify-content: center; }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
       .modules { grid-template-columns: 1fr; }
       .testimonials { grid-template-columns: 1fr; }
-      form.optin { flex-direction: column; }
     }
 
     footer {
@@ -318,7 +387,7 @@
   <nav>
     <div class="wrap">
       <div class="logo">aval<span>.</span></div>
-      <a href="#optin" class="nav-cta">Free Course</a>
+      <a href="#optin" class="nav-cta">Get My AI Tools + Free Course</a>
     </div>
   </nav>
 
@@ -327,7 +396,7 @@
       <span class="eyebrow">Free Training</span>
       <h1>4-Year Profitable Trader Reveals His Complete Trading System <span class="accent">Powered By AI Tools</span>, And How You Can Get It For <span class="accent">100% Free</span>.</h1>
       <p class="hero-sub">Watch the short video below. I show you a clear path to profitability, how you can access what I used to charge thousands for, and why I'm giving it all away for free.<br />No experience or prior knowledge needed.</p>
-      <a href="#optin" class="btn-primary">Get Free Instant Access →</a>
+      <a href="#optin" class="btn-primary">Get My AI Tools + Free Course →</a>
       <p class="trust-line"><strong>1,000+</strong> traders are already inside</p>
     </div>
   </header>
@@ -352,6 +421,29 @@
       <span>SI <span class="up">+0.88%</span></span>
     </div>
   </div>
+
+  <section id="value">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Everything You Just Unlocked</div>
+        <h2>$3,000 in value. Yours free.</h2>
+      </div>
+      <div class="value-stack">
+        <div class="value-row"><span>The Complete Trading Course</span><span class="price">$900</span></div>
+        <div class="value-row"><span>Trading Psychology &amp; Discipline Framework</span><span class="price">$500</span></div>
+        <div class="value-row"><span>Liquidity &amp; Market Structure Breakdown</span><span class="price">$400</span></div>
+        <div class="value-row"><span>Trade Journal &amp; Review Template</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Weekly Live Trainings (ongoing)</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Pre-Market Watchlist</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Risk &amp; Position Size Calculators</span><span class="price">$300</span></div>
+        <div class="value-total"><span>Total value: $3,000</span><span class="free">FREE</span></div>
+      </div>
+      <p class="value-note">This won't be free forever. It goes back to $3,000 at some point, so grab it while it's free.</p>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
 
   <section id="curriculum">
     <div class="wrap">
@@ -385,6 +477,30 @@
     </div>
   </section>
 
+  <section id="why-free">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Real Quick</div>
+        <h2>Wait, Who Are You And Why Is This Free?</h2>
+      </div>
+      <div class="why-free">
+        <div class="why-free-header">
+          <div class="why-free-photo"><img src="/images/benicio-headshot.jpg" alt="Benicio Valentin" /></div>
+          <div>
+            <div class="why-free-name">Benicio Valentin</div>
+            <div class="why-free-role">Founder, Mind Over Market</div>
+          </div>
+        </div>
+        <p>My name is Benicio Valentin, also known as Aval Trades. I've made millions of dollars in the market and taught hundreds of people how to become consistently profitable.</p>
+        <p>I've had thousands of people pay me for this exact training system and tools, so why give it away for free now?</p>
+        <p>Well, I partnered with a billion-dollar AI company that pays me when you start using their tools. Instead of you paying me thousands for this, <strong>they cover it all</strong>. All you need is the AI tool library, and my coach gets you set up with it on your onboarding call.</p>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
   <section id="testimonials">
     <div class="wrap">
       <div class="section-head">
@@ -407,20 +523,53 @@
         <div class="t-card"><img src="/images/testimonials/t13.png" alt="Student testimonial — $35K month, bought a truck" loading="lazy" /></div>
         <div class="t-card"><img src="/images/testimonials/t14.png" alt="Student testimonial — crossing $100K in profits" loading="lazy" /></div>
       </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary">Get My AI Tools + Free Course →</a>
+      </div>
     </div>
   </section>
 
   <section id="optin">
     <div class="wrap">
       <div class="final-cta">
-        <h2>Get The Free Course</h2>
-        <p>Enter your email and get instant access. No card required.</p>
-        <form class="optin" onsubmit="event.preventDefault(); window.location.href = '/receiveaccess?email=' + encodeURIComponent(this.email.value);">
+        <h2>Get My AI Tools + Free Course</h2>
+        <p>Enter your info and get instant access. No card required.</p>
+        <form class="optin" id="optin-form" novalidate>
           <!-- TODO: wire submit handler to opt-in webhook (n8n) before going live -->
-          <input type="email" name="email" placeholder="Enter your email" required />
-          <button type="submit" class="btn-primary">Get Access →</button>
+          <div>
+            <label for="fname">First name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your first name" required />
+            <div class="field-error" id="fname-error">Enter your first name.</div>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <div class="field-error" id="email-error">Enter a valid email address.</div>
+          </div>
+          <div>
+            <label for="phone">Phone number</label>
+            <div class="phone-row">
+              <select id="country" name="country">
+                <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
+                <option value="44" data-min="10" data-max="10">🇬🇧 +44</option>
+                <option value="61" data-min="9" data-max="9">🇦🇺 +61</option>
+                <option value="91" data-min="10" data-max="10">🇮🇳 +91</option>
+                <option value="971" data-min="9" data-max="9">🇦🇪 +971</option>
+                <option value="63" data-min="10" data-max="10">🇵🇭 +63</option>
+                <option value="27" data-min="9" data-max="9">🇿🇦 +27</option>
+                <option value="234" data-min="10" data-max="10">🇳🇬 +234</option>
+                <option value="52" data-min="10" data-max="10">🇲🇽 +52</option>
+                <option value="55" data-min="11" data-max="11">🇧🇷 +55</option>
+                <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
+                <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
+              </select>
+              <input type="tel" id="phone" name="phone" placeholder="Phone number" required />
+            </div>
+            <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
+          </div>
+          <button type="submit" class="btn-primary">Get My AI Tools + Free Course →</button>
         </form>
-        <p class="form-note">By submitting, you agree to receive emails from aval. Unsubscribe anytime.</p>
+        <p class="form-note">By submitting, you agree to receive emails and texts from Mind Over Market. Unsubscribe anytime.</p>
       </div>
     </div>
   </section>
@@ -434,6 +583,40 @@
       &copy; 2026 Mind Over Market. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    document.getElementById('optin-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var fname = document.getElementById('fname');
+      var email = document.getElementById('email');
+      var country = document.getElementById('country');
+      var phone = document.getElementById('phone');
+
+      var fnameOk = fname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(fname.value.trim());
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+
+      var digits = phone.value.replace(/\D/g, '');
+      var opt = country.options[country.selectedIndex];
+      var min = parseInt(opt.getAttribute('data-min'), 10);
+      var max = parseInt(opt.getAttribute('data-max'), 10);
+      var phoneOk = digits.length >= min && digits.length <= max;
+
+      document.getElementById('fname-error').classList.toggle('show', !fnameOk);
+      document.getElementById('email-error').classList.toggle('show', !emailOk);
+      document.getElementById('phone-error').classList.toggle('show', !phoneOk);
+
+      if (!fnameOk || !emailOk || !phoneOk) return;
+
+      var fullPhone = '+' + opt.value + digits;
+      var params = new URLSearchParams({
+        fname: fname.value.trim(),
+        email: email.value.trim(),
+        phone: fullPhone
+      });
+      window.location.href = '/receiveaccess?' + params.toString();
+    });
+  </script>
 
 </body>
 </html>
