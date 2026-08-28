@@ -18,8 +18,8 @@
       --green: #2ee66b;
       --green-dim: #1c9a4a;
       --green-glow: rgba(46, 230, 107, 0.18);
-      --text: #eef2ee;
-      --text-dim: #9aa79a;
+      --text: #ffffff;
+      --text-dim: #dce4dc;
       --red: #ff5c5c;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --mono: 'JetBrains Mono', 'Courier New', monospace;
@@ -314,12 +314,12 @@
 
   <nav>
     <div class="wrap">
-      <div class="logo"><img src="/images/logo.png" alt="Mind Over Market" />Mind Over Market</div>
+      <div class="logo">Mind Over Market</div>
     </div>
   </nav>
 
   <div class="urgency-bar">
-    Your coach is calling in <span id="countdown">5:00</span> from a <span id="areacode">a private</span> number — keep your phone close
+    Your coach is calling in <span id="countdown">10:00</span> from a <span id="areacode">a private</span> number — keep your phone close
   </div>
 
   <header class="hero">
@@ -348,7 +348,7 @@
           <div class="step-num">1</div>
           <div>
             <h3>Answer The Call</h3>
-            <p>A coach is reaching out in the next 5–10 minutes. Save the number and pick up.</p>
+            <p>A coach is reaching out in the next 2–10 minutes. Save the number and pick up.</p>
           </div>
         </div>
         <div class="step-row">
@@ -376,7 +376,7 @@
         <h2>$1,000 in value. Yours free.</h2>
       </div>
       <div class="value-stack">
-        <div class="value-row"><span>The Complete 10+ Hour Trading Course</span><span class="price">$300</span></div>
+        <div class="value-row"><span>The Complete Trading Course</span><span class="price">$300</span></div>
         <div class="value-row"><span>Trading Psychology &amp; Discipline Framework</span><span class="price">$200</span></div>
         <div class="value-row"><span>Liquidity &amp; Market Structure Breakdown</span><span class="price">$100</span></div>
         <div class="value-row"><span>Trade Journal &amp; Review Template</span><span class="price">$100</span></div>
@@ -547,7 +547,7 @@
         }
       }
 
-      var seconds = 300;
+      var seconds = 600;
       var el = document.getElementById('countdown');
       var timer = setInterval(function () {
         seconds--;
