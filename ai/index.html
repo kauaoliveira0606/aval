@@ -680,7 +680,6 @@
       <h2>Claim Your Free Access</h2>
       <p>Fill this out and get instant access to the AI tools and the free course.</p>
       <form class="optin" id="optin-form" novalidate>
-        <!-- TODO: wire submit handler to opt-in webhook (n8n) before going live -->
         <div class="name-row">
           <div>
             <input type="text" id="fname" name="fname" placeholder="First name" required />
@@ -778,6 +777,20 @@
       if (!fnameOk || !lnameOk || !emailOk || !phoneOk) return;
 
       var fullPhone = '+' + opt.value + digits;
+
+      fetch('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: fname.value.trim(),
+          lastName: lname.value.trim(),
+          email: email.value.trim(),
+          phone: fullPhone
+        })
+      }).catch(function () {});
+
       var params = new URLSearchParams({
         fname: fname.value.trim(),
         lname: lname.value.trim(),
