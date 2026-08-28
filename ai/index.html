@@ -240,6 +240,29 @@
     }
     .value-note { text-align: center; font-size: 13px; color: var(--text-dim); margin-top: 16px; }
 
+    /* 3 STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .step-item .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06120a;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .step-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step-item p { color: var(--text-dim); font-size: 14.5px; }
+
     /* WHY FREE */
     .why-free {
       background: var(--bg-panel);
@@ -262,6 +285,42 @@
     .why-free strong { color: var(--text); }
 
     .cta-row { text-align: center; margin-top: 48px; }
+
+    /* MODEL GRID */
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .model-card {
+      position: relative;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+    }
+    .model-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(46, 230, 107, 0.1);
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .model-num {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--border);
+    }
+    .model-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .model-card p { color: var(--text-dim); font-size: 14px; }
 
     /* CURRICULUM */
     .modules {
@@ -395,6 +454,8 @@
     @media (max-width: 720px) {
       .modules { grid-template-columns: 1fr; }
       .testimonials { grid-template-columns: 1fr; }
+      .model-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
     }
 
     footer {
@@ -472,34 +533,53 @@
     </div>
   </section>
 
-  <section id="curriculum">
+  <section id="model">
     <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">What's Inside</div>
-        <h2>What's Inside The Free Course</h2>
-        <p>Four modules. No fluff. Built for people trading around a job, not a trading floor.</p>
+      <div class="section-head" style="text-align: left; margin: 0 0 48px;">
+        <div class="section-eyebrow">The Model</div>
+        <h2>Why This Trading System <span class="accent" style="font-style: italic;">Works.</span></h2>
+        <p>You don't need a hundred indicators or a bunch of strategies, you just simply need one repeatable system and the discipline to run it consistently.</p>
       </div>
-      <div class="modules">
-        <div class="module-card">
-          <div class="module-num">01</div>
-          <h3>Building A Trading Plan</h3>
-          <p>Stop trading on gut feel. Build a plan you can actually execute under pressure — before the market opens, not during it.</p>
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+          <div class="model-num">01</div>
+          <h3>No Guesswork</h3>
+          <p>A rules-based system. You follow the setup, not your emotions.</p>
         </div>
-        <div class="module-card">
-          <div class="module-num">02</div>
-          <h3>Mastering The Strategy</h3>
-          <p>The exact setups, entries, and exits — explained so they hold up in real time, not just on a backtest.</p>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="model-num">02</div>
+          <h3>Trade From Anywhere</h3>
+          <p>A laptop and wifi. Two to three hours a day is the whole job.</p>
         </div>
-        <div class="module-card">
-          <div class="module-num">03</div>
-          <h3>Trading Psychology</h3>
-          <p>Why your best strategy falls apart at 9:47am — and how to fix the execution environment, not just the mindset.</p>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+          <div class="model-num">03</div>
+          <h3>One Repeatable Pattern</h3>
+          <p>You master a single clean setup instead of chasing a hundred.</p>
         </div>
-        <div class="module-card">
-          <div class="module-num">04</div>
-          <h3>Weekly Live Trainings</h3>
-          <p>Real trades, reviewed live, every week. Not theory — your actual charts, your actual trade log.</p>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div class="model-num">04</div>
+          <h3>Low Startup Cost</h3>
+          <p>Get funded through a prop firm and trade with their capital. No big personal account required to begin.</p>
         </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+          <div class="model-num">05</div>
+          <h3>A Skill For Life</h3>
+          <p>Markets aren't going anywhere. Learn it once, use it forever.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="model-num">06</div>
+          <h3>Battle-Tested</h3>
+          <p>A system tested and refined through real market conditions, not backtests.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
       </div>
     </div>
   </section>
@@ -523,6 +603,35 @@
         <p>Well, I partnered with a billion-dollar AI company that pays me when you start using their tools. Instead of you paying me thousands for this, <strong>they cover it all</strong>. All you need is the AI tool library, and my coach gets you set up with it on your onboarding call.</p>
       </div>
       <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">3 Simple Steps</div>
+        <h2>Get your free access in 3 steps.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h3>Fill Out The Short Form</h3>
+          <p>It takes two minutes to fill it out.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h3>A Coach Reaches Out</h3>
+          <p>Right after you apply, a real coach reaches out to get you set up. Keep your phone nearby.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h3>Get Set Up To Trade</h3>
+          <p>Your coach plugs you into the system and the weekly live trainings. You will walk out with a clear plan to follow.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top: 0;">
         <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
       </div>
     </div>
