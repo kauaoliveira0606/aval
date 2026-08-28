@@ -52,15 +52,13 @@
 
     .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
 
-    nav { position: relative; z-index: 2; border-bottom: 1px solid var(--border); }
-    nav .wrap { max-width: 1080px; display: flex; align-items: center; padding: 20px 24px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: var(--text); }
-    .logo img { height: 32px; width: 32px; border-radius: 6px; }
-
     section { position: relative; z-index: 1; padding: 56px 0; }
 
     /* URGENCY BAR */
     .urgency-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
       background: var(--bg-panel);
       border-bottom: 1px solid var(--border);
       text-align: center;
@@ -363,12 +361,6 @@
   </style>
 </head>
 <body>
-
-  <nav>
-    <div class="wrap">
-      <div class="logo">Mind Over Market</div>
-    </div>
-  </nav>
 
   <div class="urgency-bar">
     Your coach is calling in <span id="countdown">10:00</span> from a <span id="areacode">a private</span> number — keep your phone close
