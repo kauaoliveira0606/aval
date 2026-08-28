@@ -363,7 +363,7 @@
 <body>
 
   <div class="urgency-bar">
-    Your coach is calling in <span id="countdown">10:00</span> from a <span id="areacode">a private</span> number — keep your phone close
+    Your coach is calling in less than <span id="countdown">10:00</span> minutes - keep your phone close
   </div>
 
   <header class="hero">
@@ -607,18 +607,9 @@
     (function () {
       var params = new URLSearchParams(window.location.search);
       var fname = params.get('fname');
-      var phone = params.get('phone');
 
       if (fname) {
         document.getElementById('greeting').textContent = 'Hey ' + fname + ' — Free Access Unlocked';
-      }
-
-      if (phone) {
-        var digits = phone.replace(/\D/g, '');
-        if (digits.length >= 10) {
-          var area = digits.slice(-10, -7);
-          document.getElementById('areacode').textContent = '(' + area + ')';
-        }
       }
 
       var seconds = 600;
