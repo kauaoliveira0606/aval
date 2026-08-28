@@ -482,7 +482,7 @@
       <div class="final-cta">
         <h2>Get The Free Course</h2>
         <p>Enter your email and get instant access. No card required.</p>
-        <form class="optin" onsubmit="event.preventDefault();">
+        <form class="optin" onsubmit="event.preventDefault(); window.location.href = '/receiveaccess?email=' + encodeURIComponent(this.email.value);">
           <!-- TODO: wire submit handler to opt-in webhook (n8n) before going live -->
           <input type="email" name="email" placeholder="Enter your email" required />
           <button type="submit" class="btn-primary">Get Access →</button>
