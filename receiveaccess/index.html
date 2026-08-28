@@ -250,18 +250,8 @@
     .rating-count { color: var(--text-dim); font-size: 13px; }
 
     .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .t-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
-    .t-stars { color: var(--green); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
-    .t-quote { font-size: 14px; color: var(--text); margin-bottom: 16px; }
-    .t-person { display: flex; align-items: center; gap: 10px; }
-    .t-avatar {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--bg-panel-2); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 11px; font-weight: 700; color: var(--green);
-    }
-    .t-name { font-size: 12.5px; font-weight: 600; }
-    .t-role { font-size: 11.5px; color: var(--text-dim); }
+    .t-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .t-card img { display: block; width: 100%; height: auto; }
     .placeholder-tag { display: block; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--text-dim); margin-top: 18px; }
 
     /* FAQ */
@@ -468,31 +458,15 @@
       </div>
       <div class="testimonials">
         <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
-          <div class="t-person">
-            <div class="t-avatar">JD</div>
-            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
-          </div>
+          <img src="/images/testimonials/t4.png" alt="Student testimonial — $24,000 in a week" loading="lazy" />
         </div>
         <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
-          <div class="t-person">
-            <div class="t-avatar">MK</div>
-            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
-          </div>
+          <img src="/images/testimonials/t5.png" alt="Student testimonial — $10,000 payout" loading="lazy" />
         </div>
         <div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"Placeholder testimonial — swap in a real student quote here."</p>
-          <div class="t-person">
-            <div class="t-avatar">RT</div>
-            <div><div class="t-name">Student Name</div><div class="t-role">Placeholder</div></div>
-          </div>
+          <img src="/images/testimonials/t6.png" alt="Student testimonial — payout thank you message" loading="lazy" />
         </div>
       </div>
-      <span class="placeholder-tag">— replace these three cards with real testimonials —</span>
     </div>
   </section>
 
