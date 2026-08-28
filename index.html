@@ -185,21 +185,12 @@
       position: relative;
       overflow: hidden;
     }
-    .photo-frame::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(46,230,107,0.04) 10px, rgba(46,230,107,0.04) 11px);
-    }
-    .photo-frame span.label {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       position: relative;
     }
-    .photo-frame svg { color: var(--green-dim); position: relative; }
 
     /* STAT STRIP */
     .stat-strip {
@@ -261,20 +252,13 @@
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--bg-panel);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 10px;
+      overflow: hidden;
     }
-    .story-photo span {
-      font-family: var(--mono);
-      font-size: 11.5px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .story-photo svg { color: var(--green-dim); }
     .story-copy p { color: var(--text-dim); font-size: 16px; margin-bottom: 18px; }
     .story-copy p:last-child { margin-bottom: 0; }
     .story-copy strong { color: var(--text); }
@@ -369,15 +353,14 @@
       <div>
         <span class="eyebrow">About The Founder</span>
         <h1>Meet <span class="accent">Benicio Valentin</span> — The Trader Behind Aval Trades</h1>
-        <p class="hero-sub">Founder of Aval Trades. Started day trading at 15. Built a mentorship around the thing most programs skip — the psychology and liquidity concepts that actually decide whether a setup works.</p>
+        <p class="hero-sub">Founder of Aval Trades. Over four years of experience day trading. Built a mentorship around the thing most programs skip — the psychology and liquidity concepts that actually decide whether a setup works.</p>
         <div class="hero-ctas">
           <a href="#story" class="btn-primary">Read His Story →</a>
           <a href="#style" class="btn-secondary">See His Trading Style</a>
         </div>
       </div>
       <div class="photo-frame">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-        <span class="label">Headshot placeholder</span>
+        <img src="/images/benicio-headshot.jpg" alt="Benicio Valentin" />
       </div>
     </div>
   </header>
@@ -385,8 +368,8 @@
   <div class="stat-strip">
     <div class="wrap">
       <div class="stat">
-        <div class="stat-num">15</div>
-        <div class="stat-label">Age he started trading</div>
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years of trading experience</div>
       </div>
       <div class="stat">
         <div class="stat-num">Futures</div>
@@ -407,15 +390,14 @@
     <div class="wrap">
       <div class="story-grid">
         <div class="story-photo">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Photo placeholder</span>
+          <img src="/images/benicio-story.jpg" alt="Benicio Valentin" />
         </div>
         <div class="story-copy">
           <div class="section-head" style="margin-bottom:24px;">
             <div class="section-eyebrow">The Story</div>
-            <h2>From A 15-Year-Old Watching Charts To Running Aval Trades</h2>
+            <h2>From Watching Charts To Running Aval Trades</h2>
           </div>
-          <p>Benicio Valentin — known online as <strong>AvalTrades</strong> — started day trading at 15. Most people that age are figuring out a part-time job. He was figuring out order flow.</p>
+          <p>Benicio Valentin — known online as <strong>AvalTrades</strong> — has over four years of experience day trading. What started as a personal obsession with order flow turned into a real, repeatable framework.</p>
           <p>He built his name in public, documenting live account flips and futures payouts through prop firms like <strong>Apex Trader Funding</strong>, and a trading lifestyle that started years before most traders even open their first chart. That transparency — winning trades, losing trades, real accounts, real numbers — is what grew his following on Instagram and YouTube.</p>
           <p>That same transparency is what became <strong>Aval Trades</strong>: a day trading brand, mentorship community, and educational resource built around futures trading, market psychology, and liquidity concepts — not signals, not guesswork.</p>
         </div>
