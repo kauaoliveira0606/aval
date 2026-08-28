@@ -3,10 +3,565 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aval</title>
+  <title>About Benicio Valentin | aval</title>
+  <meta name="description" content="Meet Benicio Valentin (AvalTrades) — founder of Aval Trades, a futures trading mentorship built on market structure, liquidity, and discipline." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a908bca3cbef685c54909c8" data-source="WEB_USER"></script>
+  <style>
+    :root {
+      --bg: #0a0d0b;
+      --bg-panel: #10140f;
+      --bg-panel-2: #141a12;
+      --border: #1f2b1c;
+      --green: #2ee66b;
+      --green-dim: #1c9a4a;
+      --green-glow: rgba(46, 230, 107, 0.18);
+      --text: #eef2ee;
+      --text-dim: #9aa79a;
+      --red: #ff5c5c;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% -10%, var(--green-glow), transparent 60%),
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 100% 100%, 64px 64px, 64px 64px;
+      opacity: 0.5;
+    }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* NAV */
+    nav {
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid var(--border);
+    }
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+    .logo span { color: var(--green); }
+    .nav-cta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--bg);
+      background: var(--green);
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    section { position: relative; z-index: 1; padding: 88px 0; }
+
+    /* HERO */
+    header.hero {
+      padding: 88px 0 64px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 230, 107, 0.08);
+      border: 1px solid var(--green-dim);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+    h1 {
+      font-size: clamp(32px, 4.6vw, 50px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+    h1 .accent { color: var(--green); }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-dim);
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #06120a;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 15px 26px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px var(--green-dim), 0 10px 30px -8px var(--green-glow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px var(--green), 0 14px 34px -8px var(--green-glow);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 15px 26px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      transition: border-color 0.15s ease;
+    }
+    .btn-secondary:hover { border-color: var(--green-dim); }
+
+    /* PHOTO PLACEHOLDER */
+    .photo-frame {
+      aspect-ratio: 4 / 5;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 0 60px -20px var(--green-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(46,230,107,0.04) 10px, rgba(46,230,107,0.04) 11px);
+    }
+    .photo-frame span.label {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      position: relative;
+    }
+    .photo-frame svg { color: var(--green-dim); position: relative; }
+
+    /* STAT STRIP */
+    .stat-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-panel);
+      padding: 0;
+    }
+    .stat-strip .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 32px 20px;
+      text-align: center;
+      border-left: 1px solid var(--border);
+    }
+    .stat:first-child { border-left: none; }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .stat-label {
+      font-size: 12.5px;
+      color: var(--text-dim);
+      margin-top: 6px;
+    }
+
+    /* SECTION SHARED */
+    .section-head { max-width: 640px; margin: 0 0 48px; }
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      font-size: clamp(24px, 3.2vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .section-head p { color: var(--text-dim); font-size: 16px; }
+
+    /* STORY SECTION */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .story-photo {
+      aspect-ratio: 1 / 1;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .story-photo span {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .story-photo svg { color: var(--green-dim); }
+    .story-copy p { color: var(--text-dim); font-size: 16px; margin-bottom: 18px; }
+    .story-copy p:last-child { margin-bottom: 0; }
+    .story-copy strong { color: var(--text); }
+
+    /* PILLARS */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .pillar-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.15s ease;
+    }
+    .pillar-card:hover { border-color: var(--green-dim); }
+    .pillar-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .pillar-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .pillar-card p { color: var(--text-dim); font-size: 14.5px; }
+
+    /* TRADING STYLE */
+    .style-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .style-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .style-tag {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(46, 230, 107, 0.08);
+      border: 1px solid var(--green-dim);
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .style-row p { color: var(--text-dim); font-size: 15px; }
+    .style-row strong { color: var(--text); }
+
+    /* GALLERY PLACEHOLDER */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-frame {
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gallery-frame span {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .gallery-frame svg { color: var(--green-dim); }
+
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 64px 32px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .final-cta h2 { font-size: clamp(24px, 3.2vw, 32px); font-weight: 800; margin-bottom: 14px; }
+    .final-cta p { color: var(--text-dim); margin-bottom: 32px; }
+
+    @media (max-width: 780px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid .photo-frame { order: -1; max-width: 320px; margin: 0 auto; }
+      .stat-strip .wrap { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: none; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--border); }
+      .story-grid { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+  </style>
 </head>
 <body>
-  <h1>aval</h1>
-  <p>Site coming soon.</p>
+
+  <nav>
+    <div class="wrap">
+      <div class="logo">aval<span>.</span></div>
+      <a href="/ai" class="nav-cta">Free Course</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">About The Founder</span>
+        <h1>Meet <span class="accent">Benicio Valentin</span> — The Trader Behind Aval Trades</h1>
+        <p class="hero-sub">Founder of Aval Trades. Started day trading at 15. Built a mentorship around the thing most programs skip — the psychology and liquidity concepts that actually decide whether a setup works.</p>
+        <div class="hero-ctas">
+          <a href="/ai" class="btn-primary">Join The Free Course →</a>
+          <a href="#story" class="btn-secondary">Read His Story</a>
+        </div>
+      </div>
+      <div class="photo-frame">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        <span class="label">Headshot placeholder</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="stat">
+        <div class="stat-num">15</div>
+        <div class="stat-label">Age he started trading</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Futures</div>
+        <div class="stat-label">Primary market focus</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Whop</div>
+        <div class="stat-label">Home of the bootcamp</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">IG / YT</div>
+        <div class="stat-label">Built the following live</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="story">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-photo">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo placeholder</span>
+        </div>
+        <div class="story-copy">
+          <div class="section-head" style="margin-bottom:24px;">
+            <div class="section-eyebrow">The Story</div>
+            <h2>From A 15-Year-Old Watching Charts To Running Aval Trades</h2>
+          </div>
+          <p>Benicio Valentin — known online as <strong>AvalTrades</strong> — started day trading at 15. Most people that age are figuring out a part-time job. He was figuring out order flow.</p>
+          <p>He built his name in public, documenting live account flips and futures payouts through prop firms like <strong>Apex Trader Funding</strong>, and a trading lifestyle that started years before most traders even open their first chart. That transparency — winning trades, losing trades, real accounts, real numbers — is what grew his following on Instagram and YouTube.</p>
+          <p>That same transparency is what became <strong>Aval Trades</strong>: a day trading brand, mentorship community, and educational resource built around futures trading, market psychology, and liquidity concepts — not signals, not guesswork.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The Bootcamp</div>
+        <h2>What Aval Trading Bootcamp Is Built On</h2>
+        <p>Hosted on Whop. Built for beginner to intermediate traders who want a framework, not just calls to follow.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <h3>Emotional Discipline</h3>
+          <p>Trading is a psychology problem before it's a strategy problem. The bootcamp treats discipline as a skill, not a personality trait.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <h3>Risk Control</h3>
+          <p>Consistent, sized risk on every trade. Protecting the account comes before chasing the win.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <h3>Mindset Management</h3>
+          <p>Managing the moment after the loss and the moment after the win — both are where accounts actually get destroyed.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <h3>Technical Framework</h3>
+          <p>A repeatable structure for reading the market — not a signals feed to follow blindly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="style">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Trading Style</div>
+        <h2>How Benicio Actually Trades</h2>
+        <p>His models pull heavily from institutional concepts — the same ideas behind ICT-style methodology.</p>
+      </div>
+      <div class="style-list">
+        <div class="style-row">
+          <span class="style-tag">CONCEPTS</span>
+          <p><strong>Liquidity pools, session highs and lows, order flow, and change of state delivery</strong> — the institutional framework his models are built around.</p>
+        </div>
+        <div class="style-row">
+          <span class="style-tag">MARKETS</span>
+          <p>Prefers <strong>high-reward, major market-open setups</strong> in futures — where liquidity and volatility create the clearest opportunities.</p>
+        </div>
+        <div class="style-row">
+          <span class="style-tag">EXECUTION</span>
+          <p>Teaches students to take consistent <strong>"base hits"</strong> instead of overleveraging — practical risk management over swinging for home runs.</p>
+        </div>
+        <div class="style-row">
+          <span class="style-tag">FORMAT</span>
+          <p><strong>Live trading sessions</strong> and real-time market breakdowns — students watch the framework applied to the market as it happens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Gallery</div>
+        <h2>Behind The Charts</h2>
+      </div>
+      <div class="gallery">
+        <div class="gallery-frame">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo placeholder</span>
+        </div>
+        <div class="gallery-frame">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo placeholder</span>
+        </div>
+        <div class="gallery-frame">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span>Photo placeholder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap">
+      <div class="final-cta">
+        <h2>Learn The Framework Behind Aval Trades</h2>
+        <p>Get the free course and see the exact concepts Benicio teaches inside the bootcamp.</p>
+        <a href="/ai" class="btn-primary">Get Free Instant Access →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 aval. All rights reserved.
+    </div>
+  </footer>
+
 </body>
 </html>
