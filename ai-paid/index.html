@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Trading Course</title>
+  <meta name="description" content="The free course that shows you exactly where your trade log is bleeding — and how to fix it in 30 days." />
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Trading Course" />
+  <meta property="og:description" content="The free course that shows you exactly where your trade log is bleeding — and how to fix it in 30 days." />
+  <meta property="og:image" content="https://aval-livid-five.vercel.app/images/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Trading Course" />
+  <meta name="twitter:description" content="The free course that shows you exactly where your trade log is bleeding — and how to fix it in 30 days." />
+  <meta name="twitter:image" content="https://aval-livid-five.vercel.app/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a908bca3cbef685c54909c8" data-source="WEB_USER"></script>
+  <style>
+    :root {
+      --bg: #0a0d0b;
+      --bg-panel: #181f16;
+      --bg-panel-2: #1d251a;
+      --border: #2a3826;
+      --green: #2ee66b;
+      --green-dim: #1c9a4a;
+      --green-glow: rgba(46, 230, 107, 0.18);
+      --text: #ffffff;
+      --text-dim: #f3f7f3;
+      --red: #ff5c5c;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% -10%, var(--green-glow), transparent 60%),
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 100% 100%, 64px 64px, 64px 64px;
+      opacity: 0.5;
+    }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+
+    /* HERO */
+    header.hero {
+      position: relative;
+      z-index: 1;
+      padding: 88px 0 64px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(46, 230, 107, 0.08);
+      border: 1px solid var(--green-dim);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 28px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+    h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      max-width: 880px;
+      margin: 0 auto 22px;
+    }
+    h1 .accent { color: var(--green); }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-dim);
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #06120a;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 30px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px var(--green-dim), 0 10px 30px -8px var(--green-glow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px var(--green), 0 14px 34px -8px var(--green-glow);
+    }
+
+    .trust-line {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .trust-line strong { color: var(--text); }
+
+    .mini-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .mini-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+    }
+    .mini-badge.badge-yellow { color: #f5c451; }
+    .mini-badge.badge-green { color: var(--green); }
+
+    /* TICKER STRIP */
+    .ticker-strip {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-panel);
+      overflow: hidden;
+      padding: 14px 0;
+    }
+    .ticker-strip .track {
+      display: flex;
+      gap: 48px;
+      white-space: nowrap;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dim);
+      animation: scroll 28s linear infinite;
+      width: max-content;
+    }
+    .ticker-strip .up { color: var(--green); }
+    .ticker-strip .down { color: var(--red); }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* SECTION SHARED */
+    section { position: relative; z-index: 1; padding: 88px 0; }
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      font-size: clamp(26px, 3.4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    .section-head p { color: var(--text-dim); font-size: 16px; }
+
+    /* VALUE STACK */
+    .value-stack {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .value-row:last-of-type { border-bottom: none; }
+    .value-row .price { font-family: var(--mono); color: var(--text-dim); }
+    .value-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: var(--bg-panel-2);
+      font-weight: 700;
+    }
+    .value-total .free { color: var(--green); font-family: var(--mono); font-size: 20px; }
+    .strike-price {
+      position: relative;
+      color: var(--text-dim);
+    }
+    .strike-price::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      top: 50%;
+      height: 2px;
+      background: var(--red);
+      transform: rotate(-6deg);
+    }
+    .value-note { text-align: center; font-size: 13px; color: var(--text-dim); margin-top: 16px; }
+
+    /* 3 STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .step-item {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+    }
+    .step-item .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06120a;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .step-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step-item p { color: var(--text-dim); font-size: 14.5px; }
+
+    /* WHY FREE */
+    .why-free {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .why-free-header { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+    .why-free-photo {
+      width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+      border: 2px solid var(--green-dim); flex-shrink: 0;
+    }
+    .why-free-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .why-free-name { font-weight: 700; font-size: 16px; color: var(--text); }
+    .why-free-role { font-size: 13px; color: var(--green); font-family: var(--mono); }
+    .why-free p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; }
+    .why-free p:last-child { margin-bottom: 0; }
+    .why-free strong { color: var(--text); }
+
+    .cta-row { text-align: center; margin-top: 48px; }
+
+    /* MODEL GRID */
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .model-card {
+      position: relative;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 26px;
+    }
+    .model-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(46, 230, 107, 0.1);
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .model-num {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      font-family: var(--mono);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .model-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .model-card p { color: var(--text-dim); font-size: 14px; }
+
+    /* CURRICULUM */
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .module-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.15s ease;
+    }
+    .module-card:hover { border-color: var(--green-dim); }
+    .module-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+    .module-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+    .module-card p { color: var(--text-dim); font-size: 14.5px; }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      column-count: 3;
+      column-gap: 18px;
+    }
+    .t-card {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .t-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .placeholder-tag {
+      display: block;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 20px;
+    }
+
+    /* OPT-IN MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.65);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      position: relative;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+    }
+    .modal-card h2 { font-size: 24px; font-weight: 800; margin-bottom: 10px; text-align: center; }
+    .modal-card p { color: var(--text-dim); font-size: 14.5px; text-align: center; margin-bottom: 26px; }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-panel-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .name-row { display: flex; gap: 10px; }
+    .name-row > div { flex: 1; }
+
+    form.optin {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 440px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    form.optin input,
+    form.optin select {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      outline: none;
+    }
+    form.optin input:focus,
+    form.optin select:focus { border-color: var(--green-dim); }
+    .phone-row { display: flex; gap: 8px; }
+    .phone-row select { flex: 0 0 128px; }
+    .phone-row input { flex: 1; }
+    .field-error {
+      display: none;
+      font-size: 12.5px;
+      color: var(--red);
+      margin-top: 6px;
+    }
+    .field-error.show { display: block; }
+    form.optin button { width: 100%; justify-content: center; }
+    .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
+
+    @media (max-width: 720px) {
+      .modules { grid-template-columns: 1fr; }
+      .testimonials { column-count: 1; }
+      .model-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    footer .links { margin-bottom: 14px; }
+    footer .links a { color: var(--text-dim); text-decoration: none; margin: 0 8px; font-size: 13px; }
+    footer .links a:hover { color: var(--green); }
+    footer .disclaimer { max-width: 680px; margin: 0 auto 14px; font-size: 11.5px; line-height: 1.6; color: #9aa79a; }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Free Training</span>
+      <h1>4-Year Profitable Trader Reveals His Complete Trading System <span class="accent">Powered By AI Tools</span>, And How You Can Get It For <span class="accent">100% Free</span>.</h1>
+      <p class="hero-sub">Watch the short video below. I show you a clear path to profitability, how you can access what I used to charge thousands for, and why I'm giving it all away for free.</p>
+      <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      <div class="mini-badges">
+        <span class="mini-badge badge-yellow">⚡ No Trading Experience Needed</span>
+        <span class="mini-badge badge-green">✓ No Tech Skills Needed</span>
+      </div>
+      <p class="trust-line"><strong>1,000+</strong> traders are already inside</p>
+    </div>
+  </header>
+
+  <div class="ticker-strip">
+    <div class="track">
+      <span>ES <span class="up">+0.42%</span></span>
+      <span>NQ <span class="up">+0.61%</span></span>
+      <span>YM <span class="down">-0.18%</span></span>
+      <span>CL <span class="up">+1.03%</span></span>
+      <span>GC <span class="down">-0.24%</span></span>
+      <span>6E <span class="up">+0.47%</span></span>
+      <span>RTY <span class="down">-0.31%</span></span>
+      <span>SI <span class="up">+0.88%</span></span>
+      <span>ES <span class="up">+0.42%</span></span>
+      <span>NQ <span class="up">+0.61%</span></span>
+      <span>YM <span class="down">-0.18%</span></span>
+      <span>CL <span class="up">+1.03%</span></span>
+      <span>GC <span class="down">-0.24%</span></span>
+      <span>6E <span class="up">+0.47%</span></span>
+      <span>RTY <span class="down">-0.31%</span></span>
+      <span>SI <span class="up">+0.88%</span></span>
+    </div>
+  </div>
+
+  <section id="value">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Everything You Just Unlocked</div>
+        <h2><span class="strike-price">$3,000</span> <span class="accent">Free.</span></h2>
+      </div>
+      <div class="value-stack">
+        <div class="value-row"><span>The Complete Trading Course</span><span class="price">$900</span></div>
+        <div class="value-row"><span>Trading Psychology &amp; Discipline Framework</span><span class="price">$500</span></div>
+        <div class="value-row"><span>Liquidity &amp; Market Structure Breakdown</span><span class="price">$400</span></div>
+        <div class="value-row"><span>Trade Journal &amp; Review Template</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Weekly Live Trainings (ongoing)</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Pre-Market Watchlist</span><span class="price">$300</span></div>
+        <div class="value-row"><span>Risk &amp; Position Size Calculators</span><span class="price">$300</span></div>
+        <div class="value-total"><span>Total value: <span class="strike-price">$3,000</span></span><span class="free">FREE</span></div>
+      </div>
+      <p class="value-note">This won't be free forever. It goes back to <span class="strike-price">$3,000</span> at some point, so grab it while it's free.</p>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="model">
+    <div class="wrap">
+      <div class="section-head" style="text-align: left; margin: 0 0 48px;">
+        <div class="section-eyebrow">The Model</div>
+        <h2>Why This Trading System <span class="accent" style="font-style: italic;">Works.</span></h2>
+        <p>You don't need a hundred indicators or a bunch of strategies, you just simply need one repeatable system and the discipline to run it consistently.</p>
+      </div>
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+          <div class="model-num">01</div>
+          <h3>No Guesswork</h3>
+          <p>A rules-based system. You follow the setup, not your emotions.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="model-num">02</div>
+          <h3>Trade From Anywhere</h3>
+          <p>A laptop and wifi. Two to three hours a day is the whole job.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+          <div class="model-num">03</div>
+          <h3>One Repeatable Pattern</h3>
+          <p>You master a single clean setup instead of chasing a hundred.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div class="model-num">04</div>
+          <h3>Low Startup Cost</h3>
+          <p>Get funded through a prop firm and trade with their capital. No big personal account required to begin.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+          <div class="model-num">05</div>
+          <h3>A Skill For Life</h3>
+          <p>Markets aren't going anywhere. Learn it once, use it forever.</p>
+        </div>
+        <div class="model-card">
+          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div class="model-num">06</div>
+          <h3>Battle-Tested</h3>
+          <p>A system tested and refined through real market conditions, not backtests.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-free">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Real Quick</div>
+        <h2>Wait, Who Are You And Why Is This Free?</h2>
+      </div>
+      <div class="why-free">
+        <div class="why-free-header">
+          <div class="why-free-photo"><img src="/images/benicio-headshot.jpg" alt="Benicio Valentin" /></div>
+          <div>
+            <div class="why-free-name">Benicio Valentin</div>
+            <div class="why-free-role">Founder, Mind Over Market</div>
+          </div>
+        </div>
+        <p>My name is Benicio Valentin, also known as Aval Trades. I've made millions of dollars in the market and taught hundreds of people how to become consistently profitable.</p>
+        <p>I've had thousands of people pay me for this exact training system and tools, so why give it away for free now?</p>
+        <p>Well, I partnered with a billion-dollar AI company that pays me when you start using their tools. Instead of you paying me thousands for this, <strong>they cover it all</strong>. All you need is the AI tool library, and my coach gets you set up with it on your onboarding call.</p>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">3 Simple Steps</div>
+        <h2>Get Your Free Access In 3 Steps.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h3>Fill Out The Short Form</h3>
+          <p>It takes two minutes to fill it out.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h3>A Coach Reaches Out</h3>
+          <p>Right after you apply, a real coach reaches out to get you set up. Keep your phone nearby.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h3>Get Set Up To Trade</h3>
+          <p>Your coach plugs you into the system and the weekly live trainings. You will walk out with a clear plan to follow.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top: 0;">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Student Results</div>
+        <h2>1,000+ Students. One Pattern.</h2>
+      </div>
+      <div class="testimonials">
+        <div class="t-card"><img src="/images/testimonials/t1.png" alt="Student testimonial — first payout" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t2.png" alt="Student testimonial — passed first funded account" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t3.png" alt="Student testimonial — first $10,000 month" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t4.png" alt="Student testimonial — $24,000 in a week" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t5.png" alt="Student testimonial — $10,000 payout" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t6.png" alt="Student testimonial — payout thank you message" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t7.png" alt="Student testimonial — passed first eval" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t8.png" alt="Student testimonial — funded certificate" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t9.png" alt="Student testimonial — passed funded, made $500 next day" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t10.png" alt="Student testimonial — hit $10K on PA accounts" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t11.png" alt="Student testimonial — $6K payout secured" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t12.png" alt="Student testimonial — $10,000 payout, two accounts" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t13.png" alt="Student testimonial — $35K month, bought a truck" loading="lazy" /></div>
+        <div class="t-card"><img src="/images/testimonials/t14.png" alt="Student testimonial — crossing $100K in profits" loading="lazy" /></div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">Get My AI Tools + Free Course →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="optin-overlay">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="optin-close" aria-label="Close">&times;</button>
+      <h2>Claim Your Free Access</h2>
+      <p>Fill this out and get instant access to the AI tools and the free course.</p>
+      <form class="optin" id="optin-form" novalidate>
+        <div class="name-row">
+          <div>
+            <input type="text" id="fname" name="fname" placeholder="First name" required />
+            <div class="field-error" id="fname-error">Enter your first name.</div>
+          </div>
+          <div>
+            <input type="text" id="lname" name="lname" placeholder="Last name" required />
+            <div class="field-error" id="lname-error">Enter your last name.</div>
+          </div>
+        </div>
+        <div>
+          <input type="email" id="email" name="email" placeholder="Email address" required />
+          <div class="field-error" id="email-error">Enter a valid email address.</div>
+        </div>
+        <div>
+          <div class="phone-row">
+            <select id="country" name="country">
+              <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
+              <option value="44" data-min="10" data-max="10">🇬🇧 +44</option>
+              <option value="61" data-min="9" data-max="9">🇦🇺 +61</option>
+              <option value="91" data-min="10" data-max="10">🇮🇳 +91</option>
+              <option value="971" data-min="9" data-max="9">🇦🇪 +971</option>
+              <option value="63" data-min="10" data-max="10">🇵🇭 +63</option>
+              <option value="27" data-min="9" data-max="9">🇿🇦 +27</option>
+              <option value="234" data-min="10" data-max="10">🇳🇬 +234</option>
+              <option value="52" data-min="10" data-max="10">🇲🇽 +52</option>
+              <option value="55" data-min="11" data-max="11">🇧🇷 +55</option>
+              <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
+              <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
+            </select>
+            <input type="tel" id="phone" name="phone" placeholder="(201) 555-0123" required />
+          </div>
+          <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
+        </div>
+        <button type="submit" class="btn-primary">Get Instant Access →</button>
+      </form>
+      <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
+      </div>
+      <p class="disclaimer">INCOME DISCLAIMER: Results mentioned are not typical. Individual results will vary based on effort, experience, background, and market conditions. This is an educational program. We make no guarantees of income or trading outcomes.</p>
+      &copy; 2026 Mind Over Market. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    var overlay = document.getElementById('optin-overlay');
+
+    function openOptinModal(event) {
+      event.preventDefault();
+      overlay.classList.add('open');
+    }
+
+    document.querySelectorAll('.js-open-optin').forEach(function (btn) {
+      btn.addEventListener('click', openOptinModal);
+    });
+
+    document.getElementById('optin-close').addEventListener('click', function () {
+      overlay.classList.remove('open');
+    });
+
+    overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) overlay.classList.remove('open');
+    });
+
+    document.getElementById('optin-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      var fname = document.getElementById('fname');
+      var lname = document.getElementById('lname');
+      var email = document.getElementById('email');
+      var country = document.getElementById('country');
+      var phone = document.getElementById('phone');
+
+      var fnameOk = fname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(fname.value.trim());
+      var lnameOk = lname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(lname.value.trim());
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+
+      var digits = phone.value.replace(/\D/g, '');
+      var opt = country.options[country.selectedIndex];
+      var min = parseInt(opt.getAttribute('data-min'), 10);
+      var max = parseInt(opt.getAttribute('data-max'), 10);
+      var phoneOk = digits.length >= min && digits.length <= max;
+
+      document.getElementById('fname-error').classList.toggle('show', !fnameOk);
+      document.getElementById('lname-error').classList.toggle('show', !lnameOk);
+      document.getElementById('email-error').classList.toggle('show', !emailOk);
+      document.getElementById('phone-error').classList.toggle('show', !phoneOk);
+
+      if (!fnameOk || !lnameOk || !emailOk || !phoneOk) return;
+
+      var fullPhone = '+' + opt.value + digits;
+
+      fetch('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: fname.value.trim(),
+          lastName: lname.value.trim(),
+          email: email.value.trim(),
+          phone: fullPhone
+        })
+      }).catch(function () {});
+
+      var params = new URLSearchParams({
+        fname: fname.value.trim(),
+        lname: lname.value.trim(),
+        email: email.value.trim(),
+        phone: fullPhone
+      });
+      window.location.href = '/receiveaccess?' + params.toString();
+    });
+  </script>
+
+</body>
+</html>
