@@ -697,15 +697,9 @@
       <h2>Claim Your Free Access</h2>
       <p>Fill this out and get instant access to the AI tools and the free course.</p>
       <form class="optin" id="optin-form" novalidate>
-        <div class="name-row">
-          <div>
-            <input type="text" id="fname" name="fname" placeholder="First name" required />
-            <div class="field-error" id="fname-error">Enter your first name.</div>
-          </div>
-          <div>
-            <input type="text" id="lname" name="lname" placeholder="Last name" required />
-            <div class="field-error" id="lname-error">Enter your last name.</div>
-          </div>
+        <div>
+          <input type="text" id="fname" name="fname" placeholder="First name" required />
+          <div class="field-error" id="fname-error">Enter your first name.</div>
         </div>
         <div>
           <input type="email" id="email" name="email" placeholder="Email address" required />
@@ -771,13 +765,11 @@
       event.preventDefault();
 
       var fname = document.getElementById('fname');
-      var lname = document.getElementById('lname');
       var email = document.getElementById('email');
       var country = document.getElementById('country');
       var phone = document.getElementById('phone');
 
       var fnameOk = fname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(fname.value.trim());
-      var lnameOk = lname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(lname.value.trim());
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
 
       var digits = phone.value.replace(/\D/g, '');
@@ -787,11 +779,10 @@
       var phoneOk = digits.length >= min && digits.length <= max;
 
       document.getElementById('fname-error').classList.toggle('show', !fnameOk);
-      document.getElementById('lname-error').classList.toggle('show', !lnameOk);
       document.getElementById('email-error').classList.toggle('show', !emailOk);
       document.getElementById('phone-error').classList.toggle('show', !phoneOk);
 
-      if (!fnameOk || !lnameOk || !emailOk || !phoneOk) return;
+      if (!fnameOk || !emailOk || !phoneOk) return;
 
       var fullPhone = '+' + opt.value + digits;
 
@@ -802,7 +793,6 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           firstName: fname.value.trim(),
-          lastName: lname.value.trim(),
           email: email.value.trim(),
           phone: fullPhone
         })
@@ -810,7 +800,6 @@
 
       var params = new URLSearchParams({
         fname: fname.value.trim(),
-        lname: lname.value.trim(),
         email: email.value.trim(),
         phone: fullPhone
       });
