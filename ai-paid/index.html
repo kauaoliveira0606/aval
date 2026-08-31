@@ -803,6 +803,22 @@
 
       var fullPhone = '+' + opt.value + digits;
 
+      var webhookPayload = JSON.stringify({
+        firstName: fname.value.trim(),
+        email: email.value.trim(),
+        phone: fullPhone
+      });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', new Blob([webhookPayload], { type: 'application/json' }));
+      } else {
+        fetch('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          body: webhookPayload
+        }).catch(function () {});
+      }
+
       var params = new URLSearchParams({
         fname: fname.value.trim(),
         email: email.value.trim(),
