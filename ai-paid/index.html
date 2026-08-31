@@ -803,22 +803,6 @@
 
       var fullPhone = '+' + opt.value + digits;
 
-      var webhookPayload = JSON.stringify({
-        firstName: fname.value.trim(),
-        email: email.value.trim(),
-        phone: fullPhone
-      });
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', new Blob([webhookPayload], { type: 'application/json' }));
-      } else {
-        fetch('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', {
-          method: 'POST',
-          mode: 'no-cors',
-          keepalive: true,
-          body: webhookPayload
-        }).catch(function () {});
-      }
-
       var params = new URLSearchParams({
         fname: fname.value.trim(),
         email: email.value.trim(),
