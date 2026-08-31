@@ -799,14 +799,29 @@
       });
       var redirectUrl = 'https://www.avaltrades.com/receiveaccess?' + params.toString();
 
+      var debugMode = new URLSearchParams(window.location.search).get('debug') === '1';
+      var debugLines = [];
+      var debugBox = null;
+      if (debugMode) {
+        debugBox = document.createElement('div');
+        debugBox.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font-family:monospace;font-size:13px;padding:14px;white-space:pre-wrap;max-height:60vh;overflow:auto;';
+        debugBox.textContent = 'Submitting... watching webhook calls';
+        document.body.appendChild(debugBox);
+      }
+      function logDebug(line) {
+        debugLines.push(line);
+        if (debugBox) debugBox.textContent = debugLines.join('\n');
+        console.log(line);
+      }
+
       var webhookRequest = fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/c2bdbd92-19b3-45c7-acd0-b46c10a41af8', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
       }).then(function (res) {
-        console.log('Webhook response status:', res.status);
+        logDebug('Cortana webhook: HTTP ' + res.status);
       }).catch(function (err) {
-        console.error('Webhook request failed:', err);
+        logDebug('Cortana webhook FAILED: ' + err.message);
       });
 
       var zapierRequest = fetch('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', {
@@ -814,16 +829,22 @@
         headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
       }).then(function (res) {
-        console.log('Zapier response status:', res.status);
+        logDebug('Zapier webhook: HTTP ' + res.status);
       }).catch(function (err) {
-        console.error('Zapier request failed:', err);
+        logDebug('Zapier webhook FAILED: ' + err.message);
       });
 
       var zapierPixel = new Image();
       zapierPixel.src = 'https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/?firstName=' + encodeURIComponent(fname.value.trim()) + '&email=' + encodeURIComponent(email.value.trim()) + '&phone=' + encodeURIComponent(fullPhone);
 
       Promise.allSettled([webhookRequest, zapierRequest]).finally(function () {
-        window.location.href = redirectUrl;
+        if (debugMode) {
+          logDebug('Payload sent: ' + webhookPayload);
+          logDebug('Redirecting in 6 seconds to: ' + redirectUrl);
+          setTimeout(function () { window.location.href = redirectUrl; }, 6000);
+        } else {
+          window.location.href = redirectUrl;
+        }
       });
     });
   </script>
