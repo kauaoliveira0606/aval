@@ -801,7 +801,7 @@
 
       var webhookRequest = fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/8da8a544-a539-4b15-b6f3-54b46fc39cc6', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
       }).then(function (res) {
         console.log('Webhook response status:', res.status);
@@ -811,7 +811,7 @@
 
       var zapierRequest = fetch('https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
       }).then(function (res) {
         console.log('Zapier response status:', res.status);
