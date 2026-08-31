@@ -809,9 +809,9 @@
         phone: fullPhone
       });
       if (navigator.sendBeacon) {
-        navigator.sendBeacon('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', new Blob([webhookPayload], { type: 'application/json' }));
+        navigator.sendBeacon('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/c2bdbd92-19b3-45c7-acd0-b46c10a41af8', new Blob([webhookPayload], { type: 'application/json' }));
       } else {
-        fetch('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', {
+        fetch('https://app.usecortana.ai/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/c2bdbd92-19b3-45c7-acd0-b46c10a41af8', {
           method: 'POST',
           mode: 'no-cors',
           keepalive: true,
