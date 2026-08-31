@@ -809,23 +809,24 @@
         email: email.value.trim(),
         phone: fullPhone
       });
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/8da8a544-a539-4b15-b6f3-54b46fc39cc6', new Blob([webhookPayload], { type: 'application/json' }));
-      } else {
-        fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/8da8a544-a539-4b15-b6f3-54b46fc39cc6', {
-          method: 'POST',
-          mode: 'no-cors',
-          keepalive: true,
-          body: webhookPayload
-        }).catch(function () {});
-      }
-
       var params = new URLSearchParams({
         fname: fname.value.trim(),
         email: email.value.trim(),
         phone: fullPhone
       });
-      window.location.href = 'https://www.avaltrades.com/receiveaccess?' + params.toString();
+      var redirectUrl = 'https://www.avaltrades.com/receiveaccess?' + params.toString();
+
+      fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/8da8a544-a539-4b15-b6f3-54b46fc39cc6', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: webhookPayload
+      }).then(function (res) {
+        console.log('Webhook response status:', res.status);
+      }).catch(function (err) {
+        console.error('Webhook request failed:', err);
+      }).finally(function () {
+        window.location.href = redirectUrl;
+      });
     });
   </script>
 
