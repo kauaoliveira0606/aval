@@ -816,16 +816,37 @@
       });
       var redirectUrl = 'https://www.avaltrades.com/receiveaccess?' + params.toString();
 
-      fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/8da8a544-a539-4b15-b6f3-54b46fc39cc6', {
+      var debugMode = new URLSearchParams(window.location.search).get('debug') === '1';
+      var debugLines = [];
+      var debugBox = null;
+      if (debugMode) {
+        debugBox = document.createElement('div');
+        debugBox.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#000;color:#0f0;font-family:monospace;font-size:13px;padding:14px;white-space:pre-wrap;max-height:60vh;overflow:auto;';
+        debugBox.textContent = 'Submitting... watching webhook calls';
+        document.body.appendChild(debugBox);
+      }
+      function logDebug(line) {
+        debugLines.push(line);
+        if (debugBox) debugBox.textContent = debugLines.join('\n');
+        console.log(line);
+      }
+
+      fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
       }).then(function (res) {
-        console.log('Webhook response status:', res.status);
+        logDebug('Cortana webhook: HTTP ' + res.status);
       }).catch(function (err) {
-        console.error('Webhook request failed:', err);
+        logDebug('Cortana webhook FAILED: ' + err.message);
       }).finally(function () {
-        window.location.href = redirectUrl;
+        if (debugMode) {
+          logDebug('Payload sent: ' + webhookPayload);
+          logDebug('Redirecting in 6 seconds to: ' + redirectUrl);
+          setTimeout(function () { window.location.href = redirectUrl; }, 6000);
+        } else {
+          window.location.href = redirectUrl;
+        }
       });
     });
   </script>
