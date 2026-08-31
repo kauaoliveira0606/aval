@@ -830,7 +830,7 @@
         console.log(line);
       }
 
-      fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', {
+      var webhookRequest = fetch('https://use.avaltrades.com/api/webhook/e4ed7419-1802-404e-92c5-a7cd03779ca9/9c188ce2-dc13-440d-9989-51c2610cdfca', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
         body: webhookPayload
@@ -838,7 +838,22 @@
         logDebug('Cortana webhook: HTTP ' + res.status);
       }).catch(function (err) {
         logDebug('Cortana webhook FAILED: ' + err.message);
-      }).finally(function () {
+      });
+
+      var zapierRequest = fetch('https://hooks.zapier.com/hooks/catch/21143673/4h1ma29/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: webhookPayload
+      }).then(function (res) {
+        logDebug('Zapier webhook: HTTP ' + res.status);
+      }).catch(function (err) {
+        logDebug('Zapier webhook FAILED: ' + err.message);
+      });
+
+      var zapierPixel = new Image();
+      zapierPixel.src = 'https://hooks.zapier.com/hooks/catch/21143673/4h1ma29/?firstName=' + encodeURIComponent(fname.value.trim()) + '&email=' + encodeURIComponent(email.value.trim()) + '&phone=' + encodeURIComponent(fullPhone);
+
+      Promise.allSettled([webhookRequest, zapierRequest]).finally(function () {
         if (debugMode) {
           logDebug('Payload sent: ' + webhookPayload);
           logDebug('Redirecting in 6 seconds to: ' + redirectUrl);
