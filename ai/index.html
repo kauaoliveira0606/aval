@@ -819,6 +819,9 @@
         console.error('Zapier request failed:', err);
       });
 
+      var zapierPixel = new Image();
+      zapierPixel.src = 'https://hooks.zapier.com/hooks/catch/21143673/4hu0dvf/?firstName=' + encodeURIComponent(fname.value.trim()) + '&email=' + encodeURIComponent(email.value.trim()) + '&phone=' + encodeURIComponent(fullPhone);
+
       Promise.allSettled([webhookRequest, zapierRequest]).finally(function () {
         window.location.href = redirectUrl;
       });
