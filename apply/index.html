@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apply for the Mind Over Market Mentorship | Only 10 Spots Open</title>
-  <meta name="description" content="M.O.M. is a mentorship built around psychology, discipline, and systematic execution. Apply below if you're serious." />
+  <meta name="robots" content="noindex" />
+  <title>Mind Over Market - Aval Trades</title>
+  <meta name="description" content="One shift in how you trade is now helping multiple students go from inconsistent to $10K, $30K, even $100K months from prop firms. Apply below." />
   <link rel="icon" href="/apply/images/logo.png" type="image/png" />
   <script async src="https://use.avaltrades.com/api/hub/v1/cmthjvil90003jc0ab0v6dc80"></script>
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Apply for the Mind Over Market Mentorship | Only 10 Spots Open" />
-  <meta property="og:description" content="M.O.M. is a mentorship built around psychology, discipline, and systematic execution. Apply below if you're serious." />
-  <meta property="og:image" content="https://aval-livid-five.vercel.app/apply/images/logo.png" />
+  <meta property="og:title" content="Mind Over Market - Aval Trades" />
+  <meta property="og:description" content="One shift in how you trade is now helping multiple students go from inconsistent to $10K, $30K, even $100K months from prop firms. Apply below." />
+  <meta property="og:image" content="https://statics.myclickfunnels.com/workspace/jQNNOm/image/18719752/file/871c6c6458eecc8d693838e6894252be.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Apply for the Mind Over Market Mentorship | Only 10 Spots Open" />
-  <meta name="twitter:description" content="M.O.M. is a mentorship built around psychology, discipline, and systematic execution. Apply below if you're serious." />
-  <meta name="twitter:image" content="https://aval-livid-five.vercel.app/apply/images/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -49,14 +50,20 @@
       content: '';
       position: fixed;
       inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200, 168, 78, 0.04) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
-      background:
-        radial-gradient(ellipse 900px 500px at 50% -10%, rgba(200, 168, 78, 0.1), transparent 60%),
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 100% 100%, 64px 64px, 64px 64px;
-      opacity: 0.5;
+    }
+
+    /* ── STREAK CANVAS ── */
+    #streak-canvas {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      pointer-events: none !important;
+      z-index: 9 !important;
     }
 
     .page-wrapper {
@@ -67,7 +74,7 @@
       padding: 0 24px;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     .nav {
       padding: 24px 0;
       display: flex;
@@ -77,48 +84,38 @@
     .nav img {
       height: 48px;
       width: auto;
-      border-radius: 8px;
     }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       text-align: center;
       padding: 32px 0 40px;
     }
 
-    .spots-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(200, 168, 78, 0.1);
-      border: 1px solid rgba(200, 168, 78, 0.25);
-      border-radius: 100px;
-      padding: 8px 20px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--gold);
+    .hero-logo {
+      margin-bottom: 20px;
+    }
+
+    .hero-logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .callout {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 28px;
-    }
-
-    .spots-badge .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+      margin-bottom: 16px;
+      opacity: 0.85;
     }
 
     .hero h1 {
-      font-size: clamp(26px, 4vw, 40px);
+      font-size: clamp(26px, 4.5vw, 44px);
       font-weight: 900;
-      line-height: 1.15;
+      line-height: 1.12;
       letter-spacing: -0.5px;
       margin-bottom: 20px;
       color: var(--text-primary);
@@ -130,36 +127,187 @@
     .hero-sub {
       font-size: clamp(15px, 1.8vw, 17px);
       color: var(--text-secondary);
-      max-width: 560px;
+      max-width: 620px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .hero-sub strong { color: var(--text-primary); }
 
-    /* PROOF STRIP */
-    .proof-strip {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      padding: 24px 0 36px;
-      border-top: 1px solid var(--border);
-      margin-bottom: 0;
+    /* ── VSL VIDEO ── */
+    .vsl-section {
+      padding: 0 0 48px;
     }
 
-    .proof-item {
+    @property --border-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    .vsl-border-wrap {
+      position: relative;
+      border-radius: 14px;
+      padding: 2px;
+      background: conic-gradient(
+        from var(--border-angle),
+        #A8893A 0%,
+        #C8A84E 12%,
+        #D4B96A 22%,
+        rgba(200, 168, 78, 0.2) 35%,
+        rgba(168, 137, 58, 0.1) 50%,
+        rgba(200, 168, 78, 0.2) 65%,
+        #D4B96A 78%,
+        #C8A84E 88%,
+        #A8893A 100%
+      );
+      animation: borderRotate 6s linear infinite;
+    }
+
+    @keyframes borderRotate {
+      0% { --border-angle: 0deg; }
+      100% { --border-angle: 360deg; }
+    }
+
+    .vsl-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: var(--bg-secondary);
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .vsl-container iframe,
+    .vsl-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .vsl-placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--text-muted);
+    }
+
+    .vsl-placeholder .play-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(200, 168, 78, 0.15);
+      border: 2px solid rgba(200, 168, 78, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vsl-placeholder .play-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--gold);
+      margin-left: 4px;
+    }
+
+    .vsl-placeholder span {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── APPLICATION SECTION ── */
+    .app-section {
+      padding: 0 0 60px;
+    }
+
+    .app-section-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .app-section-header h2 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .app-section-header h2 .gold { color: var(--gold); }
+
+    .app-section-header p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .form-container {
+      border: 1px solid rgba(200, 168, 78, 0.15);
+      border-radius: 12px;
+      padding: 24px;
+      background: rgba(22, 22, 22, 0.5);
+    }
+
+    .form-container [data-tf-live] {
+      width: 100%;
+      min-height: 550px;
+    }
+
+    /* ── PROOF SPAM ── */
+    .proof-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .proof-section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .proof-section-header h2 {
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .proof-section-header p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* Proof stat strip */
+    .proof-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 24px 0 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .proof-stat {
       text-align: center;
     }
 
-    .proof-item .number {
-      font-size: 22px;
+    .proof-stat .number {
+      font-size: 24px;
       font-weight: 900;
       color: var(--gold);
       letter-spacing: -0.5px;
     }
 
-    .proof-item .label {
+    .proof-stat .label {
       font-size: 11px;
       font-weight: 600;
       color: var(--text-muted);
@@ -168,20 +316,171 @@
       margin-top: 2px;
     }
 
-    /* TYPEFORM EMBED */
-    .form-section {
-      border: 1px solid rgba(200, 168, 78, 0.15);
-      border-radius: 12px;
-      padding: 24px;
-      padding-bottom: 60px;
+    /* Video testimonial (Sugar) */
+    .video-testimonial {
+      margin-bottom: 32px;
     }
 
-    .form-section [data-tf-live] {
+    .video-testimonial-label {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .video-testimonial-label span {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .video-testimonial .video-wrapper {
+      position: relative;
       width: 100%;
-      min-height: 500px;
+      padding-bottom: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
     }
 
-    /* FOOTER */
+    .video-testimonial .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Screenshot grid */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .proof-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: border-color 0.2s;
+    }
+
+    .proof-card:hover {
+      border-color: rgba(200, 168, 78, 0.3);
+    }
+
+    .proof-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 400px;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .proof-card img.img-broken {
+      display: none !important;
+    }
+
+    .proof-card .proof-card-placeholder.show {
+      display: flex !important;
+    }
+
+    .proof-card .proof-card-placeholder {
+      aspect-ratio: 4/5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .proof-card .student-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .proof-card .student-result {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .proof-card .student-detail {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      max-width: 200px;
+    }
+
+    /* Full-width proof card */
+    .proof-card-full {
+      grid-column: 1 / -1;
+      max-width: 480px;
+      justify-self: center;
+    }
+
+    /* Video testimonial card - no max-width cap */
+    .proof-card-full.proof-card-video {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .proof-card-full img {
+      max-height: 520px;
+    }
+
+    .proof-card-full .proof-card-placeholder {
+      aspect-ratio: auto;
+      padding: 32px;
+    }
+
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      text-align: center;
+      padding: 48px 0 60px;
+    }
+
+    .bottom-cta p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .bottom-cta p strong { color: var(--text-primary); }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 48px;
+      background: var(--gold);
+      color: #0A0A0A;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cta-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .cta-button:active {
+      transform: translateY(0);
+    }
+
+    /* ── FOOTER ── */
     .footer {
       border-top: 1px solid var(--border);
       padding: 24px 0;
@@ -190,62 +489,287 @@
       color: var(--text-muted);
       letter-spacing: 0.3px;
     }
-    .footer .links { margin-bottom: 12px; }
-    .footer .links a { color: var(--text-muted); text-decoration: none; margin: 0 8px; font-size: 12px; }
-    .footer .links a:hover { color: var(--gold); }
-    .footer .disclaimer { max-width: 680px; margin: 0 auto 12px; font-size: 11px; line-height: 1.6; }
 
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 640px) {
       .hero { padding: 24px 0 32px; }
-      .proof-strip { gap: 20px; }
-      .proof-item .number { font-size: 18px; }
+      .proof-stats { gap: 20px; }
+      .proof-stat .number { font-size: 20px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-card-full { max-width: 100%; }
     }
   </style>
 </head>
 <body>
+
+  <canvas id="streak-canvas"></canvas>
+
   <div class="page-wrapper">
-    <nav class="nav">
-      <img src="/apply/images/logo.png" alt="Mind Over Market" />
-    </nav>
+    <nav class="nav"></nav>
 
     <section class="hero">
-      <div class="spots-badge"><span class="dot"></span> Limited Spots Available</div>
-      <h1>Stop Trading <span class="gold">Emotionally</span>. Start Trading With Structure.</h1>
-      <p class="hero-sub">M.O.M. is a mentorship built around <strong>psychology, discipline, and systematic execution</strong> - not signals, not courses, not get-rich-quick promises. Apply below if you're serious.</p>
+      <div class="hero-logo">
+        <img src="/apply/images/logo.png" alt="Mind Over Market" />
+      </div>
+      <p class="callout">For traders who keep blowing accounts and can't figure out why</p>
+      <h1>
+        One Shift In How You Trade Is Now Helping Multiple Students Go From Inconsistent To
+        <span class="gold">$10K, $30K, Even $100K Months</span> From Prop Firms
+      </h1>
+      <p class="hero-sub">
+        No new strategy. No more blown accounts. Watch how one shift is helping traders who've tried
+        everything finally get funded and pull <strong>consistent</strong> payouts.
+      </p>
     </section>
 
-    <section class="form-section">
-      <div data-tf-live="01KP9M6Q7XAF3Y8VZAJG7J75Z5"></div>
-      <script src="https://embed.typeform.com/next/embed.js"></script>
+    <section class="vsl-section">
+      <div class="vsl-border-wrap">
+        <div class="vsl-container" style="padding-bottom:0;aspect-ratio:16/9;">
+          <vturb-smartplayer id="vid-69c986ed96fd2c2d9b2b6987" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
+          <script type="text/javascript">
+            var s=document.createElement("script");s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69c986ed96fd2c2d9b2b6987/v4/player.js",s.async=!0,document.head.appendChild(s);
+          </script>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:24px;">
+        <a href="#apply" class="cta-button" onclick="document.querySelector('.app-section').scrollIntoView({behavior:'smooth'});return false;">APPLY NOW</a>
+      </div>
     </section>
 
-    <div class="proof-strip">
-      <div class="proof-item">
-        <p class="number">$85K</p>
-        <p class="label">Landon - January</p>
+    <section class="app-section" id="apply">
+      <div class="app-section-header">
+        <h2>Get Plugged Into The System. <span class="gold">Apply Below</span></h2>
       </div>
-      <div class="proof-item">
-        <p class="number">$50K+</p>
-        <p class="label">Sugar - Total Payouts</p>
+      <div class="form-container">
+        <div data-tf-live="01KMVKQJCY9RGCNMKQ42GXKTNN" style="width:100%;min-height:550px;"></div>
+        <script src="//embed.typeform.com/next/embed.js"></script>
       </div>
-      <div class="proof-item">
-        <p class="number">$20K/mo</p>
-        <p class="label">Viktor - 6 Months In</p>
+    </section>
+
+    <section class="proof-section">
+      <div class="proof-section-header">
+        <h2>They Were Exactly Where You Are. <span style="color:var(--gold);">Look At Them Now.</span></h2>
+        <p>Real results from traders inside Mind Over Market.</p>
       </div>
-      <div class="proof-item">
-        <p class="number">4 Days</p>
-        <p class="label">Leb - Passed Funded</p>
+
+      <div class="proof-stats">
+        <div class="proof-stat"><p class="number">$100K+</p><p class="label">Isaac - Total Payouts</p></div>
+        <div class="proof-stat"><p class="number">$100K</p><p class="label">Landon - January</p></div>
+        <div class="proof-stat"><p class="number">$50K+</p><p class="label">Sugar - 7 Months</p></div>
+        <div class="proof-stat"><p class="number">$30K/mo</p><p class="label">Nahom - Topstep + Apex</p></div>
       </div>
-    </div>
+
+      <div class="proof-grid">
+        <div class="proof-card proof-card-full proof-card-video" style="border:none;background:transparent;">
+          <div class="video-testimonial" style="margin-bottom:0;">
+            <div class="video-testimonial-label"><span>Student Testimonial - Sugar</span></div>
+            <div class="video-wrapper" style="width:100%;max-width:100%;padding-bottom:56.25%;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/jyE_87ndx9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="proof-card proof-card-full">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370479/file/7a3ac9af84265c6e44442ee541949eff.png" alt="Landon — $10K payout, $30K month, two accounts ready for max payouts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Landon</span>
+            <span class="student-result">$10K single payout · $30K month · Max payouts waiting</span>
+            <span class="student-detail">"crazy used to have 10k months, now it's the regular payout!"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370439/file/3515d4262d1a3e09b9d2d6f240281a3b.png" alt="Isaac — $100K+ in payouts, 10x $5,000 payouts shown" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Isaac</span>
+            <span class="student-result">$100K+ total payouts · $50K months consistently</span>
+            <span class="student-detail">"was so down, depressed... -20k in debt... it was my mindset"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370444/file/7e6fa5669c0ba3db96e145fda75c579e.png" alt="Isaac — 50k month again, 5 Topstep payout confirmations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Isaac</span>
+            <span class="student-result">Another $50K month</span>
+            <span class="student-detail">"50k month again! All glory be to God!"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370440/file/ae4455476d5d79a08ea235fadd4a5819.png" alt="JonahP — Quit his job, $5K payout from TopstepTrader" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Jonah</span>
+            <span class="student-result">Quit his job · $5K+ payout</span>
+            <span class="student-detail">"I just quit my job, it's been another W trading week so I decided to full send."</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370447/file/05772fd93b868884000f416c336aaab4.png" alt="Nahom — $10K payout, $30K month between Topstep and Apex" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Nahom</span>
+            <span class="student-result">$30K month · Topstep + Apex</span>
+            <span class="student-detail">"So blessed, another 10K payout which will put me to 20k for the month"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370443/file/2f53f61e4931955a91263fc340da5e91.png" alt="Nahom — $25K in payouts halfway through month, 10 Apex payouts shown" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Nahom</span>
+            <span class="student-result">$25K halfway through the month · 10 Apex payouts</span>
+            <span class="student-detail">"it feels unreal atp. All Glory to God"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370445/file/4228088afa3324ce3a894aebe224a207.png" alt="Joe — +$3,600 first eval pass with flawless risk management" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Joe</span>
+            <span class="student-result">+$3,600 first eval pass</span>
+            <span class="student-detail">"I've used FLAWLESS risk management all week"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370446/file/d54edae8443d8b529888ad769edbbbe7.png" alt="Keo — Passed first eval 1 month after learning to trade, Apex 50K certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Keo</span>
+            <span class="student-result">Passed first eval · 1 month after learning to trade</span>
+            <span class="student-detail">"I learnt trading 1 month ago, i just passed my first eval"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370442/file/01ff0537908883a8bae82694c01995fb.png" alt="Niels — First payout via FundedNext, hasn't lost a trade in over a month" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Niels</span>
+            <span class="student-result">First payout · Hasn't lost a trade in over a month</span>
+            <span class="student-detail">"I've really discovered a system that works well for me"</span>
+          </div>
+        </div>
+
+        <div class="proof-card">
+          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370477/file/461d9a2c52e1871122570591f78ad3ca.png" alt="Ollie — Passed 4 50K Apex accounts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="proof-card-placeholder" style="display:none;">
+            <span class="student-name">Ollie</span>
+            <span class="student-result">Passed 4 × 50K Apex accounts</span>
+            <span class="student-detail">"Passed 4 50k apex's!"</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-cta">
+      <p><strong>Spots are limited.</strong> If you're serious about making the shift, apply now.</p>
+      <a href="#apply" class="cta-button" onclick="document.querySelector('.app-section').scrollIntoView({behavior:'smooth'});return false;">APPLY NOW</a>
+    </section>
 
     <footer class="footer">
-      <div class="links">
-        <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
-      </div>
-      <p class="disclaimer">INCOME DISCLAIMER: Results mentioned are not typical. Individual results will vary based on effort, experience, background, and market conditions. This is an educational program. We make no guarantees of income or trading outcomes.</p>
-      <p>Mind Over Market &copy; 2026 - Application does not guarantee acceptance. Results vary based on individual effort.</p>
+      <p>Mind Over Market &copy; 2026 - Results vary based on individual effort and market conditions. Application does not guarantee acceptance.</p>
     </footer>
   </div>
+
+  <script>
+    (function() {
+      function handleBrokenImg(img) {
+        img.classList.add('img-broken');
+        var placeholder = img.nextElementSibling;
+        if (placeholder && placeholder.classList.contains('proof-card-placeholder')) {
+          placeholder.classList.add('show');
+        }
+      }
+      var imgs = document.querySelectorAll('.proof-card img');
+      for (var i = 0; i < imgs.length; i++) {
+        if (imgs[i].complete && imgs[i].naturalWidth === 0) { handleBrokenImg(imgs[i]); }
+        imgs[i].addEventListener('error', function() { handleBrokenImg(this); });
+      }
+    })();
+  </script>
+
+  <script>
+    (function() {
+      var c = document.getElementById('streak-canvas');
+      var ctx = c.getContext('2d');
+      function resize() { c.width = window.innerWidth; c.height = window.innerHeight; }
+      resize();
+      window.addEventListener('resize', resize);
+
+      var streaks = [];
+      var golds = [
+        [200, 168, 78],
+        [212, 185, 106],
+        [168, 137, 58]
+      ];
+
+      function makeStreak() {
+        var g = golds[Math.floor(Math.random() * golds.length)];
+        var angle = -25 - Math.random() * 20;
+        var rad = angle * Math.PI / 180;
+        var len = c.width * (0.3 + Math.random() * 0.25);
+        var speed = 0.3 + Math.random() * 0.4;
+        var yPos = Math.random() * c.height;
+        var startX = -len * 0.3;
+        return {
+          x: startX + Math.random() * c.width * 0.5,
+          y: yPos,
+          len: len,
+          angle: rad,
+          speed: speed,
+          color: g,
+          alpha: 0.08 + Math.random() * 0.1,
+          width: 1 + Math.random() * 1.5,
+          fadeIn: 0.05,
+          fadeOut: 0.95,
+          progress: Math.random()
+        };
+      }
+
+      for (var i = 0; i < 7; i++) { streaks.push(makeStreak()); }
+
+      function draw() {
+        ctx.clearRect(0, 0, c.width, c.height);
+        for (var i = 0; i < streaks.length; i++) {
+          var s = streaks[i];
+          s.progress += s.speed / 1000;
+          if (s.progress > 1) { streaks[i] = makeStreak(); streaks[i].progress = 0; continue; }
+
+          var t = s.progress;
+          var opacity = s.alpha;
+          if (t < s.fadeIn) opacity *= t / s.fadeIn;
+          else if (t > s.fadeOut) opacity *= (1 - t) / (1 - s.fadeOut);
+
+          var xOff = (t - 0.5) * c.width * 1.4;
+          var x1 = s.x + xOff;
+          var y1 = s.y + Math.sin(s.angle) * xOff;
+          var x2 = x1 + Math.cos(s.angle) * s.len;
+          var y2 = y1 + Math.sin(s.angle) * s.len;
+
+          var grad = ctx.createLinearGradient(x1, y1, x2, y2);
+          var r = s.color[0], g = s.color[1], b = s.color[2];
+          grad.addColorStop(0, 'rgba(' + r + ',' + g + ',' + b + ',0)');
+          grad.addColorStop(0.3, 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')');
+          grad.addColorStop(0.5, 'rgba(' + r + ',' + g + ',' + b + ',' + (opacity * 1.5) + ')');
+          grad.addColorStop(0.7, 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')');
+          grad.addColorStop(1, 'rgba(' + r + ',' + g + ',' + b + ',0)');
+
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = s.width;
+          ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
+
 </body>
 </html>
