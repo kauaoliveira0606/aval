@@ -372,19 +372,11 @@
       background: var(--bg-panel);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 28px;
+      overflow: hidden;
       transition: border-color 0.15s ease;
     }
     .module-card:hover { border-color: var(--green-dim); }
-    .module-num {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 14px;
-    }
-    .module-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
-    .module-card p { color: var(--text-dim); font-size: 14.5px; }
+    .module-card img { display: block; width: 100%; height: auto; }
 
     /* TESTIMONIALS */
     .testimonials {
@@ -552,6 +544,23 @@
       <span>SI <span class="up">+0.88%</span></span>
     </div>
   </div>
+
+  <section id="curriculum">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The Full Program</div>
+        <h2>The full program you just unlocked.</h2>
+      </div>
+      <div class="modules">
+        <div class="module-card"><img src="/images/modules/module-1.jpg" alt="Module 1" /></div>
+        <div class="module-card"><img src="/images/modules/module-2.jpg" alt="Module 2" /></div>
+        <div class="module-card"><img src="/images/modules/module-3.jpg" alt="Module 3" /></div>
+        <div class="module-card"><img src="/images/modules/module-4.jpg" alt="Module 4" /></div>
+        <div class="module-card"><img src="/images/modules/module-5.jpg" alt="Module 5" /></div>
+        <div class="module-card"><img src="/images/modules/module-6.jpg" alt="Module 6" /></div>
+      </div>
+    </div>
+  </section>
 
   <section id="value">
     <div class="wrap">
