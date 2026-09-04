@@ -398,7 +398,7 @@
 <body>
 
   <div class="urgency-bar">
-    Your coach is calling in less than <span id="countdown">10:00</span> minutes - keep your phone close
+    Your coach is calling now from a (645) or (321) number, answer your phone
   </div>
 
   <header class="hero">
@@ -631,16 +631,6 @@
       if (fname) {
         document.getElementById('greeting').textContent = 'Hey ' + fname + ' — Free Access Unlocked';
       }
-
-      var seconds = 600;
-      var el = document.getElementById('countdown');
-      var timer = setInterval(function () {
-        seconds--;
-        if (seconds < 0) { clearInterval(timer); el.textContent = '0:00'; return; }
-        var m = Math.floor(seconds / 60);
-        var s = seconds % 60;
-        el.textContent = m + ':' + (s < 10 ? '0' : '') + s;
-      }, 1000);
     })();
   </script>
 
