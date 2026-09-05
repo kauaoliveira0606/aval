@@ -367,6 +367,43 @@
     section.alt .data-note { background: var(--bg); }
     .data-note strong { color: var(--text); }
 
+    /* ROADMAP */
+    .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 40px 0 20px; }
+    @media (max-width: 880px) { .phases { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .phases { grid-template-columns: 1fr; } }
+    .phase-tab {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px;
+      padding: 16px 18px; cursor: pointer; text-align: left;
+      font-family: var(--font); color: var(--text); transition: all 0.2s;
+    }
+    .phase-tab .pnum {
+      font-family: var(--mono); font-size: 10px; font-weight: 700; color: var(--text-mut);
+      letter-spacing: 0.16em; text-transform: uppercase; display: block; margin-bottom: 4px;
+    }
+    .phase-tab .pname { font-weight: 800; font-size: 16px; display: block; }
+    .phase-tab .pdays { font-size: 12.5px; color: var(--text-mut); }
+    .phase-tab:hover { border-color: var(--border-2); }
+    .phase-tab.active { border-color: var(--green); background: var(--bg-alt); box-shadow: 0 10px 24px -12px var(--green-glow); }
+    .phase-tab.active .pnum { color: var(--green); }
+    .phase-panel {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 36px; display: none; animation: fadeUp 0.4s ease;
+    }
+    .phase-panel.active { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .phase-panel h3 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+    .phase-panel .tl { font-family: var(--mono); color: var(--green); font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .phase-panel p { color: var(--text-dim); max-width: 720px; margin-bottom: 16px; }
+    .phase-panel ul { list-style: none; display: grid; gap: 11px; }
+    .phase-panel li { display: flex; gap: 12px; color: var(--text-dim); font-size: 15px; }
+    .phase-panel li::before { content: "\2192"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .roadmap-note {
+      margin-top: 24px; padding: 22px 26px; border-left: 3px solid var(--green-dim);
+      background: var(--bg-alt); border-radius: 0 8px 8px 0;
+      color: var(--text-dim); font-size: 16px; max-width: 860px;
+    }
+    .roadmap-note strong { color: var(--text); }
+
     /* PROOF / PAYOUTS */
     .payout-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 40px; }
     @media (max-width: 820px) { .payout-grid { grid-template-columns: 1fr 1fr; } }
@@ -485,6 +522,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#story">The Story</a>
       <a href="#program">The Program</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="#proof">Proof</a>
       <a href="#interviews">Interviews</a>
       <a href="#students">Results</a>
@@ -665,8 +703,73 @@
   </div>
 </section>
 
+<!-- ============ ROADMAP ============ -->
+<section id="roadmap">
+  <div class="wrap">
+    <span class="eyebrow reveal">Your First 90 Days</span>
+    <h2 class="reveal">The 90 Day <span class="accent">Roadmap</span></h2>
+    <p class="lead reveal d1">Most members follow the same path. Four phases, each one building the next. Tap a phase to open it.</p>
+
+    <div class="phases reveal d1">
+      <button class="phase-tab active" data-phase="0"><span class="pnum">Phase 1</span><span class="pname">Foundation</span><span class="pdays">Days 1 to 30</span></button>
+      <button class="phase-tab" data-phase="1"><span class="pnum">Phase 2</span><span class="pname">Pattern Recognition</span><span class="pdays">Days 30 to 60</span></button>
+      <button class="phase-tab" data-phase="2"><span class="pnum">Phase 3</span><span class="pname">Live Execution</span><span class="pdays">Days 60 to 90</span></button>
+      <button class="phase-tab" data-phase="3"><span class="pnum">Phase 4</span><span class="pname">Scaling Consistency</span><span class="pdays">Day 90+</span></button>
+    </div>
+
+    <div class="phase-panel active" data-panel="0">
+      <h3>Foundation</h3>
+      <span class="tl">Days 1 to 30</span>
+      <p>Everything starts with the fundamentals, before a single dollar is at risk.</p>
+      <ul>
+        <li>Move through onboarding and the Mind Over Market curriculum at your own pace</li>
+        <li>Learn risk management and the safe order types first. That is lesson one.</li>
+        <li>Learn the framework: conditions, continuations only, equilibrium, conservative targets</li>
+        <li>Study the setup on charts until you can mark a condition cold</li>
+      </ul>
+    </div>
+    <div class="phase-panel" data-panel="1">
+      <h3>Pattern Recognition</h3>
+      <span class="tl">Days 30 to 60</span>
+      <p>Now you train your eye. You watch the framework play out live, every day, with zero money at risk.</p>
+      <ul>
+        <li>Backtest the framework and mark your conditions before each session</li>
+        <li>Attend the live trading sessions with Benicio and the coaches</li>
+        <li>Watch continuations off equilibrium confirm in real time</li>
+        <li>Journal every rep until recognition is automatic</li>
+      </ul>
+    </div>
+    <div class="phase-panel" data-panel="2">
+      <h3>Live Execution</h3>
+      <span class="tl">Days 60 to 90</span>
+      <p>Real execution, small size, guided. You are never trading alone.</p>
+      <ul>
+        <li>Go live on a small or evaluation account with pre-defined risk on every trade</li>
+        <li>Keep attending the daily live sessions and coaching calls</li>
+        <li>Set your stop and size before you enter. No exceptions.</li>
+        <li>Bring every trade to review. The goal is clean execution, not a big number.</li>
+      </ul>
+    </div>
+    <div class="phase-panel" data-panel="3">
+      <h3>Scaling Consistency</h3>
+      <span class="tl">Day 90 and beyond</span>
+      <p>The foundation is set. Now consistency compounds, month over month.</p>
+      <ul>
+        <li>Tighten execution and pass or scale funded accounts</li>
+        <li>Fill out your end-of-week review and stack the green days</li>
+        <li>Grow size as your consistency proves out</li>
+        <li>Compound month over month with the community behind you</li>
+      </ul>
+    </div>
+
+    <div class="roadmap-note reveal">
+      <strong>The goal in your first 90 days is not a huge payout.</strong> It is the discipline, the pattern recognition, and the risk framework that let you trade consistently for years.
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROOF OF PAYOUTS ============ -->
-<section id="proof">
+<section class="alt" id="proof">
   <div class="wrap">
     <span class="eyebrow reveal">Receipts</span>
     <h2 class="reveal">Proof of <span class="accent">Payouts</span></h2>
@@ -900,6 +1003,17 @@ const countIO = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll("[data-count]").forEach(el => countIO.observe(el));
+
+/* ===== ROADMAP TABS ===== */
+const phaseTabs = document.querySelectorAll(".phase-tab");
+const phasePanels = document.querySelectorAll(".phase-panel");
+phaseTabs.forEach(tab => tab.addEventListener("click", () => {
+  phaseTabs.forEach(t => t.classList.remove("active"));
+  phasePanels.forEach(p => p.classList.remove("active"));
+  tab.classList.add("active");
+  const panel = document.querySelector('.phase-panel[data-panel="' + tab.dataset.phase + '"]');
+  if (panel) panel.classList.add("active");
+}));
 
 /* ===== FAQ ACCORDION ===== */
 document.querySelectorAll(".faq-item").forEach(item => {
