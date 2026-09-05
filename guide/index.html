@@ -458,6 +458,18 @@
     .faq-a p { padding: 0 26px 24px; color: var(--text-dim); font-size: 15.5px; }
     .faq-a p + p { padding-top: 14px; }
 
+    /* EXECUTIVE SUMMARY */
+    .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    @media (max-width: 880px) { .summary-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .summary-grid { grid-template-columns: 1fr; } }
+    .sum-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 24px 22px;
+      font-size: 14.5px; color: var(--text-dim); line-height: 1.6; transition: transform 0.2s, border-color 0.2s;
+    }
+    .sum-card:hover { transform: translateY(-3px); border-color: var(--green-dim); }
+    .sum-card .k { font-weight: 800; font-size: 17px; color: var(--text); display: block; margin-bottom: 6px; }
+    .sum-card strong { color: var(--green); }
+
     /* NEXT / CTA */
     .next-section { background: var(--band); color: var(--text); text-align: center; border-top: 1px solid var(--border-2); }
     .next-section .eyebrow { color: var(--green); }
@@ -916,6 +928,25 @@
 </section>
 
 <!-- ============ NEXT STEPS ============ -->
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section class="alt" id="summary">
+  <div class="wrap">
+    <span class="eyebrow reveal">If You Only Read One Section</span>
+    <h2 class="reveal">Executive <span class="accent">Summary</span></h2>
+    <div class="summary-grid">
+      <div class="sum-card reveal d1"><span class="k">One framework</span>Futures, traded with <strong>conditions, continuations, equilibrium, and conservative targets</strong>. The same setup every session, not a pile of indicators.</div>
+      <div class="sum-card reveal d1"><span class="k">91.3% win rate</span>What Benicio held through May trading this. The edge is <strong>consistency</strong>, taking your piece and logging the green day, not swinging for a screenshot.</div>
+      <div class="sum-card reveal d2"><span class="k">Mentorship, not a course</span>A <strong>daily live routine</strong> with Benicio and the coaches. Trades reviewed by a person, questions answered in real time.</div>
+      <div class="sum-card reveal d2"><span class="k">Traded on funded accounts</span>Most members trade evaluation and funded accounts through a prop firm, so getting started is an <strong>eval fee</strong>, not a large personal account.</div>
+      <div class="sum-card reveal d3"><span class="k">A structured path</span>Your first 90 days follow a <strong>4 phase roadmap</strong>: Foundation, Pattern Recognition, Live Execution, Scaling Consistency.</div>
+      <div class="sum-card reveal d3"><span class="k">Accountability built in</span>Weekly end-of-week reviews, tracked metrics, and feedback on your journal and emotional control. <strong>You cannot hide here.</strong></div>
+    </div>
+    <div class="roadmap-note reveal" style="margin-top:28px;">
+      <strong>This is not about a payout next week.</strong> It is about building a skill that pays you for years. The call is where Benicio's team learns your goals and you both decide if this is the right fit.
+    </div>
+  </div>
+</section>
+
 <section class="next-section" id="next">
   <div class="wrap">
     <span class="eyebrow reveal">What Happens Next</span>
