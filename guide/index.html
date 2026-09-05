@@ -249,23 +249,33 @@
       font-family: var(--mono); font-size: 11px; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); padding-left: 4px;
     }
-    .video-slot {
+    .video-embed {
       position: relative; width: 100%; aspect-ratio: 16 / 9;
       border-radius: 10px; overflow: hidden;
-      border: 1px dashed var(--border-2); background: var(--bg-card);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-      color: var(--text-mut); text-align: center; padding: 20px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      box-shadow: 0 20px 50px -24px var(--green-glow);
     }
-    .video-slot .play-btn {
-      width: 62px; height: 42px; border-radius: 8px; background: var(--green);
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-facade { cursor: pointer; }
+    .video-facade .thumb {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; transition: transform 0.3s ease, filter 0.3s ease; filter: brightness(0.9);
+    }
+    .video-facade:hover .thumb { transform: scale(1.03); filter: brightness(1); }
+    .video-facade .play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 66px; height: 46px; border-radius: 8px; background: var(--green);
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 30px rgba(46,230,107,0.4); transition: transform 0.2s ease; pointer-events: none;
     }
-    .video-slot .play-btn::after {
+    .video-facade:hover .play-btn { transform: translate(-50%, -50%) scale(1.08); }
+    .video-facade .play-btn::after {
       content: ""; display: block; margin-left: 3px;
-      border-style: solid; border-width: 9px 0 9px 15px;
+      border-style: solid; border-width: 10px 0 10px 17px;
       border-color: transparent transparent transparent #06120a;
     }
-    .video-slot .slot-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .section-video { max-width: 780px; margin: 44px auto 0; display: grid; gap: 14px; }
+    .section-video .video-caption { justify-content: center; padding-left: 0; }
 
     .quote-card {
       background: var(--bg-card); border: 1px solid var(--border);
@@ -484,9 +494,9 @@
         <a href="#proof" class="btn btn-ghost">See the Payout Proof</a>
       </div>
       <div class="hero-stats">
-        <div class="hstat"><div class="num" data-count="4">0</div><div class="lbl">Years trading full time</div></div>
-        <div class="hstat"><div class="num"><em>1</em></div><div class="lbl">Framework. Traded daily.</div></div>
-        <div class="hstat"><div class="num" data-count="90">0</div><div class="lbl">Day roadmap inside</div></div>
+        <div class="hstat"><div class="num"><em>91.3%</em></div><div class="lbl">Win rate through May</div></div>
+        <div class="hstat"><div class="num"><em>$25K</em></div><div class="lbl">From zero in 20 days</div></div>
+        <div class="hstat"><div class="num"><em>1</em></div><div class="lbl">Framework, traded live daily</div></div>
       </div>
     </div>
     <div class="chart-card reveal">
@@ -527,21 +537,22 @@
   <div class="wrap two-col">
     <div class="story-copy">
       <span class="eyebrow reveal">Welcome From Benicio</span>
-      <h2 class="reveal">The Story Behind <span class="accent">Mind Over Market</span></h2>
-      <span class="placeholder-note reveal d1">Placeholder &mdash; Benicio's personal story goes here</span>
-      <p class="lead reveal d1">Write the full story in this space. Where it started, the years of losing before it clicked, the account flips documented in public, the prop firm payouts, and the decision to build this into a mentorship. Keep it in his own voice.</p>
+      <h2 class="reveal">From $126 in the Bank to <span class="accent">This</span></h2>
+      <p class="lead reveal d1">On May 7th, 2023, I had $126 in my bank account. Since then I have bought cars I used to only screenshot, moved into my first apartment, and gotten married. None of it was luck. Here is how it actually happened, and why I built Mind Over Market.</p>
       <div class="story-points">
-        <div class="spoint reveal d1"><div class="ico">1</div><div><h4>Where it started</h4><p>Placeholder. The moment he first opened a chart and what pulled him in.</p></div></div>
-        <div class="spoint reveal d2"><div class="ico">2</div><div><h4>The years that did not work</h4><p>Placeholder. What he tried, what he lost, and why nothing stuck.</p></div></div>
-        <div class="spoint reveal d3"><div class="ico">3</div><div><h4>The shift</h4><p>Placeholder. The one change in how he approached the market that finally made it repeatable.</p></div></div>
-        <div class="spoint reveal d4"><div class="ico">4</div><div><h4>Building the mentorship</h4><p>Placeholder. Why he started teaching this and who it is for.</p></div></div>
+        <div class="spoint reveal d1"><div class="ico">1</div><div><h4>Counted out early</h4><p>Growing up I was the fat kid, always overlooked, always underestimated. Deep down I knew I would make something of myself. I could not explain it. I just knew. If you are watching this because you feel the same way, keep going.</p></div></div>
+        <div class="spoint reveal d2"><div class="ico">2</div><div><h4>Introduced to trading at 15</h4><p>A friend of my mom's showed me the markets. My dad staked me $700 and I blew all of it. He gave me another $400 and I blew that too. From that point I felt indebted to the market, and I got obsessed with figuring it out.</p></div></div>
+        <div class="spoint reveal d3"><div class="ico">3</div><div><h4>16, in school, working 40-hour weeks</h4><p>I was not profitable yet, so I worked to fund it: the car payment, the mentorships, the funded accounts. School, a job, and chasing this all at once. I graduated with a 2.2 GPA. The trading still was not working.</p></div></div>
+        <div class="spoint reveal d4"><div class="ico">4</div><div><h4>The break that changed everything</h4><p>Trading had taken over my life and pulled me away from my faith. So I quit it cold for a few months and put that time into God instead. When I came back to the charts, I made more progress in a few weeks than I had in the year and a half before.</p></div></div>
+        <div class="spoint reveal"><div class="ico">5</div><div><h4>Kicked out of school for trading</h4><p>I was posting myself trading live in class and it went viral. Teachers mocked it. Eventually I was told to shut the laptop mid-trade or leave, so I left. I was making around $10,000 a month by then. The principal worked out hybrid online school so I could be at my desk for the 9:30 open.</p></div></div>
+        <div class="spoint reveal"><div class="ico">6</div><div><h4>All in</h4><p>The next day another teacher tried to pull the laptop out of my hands. I went home and told my parents I was done playing it safe. I quit the job. I went all in on trading and on building in public. The Corvette came before I graduated. Then Lake Como. A $140,000 month. My dad's dream truck. Married at 19. The Ferrari. I still do not feel like I have made it. I feel like I have barely started.</p></div></div>
       </div>
     </div>
     <div class="story-side">
-      <div class="video-caption reveal d1">&#9654; Watch: Benicio's story</div>
-      <div class="video-slot reveal d1">
+      <div class="video-caption reveal d1">&#9654; Watch: Benicio's full story</div>
+      <div class="video-embed video-facade reveal d1" data-video="fgSUgtsWfmA" role="button" tabindex="0" aria-label="Play video: Benicio's full story">
+        <img class="thumb" src="https://i.ytimg.com/vi/fgSUgtsWfmA/hqdefault.jpg" alt="Benicio's full story" loading="lazy" />
         <div class="play-btn"></div>
-        <div class="slot-label">Video placeholder &middot; drop the embed here</div>
       </div>
       <div class="quote-card reveal d2">
         <img class="note-photo" src="/images/benicio-story.jpg" alt="Benicio Valentin" />
@@ -561,30 +572,38 @@
 <!-- ============ THE PROGRAM + WHY BEGINNERS FAIL ============ -->
 <section class="alt" id="program">
   <div class="wrap">
-    <span class="eyebrow reveal">The Strategy &amp; The Program</span>
-    <h2 class="reveal">One Framework. Traded Live. <span class="accent">Every Day.</span></h2>
-    <p class="lead reveal d1">Mind Over Market is a futures mentorship built on institutional concepts: liquidity, session highs and lows, order flow, and change of state delivery. No signals to follow blindly. You learn to read the market, wait for it to confirm, and take consistent base hits instead of swinging for home runs.</p>
+    <span class="eyebrow reveal">The Strategy</span>
+    <h2 class="reveal">The Exact Framework Benicio Used To Take <span class="accent">$25,000 From Zero</span> In 20 Days</h2>
+    <p class="lead reveal d1">He held a 91.3% win rate through the month of May with it. It is different from most things you have traded before, because it stops trying to predict the market and starts reacting to it. Four rules do the heavy lifting.</p>
 
     <div class="pillars">
       <div class="pillar-card reveal d1">
         <div class="pillar-num">01</div>
-        <h3>Emotional Discipline</h3>
-        <p>Trading is a psychology problem before it is a strategy problem. Discipline is treated as a skill you build, not a trait you are born with.</p>
+        <h3>Conditions, not daily bias</h3>
+        <p>The market moves both ways almost every session. Instead of picking a direction at the open, you set "if this, then that" conditions on fair value gaps, rejection blocks, and equilibrium, then trade whichever side the market confirms.</p>
       </div>
       <div class="pillar-card reveal d2">
         <div class="pillar-num">02</div>
-        <h3>Risk Control</h3>
-        <p>Sized, pre-defined risk on every trade. The stop is set before you enter. Protecting the account comes before chasing the win.</p>
+        <h3>Continuations only</h3>
+        <p>No reversals. You take trades with the trend. Same entry model, but trading continuation instead of trying to catch tops and bottoms is worth a 10 to 15% jump in win rate on its own.</p>
       </div>
       <div class="pillar-card reveal d3">
         <div class="pillar-num">03</div>
-        <h3>The Technical Framework</h3>
-        <p>A repeatable structure for reading price: where liquidity sits, where the session turns, and when order flow actually confirms a setup.</p>
+        <h3>Equilibrium plus confluence</h3>
+        <p>Every entry is lined up with the equilibrium of the range, the 0.5 on the Fibonacci tool. A fair value gap sitting on equilibrium is two confluences instead of one, and that is what filters out the entries that run straight to your stop.</p>
       </div>
       <div class="pillar-card reveal d4">
         <div class="pillar-num">04</div>
-        <h3>Live Execution</h3>
-        <p>Live trading sessions and real-time market breakdowns. You watch the framework applied to the market as it happens, then do it yourself.</p>
+        <h3>Conservative targets</h3>
+        <p>No swinging for a $5,000 screenshot. You take your piece of the pie, the internal liquidity, and log the green day. Stacking $250 to $500 winners is what actually gets prop payouts approved.</p>
+      </div>
+    </div>
+
+    <div class="section-video reveal">
+      <div class="video-caption">&#9654; Watch: the full strategy breakdown</div>
+      <div class="video-embed video-facade" data-video="titMR4fUOQE" role="button" tabindex="0" aria-label="Play video: the full strategy breakdown">
+        <img class="thumb" src="https://i.ytimg.com/vi/titMR4fUOQE/hqdefault.jpg" alt="The full strategy breakdown" loading="lazy" />
+        <div class="play-btn"></div>
       </div>
     </div>
 
@@ -629,7 +648,7 @@
     </div>
 
     <div class="data-note reveal">
-      <strong>The strategy is usually fine. The conditions for executing it are broken.</strong> Pull any struggling trader's log and sort by time of entry. The losing trades cluster in the minutes when they had somewhere else to be. Fix the execution environment first, and the same setups start working.
+      <strong>The strategy is usually fine. The timeline and the execution are what break it.</strong> Beginners rush: pass the account today, first payout this week. Benicio's fix is the opposite. Extend the timeline, trade only the windows where you have full attention, and let consistency compound. The people who give themselves the grace of time tend to hit their goals sooner, not later.
     </div>
   </div>
 </section>
@@ -865,6 +884,23 @@ checks.forEach((c, i) => {
   });
 });
 refreshProgress();
+
+/* ===== VIDEO FACADES ===== */
+document.querySelectorAll(".video-facade").forEach(f => {
+  function play() {
+    const id = f.dataset.video;
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    iframe.title = f.getAttribute("aria-label") || "Video";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    f.innerHTML = "";
+    f.appendChild(iframe);
+    f.classList.remove("video-facade");
+  }
+  f.addEventListener("click", play);
+  f.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); } });
+});
 
 /* ===== ACTIVE NAV HIGHLIGHT ===== */
 const navA = document.querySelectorAll(".nav-links a[href^='#']");
