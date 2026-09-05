@@ -239,6 +239,24 @@
     .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
     .proof-grid img { width: 100%; height: 100%; max-height: 220px; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid var(--border); display: block; }
 
+    /* PAYOUT PROOF */
+    .payout-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .payout-shot {
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+      box-shadow: 0 0 60px -30px var(--gold-glow);
+    }
+    .payout-shot img {
+      display: block;
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: top;
+    }
+
     /* TESTIMONIALS */
     .testimonials { column-count: 3; column-gap: 16px; }
     .t-card {
@@ -289,6 +307,8 @@
       .faq-grid { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: repeat(2, 1fr); }
       .proof-grid { grid-template-columns: 1fr 1fr; }
+      .payout-grid { grid-template-columns: 1fr 1fr; }
+      .payout-shot img { height: 340px; }
       .testimonials { column-count: 1; }
     }
   </style>
@@ -350,6 +370,30 @@
             <wistia-player media-id="j2l4ddsjf8" aspect="1.7777777777777777" playback-rate-control="false" controls-visible-on-load="false"></wistia-player>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="payout-proof">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Receipts</div>
+        <h2>Proof of My <span class="gold">Payouts</span></h2>
+        <p class="lead">Straight from the withdrawal portal. No edits, no cropping the numbers out.</p>
+      </div>
+      <div class="payout-grid">
+        <a class="payout-shot" href="/images/payouts/p1.png" target="_blank" rel="noopener">
+          <img src="/images/payouts/p1.png" alt="Payout proof — withdrawal requests in the AMP client portal" loading="lazy" />
+        </a>
+        <a class="payout-shot" href="/images/payouts/p2.png" target="_blank" rel="noopener">
+          <img src="/images/payouts/p2.png" alt="Payout proof — full list of withdrawal requests in the AMP client portal" loading="lazy" />
+        </a>
+        <a class="payout-shot" href="/images/payouts/p3.png" target="_blank" rel="noopener">
+          <img src="/images/payouts/p3.png" alt="Payout proof — withdrawal amounts to bank account in the AMP client portal" loading="lazy" />
+        </a>
+        <a class="payout-shot" href="/images/payouts/p4.png" target="_blank" rel="noopener">
+          <img src="/images/payouts/p4.png" alt="Payout proof — wire withdrawal amounts in the AMP client portal" loading="lazy" />
+        </a>
       </div>
     </div>
   </section>
