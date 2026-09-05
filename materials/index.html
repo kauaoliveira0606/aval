@@ -287,6 +287,18 @@
     .checklist { display: inline-flex; flex-direction: column; gap: 10px; text-align: left; }
     .checklist div { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--text-dim); }
     .checklist .check { color: var(--gold); font-weight: 700; }
+    .final-box .sub { color: var(--text-dim); font-size: 15px; max-width: 460px; margin: 0 auto 28px; }
+    .guide-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: #1a1608;
+      font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 16px 30px; border-radius: 8px; text-decoration: none;
+      box-shadow: 0 0 0 1px var(--gold-dim), 0 12px 34px -10px var(--gold-glow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .guide-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px var(--gold), 0 16px 38px -10px var(--gold-glow); }
+    .final-box .signoff { margin-top: 30px; font-style: italic; font-weight: 700; }
+    .final-box .signoff-role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
 
     footer {
       position: relative;
@@ -456,6 +468,19 @@
           <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370444/file/7e6fa5669c0ba3db96e145fda75c579e.png" alt="Student payout proof — Isaac $50K" loading="lazy" />
           <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370443/file/2f53f61e4931955a91263fc340da5e91.png" alt="Student payout proof — Nahom $25K" loading="lazy" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="full-guide">
+    <div class="wrap">
+      <div class="final-box">
+        <div class="eyebrow">One More Thing</div>
+        <h2>Ready for the <span class="gold" style="font-style:italic;">Full Guide?</span></h2>
+        <p class="sub">Open the Opportunity Guide to see the strategy, the roadmap, the payout proof, and every student story in one place.</p>
+        <a href="/guide" class="guide-cta-btn">Open The Full Guide &rarr;</a>
+        <div class="signoff">See you on the call.</div>
+        <div class="signoff-role">Benicio &middot; Founder, Mind Over Market</div>
       </div>
     </div>
   </section>
