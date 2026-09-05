@@ -158,6 +158,22 @@
     .reveal.d3 { transition-delay: 0.24s; } .reveal.d4 { transition-delay: 0.32s; }
 
     /* HERO */
+    /* WELCOME LETTER */
+    .welcome { padding: 72px 0 60px; border-bottom: 1px solid var(--border); }
+    .welcome-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 40px 44px; max-width: 820px; margin: 0 auto;
+      box-shadow: 0 24px 60px -30px var(--green-glow);
+    }
+    .welcome-card .eyebrow { margin-bottom: 14px; }
+    .welcome-card h2 { font-size: clamp(23px, 3.4vw, 33px); margin-bottom: 20px; }
+    .welcome-card p { color: var(--text-dim); margin-bottom: 15px; font-size: 16.5px; }
+    .welcome-card p:last-of-type { margin-bottom: 0; }
+    .welcome-card strong { color: var(--text); }
+    .welcome-sign { margin-top: 24px; font-weight: 800; font-style: italic; }
+    .welcome-sign-role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-top: 6px; }
+    @media (max-width: 720px) { .welcome-card { padding: 30px 24px; } }
+
     .hero { padding: 84px 0 92px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
     .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 56px; align-items: center; }
     @media (max-width: 940px) { .hero-inner { grid-template-columns: 1fr; gap: 44px; } }
@@ -543,6 +559,23 @@
     </div>
   </div>
 </nav>
+
+<!-- ============ WELCOME LETTER ============ -->
+<section class="welcome" id="welcome">
+  <div class="wrap">
+    <div class="welcome-card reveal">
+      <span class="eyebrow">Start Here</span>
+      <h2>Congratulations on booking your call.</h2>
+      <p>Let me be clear about my responsibility from here. Between now and your game plan call, my job is to help you do your due diligence: to give you as much information as possible so you can decide whether working with us is a good fit for you or not.</p>
+      <p>Everything on this page is built for that. My story, and how I actually trade. The exact framework and the 90 day roadmap we put you through. The worst-case scenario in plain terms, and the process we use to turn a casual trader into a consistently profitable one. And the questions people ask us most at this stage, before their game plan call, answered in writing.</p>
+      <p>You will also find the proof: <strong>my full payout history from the funding portal</strong>, so you know I am a real trader and not someone who just sells courses. Alongside that, interviews and testimonials from students who ran the same framework.</p>
+      <p>On top of this page, you will get a handful of emails from us over the next few days. Not one email, a handful. They all exist to give you more information so you are well informed on everything there is to know. We want you confident in your decision either way, whether you are in or out.</p>
+      <p>Scroll down and go through all of it. If anything is still open, bring it to your game plan call and we will answer it there. I look forward to helping you.</p>
+      <div class="welcome-sign">Benicio Valentin</div>
+      <div class="welcome-sign-role">Founder, Mind Over Market</div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
