@@ -499,6 +499,21 @@
       margin-top: 6px;
     }
     .field-error.show { display: block; }
+    .consent-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-dim);
+      cursor: pointer;
+    }
+    .consent-row input {
+      width: auto;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+    .consent-row strong { color: var(--green); }
     form.optin button { width: 100%; justify-content: center; }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
@@ -784,6 +799,13 @@
           </div>
           <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
         </div>
+        <div>
+          <label class="consent-row">
+            <input type="checkbox" id="funds" name="funds" />
+            <span>By checking this box you understand that it is a requirement to have at least <strong>$50</strong> to be able to access these tools. If that's not possible for you, please LEAVE this page now.</span>
+          </label>
+          <div class="field-error" id="funds-error">You must check this box to continue.</div>
+        </div>
         <button type="submit" class="btn-primary">Get Instant Access →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
@@ -837,11 +859,15 @@
       var max = parseInt(opt.getAttribute('data-max'), 10);
       var phoneOk = digits.length >= min && digits.length <= max;
 
+      var funds = document.getElementById('funds');
+      var fundsOk = funds.checked;
+
       document.getElementById('fname-error').classList.toggle('show', !fnameOk);
       document.getElementById('email-error').classList.toggle('show', !emailOk);
       document.getElementById('phone-error').classList.toggle('show', !phoneOk);
+      document.getElementById('funds-error').classList.toggle('show', !fundsOk);
 
-      if (!fnameOk || !emailOk || !phoneOk) return;
+      if (!fnameOk || !emailOk || !phoneOk || !fundsOk) return;
 
       var fullPhone = '+' + opt.value + digits;
 
