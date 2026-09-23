@@ -545,6 +545,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .consent-row span { flex: 1 1 auto; min-width: 0; }
     .consent-row strong { color: var(--green); }
     form.optin button { width: 100%; justify-content: center; }
+    .inline-optin { margin: 40px auto 0; text-align: left; }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
@@ -582,7 +583,49 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
       <vturb-smartplayer id="vid-6aa04aa45e4f2434ba3a680d" style="display: block; margin: 0 auto 40px; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
       <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6aa04aa45e4f2434ba3a680d/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-      <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">Get My AI Tools + Free Course →</a>
+      <div class="modal-card inline-optin" id="optin">
+        <h2>Claim Your Free Access</h2>
+        <p>Fill this out and get instant access to the AI tools and the free course.</p>
+        <form class="optin" id="hero-optin-form" novalidate>
+          <div>
+            <input type="text" id="h-fname" name="fname" placeholder="First name" required />
+            <div class="field-error" id="h-fname-error">Enter your first name.</div>
+          </div>
+          <div>
+            <input type="email" id="h-email" name="email" placeholder="Email address" required />
+            <div class="field-error" id="h-email-error">Enter a valid email address.</div>
+          </div>
+          <div>
+            <div class="phone-row">
+              <select id="h-country" name="country">
+                <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
+                <option value="44" data-min="10" data-max="10">🇬🇧 +44</option>
+                <option value="61" data-min="9" data-max="9">🇦🇺 +61</option>
+                <option value="91" data-min="10" data-max="10">🇮🇳 +91</option>
+                <option value="971" data-min="9" data-max="9">🇦🇪 +971</option>
+                <option value="63" data-min="10" data-max="10">🇵🇭 +63</option>
+                <option value="27" data-min="9" data-max="9">🇿🇦 +27</option>
+                <option value="234" data-min="10" data-max="10">🇳🇬 +234</option>
+                <option value="52" data-min="10" data-max="10">🇲🇽 +52</option>
+                <option value="55" data-min="11" data-max="11">🇧🇷 +55</option>
+                <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
+                <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
+              </select>
+              <input type="tel" id="h-phone" name="phone" placeholder="(201) 555-0123" required />
+            </div>
+            <div class="field-error" id="h-phone-error">Enter a valid phone number for the selected country.</div>
+          </div>
+          <div>
+            <label class="consent-row">
+              <input type="checkbox" id="h-funds" name="funds" />
+              <span>By checking this box you understand that it is a requirement to have at least <strong>$50</strong> to be able to access these tools. If that's not possible for you, please LEAVE this page now.</span>
+            </label>
+            <div class="field-error" id="h-funds-error">You must check this box to continue.</div>
+          </div>
+          <button type="submit" class="btn-primary">Get Instant Access →</button>
+        </form>
+        <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
+      </div>
       <p class="trust-line"><strong>1,000+</strong> traders are already inside</p>
     </div>
   </header>
@@ -848,13 +891,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       if (event.target === overlay) overlay.classList.remove('open');
     });
 
-    document.getElementById('optin-form').addEventListener('submit', function (event) {
+    function handleOptinSubmit(event, prefix) {
       event.preventDefault();
 
-      var fname = document.getElementById('fname');
-      var email = document.getElementById('email');
-      var country = document.getElementById('country');
-      var phone = document.getElementById('phone');
+      var fname = document.getElementById(prefix + 'fname');
+      var email = document.getElementById(prefix + 'email');
+      var country = document.getElementById(prefix + 'country');
+      var phone = document.getElementById(prefix + 'phone');
 
       var fnameOk = fname.value.trim().length >= 2 && /^[a-zA-Z' -]+$/.test(fname.value.trim());
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
@@ -865,13 +908,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       var max = parseInt(opt.getAttribute('data-max'), 10);
       var phoneOk = digits.length >= min && digits.length <= max;
 
-      var funds = document.getElementById('funds');
+      var funds = document.getElementById(prefix + 'funds');
       var fundsOk = funds.checked;
 
-      document.getElementById('fname-error').classList.toggle('show', !fnameOk);
-      document.getElementById('email-error').classList.toggle('show', !emailOk);
-      document.getElementById('phone-error').classList.toggle('show', !phoneOk);
-      document.getElementById('funds-error').classList.toggle('show', !fundsOk);
+      document.getElementById(prefix + 'fname-error').classList.toggle('show', !fnameOk);
+      document.getElementById(prefix + 'email-error').classList.toggle('show', !emailOk);
+      document.getElementById(prefix + 'phone-error').classList.toggle('show', !phoneOk);
+      document.getElementById(prefix + 'funds-error').classList.toggle('show', !fundsOk);
 
       if (!fnameOk || !emailOk || !phoneOk || !fundsOk) return;
 
@@ -936,6 +979,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           window.location.href = redirectUrl;
         }
       });
+    }
+
+    document.getElementById('optin-form').addEventListener('submit', function (event) {
+      handleOptinSubmit(event, '');
+    });
+    document.getElementById('hero-optin-form').addEventListener('submit', function (event) {
+      handleOptinSubmit(event, 'h-');
     });
   </script>
 
