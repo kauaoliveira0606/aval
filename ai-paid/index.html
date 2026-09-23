@@ -545,15 +545,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .consent-row span { flex: 1 1 auto; min-width: 0; }
     .consent-row strong { color: var(--green); }
     form.optin button { width: 100%; justify-content: center; }
-    .inline-optin {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px 24px;
-      max-width: 440px;
-      margin: 40px auto 0;
-      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
-    }
+    .inline-optin { margin: 40px auto 0; text-align: left; }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
@@ -591,7 +583,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
       <vturb-smartplayer id="vid-6aa0512496f385954ead1660" style="display: block; margin: 0 auto 40px; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
       <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6aa0512496f385954ead1660/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-      <div class="inline-optin" id="optin">
+      <div class="modal-card inline-optin" id="optin">
+        <h2>Claim Your Free Access</h2>
+        <p>Fill this out and get instant access to the AI tools and the free course.</p>
         <form class="optin" id="hero-optin-form" novalidate>
           <div>
             <input type="text" id="h-fname" name="fname" placeholder="First name" required />
@@ -621,8 +615,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
             </div>
             <div class="field-error" id="h-phone-error">Enter a valid phone number for the selected country.</div>
           </div>
-          <button type="submit" class="btn-primary">Get My Trading System →</button>
+          <button type="submit" class="btn-primary">Get Instant Access →</button>
         </form>
+        <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
       </div>
       <div class="cta-note">AI Tools + Free Course</div>
       <p class="trust-line"><strong>1,000+</strong> traders are already inside</p>
