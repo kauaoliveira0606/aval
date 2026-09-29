@@ -417,14 +417,18 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .big-figure .mono-muted { display: block; margin-top: 6px; }
 
     /* WHAT WE'LL COVER */
-    .cover-list { display: flex; flex-direction: column; gap: 40px; max-width: 980px; margin: 0 auto; }
+    .cover-list { display: flex; flex-direction: column; gap: 24px; max-width: 980px; margin: 0 auto; }
     .cover-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 36px;
       align-items: center;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.8);
     }
-    .cover-row + .cover-row { border-top: 1px solid var(--border); padding-top: 40px; }
     .cover-row.flip .cover-media { order: 2; }
     .cover-media .shot img { aspect-ratio: 8 / 5; object-fit: cover; }
     .cover-num { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: 0.08em; }
@@ -549,7 +553,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .payout-grid { grid-template-columns: 1fr 1fr; }
       .payout-grid .shot img { height: 300px; }
       .wins { column-count: 2; }
-      .cover-row { grid-template-columns: 1fr; gap: 20px; }
+      .cover-row { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
       .cover-row.flip .cover-media { order: 0; }
     }
     @media (max-width: 560px) {
@@ -670,6 +674,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           <div>
             <div class="cover-num">02</div>
             <h3>My Strategy</h3>
+            <p>The exact rules I trade every day. Where I set my conditions, why I only take trades with the trend, and how I line up every entry with equilibrium so the market confirms the trade before I take it.</p>
           </div>
         </div>
         <div class="cover-row">
