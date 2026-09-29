@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Live Masterclass | Mind Over Market</title>
-  <meta name="description" content="The framework behind a 91.3% win rate and the students pulling consistent prop firm payouts with it. Watch the preview, then save your free seat." />
+  <title>You're Registered | Mind Over Market</title>
+  <meta name="description" content="Your seat for the free live masterclass is saved. Finish the quick steps so you get the reminders and the replay." />
+  <meta name="robots" content="noindex" />
   <link rel="icon" href="/images/logo.png" type="image/png" />
   <script async src="https://use.mindovermarket.com/api/hub/v1/cmthjvil90003jc0ab0v6dc80"></script>
 <!-- Meta Pixel Code -->
@@ -25,13 +26,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Free Live Masterclass | Mind Over Market" />
-  <meta property="og:description" content="The framework behind a 91.3% win rate and the students pulling consistent prop firm payouts with it. Watch the preview, then save your free seat." />
+  <meta property="og:title" content="You're Registered | Mind Over Market" />
   <meta property="og:image" content="https://www.mindovermarket.com/images/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Live Masterclass | Mind Over Market" />
-  <meta name="twitter:description" content="The framework behind a 91.3% win rate and the students pulling consistent prop firm payouts with it." />
-  <meta name="twitter:image" content="https://www.mindovermarket.com/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -316,6 +312,11 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .radio-opt:has(input:checked) { border-color: var(--green-dim); background: rgba(46, 230, 107, 0.06); }
     .field-error { display: none; font-size: 12.5px; color: var(--red); margin-top: 6px; }
     .field-error.show { display: block; }
+    .form-success { display: none; text-align: center; padding: 12px 0; }
+    .form-success h3 { font-size: 22px; font-weight: 800; margin: 10px 0 8px; }
+    .form-success p { color: var(--text-dim); font-size: 15px; }
+    .form-card.done form { display: none; }
+    .form-card.done .form-success { display: block; }
 
     .btn-primary {
       display: inline-flex;
@@ -567,33 +568,138 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .cover-item { grid-template-columns: 1fr; gap: 10px; padding: 22px; }
       .wins { column-count: 1; }
     }
+    /* STEPS TIMELINE */
+    .steps-wrap { max-width: 640px; margin: 56px auto 0; text-align: left; }
+    .steps-wrap > .mono-label { text-align: center; margin-bottom: 28px; }
+    .steps {
+      position: relative;
+      padding-left: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      scroll-margin-top: 24px;
+    }
+    .steps::before {
+      content: "";
+      position: absolute;
+      left: 21px;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      background: var(--border);
+    }
+    .step { position: relative; }
+    .step[hidden] { display: none; }
+    .step-num {
+      position: absolute;
+      left: -64px;
+      top: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06120a;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 6px var(--bg);
+    }
+    .step h3 { font-size: 21px; font-weight: 700; line-height: 1.3; margin: 8px 0 8px; }
+    .step p { color: var(--text-dim); font-size: 15.5px; }
+    .step-actions { display: flex; gap: 12px; margin-top: 18px; }
+    .step-actions .btn-primary { flex: 1; }
+    .step-note { margin-top: 10px; font-size: 12.5px; color: var(--text-mut); text-align: center; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--bg-panel);
+      color: var(--text);
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 30px;
+      border-radius: 8px;
+      border: 1px solid var(--green-dim);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .btn-secondary:hover { transform: translateY(-1px); border-color: var(--green); }
+    .steps-proof { text-align: center; margin-top: 40px; }
+
+    @media (max-width: 560px) {
+      .steps { padding-left: 52px; }
+      .steps::before { left: 17px; }
+      .step-num { left: -52px; width: 36px; height: 36px; font-size: 11px; }
+      .step-actions { flex-direction: column; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="top-bar"><span class="dot"></span>Free Live Masterclass &middot; <span class="js-event-date">Tuesday &middot; 7:00 PM ET</span> &middot; Seats Are Limited</div>
+  <div class="top-bar"><span class="dot"></span>You're Registered &middot; <span class="js-event-date">Tuesday &middot; 7:00 PM ET</span> &middot; Check Your Email</div>
 
   <header class="hero">
     <div class="wrap">
-      <div class="live-pill">Free Live Masterclass</div>
-      <h1>Learn “The One Shift” Trading Strategy Behind My <span class="accent">$100,000/Month</span> In Prop Firm Payouts. Designed To Help You Get Funded And Become Consistently Profitable</h1>
-      <p class="hero-sub">Backed by verified prop firm payouts. No experience needed to get started</p>
+      <div class="live-pill">Registration Confirmed &middot; Free Live Masterclass</div>
+      <h1>Your Seat Is Saved. Do These <span class="accent"><span class="js-step-count">4</span> Things</span> Before We Go Live</h1>
+      <p class="hero-sub">Your registration is confirmed for <span class="js-event-date">Tuesday &middot; 7:00 PM ET</span>. Two minutes of setup now makes sure you get the reminders, the replay and everything else.</p>
 
-      <div class="mono-label step-label">Step 1/2: Watch The Masterclass Preview</div>
+      <div class="mono-label step-label">Watch This First</div>
       <div class="hero-video video-frame">
-        <div class="video-embed video-facade" data-video="titMR4fUOQE" role="button" tabindex="0" aria-label="Play video: masterclass preview">
-          <img class="thumb" src="https://i.ytimg.com/vi/titMR4fUOQE/hqdefault.jpg" alt="Masterclass preview" />
+        <div class="video-embed video-facade" data-video="titMR4fUOQE" role="button" tabindex="0" aria-label="Play video: watch this first">
+          <img class="thumb" src="https://i.ytimg.com/vi/titMR4fUOQE/hqdefault.jpg" alt="Watch this first" />
           <div class="play-btn"></div>
         </div>
       </div>
-      <p class="hero-note">No cost. Seats are limited. If you can't make it live, register anyway and I'll send you the replay.</p>
 
-      <div class="register-block" id="register">
-        <div class="mono-label">Step 2/2: Save Your Free Seat</div>
+      <div class="register-block">
+        <div class="mono-label">Your Masterclass Starts In</div>
         <div class="event-date js-event-date">Tuesday &middot; 7:00 PM ET</div>
         <div class="countdown js-countdown"></div>
-        <div class="form-card" id="form-card-top"></div>
-        <div class="mono-muted hero-proof">1,000+ Traders Trained By Mind Over Market</div>
+      </div>
+
+      <div class="steps-wrap">
+        <div class="mono-label">Step By Step: Lock In Your Spot</div>
+        <div class="steps" id="steps">
+          <div class="step">
+            <div class="step-num js-num"></div>
+            <h3>Open Your Email And Reply "Yes"</h3>
+            <p>I just sent you a confirmation email. Reply "Yes" to it so the reminders and the replay actually land in your inbox instead of spam.</p>
+          </div>
+          <div class="step">
+            <div class="step-num js-num"></div>
+            <h3>Add The Masterclass To Your Calendar</h3>
+            <p>One click puts the masterclass on your calendar, Google, Apple or anything else, so you don't miss it.</p>
+            <div class="step-actions">
+              <a class="btn-primary js-gcal" href="#" target="_blank" rel="noopener">Google Calendar</a>
+              <button type="button" class="btn-secondary js-ics">Apple Calendar</button>
+            </div>
+          </div>
+          <div class="step js-step-whatsapp">
+            <div class="step-num js-num"></div>
+            <h3>Join The Masterclass WhatsApp Group</h3>
+            <p>In this group, I'll personally send free resources and information for the masterclass.</p>
+            <div class="step-actions">
+              <a class="btn-primary js-whatsapp" href="#" target="_blank" rel="noopener">Join The WhatsApp Group</a>
+            </div>
+            <div class="step-note">Don't have WhatsApp? Download it. It will be essential for our communication here.</div>
+          </div>
+          <div class="step js-step-discord">
+            <div class="step-num js-num"></div>
+            <h3>Join The Private Discord</h3>
+            <p>Announcements, extra resources and more before the masterclass goes live. This is also where I answer questions.</p>
+            <div class="step-actions">
+              <a class="btn-primary js-discord" href="#" target="_blank" rel="noopener">Join The Discord</a>
+            </div>
+          </div>
+        </div>
+        <div class="mono-muted steps-proof">1,000+ Traders Trained By Mind Over Market</div>
       </div>
     </div>
   </header>
@@ -645,8 +751,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
 
       <div class="cta-row">
-        <a href="#register" class="btn-primary">Save My Free Seat &rarr;</a>
-        <div class="mono-muted">Free &middot; Limited Seats &middot; Replay Included</div>
+        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
+        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
       </div>
     </div>
   </section>
@@ -654,8 +760,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <section id="cover">
     <div class="wrap">
       <div class="section-head">
-        <div class="mono-label">On This Free Masterclass</div>
-        <h2>What We'll Cover <span class="accent">Live</span></h2>
+        <div class="mono-label">When We Go Live</div>
+        <h2>What You'll <span class="accent">Walk Away Knowing</span></h2>
       </div>
       <div class="cover-list">
         <div class="cover-item">
@@ -694,8 +800,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         </div>
       </div>
       <div class="cta-row">
-        <a href="#register" class="btn-primary">Save My Free Seat &rarr;</a>
-        <div class="mono-muted">Free &middot; Limited Seats &middot; Replay Included</div>
+        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
+        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
       </div>
     </div>
   </section>
@@ -709,22 +815,23 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
       <div class="wins js-wins"></div>
       <div class="cta-row">
-        <a href="#register" class="btn-primary">Save My Free Seat &rarr;</a>
-        <div class="mono-muted">Free &middot; Limited Seats &middot; Replay Included</div>
+        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
+        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
       </div>
     </div>
   </section>
 
   <section id="final">
     <div class="wrap wrap-narrow" style="text-align: center;">
-      <div class="live-pill">Seats Fill Up Before Every Live Masterclass</div>
-      <div class="section-head" style="margin-bottom: 28px;">
-        <h2>Save Your <span class="accent">Free Seat</span></h2>
-        <p style="color: var(--text-dim); font-size: 17px; margin-top: 16px;">The masterclass is free. Register now and I'll send you the details, plus the replay if you can't make it live.</p>
+      <div class="live-pill">Registered Traders Who Show Up Get Paid</div>
+      <div class="section-head" style="margin-bottom: 0;">
+        <h2>Don't Just Register. <span class="accent">Show Up.</span></h2>
+        <p style="color: var(--text-dim); font-size: 17px; margin-top: 16px;">The traders you just scrolled past all did one thing differently: they showed up live and asked questions. Finish the steps so nothing gets between you and the masterclass.</p>
       </div>
-      <div class="event-date js-event-date">Tuesday &middot; 7:00 PM ET</div>
-      <div class="countdown js-countdown"></div>
-      <div class="form-card" id="form-card-bottom"></div>
+      <div class="cta-row">
+        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
+        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
+      </div>
     </div>
   </section>
 
@@ -751,62 +858,19 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <img src="" alt="" />
   </div>
 
-  <template id="optin-template">
-    <form class="optin" novalidate>
-      <div>
-        <label class="field-label" data-for="fname">First Name <span>*</span></label>
-        <input type="text" data-field="fname" placeholder="Enter your first name" autocomplete="given-name" required />
-        <div class="field-error" data-error="fname">Enter your first name.</div>
-      </div>
-      <div>
-        <label class="field-label" data-for="phone">Phone <span>*</span></label>
-        <div class="phone-row">
-          <select data-field="country" aria-label="Country code">
-            <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
-            <option value="44" data-min="10" data-max="10">🇬🇧 +44</option>
-            <option value="61" data-min="9" data-max="9">🇦🇺 +61</option>
-            <option value="91" data-min="10" data-max="10">🇮🇳 +91</option>
-            <option value="971" data-min="9" data-max="9">🇦🇪 +971</option>
-            <option value="63" data-min="10" data-max="10">🇵🇭 +63</option>
-            <option value="27" data-min="9" data-max="9">🇿🇦 +27</option>
-            <option value="234" data-min="10" data-max="10">🇳🇬 +234</option>
-            <option value="52" data-min="10" data-max="10">🇲🇽 +52</option>
-            <option value="55" data-min="11" data-max="11">🇧🇷 +55</option>
-            <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
-            <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
-          </select>
-          <input type="tel" data-field="phone" placeholder="(201) 555-0123" autocomplete="tel-national" required />
-        </div>
-        <div class="field-error" data-error="phone">Enter a valid phone number for the selected country.</div>
-      </div>
-      <div>
-        <label class="field-label" data-for="email">Email <span>*</span></label>
-        <input type="email" data-field="email" placeholder="your@email.com" autocomplete="email" required />
-        <div class="field-error" data-error="email">Enter a valid email address.</div>
-      </div>
-      <div>
-        <div class="field-label">How Much Have You Spent On Evals? <span>*</span></div>
-        <div class="radio-list">
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$0" /> $0</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$0-$2,000" /> $0-$2,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$2,000-$5,000" /> $2,000-$5,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$5,000-$10,000" /> $5,000-$10,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$10,000+" /> $10,000+</label>
-        </div>
-        <div class="field-error" data-error="evals">Pick one option.</div>
-      </div>
-      <button type="submit" class="btn-primary">Save My Seat &rarr;</button>
-    </form>
-  </template>
-
   <script>
     // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
     var MASTERCLASS_DAY = 2;
     var MASTERCLASS_HOUR = 19;
     var MASTERCLASS_TIME_LABEL = '7:00 PM ET';
 
-    // Lead destinations. Each receives the same JSON payload.
-    var WEBHOOK_URLS = ['https://hooks.zapier.com/hooks/catch/21143673/4m9mgjc/'];
+    var MASTERCLASS_MINUTES = 60;
+
+    // Step links. A step whose link is empty is hidden and the steps renumber.
+    var WHATSAPP_URL = '';
+    var DISCORD_URL = '';
+    // Where the live masterclass happens; goes into the calendar invite.
+    var LIVE_URL = '';
 
     var TESTIMONIALS = [
       { img: '/images/testimonials/t1.png', title: 'First Payout' },
@@ -969,70 +1033,90 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       timer = setTimeout(show, 8000);
     })();
 
-    /* ---------- Opt-in forms ---------- */
-    var template = document.getElementById('optin-template');
-    ['form-card-top', 'form-card-bottom'].forEach(function (id) {
-      var card = document.getElementById(id);
-      card.appendChild(template.content.cloneNode(true));
-      card.querySelectorAll('[data-group="evals"]').forEach(function (r) { r.name = id + '-evals'; });
-      card.querySelectorAll('[data-for]').forEach(function (label) {
-        var input = card.querySelector('[data-field="' + label.getAttribute('data-for') + '"]');
-        input.id = id + '-' + label.getAttribute('data-for');
-        label.htmlFor = input.id;
-      });
-      card.querySelector('form').addEventListener('submit', function (event) {
-        handleOptinSubmit(event, card);
-      });
+    /* ---------- Steps ---------- */
+    (function () {
+      var whatsappStep = document.querySelector('.js-step-whatsapp');
+      var discordStep = document.querySelector('.js-step-discord');
+      if (WHATSAPP_URL) document.querySelector('.js-whatsapp').href = WHATSAPP_URL; else whatsappStep.hidden = true;
+      if (DISCORD_URL) document.querySelector('.js-discord').href = DISCORD_URL; else discordStep.hidden = true;
+      var visible = Array.prototype.filter.call(document.querySelectorAll('.step'), function (s) { return !s.hidden; });
+      visible.forEach(function (s, i) { s.querySelector('.js-num').textContent = pad(i + 1); });
+      document.querySelectorAll('.js-step-count').forEach(function (el) { el.textContent = visible.length; });
+    })();
+
+    /* ---------- Calendar ---------- */
+    var EVENT_TITLE = 'Mind Over Market Free Live Masterclass';
+    var EVENT_DETAILS = 'Free live masterclass with Benicio Valentin (AvalTrades). Show up live and bring your questions.' + (LIVE_URL ? '\n\nJoin here: ' + LIVE_URL : '');
+    var EVENT_LOCATION = LIVE_URL || 'Online';
+
+    function utcStamp(date) {
+      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
+    function eventEnd() {
+      return new Date(session.getTime() + MASTERCLASS_MINUTES * 60000);
+    }
+
+    document.querySelector('.js-gcal').addEventListener('click', function () {
+      this.href = 'https://calendar.google.com/calendar/render?' + new URLSearchParams({
+        action: 'TEMPLATE',
+        text: EVENT_TITLE,
+        dates: utcStamp(session) + '/' + utcStamp(eventEnd()),
+        details: EVENT_DETAILS,
+        location: EVENT_LOCATION
+      }).toString();
     });
 
-    function field(card, name) { return card.querySelector('[data-field="' + name + '"]'); }
-    function showError(card, name, show) { card.querySelector('[data-error="' + name + '"]').classList.toggle('show', show); }
-
-    function handleOptinSubmit(event, card) {
-      event.preventDefault();
-
-      var fname = field(card, 'fname').value.trim();
-      var email = field(card, 'email').value.trim();
-      var country = field(card, 'country');
-      var digits = field(card, 'phone').value.replace(/\D/g, '');
-      var checked = card.querySelector('[data-group="evals"]:checked');
-
-      var fnameOk = fname.length >= 2 && /^[a-zA-Z' -]+$/.test(fname);
-      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      var opt = country.options[country.selectedIndex];
-      var phoneOk = digits.length >= parseInt(opt.getAttribute('data-min'), 10) && digits.length <= parseInt(opt.getAttribute('data-max'), 10);
-      var evalsOk = !!checked;
-
-      showError(card, 'fname', !fnameOk);
-      showError(card, 'email', !emailOk);
-      showError(card, 'phone', !phoneOk);
-      showError(card, 'evals', !evalsOk);
-      if (!fnameOk || !emailOk || !phoneOk || !evalsOk) return;
-
-      var button = card.querySelector('button[type="submit"]');
-      button.disabled = true;
-      button.textContent = 'Saving Your Seat...';
-
-      var payload = JSON.stringify({
-        firstName: fname,
-        email: email,
-        phone: '+' + opt.value + digits,
-        evalsSpent: checked.value,
-        source: 'masterclass',
-        masterclassDate: session.toISOString(),
-        pageUrl: window.location.href
-      });
-
-      var requests = WEBHOOK_URLS.map(function (url) {
-        return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload })
-          .catch(function (err) { console.log('Webhook failed: ' + url + ' ' + err.message); });
-      });
-
-      var params = new URLSearchParams({ fname: fname, email: email, phone: '+' + opt.value + digits });
-      Promise.allSettled(requests).finally(function () {
-        window.location.href = '/masterclass-confirmation?' + params.toString();
-      });
+    function icsEscape(s) {
+      return s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
     }
+    document.querySelector('.js-ics').addEventListener('click', function () {
+      var ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Mind Over Market//Live Masterclass//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        'UID:mom-masterclass-' + utcStamp(session) + '@mindovermarket.com',
+        'DTSTAMP:' + utcStamp(new Date()),
+        'DTSTART:' + utcStamp(session),
+        'DTEND:' + utcStamp(eventEnd()),
+        'SUMMARY:' + icsEscape(EVENT_TITLE),
+        'DESCRIPTION:' + icsEscape(EVENT_DETAILS),
+        'LOCATION:' + icsEscape(EVENT_LOCATION),
+        'BEGIN:VALARM',
+        'TRIGGER:-PT30M',
+        'ACTION:DISPLAY',
+        'DESCRIPTION:' + icsEscape(EVENT_TITLE),
+        'END:VALARM',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      var url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'mind-over-market-masterclass.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    });
+
+    /* ---------- Lead tracking (once per session) ---------- */
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var keys = ['fname', 'email', 'phone'];
+      if (keys.some(function (k) { return params.has(k); })) {
+        keys.forEach(function (k) { params.delete(k); });
+        var qs = params.toString();
+        window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+      }
+      var tracked = false;
+      try { tracked = window.sessionStorage.getItem('mom_masterclass_lead') === '1'; } catch (e) {}
+      if (tracked) return;
+      if (window.fbq) fbq('track', 'Lead');
+      try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
+    })();
   </script>
 
 </body>
