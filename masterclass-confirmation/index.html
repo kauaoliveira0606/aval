@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You're Registered | Mind Over Market</title>
-  <meta name="description" content="Your seat for the free live masterclass is saved. Finish the quick steps so you get the reminders and the replay." />
+  <title>Wait! Before You Go | Mind Over Market</title>
+  <meta name="description" content="Your masterclass registration is almost complete. Read this page before you go." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="/images/logo.png" type="image/png" />
   <script async src="https://use.mindovermarket.com/api/hub/v1/cmthjvil90003jc0ab0v6dc80"></script>
@@ -26,7 +26,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="You're Registered | Mind Over Market" />
+  <meta property="og:title" content="Wait! Before You Go | Mind Over Market" />
   <meta property="og:image" content="https://www.mindovermarket.com/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -635,220 +635,319 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .step-num { left: -52px; width: 36px; height: 36px; font-size: 11px; }
       .step-actions { flex-direction: column; }
     }
+    /* SALES LETTER */
+    .urgent-bar {
+      position: relative;
+      z-index: 2;
+      background: var(--gold);
+      color: #1a1405;
+      text-align: center;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      padding: 10px 16px;
+    }
+    .letter { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .bump-hero { padding: 44px 0 56px; text-align: center; }
+    .bump-hero .wait { font-size: clamp(30px, 5vw, 46px); font-weight: 800; color: var(--gold); letter-spacing: -0.01em; margin-bottom: 18px; }
+    .bump-hero h1 { font-size: clamp(26px, 4vw, 40px); max-width: 720px; }
+    .bump-hero .hero-sub { max-width: 600px; }
+    .bump-hero .this-is { margin-top: 18px; font-size: 18px; font-weight: 700; }
+    .price-line { margin: 26px 0 22px; font-size: 20px; color: var(--text-dim); }
+    .price-line .now { font-family: var(--mono); font-size: 34px; font-weight: 700; color: var(--green); margin: 0 8px; }
+    .price-line .was { position: relative; font-family: var(--mono); font-size: 20px; color: var(--text-mut); }
+    .price-line .was::after {
+      content: "";
+      position: absolute;
+      left: -3px;
+      right: -3px;
+      top: 50%;
+      height: 2px;
+      background: var(--red);
+      transform: rotate(-8deg);
+    }
+    .btn-buy { font-size: 18px; padding: 20px 28px; width: 100%; max-width: 520px; text-transform: none; }
+    .buy-note { margin-top: 12px; }
+    .no-thanks {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--text-mut);
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .no-thanks:hover { color: var(--text-dim); }
+
+    .story { padding: 64px 0; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    .story h2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; margin-bottom: 24px; }
+    .story p { font-size: 18px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.6; }
+    .story p strong { color: var(--text); }
+    .story .big { font-size: 22px; font-weight: 800; color: var(--text); }
+    .story .red { color: var(--red); font-weight: 700; }
+    .story .green { color: var(--green); font-weight: 700; }
+    .story .quote { font-style: italic; color: var(--text); padding-left: 16px; border-left: 3px solid var(--red); margin-bottom: 10px; }
+    .story .timer { font-family: var(--mono); color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+    .notice-card {
+      max-width: 420px;
+      margin: 8px auto 26px;
+      background: var(--bg-panel);
+      border: 1px solid var(--red);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+    }
+    .notice-card .mono-muted { margin-bottom: 8px; }
+    .notice-card b { display: block; font-size: 22px; }
+    .notice-card span { color: var(--red); font-weight: 600; font-size: 15px; }
+
+    .product-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--green-dim);
+      border-radius: 16px;
+      padding: 32px;
+      margin: 8px 0 24px;
+      box-shadow: 0 20px 60px -24px var(--green-glow);
+    }
+    .product-card .intro { font-size: 16px; color: var(--text-mut); margin-bottom: 6px; }
+    .product-card h2 { font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 12px; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 22px 0 0; }
+    .check-list li { position: relative; padding-left: 36px; font-size: 17px; color: var(--text); font-weight: 600; line-height: 1.45; }
+    .check-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #06120a;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check-list li span { display: block; color: var(--text-dim); font-weight: 400; font-size: 15.5px; margin-top: 2px; }
+
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0 10px; align-items: start; }
+    .proof-grid .win-card { margin: 0; }
+
+    .stack { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+    .stack-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stack-item .tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #1a1405;
+      background: var(--gold);
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-bottom: 6px;
+    }
+    .stack-item .tag.main { background: var(--green); color: #06120a; }
+    .stack-item .ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(46, 230, 107, 0.1);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stack-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .stack-item p { color: var(--text-dim); font-size: 15.5px; margin: 0; }
+
+    .offer-box {
+      text-align: center;
+      background: var(--bg-panel);
+      border: 2px dashed var(--green-dim);
+      border-radius: 18px;
+      padding: 34px 24px;
+      margin-top: 10px;
+    }
+    .offer-box h2 { font-size: clamp(24px, 3.4vw, 32px); margin-bottom: 8px; }
+
+    @media (max-width: 560px) {
+      .letter { padding: 0 16px; }
+      .story p { font-size: 17px; }
+      .product-card { padding: 22px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .stack-item { grid-template-columns: 1fr; gap: 10px; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="top-bar"><span class="dot"></span>You're Registered &middot; <span class="js-event-date">Tuesday &middot; 7:00 PM ET</span> &middot; Check Your Email</div>
+  <div class="urgent-bar">URGENT! Your Registration Is Almost Complete. Read This Page Carefully!</div>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="live-pill">Registration Confirmed &middot; Free Live Masterclass</div>
-      <h1>Your Seat Is Saved. Do These <span class="accent"><span class="js-step-count">4</span> Things</span> Before We Go Live</h1>
-      <p class="hero-sub">Your registration is confirmed for <span class="js-event-date">Tuesday &middot; 7:00 PM ET</span>. Two minutes of setup now makes sure you get the reminders, the replay and everything else.</p>
-
-      <div class="mono-label step-label">Watch This First</div>
-      <div class="hero-video video-frame">
-        <div class="video-embed video-facade" data-video="titMR4fUOQE" role="button" tabindex="0" aria-label="Play video: watch this first">
-          <img class="thumb" src="https://i.ytimg.com/vi/titMR4fUOQE/hqdefault.jpg" alt="Watch this first" />
-          <div class="play-btn"></div>
-        </div>
-      </div>
-
-      <div class="register-block">
-        <div class="mono-label">Your Masterclass Starts In</div>
-        <div class="event-date js-event-date">Tuesday &middot; 7:00 PM ET</div>
-        <div class="countdown js-countdown"></div>
-      </div>
-
-      <div class="steps-wrap">
-        <div class="mono-label">Step By Step: Lock In Your Spot</div>
-        <div class="steps" id="steps">
-          <div class="step">
-            <div class="step-num js-num"></div>
-            <h3>Open Your Email And Reply "Yes"</h3>
-            <p>I just sent you a confirmation email. Reply "Yes" to it so the reminders and the replay actually land in your inbox instead of spam.</p>
-          </div>
-          <div class="step">
-            <div class="step-num js-num"></div>
-            <h3>Add The Masterclass To Your Calendar</h3>
-            <p>One click puts the masterclass on your calendar, Google, Apple or anything else, so you don't miss it.</p>
-            <div class="step-actions">
-              <a class="btn-primary js-gcal" href="#" target="_blank" rel="noopener">Google Calendar</a>
-              <button type="button" class="btn-secondary js-ics">Apple Calendar</button>
-            </div>
-          </div>
-          <div class="step js-step-whatsapp">
-            <div class="step-num js-num"></div>
-            <h3>Join The Masterclass WhatsApp Group</h3>
-            <p>In this group, I'll personally send free resources and information for the masterclass.</p>
-            <div class="step-actions">
-              <a class="btn-primary js-whatsapp" href="#" target="_blank" rel="noopener">Join The WhatsApp Group</a>
-            </div>
-            <div class="step-note">Don't have WhatsApp? Download it. It will be essential for our communication here.</div>
-          </div>
-          <div class="step js-step-discord">
-            <div class="step-num js-num"></div>
-            <h3>Join The Private Discord</h3>
-            <p>Announcements, extra resources and more before the masterclass goes live. This is also where I answer questions.</p>
-            <div class="step-actions">
-              <a class="btn-primary js-discord" href="#" target="_blank" rel="noopener">Join The Discord</a>
-            </div>
-          </div>
-        </div>
-        <div class="mono-muted steps-proof">1,000+ Traders Trained By Mind Over Market</div>
-      </div>
+  <header class="bump-hero">
+    <div class="letter">
+      <div class="wait">WAIT! Before You Go...</div>
+      <h1>The #1 Reason Traders Blow Their Funded Accounts Has <span class="accent">Nothing To Do</span> With Their Strategy</h1>
+      <p class="hero-sub">It's taking trades with no risk plan behind them. One bad trade, one bad day, and the account is gone. The traders pulling consistent payouts run a risk framework on every single trade.</p>
+      <p class="this-is">This is that framework. Step by step.</p>
+      <div class="price-line">And only <span class="now">$27</span> <span class="was">$97</span> as of <span class="js-today">today</span>.</div>
+        <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Framework For Just $27 &rarr;</a>
+        <div class="mono-muted buy-note">One-Time Payment &middot; Instant Access</div>
     </div>
   </header>
 
-  <section id="meet" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono-label">Meet Benicio</div>
-        <h2>I Don't Just Teach It, <span class="accent">I Trade It</span></h2>
+  <section class="story">
+    <div class="letter">
+      <h2>Picture This:</h2>
+      <p>It's a few weeks from now.</p>
+      <p>You passed the eval. The funded account is live, and for the first time it actually feels like this is going to work.</p>
+      <p>You stack a couple of green days. Your buffer is growing. You start thinking about <strong>your first payout.</strong></p>
+      <p>Then the market opens and moves against you.</p>
+      <p class="timer">&#9201; Down $400.</p>
+      <p class="timer">&#9201; Down $900.</p>
+      <p class="timer">&#9201; Down $1,600.</p>
+      <p>You're sure it will come back, so you hold. Then you add to the position. Then you hold a little longer...</p>
+      <p>Your platform freezes on one message:</p>
+      <div class="notice-card">
+        <div class="mono-muted">Account Notice</div>
+        <b>Account Disabled</b>
+        <span>Rule breach: max loss limit</span>
       </div>
-      <div class="meet-grid">
-        <div class="shot-card">
-          <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/benicio-story.jpg" aria-label="View photo of Benicio Valentin"><img src="/images/benicio-story.jpg" alt="Benicio Valentin" /></button></div>
-          <div class="caption">Benicio Valentin &middot; Founder, Mind Over Market</div>
-        </div>
-        <div class="meet-copy">
-          <p>My name is Benicio Valentin, known online as <strong>AvalTrades</strong>. I started trading at 15 and have been day trading futures for over four years, documenting live account flips and prop firm payouts in public the whole way.</p>
-          <p>This space is full of people selling screenshots and signals. I do the opposite. My framework stops trying to predict the market and starts reacting to it, and <strong>I held a 91.3% win rate through May trading it.</strong></p>
-          <p>Below is my payout history straight from the funding portal, followed by students who run the same framework.</p>
-          <div class="stat-row">
-            <div class="stat"><b>91.3%</b><span>Win rate through May</span></div>
-            <div class="stat"><b>4+ Yrs</b><span>Day trading futures</span></div>
-            <div class="stat"><b>1,000+</b><span>Traders trained</span></div>
+      <p class="big">One trade. Weeks of work, gone in under an hour.</p>
+      <p>And then the voice in your head starts:</p>
+      <p class="quote">"Why didn't I just take the stop?"</p>
+      <p class="quote">"Why did I size up on that one?"</p>
+      <p class="quote">"Maybe I'm just not cut out for this..."</p>
+      <p style="margin-top: 26px;">That's the moment most traders quit.</p>
+      <p><span class="red">NOT</span> because their strategy is bad.</p>
+      <p><span class="red">NOT</span> because they can't read a chart.</p>
+      <p class="big">Because nobody ever gave them a risk plan.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="letter">
+      <p>The masterclass shows you the strategy.</p>
+      <p>But <strong>the strategy is only half the game.</strong></p>
+      <p>Payouts aren't made on the entry. <span class="green">They're kept by the risk you manage on every single trade.</span></p>
+      <p>And if you don't know exactly how much to risk, when to stop, and when to walk away for the day, you'll keep handing back accounts that should have paid you.</p>
+      <p>What if instead of hoping the trade comes back...</p>
+      <p>You had a framework that told you exactly what to risk, exactly where to stop, and exactly when you're done for the day?</p>
+      <p class="big">So one bad trade never wipes out your account again.</p>
+
+      <div class="product-card">
+        <div class="intro">Introducing...</div>
+        <h2>The Funded Account <span class="accent">Risk Framework</span></h2>
+        <p style="margin-bottom: 0;">The same risk rules I run on every trade, broken down step by step so you can use them from your very next session.</p>
+        <ul class="check-list">
+          <li>Build a risk management framework<span>So one bad trade never wipes out your account</span></li>
+          <li>Develop a daily routine that finds setups<span>Without sitting at a screen all day</span></li>
+          <li>Scale your position sizing as your account grows<span>Without increasing your risk</span></li>
+          <li>Learn the system and place your first profitable trades<span>Following the same process from day one</span></li>
+        </ul>
+      </div>
+      <p>No guessing your size. No revenge trading. No "one more trade" to get it back.</p>
+      <p class="big">You just follow the framework.</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="letter">
+      <h2>Traders Who Run The Framework <span class="accent">Keep Their Accounts</span></h2>
+      <p>These traders didn't find a magic indicator. They stopped giving it back.</p>
+      <div class="proof-grid">
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t7.png" aria-label="Student result: Passed First Eval"><img src="/images/testimonials/t7.png" alt="Student result: Passed First Eval" loading="lazy" /></button>
+            <div class="win-foot"><b>Passed First Eval</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t1.png" aria-label="Student result: First Payout"><img src="/images/testimonials/t1.png" alt="Student result: First Payout" loading="lazy" /></button>
+            <div class="win-foot"><b>First Payout</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t11.png" aria-label="Student result: $6K Payout Secured"><img src="/images/testimonials/t11.png" alt="Student result: $6K Payout Secured" loading="lazy" /></button>
+            <div class="win-foot"><b>$6K Payout Secured</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t9.png" aria-label="Student result: Passed Funded, $500 Next Day"><img src="/images/testimonials/t9.png" alt="Student result: Passed Funded, $500 Next Day" loading="lazy" /></button>
+            <div class="win-foot"><b>Passed Funded, $500 Next Day</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t12.png" aria-label="Student result: $10,000 Payout, Two Accounts"><img src="/images/testimonials/t12.png" alt="Student result: $10,000 Payout, Two Accounts" loading="lazy" /></button>
+            <div class="win-foot"><b>$10,000 Payout, Two Accounts</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+          <div class="win-card">
+            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t10.png" aria-label="Student result: Hit $10K On PA Accounts"><img src="/images/testimonials/t10.png" alt="Student result: Hit $10K On PA Accounts" loading="lazy" /></button>
+            <div class="win-foot"><b>Hit $10K On PA Accounts</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
+          </div>
+      </div>
+      <div class="mono-muted" style="text-align: center;">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="letter">
+      <h2>Here's Everything You're Getting:</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <span class="tag main">MAIN</span>
+            <h3>The Funded Account Risk Framework</h3>
+            <p>Build a risk management framework so one bad trade never wipes out your account.</p>
           </div>
         </div>
-      </div>
-
-      <div class="payout-grid">
-        <div class="shot-card">
-          <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/payouts/p1.png" aria-label="View payout proof"><img src="/images/payouts/p1.png" alt="Payout proof, withdrawal requests in the prop firm funding portal" loading="lazy" /></button></div>
-          <div class="caption">Withdrawal Requests</div>
+        <div class="stack-item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div>
+            <span class="tag">BONUS #1</span>
+            <h3>The Daily Setup Routine</h3>
+            <p>Develop a daily routine that finds setups without sitting at a screen all day.</p>
+          </div>
         </div>
-        <div class="shot-card">
-          <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/payouts/p2.png" aria-label="View payout proof"><img src="/images/payouts/p2.png" alt="Payout proof, full list of withdrawal requests" loading="lazy" /></button></div>
-          <div class="caption">Full Withdrawal History</div>
+        <div class="stack-item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+          <div>
+            <span class="tag">BONUS #2</span>
+            <h3>The Position Sizing Scale Plan</h3>
+            <p>Scale your position sizing as your account grows without increasing risk.</p>
+          </div>
         </div>
-        <div class="shot-card">
-          <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/payouts/p3.png" aria-label="View payout proof"><img src="/images/payouts/p3.png" alt="Payout proof, withdrawal amounts paid to bank account" loading="lazy" /></button></div>
-          <div class="caption">Paid To Bank</div>
+        <div class="stack-item">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg></div>
+          <div>
+            <span class="tag">BONUS #3</span>
+            <h3>Your First Trades Walkthrough</h3>
+            <p>Learn the system and place your first profitable trades.</p>
+          </div>
         </div>
-        <div class="shot-card">
-          <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/payouts/p4.png" aria-label="View payout proof"><img src="/images/payouts/p4.png" alt="Payout proof, wire withdrawal amounts" loading="lazy" /></button></div>
-          <div class="caption">Wire Withdrawals</div>
-        </div>
-      </div>
-      <div class="big-figure">
-        <b>91.3%</b>
-        <span class="mono-muted">Win rate through May &middot; Payouts shown are Benicio's own and not typical</span>
-      </div>
-
-      <div class="cta-row">
-        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
-        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
       </div>
     </div>
   </section>
 
-  <section id="cover">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono-label">When We Go Live</div>
-        <h2>What You'll <span class="accent">Walk Away Knowing</span></h2>
-      </div>
-      <div class="cover-list">
-        <div class="cover-row">
-          <div class="cover-media shot-card">
-            <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-1.svg" aria-label="Illustration: a funded account balance climbing after the eval, then falling to the max loss limit"><img src="/images/masterclass/cover-1.svg" alt="Illustration: a funded account balance climbing after the eval, then falling to the max loss limit" loading="lazy" /></button></div>
-            <div class="caption">Why Funded Accounts Get Taken Back</div>
-          </div>
-          <div>
-            <div class="cover-num">01</div>
-            <h3>Why You Still Aren't Consistently Profitable</h3>
-            <p>And 90% of the time, it's not the strategy. It's an element more important than that.</p>
-          </div>
-        </div>
-        <div class="cover-row flip">
-          <div class="cover-media shot-card">
-            <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-2.svg" aria-label="Illustration: a trend continuation entry at a fair value gap on equilibrium"><img src="/images/masterclass/cover-2.svg" alt="Illustration: a trend continuation entry at a fair value gap on equilibrium" loading="lazy" /></button></div>
-            <div class="caption">Trend Continuation At Equilibrium</div>
-          </div>
-          <div>
-            <div class="cover-num">02</div>
-            <h3>My Strategy</h3>
-            <p>The exact rules I trade every day. Where I set my conditions, why I only take trades with the trend, and how I line up every entry with equilibrium so the market confirms the trade before I take it.</p>
-          </div>
-        </div>
-        <div class="cover-row">
-          <div class="cover-media shot-card">
-            <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-3.svg" aria-label="Illustration: random results before the shift, steady growth after"><img src="/images/masterclass/cover-3.svg" alt="Illustration: random results before the shift, steady growth after" loading="lazy" /></button></div>
-            <div class="caption">Before And After The Shift</div>
-          </div>
-          <div>
-            <div class="cover-num">03</div>
-            <h3>The One Shift</h3>
-            <p>The biggest change within my trading that allowed me to be consistently profitable and grow my trading profits month after month. This will be reviewed live.</p>
-          </div>
-        </div>
-        <div class="cover-row flip">
-          <div class="cover-media shot-card">
-            <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-4.svg" aria-label="Illustration: checklist from passing the eval to an approved first payout"><img src="/images/masterclass/cover-4.svg" alt="Illustration: checklist from passing the eval to an approved first payout" loading="lazy" /></button></div>
-            <div class="caption">The First Payout Process</div>
-          </div>
-          <div>
-            <div class="cover-num">04</div>
-            <h3>The Payout Playbook</h3>
-            <p>The exact process my students follow when going for their first prop firm payout, starting with no track record.</p>
-          </div>
-        </div>
-        <div class="cover-row">
-          <div class="cover-media shot-card">
-            <div class="shot"><button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-5.svg" aria-label="Illustration: Benicio live on camera answering student questions"><img src="/images/masterclass/cover-5.svg" alt="Illustration: Benicio live on camera answering student questions" loading="lazy" /></button></div>
-            <div class="caption">Live Q&amp;A With Benicio</div>
-          </div>
-          <div>
-            <div class="cover-num">05</div>
-            <h3>Live Q&amp;A With Me</h3>
-            <p>Bring your account and your questions and get straight answers.</p>
-          </div>
-        </div>
-      </div>
-      <div class="cta-row">
-        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
-        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
-      </div>
-    </div>
-  </section>
+  <section class="story">
+    <div class="letter">
+      <h2>Let Me Level With You For A Second...</h2>
+      <p>This isn't something I normally hand out for $27.</p>
+      <p>These are the risk rules my students learn inside the mentorship. They're the reason the traders you just scrolled past kept their funded accounts long enough to get paid.</p>
+      <p>But you just registered for the masterclass. <strong>You took action.</strong> You proved you're serious about this.</p>
+      <p>And I want to reward that.</p>
+      <p>So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$97</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
 
-  <section id="wins" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="mono-label">Exhibit B &middot; Real Students &middot; Real Payouts</div>
-        <h2>A Wall Of <span class="accent">Student Wins</span></h2>
-        <div class="mono-muted">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
-      </div>
-      <div class="wins js-wins"></div>
-      <div class="cta-row">
-        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
-        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="final">
-    <div class="wrap wrap-narrow" style="text-align: center;">
-      <div class="live-pill">Registered Traders Who Show Up Get Paid</div>
-      <div class="section-head" style="margin-bottom: 0;">
-        <h2>Don't Just Register. <span class="accent">Show Up.</span></h2>
-        <p style="color: var(--text-dim); font-size: 17px; margin-top: 16px;">The traders you just scrolled past all did one thing differently: they showed up live and asked questions. Finish the steps so nothing gets between you and the masterclass.</p>
-      </div>
-      <div class="cta-row">
-        <a href="#steps" class="btn-primary">Complete The Steps &rarr;</a>
-        <div class="mono-muted">Two Minutes &middot; Lock In Your Spot</div>
+      <div class="offer-box">
+        <h2>Get The Full Risk Framework Today</h2>
+        <div class="price-line">Only <span class="now">$27</span> <span class="was">$97</span></div>
+        <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Framework For Just $27 &rarr;</a>
+        <div class="mono-muted buy-note">One-Time Payment &middot; Instant Access</div>
+        <div><a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a></div>
       </div>
     </div>
   </section>
@@ -863,136 +962,26 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     </div>
   </footer>
 
-  <div class="float-proof js-float" aria-live="polite">
-    <button type="button" class="fp-close js-float-close" aria-label="Dismiss">&times;</button>
-    <button type="button" class="fp-body js-float-open">
-      <span class="fp-thumb"><img class="js-float-img" src="" alt="" /></span>
-      <span class="fp-text"><b class="js-float-title"></b><span class="mono-muted" style="font-size:10px;">&#9733;&#9733;&#9733;&#9733;&#9733; &middot; Verified &middot; Not typical</span></span>
-    </button>
-  </div>
-
   <div class="lightbox js-lightbox" role="dialog" aria-modal="true">
     <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
     <img src="" alt="" />
   </div>
 
   <script>
-    // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
-    var MASTERCLASS_DAY = 2;
-    var MASTERCLASS_HOUR = 19;
-    var MASTERCLASS_TIME_LABEL = '7:00 PM ET';
+    // Whop checkout for the $27 order bump.
+    var CHECKOUT_URL = '';
 
-    var MASTERCLASS_MINUTES = 60;
-
-    // Step links. A step whose link is empty is hidden and the steps renumber.
-    var WHATSAPP_URL = '';
-    var DISCORD_URL = '';
-    // Where the live masterclass happens; goes into the calendar invite.
-    var LIVE_URL = '';
-
-    var TESTIMONIALS = [
-      { img: '/images/testimonials/t1.png', title: 'First Payout' },
-      { img: '/images/testimonials/t2.png', title: 'Passed First Funded Account' },
-      { img: '/images/testimonials/t3.png', title: 'First $10,000 Month' },
-      { img: '/images/testimonials/t4.png', title: '$24,000 In A Week' },
-      { img: '/images/testimonials/t5.png', title: '$10,000 Payout' },
-      { img: '/images/testimonials/t6.png', title: 'Payout Thank You' },
-      { img: '/images/testimonials/t7.png', title: 'Passed First Eval' },
-      { img: '/images/testimonials/t8.png', title: 'Funded Certificate' },
-      { img: '/images/testimonials/t9.png', title: 'Passed Funded, $500 Next Day' },
-      { img: '/images/testimonials/t10.png', title: 'Hit $10K On PA Accounts' },
-      { img: '/images/testimonials/t11.png', title: '$6K Payout Secured' },
-      { img: '/images/testimonials/t12.png', title: '$10,000 Payout, Two Accounts' },
-      { img: '/images/testimonials/t13.png', title: '$35K Month' },
-      { img: '/images/testimonials/t14.png', title: 'Crossing $100K In Profits' }
-    ];
-
-    /* ---------- Schedule + countdown ---------- */
-    function nyParts(date) {
-      var parts = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'America/New_York', hourCycle: 'h23',
-        year: 'numeric', month: 'numeric', day: 'numeric',
-        hour: 'numeric', minute: 'numeric', second: 'numeric', weekday: 'short'
-      }).formatToParts(date);
-      var out = {};
-      parts.forEach(function (p) { out[p.type] = p.value; });
-      return out;
-    }
-
-    // Offset (ms) of New York from UTC at a given instant.
-    function nyOffset(date) {
-      var p = nyParts(date);
-      var asUtc = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second);
-      return asUtc - Math.floor(date.getTime() / 1000) * 1000;
-    }
-
-    function nextSession(now) {
-      var p = nyParts(now);
-      var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
-      var days = (MASTERCLASS_DAY - dow + 7) % 7;
-      var secsIntoDay = (+p.hour) * 3600 + (+p.minute) * 60 + (+p.second);
-      if (days === 0 && secsIntoDay >= MASTERCLASS_HOUR * 3600) days = 7;
-      var wallUtc = Date.UTC(+p.year, +p.month - 1, +p.day + days, MASTERCLASS_HOUR, 0, 0);
-      var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
-      return new Date(wallUtc - nyOffset(guess));
-    }
-
-    function formatSession(date) {
-      var label = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric'
-      }).format(date);
-      return label + ' · ' + MASTERCLASS_TIME_LABEL;
-    }
-
-    var session = nextSession(new Date());
-    document.querySelectorAll('.js-event-date').forEach(function (el) {
-      el.textContent = formatSession(session);
+    document.querySelectorAll('.js-buy').forEach(function (a) {
+      if (CHECKOUT_URL) a.href = CHECKOUT_URL;
     });
 
-    var countdowns = document.querySelectorAll('.js-countdown');
-    function pad(n) { return String(n).padStart(2, '0'); }
-    function tick() {
-      var ms = session.getTime() - Date.now();
-      if (ms <= 0) {
-        session = nextSession(new Date(Date.now() + 1000));
-        document.querySelectorAll('.js-event-date').forEach(function (el) { el.textContent = formatSession(session); });
-        ms = session.getTime() - Date.now();
-      }
-      var s = Math.floor(ms / 1000);
-      var cells = [[Math.floor(s / 86400), 'Days'], [Math.floor(s % 86400 / 3600), 'Hours'], [Math.floor(s % 3600 / 60), 'Min'], [s % 60, 'Sec']];
-      var html = cells.map(function (c) {
-        return '<div class="cd-cell"><div class="cd-num">' + pad(c[0]) + '</div><div class="cd-lbl mono-muted">' + c[1] + '</div></div>';
-      }).join('');
-      countdowns.forEach(function (el) { el.innerHTML = html; });
-    }
-    tick();
-    setInterval(tick, 1000);
-
-    /* ---------- Video facades ---------- */
-    document.querySelectorAll('.video-facade').forEach(function (el) {
-      function play() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube-nocookie.com/embed/' + el.getAttribute('data-video') + '?autoplay=1&rel=0';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-        iframe.allowFullscreen = true;
-        el.innerHTML = '';
-        el.appendChild(iframe);
-        el.classList.remove('video-facade');
-      }
-      el.addEventListener('click', play, { once: true });
-      el.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
-      });
+    document.querySelectorAll('.js-today').forEach(function (el) {
+      el.textContent = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date());
     });
 
     /* ---------- Lightbox ---------- */
     var lightbox = document.querySelector('.js-lightbox');
     var lightboxImg = lightbox.querySelector('img');
-    function openLightbox(src, alt) {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || '';
-      lightbox.classList.add('open');
-    }
     lightbox.addEventListener('click', function (e) {
       if (e.target !== lightboxImg) lightbox.classList.remove('open');
     });
@@ -1001,123 +990,10 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     });
     document.addEventListener('click', function (e) {
       var z = e.target.closest('.js-zoom');
-      if (z) openLightbox(z.getAttribute('data-src'), z.getAttribute('aria-label'));
-    });
-
-    /* ---------- Wall of wins ---------- */
-    document.querySelector('.js-wins').innerHTML = TESTIMONIALS.map(function (t, i) {
-      return '<div class="win-card">' +
-        '<div class="win-head"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="verified">&#10003; Verified</span></div>' +
-        '<button type="button" class="zoom js-zoom" data-src="' + t.img + '" aria-label="Student result: ' + t.title + '"><img src="' + t.img + '" alt="Student result: ' + t.title + '" loading="lazy" /></button>' +
-        '<div class="win-foot"><b>' + t.title + '</b><span class="mono-muted" style="font-size:10px;">Exhibit B-' + pad(i + 1) + ' &middot; Results not typical</span></div>' +
-        '</div>';
-    }).join('');
-
-    /* ---------- Floating proof (desktop) ---------- */
-    (function () {
-      var box = document.querySelector('.js-float');
-      var img = box.querySelector('.js-float-img');
-      var title = box.querySelector('.js-float-title');
-      var order = TESTIMONIALS.slice().sort(function () { return Math.random() - 0.5; });
-      var idx = 0;
-      var timer = null;
-      var hovering = false;
-      function show() {
-        var t = order[idx % order.length];
-        img.src = t.img;
-        img.alt = 'Student result: ' + t.title;
-        title.textContent = t.title;
-        box.classList.add('show');
-        timer = setTimeout(hide, 7000);
-      }
-      function hide() {
-        if (hovering) { timer = setTimeout(hide, 1500); return; }
-        box.classList.remove('show');
-        idx++;
-        timer = setTimeout(show, 8000);
-      }
-      box.addEventListener('mouseenter', function () { hovering = true; });
-      box.addEventListener('mouseleave', function () { hovering = false; });
-      box.querySelector('.js-float-close').addEventListener('click', function () {
-        clearTimeout(timer);
-        box.classList.remove('show');
-        idx++;
-        timer = setTimeout(show, 30000);
-      });
-      box.querySelector('.js-float-open').addEventListener('click', function () {
-        var t = order[idx % order.length];
-        openLightbox(t.img, 'Student result: ' + t.title);
-      });
-      timer = setTimeout(show, 8000);
-    })();
-
-    /* ---------- Steps ---------- */
-    (function () {
-      var whatsappStep = document.querySelector('.js-step-whatsapp');
-      var discordStep = document.querySelector('.js-step-discord');
-      if (WHATSAPP_URL) document.querySelector('.js-whatsapp').href = WHATSAPP_URL; else whatsappStep.hidden = true;
-      if (DISCORD_URL) document.querySelector('.js-discord').href = DISCORD_URL; else discordStep.hidden = true;
-      var visible = Array.prototype.filter.call(document.querySelectorAll('.step'), function (s) { return !s.hidden; });
-      visible.forEach(function (s, i) { s.querySelector('.js-num').textContent = pad(i + 1); });
-      document.querySelectorAll('.js-step-count').forEach(function (el) { el.textContent = visible.length; });
-    })();
-
-    /* ---------- Calendar ---------- */
-    var EVENT_TITLE = 'Mind Over Market Free Live Masterclass';
-    var EVENT_DETAILS = 'Free live masterclass with Benicio Valentin (AvalTrades). Show up live and bring your questions.' + (LIVE_URL ? '\n\nJoin here: ' + LIVE_URL : '');
-    var EVENT_LOCATION = LIVE_URL || 'Online';
-
-    function utcStamp(date) {
-      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    }
-    function eventEnd() {
-      return new Date(session.getTime() + MASTERCLASS_MINUTES * 60000);
-    }
-
-    document.querySelector('.js-gcal').addEventListener('click', function () {
-      this.href = 'https://calendar.google.com/calendar/render?' + new URLSearchParams({
-        action: 'TEMPLATE',
-        text: EVENT_TITLE,
-        dates: utcStamp(session) + '/' + utcStamp(eventEnd()),
-        details: EVENT_DETAILS,
-        location: EVENT_LOCATION
-      }).toString();
-    });
-
-    function icsEscape(s) {
-      return s.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
-    }
-    document.querySelector('.js-ics').addEventListener('click', function () {
-      var ics = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Mind Over Market//Live Masterclass//EN',
-        'CALSCALE:GREGORIAN',
-        'METHOD:PUBLISH',
-        'BEGIN:VEVENT',
-        'UID:mom-masterclass-' + utcStamp(session) + '@mindovermarket.com',
-        'DTSTAMP:' + utcStamp(new Date()),
-        'DTSTART:' + utcStamp(session),
-        'DTEND:' + utcStamp(eventEnd()),
-        'SUMMARY:' + icsEscape(EVENT_TITLE),
-        'DESCRIPTION:' + icsEscape(EVENT_DETAILS),
-        'LOCATION:' + icsEscape(EVENT_LOCATION),
-        'BEGIN:VALARM',
-        'TRIGGER:-PT30M',
-        'ACTION:DISPLAY',
-        'DESCRIPTION:' + icsEscape(EVENT_TITLE),
-        'END:VALARM',
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-      var url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'mind-over-market-masterclass.ics';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+      if (!z) return;
+      lightboxImg.src = z.getAttribute('data-src');
+      lightboxImg.alt = z.getAttribute('aria-label') || '';
+      lightbox.classList.add('open');
     });
 
     /* ---------- Lead tracking (once per session) ---------- */
