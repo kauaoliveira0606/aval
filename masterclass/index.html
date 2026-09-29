@@ -316,42 +316,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .radio-opt:has(input:checked) { border-color: var(--green-dim); background: rgba(46, 230, 107, 0.06); }
     .field-error { display: none; font-size: 12.5px; color: var(--red); margin-top: 6px; }
     .field-error.show { display: block; }
-    .consent-row {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--text-dim);
-      cursor: pointer;
-    }
-    .consent-row input[type="checkbox"] {
-      -webkit-appearance: none;
-      appearance: none;
-      flex: none;
-      width: 20px;
-      height: 20px;
-      margin: 1px 0 0;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .consent-row input[type="checkbox"]::after {
-      content: "";
-      width: 5px;
-      height: 9px;
-      margin-bottom: 2px;
-      border: solid #0a0d0b;
-      border-width: 0 2px 2px 0;
-      transform: rotate(45deg);
-      opacity: 0;
-    }
-    .consent-row input[type="checkbox"]:checked { background: var(--green); border-color: var(--green); }
-    .consent-row input[type="checkbox"]:checked::after { opacity: 1; }
     .form-success { display: none; text-align: center; padding: 12px 0; }
     .form-success h3 { font-size: 22px; font-weight: 800; margin: 10px 0 8px; }
     .form-success p { color: var(--text-dim); font-size: 15px; }
@@ -479,17 +443,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .cover-num { font-family: var(--mono); font-size: 30px; font-weight: 700; color: var(--green); line-height: 1; }
     .cover-item h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
     .cover-item p { color: var(--text-dim); font-size: 15.5px; }
-    .pain-box {
-      max-width: 860px;
-      margin: 20px auto 0;
-      background: var(--bg-panel-2);
-      border: 1px solid var(--green-dim);
-      border-radius: 12px;
-      padding: 26px;
-      font-size: 16px;
-      color: var(--text-dim);
-    }
-    .pain-box strong { color: var(--text); }
 
     /* INTERVIEWS */
     .interviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -752,7 +705,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           <div class="cover-num">04</div>
           <div>
             <h3>The Payout Playbook</h3>
-            <p>Conservative targets, $250 to $500 winners stacked instead of chased, and the risk rules that actually get prop firm payouts approved.</p>
+            <p>The exact process my students follow when going for their first prop firm payout, starting with no track record.</p>
           </div>
         </div>
         <div class="cover-item">
@@ -762,9 +715,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
             <p>Bring your account and your questions and get straight answers.</p>
           </div>
         </div>
-      </div>
-      <div class="pain-box">
-        You already know you can trade. You've probably passed evals before. The problem was never finding another strategy or another indicator. <strong>The problem is you keep giving the money back.</strong> You pass the challenge, blow the funded account, and nobody ever showed you why. That's what this masterclass fixes.
       </div>
       <div class="cta-row">
         <a href="#register" class="btn-primary">Save My Free Seat &rarr;</a>
@@ -917,10 +867,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <div class="field-error" data-error="evals">Pick one option.</div>
       </div>
       <button type="submit" class="btn-primary">Save My Seat &rarr;</button>
-      <label class="consent-row">
-        <input type="checkbox" data-field="consent" />
-        <span>I agree to terms &amp; conditions provided by Mind Over Market. By providing my phone number, I agree to receive text messages from the business.</span>
-      </label>
     </form>
     <div class="form-success">
       <div class="mono-label">Seat Saved</div>
@@ -1148,7 +1094,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         email: email,
         phone: '+' + opt.value + digits,
         evalsSpent: checked.value,
-        smsConsent: field(card, 'consent').checked,
         source: 'masterclass',
         masterclassDate: session.toISOString(),
         pageUrl: window.location.href
