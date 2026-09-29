@@ -666,6 +666,20 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       background: var(--red);
       transform: rotate(-8deg);
     }
+    .deal-badge {
+      display: inline-block;
+      margin-top: 26px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1a1405;
+      background: var(--gold);
+      border-radius: 999px;
+      padding: 6px 14px;
+    }
+    .deal-badge + .price-line { margin-top: 14px; }
     .btn-buy { font-size: 18px; padding: 20px 28px; width: 100%; max-width: 520px; text-transform: none; }
     .buy-note { margin-top: 12px; }
     .no-thanks {
@@ -798,9 +812,10 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <h1>The #1 Reason Traders Blow Their Funded Accounts Has <span class="accent">Nothing To Do</span> With Their Strategy</h1>
       <p class="hero-sub">It's taking trades with no risk plan behind them. One bad trade, one bad day, and the account is gone. The traders pulling consistent payouts run a risk framework on every single trade.</p>
       <p class="this-is">This is that framework. Step by step.</p>
-      <div class="price-line">And only <span class="now">$27</span> <span class="was">$97</span> as of <span class="js-today">today</span>.</div>
+      <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
+      <div class="price-line">And only <span class="now">$27</span> <span class="was">$50</span> as of <span class="js-today">today</span>.</div>
         <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Framework For Just $27 &rarr;</a>
-        <div class="mono-muted buy-note">One-Time Payment &middot; Instant Access</div>
+        <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
     </div>
   </header>
 
@@ -940,13 +955,14 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <p>These are the risk rules my students learn inside the mentorship. They're the reason the traders you just scrolled past kept their funded accounts long enough to get paid.</p>
       <p>But you just registered for the masterclass. <strong>You took action.</strong> You proved you're serious about this.</p>
       <p>And I want to reward that.</p>
-      <p>So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$97</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
+      <p>This is a one-time offer. So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$50</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
 
       <div class="offer-box">
         <h2>Get The Full Risk Framework Today</h2>
-        <div class="price-line">Only <span class="now">$27</span> <span class="was">$97</span></div>
+        <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
+        <div class="price-line">Only <span class="now">$27</span> <span class="was">$50</span></div>
         <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Framework For Just $27 &rarr;</a>
-        <div class="mono-muted buy-note">One-Time Payment &middot; Instant Access</div>
+        <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
         <div><a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a></div>
       </div>
     </div>
@@ -969,7 +985,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
   <script>
     // Whop checkout for the $27 order bump.
-    var CHECKOUT_URL = '';
+    var CHECKOUT_URL = 'https://whop.com/aval-trades/risk-management-bundle-pre-masterclass-prep';
 
     document.querySelectorAll('.js-buy').forEach(function (a) {
       if (CHECKOUT_URL) a.href = CHECKOUT_URL;
