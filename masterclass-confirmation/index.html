@@ -694,6 +694,14 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .deal-badge + .price-line { margin-top: 14px; }
     .btn-buy { font-size: 18px; padding: 20px 28px; width: 100%; max-width: 520px; text-transform: none; }
     .buy-note { margin-top: 12px; }
+    .checkout-embed {
+      max-width: 520px;
+      min-height: 420px;
+      margin: 24px auto 0;
+      text-align: left;
+      scroll-margin-top: 24px;
+    }
+    .checkout-embed iframe { width: 100%; border: 0; }
     .no-thanks {
       display: inline-block;
       margin-top: 18px;
@@ -826,7 +834,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <p class="this-is">This is that framework. Step by step. And it's how you get the most out of the masterclass, because we'll use it together, live.</p>
       <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
       <div class="price-line">And only <span class="now">$27</span> <span class="was">$50</span> as of <span class="js-today">today</span>.</div>
-        <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Management Bundle For Just $27 &rarr;</a>
+        <a class="btn-primary btn-buy" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27 &rarr;</a>
         <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
     </div>
   </header>
@@ -989,8 +997,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <h2>Get The Risk Management Bundle Today</h2>
         <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
         <div class="price-line">Only <span class="now">$27</span> <span class="was">$50</span></div>
-        <a class="btn-primary btn-buy js-buy" href="#">Yes! I Want The Risk Management Bundle For Just $27 &rarr;</a>
         <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
+        <div class="checkout-embed" id="checkout"></div>
         <div><a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a></div>
       </div>
     </div>
@@ -1012,12 +1020,25 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   </div>
 
   <script>
-    // Whop checkout for the $27 order bump.
-    var CHECKOUT_URL = 'https://whop.com/aval-trades/risk-management-bundle-pre-masterclass-prep';
+    /* ---------- Whop embedded checkout ($27 order bump) ---------- */
+    var WHOP_PLAN_ID = 'plan_KJGwJZBA5viqR';
+    var AFTER_PURCHASE_URL = 'https://www.mindovermarket.com/masterclass-next-steps';
 
-    document.querySelectorAll('.js-buy').forEach(function (a) {
-      if (CHECKOUT_URL) a.href = CHECKOUT_URL;
-    });
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var embed = document.getElementById('checkout');
+      embed.setAttribute('data-whop-checkout-plan-id', WHOP_PLAN_ID);
+      embed.setAttribute('data-whop-checkout-theme', 'dark');
+      embed.setAttribute('data-whop-checkout-theme-accent-color', 'green');
+      embed.setAttribute('data-whop-checkout-return-url', AFTER_PURCHASE_URL);
+      if (params.get('email')) embed.setAttribute('data-whop-checkout-prefill-email', params.get('email'));
+      if (params.get('fname')) embed.setAttribute('data-whop-checkout-prefill-name', params.get('fname'));
+      var loader = document.createElement('script');
+      loader.src = 'https://js.whop.com/static/checkout/loader.js';
+      loader.async = true;
+      loader.defer = true;
+      document.body.appendChild(loader);
+    })();
 
     document.querySelectorAll('.js-today').forEach(function (el) {
       el.textContent = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date());
