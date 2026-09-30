@@ -681,6 +681,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .ps span { color: var(--gold); font-weight: 800; }
     .ps { font-weight: 600; color: var(--text) !important; }
 
+    .form-card-embed { padding: 0; overflow: hidden; min-height: 480px; }
+    .form-card-embed > div { min-height: 480px; }
+    .form-card-embed iframe { width: 100%; min-height: 480px; border: 0; display: block; }
     .thats-it { margin-top: 56px; }
     .thats-it h2 {
       font-size: clamp(34px, 5vw, 46px);
@@ -767,6 +770,15 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
       <div class="confirm-step" id="step-2">
         <div class="step-pill">Step #2</div>
+        <div class="step-emoji" aria-hidden="true">&#128221;</div>
+        <h2>Fill Out This Quick Form To Confirm Your Spot</h2>
+        <div class="details-card form-card-embed">
+          <div data-tf-live="01M3R1H2PWCEDWQAE0GD74MXQJ"></div>
+        </div>
+      </div>
+
+      <div class="confirm-step" id="step-3">
+        <div class="step-pill">Step #3</div>
         <div class="step-emoji" aria-hidden="true">&#9993;&#65039;</div>
         <h2>Open Your Email And Reply "Yes"</h2>
         <div class="details-card text-card">
@@ -776,8 +788,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <div class="confirm-step" id="step-3">
-        <div class="step-pill">Step #3</div>
+      <div class="confirm-step" id="step-4">
+        <div class="step-pill">Step #4</div>
         <div class="step-emoji" aria-hidden="true">&#128216;</div>
         <h2>Get Your Masterclass Workbook</h2>
         <div class="details-card text-card">
@@ -997,6 +1009,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <img src="" alt="" />
   </div>
 
+  <script src="https://embed.typeform.com/next/embed.js"></script>
   <script>
     // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
     var MASTERCLASS_DAY = 2;
