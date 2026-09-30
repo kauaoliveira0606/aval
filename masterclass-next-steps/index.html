@@ -692,7 +692,24 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       margin-bottom: 14px;
     }
     .thats-it p { font-size: 22px; font-weight: 700; color: var(--text); }
-    .thats-it .see-you { margin-top: 6px; color: var(--gold); }
+    .thats-it .see-you { margin-top: 22px; color: var(--gold); }
+    .thats-it .more-q { margin-top: 28px; font-size: 20px; }
+    .thats-it .more-lead { margin-top: 10px; font-size: 17px; font-weight: 600; color: var(--text-dim); }
+    .more-list {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px auto 22px;
+      text-align: left;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+    }
+    .more-list li { font-size: 16.5px; font-weight: 600; color: var(--text); }
+    .more-list li span { display: inline-block; width: 28px; }
+    .scroll-more { display: flex; width: fit-content; margin: 0 auto; }
 
     @media (max-width: 560px) {
       .details-card { padding: 18px; }
@@ -780,9 +797,17 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
 
       <div class="thats-it">
-        <h2>That's It!</h2>
-        <p>You're ready for the masterclass.</p>
-        <p class="see-you">See you soon! &#128075;</p>
+        <h2>You're All Set!</h2>
+        <p>That's everything you need to be ready for the masterclass.</p>
+        <p class="more-q">Want to know more before we go live?</p>
+        <p class="more-lead">Keep scrolling to:</p>
+        <ul class="more-list">
+          <li><span aria-hidden="true">&#128100;</span> Learn who I am and how I actually trade</li>
+          <li><span aria-hidden="true">&#128203;</span> See exactly what we'll walk through on the masterclass</li>
+          <li><span aria-hidden="true">&#128200;</span> Check out real student results</li>
+        </ul>
+        <a class="btn-secondary scroll-more" href="#meet">Keep Scrolling &darr;</a>
+        <p class="see-you">See you on the masterclass.</p>
       </div>
     </div>
   </header>
