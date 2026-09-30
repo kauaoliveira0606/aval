@@ -864,6 +864,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .product-card { padding: 22px; }
       .proof-grid { grid-template-columns: 1fr 1fr; }
     }
+    /* Short copy lines: space between consecutive lines inside cards and the hero */
+    .hero-sub + .hero-sub, .this-is + .this-is, .cover-row p + p, .step p + p, .bundle-card p + p { margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -874,8 +876,11 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <div class="letter">
       <div class="wait">WAIT! Before You Go...</div>
       <h1>The #1 Reason Traders Blow Their Funded Accounts Has <span class="accent">Nothing To Do</span> With Their Strategy</h1>
-      <p class="hero-sub">It's taking trades with no risk plan behind them. One bad trade, one bad day, and the account is gone. The traders pulling consistent payouts run a risk framework on every single trade.</p>
-      <p class="this-is">This is that framework. Step by step. And it's how you get the most out of the masterclass, because we'll use it together, live.</p>
+      <p class="hero-sub">It's taking trades with no risk plan behind them.</p>
+      <p class="hero-sub">One bad trade, one bad day, and the account is gone.</p>
+      <p class="hero-sub">The traders pulling consistent payouts run a risk framework on every single trade.</p>
+      <p class="this-is">This is that framework. Step by step.</p>
+      <p class="this-is">And it's how you get the most out of the masterclass, because we'll use it together, live.</p>
       <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
       <div class="price-line">And only <span class="now">$27</span> <span class="was">$50</span> as of <span class="js-today">today</span>.</div>
         <a class="btn-primary btn-buy" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27 &rarr;</a>
@@ -887,13 +892,18 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <div class="letter">
       <h2>Picture This:</h2>
       <p>It's a few weeks from now.</p>
-      <p>You passed the eval. The funded account is live, and for the first time it actually feels like this is going to work.</p>
-      <p>You stack a couple of green days. Your buffer is growing. You start thinking about <strong>your first payout.</strong></p>
+      <p>You passed the eval.</p>
+      <p>The funded account is live, and for the first time it actually feels like this is going to work.</p>
+      <p>You stack a couple of green days.</p>
+      <p>Your buffer is growing.</p>
+      <p>You start thinking about <strong>your first payout.</strong></p>
       <p>Then the market opens and moves against you.</p>
       <p class="timer">&#9201; Down $400.</p>
       <p class="timer">&#9201; Down $900.</p>
       <p class="timer">&#9201; Down $1,600.</p>
-      <p>You're sure it will come back, so you hold. Then you add to the position. Then you hold a little longer...</p>
+      <p>You're sure it will come back, so you hold.</p>
+      <p>Then you add to the position.</p>
+      <p>Then you hold a little longer...</p>
       <p>Your platform freezes on one message:</p>
       <div class="notice-card">
         <div class="mono-muted">Account Notice</div>
@@ -917,7 +927,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <p>The masterclass shows you the strategy.</p>
       <p>But <strong>the strategy is only half the game.</strong></p>
       <p>Payouts aren't made on the entry. <span class="green">They're kept by the risk you manage on every single trade.</span></p>
-      <p>And if you don't know exactly how much to risk, when to stop, and when to walk away for the day, you'll keep handing back accounts that should have paid you.</p>
+      <p>And if you don't know exactly how much to risk, when to stop, and when to walk away for the day...</p>
+      <p>You'll keep handing back accounts that should have paid you.</p>
       <p>What if instead of hoping the trade comes back...</p>
       <p>You had a framework that told you exactly what to risk, exactly where to stop, and exactly when you're done for the day?</p>
       <p class="big">So one bad trade never wipes out your account again.</p>
@@ -959,22 +970,33 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         </div>
       </div>
 
-      <p style="margin-top: 30px;">You don't need years of screen time. You don't need to be a "math person." You don't need to figure it out by blowing another account...</p>
-      <p>No guessing your size. No revenge trading. No "one more trade" to get it back.</p>
+      <p style="margin-top: 30px;">You don't need years of screen time.</p>
+      <p>You don't need to be a "math person."</p>
+      <p>You don't need to figure it out by blowing another account...</p>
+      <p>No guessing your size. No revenge trading.</p>
+      <p>No "one more trade" to get it back.</p>
       <p class="big">You just follow the guide.</p>
       <div class="live-card">
         <div class="mono-label">How To Get The Most Out Of The Masterclass</div>
         <h3>Showing Up To A Free Class Is One Thing. Applying It Is A Whole Different Ball Game.</h3>
-        <p>Anyone can sit through a free class. Most people watch, nod along, close the tab, and go right back to trading the exact same way they did before.</p>
-        <p>The traders who actually get results from a masterclass do something different. <strong>They show up ready, they apply what they learn while it's being taught, and they walk away with a plan instead of a page of notes.</strong></p>
+        <p>Anyone can sit through a free class.</p>
+        <p>Most people watch, nod along, close the tab, and go right back to trading the exact same way they did before.</p>
+        <p>The traders who actually get results from a masterclass do something different.</p>
+        <p><strong>They show up ready.</strong></p>
+        <p><strong>They apply what they learn while it's being taught.</strong></p>
+        <p><strong>And they walk away with a plan instead of a page of notes.</strong></p>
         <p class="big">That's exactly what the Risk Management Bundle is for.</p>
-        <p>We're using the Risk Management Guide during the live masterclass. At one point in the presentation, I'm going to ask you to pull it out, and we'll work through it together on your own numbers, in real time.</p>
+        <p>We're using the Risk Management Guide during the live masterclass.</p>
+        <p>At one point in the presentation, I'm going to ask you to pull it out.</p>
+        <p>And we'll work through it together on your own numbers, in real time.</p>
         <ul class="check-list">
           <li>Follow along instead of just watching<span>You're using the same tool I'm teaching from</span></li>
           <li>Build your risk plan while I teach it<span>Not later, not "when you get around to it"</span></li>
           <li>Leave with a plan you can use on your very next trade<span>So the masterclass actually changes how you trade</span></li>
         </ul>
-        <p style="margin-top: 22px;">I don't want this to be another free class you forget about by next week. I want you to get real results from it. <strong>This is how I help you do that.</strong></p>
+        <p style="margin-top: 22px;">I don't want this to be another free class you forget about by next week.</p>
+        <p>I want you to get real results from it.</p>
+        <p><strong>This is how I help you do that.</strong></p>
       </div>
     </div>
   </section>
@@ -1021,25 +1043,29 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           <img class="bundle-doc" src="/images/masterclass/doc-risk-guide.svg" alt="The Risk Management Guide" loading="lazy" />
           <span class="tag main">THE MAIN GUIDE</span>
           <h3>The Risk Management Guide</h3>
-          <p>Build a risk management framework so <u>one bad trade never wipes out your account</u>. This is the guide we pull out and use together on the live masterclass.</p>
+          <p>Build a risk management framework so <u>one bad trade never wipes out your account</u>.</p>
+          <p>This is the guide we pull out and use together on the live masterclass.</p>
         </div>
         <div class="bundle-card">
           <img class="bundle-doc" src="/images/masterclass/doc-daily-routine.svg" alt="The Daily Setup Routine" loading="lazy" />
           <span class="tag ">BONUS #1</span>
           <h3>The Daily Setup Routine</h3>
-          <p>Develop a daily routine that finds setups <u>without sitting at a screen all day</u>, so trading fits around your life instead of taking it over.</p>
+          <p>Develop a daily routine that finds setups <u>without sitting at a screen all day</u>.</p>
+          <p>So trading fits around your life instead of taking it over.</p>
         </div>
         <div class="bundle-card">
           <img class="bundle-doc" src="/images/masterclass/doc-position-sizing.svg" alt="The Position Sizing Scale Plan" loading="lazy" />
           <span class="tag ">BONUS #2</span>
           <h3>The Position Sizing Scale Plan</h3>
-          <p>Scale your position sizing as your account grows <u>without increasing your risk</u>, so your size grows with your account, not your emotions.</p>
+          <p>Scale your position sizing as your account grows <u>without increasing your risk</u>.</p>
+          <p>So your size grows with your account, not your emotions.</p>
         </div>
         <div class="bundle-card">
           <img class="bundle-doc" src="/images/masterclass/doc-first-trades.svg" alt="Your First Trades Walkthrough" loading="lazy" />
           <span class="tag ">BONUS #3</span>
           <h3>Your First Trades Walkthrough</h3>
-          <p>Learn the system and <u>place your first profitable trades</u>, step by step, even if you're starting with zero experience.</p>
+          <p>Learn the system and <u>place your first profitable trades</u>, step by step.</p>
+          <p>Even if you're starting with zero experience.</p>
         </div>
       </div>
     </div>
@@ -1049,11 +1075,14 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <div class="letter">
       <h2>Let Me Level With You For A Second...</h2>
       <p>This isn't something I normally hand out for $27.</p>
-      <p>These are the risk rules my students learn inside the mentorship. They're the reason the traders you just scrolled past kept their funded accounts long enough to get paid.</p>
+      <p>These are the risk rules my students learn inside the mentorship.</p>
+      <p>They're the reason the traders you just scrolled past kept their funded accounts long enough to get paid.</p>
       <p>But you just registered for the masterclass. <strong>You took action.</strong> You proved you're serious about this.</p>
       <p>And I want to reward that.</p>
-      <p>And because we're using it live on the masterclass, grabbing it now means you'll have it ready the moment I ask you to pull it out, and you'll get far more out of the masterclass than someone who just watches.</p>
-      <p>This is a one-time offer. So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$50</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
+      <p>And because we're using it live on the masterclass, you'll have it ready the moment I ask you to pull it out.</p>
+      <p>You'll get far more out of the masterclass than someone who just watches.</p>
+      <p>This is a one-time offer.</p>
+      <p>So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$50</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
 
       <div class="offer-box">
         <h2>Get The Risk Management Bundle Today</h2>
