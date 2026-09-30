@@ -262,6 +262,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     form.optin { display: flex; flex-direction: column; gap: 16px; }
     .field-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
     .field-label span { color: var(--green); }
+    .field-label em { font-style: normal; font-weight: 400; color: var(--text-mut); }
     form.optin input[type="text"],
     form.optin input[type="email"],
     form.optin input[type="tel"],
@@ -334,6 +335,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     }
     .sms-consent input:checked { background: var(--green); border-color: var(--green); box-shadow: inset 0 0 0 3px var(--bg-panel); }
     .sms-consent-title { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .sms-consent-title em { font-style: normal; font-weight: 400; color: var(--text-mut); }
     .sms-consent-body { display: block; font-size: 12px; line-height: 1.5; color: var(--text-mut); }
     .sms-consent-body a { color: var(--green); }
     .field-error.show { display: block; }
@@ -826,7 +828,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <div class="field-error" data-error="fname">Enter your first name.</div>
       </div>
       <div>
-        <label class="field-label" data-for="phone">Phone <span>*</span></label>
+        <label class="field-label" data-for="phone">Phone <em>(Optional)</em></label>
         <div class="phone-row">
           <select data-field="country" aria-label="Country code">
             <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
@@ -842,7 +844,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
             <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
             <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
           </select>
-          <input type="tel" data-field="phone" placeholder="(201) 555-0123" autocomplete="tel-national" required />
+          <input type="tel" data-field="phone" placeholder="(201) 555-0123" autocomplete="tel-national" />
         </div>
         <div class="field-error" data-error="phone">Enter a valid phone number for the selected country.</div>
       </div>
@@ -865,7 +867,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <label class="sms-consent">
         <input type="checkbox" data-field="smsConsent" />
         <span>
-          <span class="sms-consent-title">Please send me masterclass reminder text messages.</span>
+          <span class="sms-consent-title">Please send me masterclass reminder text messages. <em>(Optional)</em></span>
           <span class="sms-consent-body">I agree to receive masterclass reminder text messages from Aval Trading at the phone number provided. Consent is not a condition of purchase. Message frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
         </span>
       </label>
@@ -1074,7 +1076,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       var fnameOk = fname.length >= 2 && /^[a-zA-Z' -]+$/.test(fname);
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       var opt = country.options[country.selectedIndex];
-      var phoneOk = digits.length >= parseInt(opt.getAttribute('data-min'), 10) && digits.length <= parseInt(opt.getAttribute('data-max'), 10);
+      var phoneOk = digits.length === 0 || digits.length >= parseInt(opt.getAttribute('data-min'), 10) && digits.length <= parseInt(opt.getAttribute('data-max'), 10);
       var evalsOk = !!checked;
 
       showError(card, 'fname', !fnameOk);
@@ -1087,10 +1089,12 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       button.disabled = true;
       button.textContent = 'Saving Your Seat...';
 
+      var phone = digits ? '+' + opt.value + digits : '';
+
       var payload = JSON.stringify({
         firstName: fname,
         email: email,
-        phone: '+' + opt.value + digits,
+        phone: phone,
         evalsSpent: checked.value,
         smsConsent: field(card, 'smsConsent').checked,
         source: 'masterclass',
@@ -1103,7 +1107,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           .catch(function (err) { console.log('Webhook failed: ' + url + ' ' + err.message); });
       });
 
-      var params = new URLSearchParams({ fname: fname, email: email, phone: '+' + opt.value + digits });
+      var params = new URLSearchParams({ fname: fname, email: email, phone: phone });
       Promise.allSettled(requests).finally(function () {
         window.location.href = '/masterclass-confirmation?' + params.toString();
       });
