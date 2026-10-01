@@ -865,11 +865,12 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <div class="field-error" data-error="evals">Pick one option.</div>
       </div>
       <label class="sms-consent">
-        <input type="checkbox" data-field="smsConsent" />
-        <span>
-          <span class="sms-consent-title">Please send me masterclass reminder text messages. <em>(Optional)</em></span>
-          <span class="sms-consent-body">I agree to receive masterclass reminder text messages from Aval Trading at the phone number provided. Consent is not a condition of purchase. Message frequency varies. Msg &amp; data rates may apply. Reply HELP for help, STOP to cancel. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
-        </span>
+        <input type="checkbox" data-field="smsMarketing" />
+        <span class="sms-consent-body">I agree to receive Marketing SMS messages from Aval Trading. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
+      </label>
+      <label class="sms-consent">
+        <input type="checkbox" data-field="smsTransactional" />
+        <span class="sms-consent-body">I agree to receive Transactional SMS messages from Aval Trading. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
       </label>
       <button type="submit" class="btn-primary">Save My Seat &rarr;</button>
     </form>
@@ -1096,7 +1097,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         email: email,
         phone: phone,
         evalsSpent: checked.value,
-        smsConsent: field(card, 'smsConsent').checked,
+        smsConsent: field(card, 'smsMarketing').checked || field(card, 'smsTransactional').checked,
+        smsMarketingConsent: field(card, 'smsMarketing').checked,
+        smsTransactionalConsent: field(card, 'smsTransactional').checked,
         source: 'masterclass',
         masterclassDate: session.toISOString(),
         pageUrl: window.location.href
