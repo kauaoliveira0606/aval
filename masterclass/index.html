@@ -282,34 +282,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .phone-row { display: flex; gap: 8px; }
     .phone-row select { flex: 0 0 108px; min-width: 0; }
     .phone-row input { flex: 1 1 auto; min-width: 0; }
-    .radio-list { display: flex; flex-direction: column; gap: 8px; }
-    .radio-opt {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: border-color 0.15s ease;
-    }
-    .radio-opt:hover { border-color: var(--green-dim); }
-    .radio-opt input {
-      -webkit-appearance: none;
-      appearance: none;
-      flex: none;
-      width: 18px;
-      height: 18px;
-      margin: 0;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      background: var(--bg-panel);
-      cursor: pointer;
-    }
-    .radio-opt input:checked { border: 5px solid var(--green); background: #06120a; }
-    .radio-opt:has(input:checked) { border-color: var(--green-dim); background: rgba(46, 230, 107, 0.06); }
     .field-error { display: none; font-size: 12.5px; color: var(--red); margin-top: 6px; }
     .sms-consent {
       display: flex;
@@ -817,17 +789,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <input type="email" data-field="email" placeholder="your@email.com" autocomplete="email" required />
         <div class="field-error" data-error="email">Enter a valid email address.</div>
       </div>
-      <div>
-        <div class="field-label">How Much Have You Spent On Evals? <span>*</span></div>
-        <div class="radio-list">
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$0" /> $0</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$0-$2,000" /> $0-$2,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$2,000-$5,000" /> $2,000-$5,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$5,000-$10,000" /> $5,000-$10,000</label>
-          <label class="radio-opt"><input type="radio" data-group="evals" value="$10,000+" /> $10,000+</label>
-        </div>
-        <div class="field-error" data-error="evals">Pick one option.</div>
-      </div>
       <label class="sms-consent">
         <input type="checkbox" data-field="smsMarketing" />
         <span class="sms-consent-body">I agree to receive Marketing SMS messages from Aval Trading. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
@@ -1004,7 +965,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     ['form-card-top', 'form-card-bottom'].forEach(function (id) {
       var card = document.getElementById(id);
       card.appendChild(template.content.cloneNode(true));
-      card.querySelectorAll('[data-group="evals"]').forEach(function (r) { r.name = id + '-evals'; });
       card.querySelectorAll('[data-for]').forEach(function (label) {
         var input = card.querySelector('[data-field="' + label.getAttribute('data-for') + '"]');
         input.id = id + '-' + label.getAttribute('data-for');
@@ -1025,19 +985,16 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       var email = field(card, 'email').value.trim();
       var country = field(card, 'country');
       var digits = field(card, 'phone').value.replace(/\D/g, '');
-      var checked = card.querySelector('[data-group="evals"]:checked');
 
       var fnameOk = fname.length >= 2 && /^[a-zA-Z' -]+$/.test(fname);
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       var opt = country.options[country.selectedIndex];
       var phoneOk = digits.length === 0 || digits.length >= parseInt(opt.getAttribute('data-min'), 10) && digits.length <= parseInt(opt.getAttribute('data-max'), 10);
-      var evalsOk = !!checked;
 
       showError(card, 'fname', !fnameOk);
       showError(card, 'email', !emailOk);
       showError(card, 'phone', !phoneOk);
-      showError(card, 'evals', !evalsOk);
-      if (!fnameOk || !emailOk || !phoneOk || !evalsOk) return;
+      if (!fnameOk || !emailOk || !phoneOk) return;
 
       var button = card.querySelector('button[type="submit"]');
       button.disabled = true;
@@ -1049,7 +1006,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         firstName: fname,
         email: email,
         phone: phone,
-        evalsSpent: checked.value,
         smsConsent: field(card, 'smsMarketing').checked || field(card, 'smsTransactional').checked,
         smsMarketingConsent: field(card, 'smsMarketing').checked,
         smsTransactionalConsent: field(card, 'smsTransactional').checked,
