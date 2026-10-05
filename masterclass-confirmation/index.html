@@ -30,1144 +30,626 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <meta property="og:image" content="https://www.mindovermarket.com/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #0a0d0b;
-      --bg-panel: #181f16;
-      --bg-panel-2: #1d251a;
-      --border: #2a3826;
-      --green: #2ee66b;
-      --green-dim: #1c9a4a;
-      --green-glow: rgba(46, 230, 107, 0.18);
-      --text: #ffffff;
-      --text-dim: #f3f7f3;
-      --text-mut: #9aa79a;
-      --red: #ff5c5c;
-      --gold: #f5c451;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --mono: 'JetBrains Mono', 'Courier New', monospace;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
+    :root {
+      --card: #ffffff;
+      --border: rgba(0,0,0,0.09);
+      --text: #0b1b26;
+      --text2: #6b7280;
+      --body: #5b5d6b;
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --tint: #f0fdf4;
+      --gold: #f59e0b;
+      --red: #f0555a;
+      --head: 'Manrope', sans-serif;
+    }
+
     body {
-      background: #142b1d;
+      font-family: 'Geist', 'Inter', sans-serif;
+      background: #fcfcfc;
       color: var(--text);
-      font-family: var(--font);
-      line-height: 1.5;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      background: url('/images/bg-lines.svg') center / cover no-repeat;
-    }
+    a { color: inherit; text-decoration: none; }
+    [hidden] { display: none !important; }
+    .acc { color: var(--green-dark); }
+    .eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green-dark); }
+    .muted-caps { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; color: var(--text2); }
 
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    .wrap-narrow { max-width: 720px; }
-    .accent { color: var(--green); }
-    .mono-label {
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-    }
-    .mono-muted {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-mut);
-    }
-
-    /* TOP BAR */
-    .top-bar {
-      position: relative;
-      z-index: 2;
-      background: var(--bg-panel);
-      border-bottom: 2px solid var(--green-dim);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-dim);
+    /* ── TOP BAND + PROGRESS ── */
+    .band {
+      background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+      color: #fff;
       text-align: center;
-      padding: 10px 16px;
-    }
-    .top-bar .dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-
-    /* HERO */
-    header.hero {
-      position: relative;
-      z-index: 1;
-      padding: 48px 0 80px;
-      text-align: center;
-    }
-    .live-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: rgba(46, 230, 107, 0.08);
-      border: 1px solid var(--green-dim);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 26px;
-    }
-    .live-pill::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-      animation: pulse 1.6s ease-in-out infinite;
-    }
-    @keyframes pulse { 50% { opacity: 0.35; } }
-    h1 {
-      font-size: clamp(28px, 4.4vw, 48px);
+      font-family: var(--head);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      max-width: 900px;
-      margin: 0 auto 22px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 15px 16px;
     }
-    .hero-sub {
-      font-size: clamp(15px, 1.8vw, 18px);
-      color: var(--text-dim);
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .step-label { margin: 48px 0 16px; }
-    .hero-video { max-width: 860px; margin: 0 auto; }
-    .hero-note {
-      max-width: 640px;
-      margin: 22px auto 0;
-      font-size: 16px;
-      color: var(--text-dim);
-    }
-
-    /* VIDEO FACADE */
-    .video-frame {
-      background: var(--bg-panel);
-      border: 1px solid var(--green-dim);
-      border-radius: 14px;
-      padding: 8px;
-      box-shadow: 0 20px 60px -20px var(--green-glow);
-    }
-    .video-embed {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 8px;
+    .col { max-width: 598px; margin: 0 auto; padding: 0 24px; }
+    .progress {
+      max-width: 520px;
+      margin: 20px auto 0;
+      height: 38px;
+      border-radius: 100px;
+      background: #fff;
+      box-shadow: inset 0 0 0 2px #ececec;
       overflow: hidden;
     }
-    .video-facade { cursor: pointer; }
-    .video-facade .thumb,
-    .video-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 0;
-    }
-    .play-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 68px;
-      height: 68px;
-      margin: -34px 0 0 -34px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 8px rgba(46, 230, 107, 0.2);
-      transition: transform 0.15s ease;
-    }
-    .play-btn::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: -11px 0 0 -6px;
-      border-style: solid;
-      border-width: 11px 0 11px 18px;
-      border-color: transparent transparent transparent #06120a;
-    }
-    .video-facade:hover .play-btn { transform: scale(1.06); }
-
-    /* COUNTDOWN */
-    .register-block { margin-top: 56px; }
-    .event-date { font-size: clamp(18px, 2.2vw, 22px); font-weight: 700; margin: 10px 0 16px; }
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      max-width: 360px;
-      margin: 0 auto;
-    }
-    .cd-cell {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 6px;
-    }
-    .cd-num {
-      font-family: var(--mono);
-      font-size: clamp(22px, 3vw, 28px);
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-    }
-    .cd-lbl { margin-top: 4px; font-size: 10px; }
-
-    /* FORM */
-    .form-card {
-      max-width: 560px;
-      margin: 24px auto 0;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      text-align: left;
-      scroll-margin-top: 24px;
-    }
-    form.optin { display: flex; flex-direction: column; gap: 16px; }
-    .field-label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
-    .field-label span { color: var(--green); }
-    form.optin input[type="text"],
-    form.optin input[type="email"],
-    form.optin input[type="tel"],
-    form.optin select {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 15px;
-      padding: 14px 16px;
-      border-radius: 8px;
-      outline: none;
-    }
-    form.optin input:focus,
-    form.optin select:focus { border-color: var(--green-dim); }
-    .phone-row { display: flex; gap: 8px; }
-    .phone-row select { flex: 0 0 108px; min-width: 0; }
-    .phone-row input { flex: 1 1 auto; min-width: 0; }
-    .radio-list { display: flex; flex-direction: column; gap: 8px; }
-    .radio-opt {
+    .progress span {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: border-color 0.15s ease;
-    }
-    .radio-opt:hover { border-color: var(--green-dim); }
-    .radio-opt input {
-      -webkit-appearance: none;
-      appearance: none;
-      flex: none;
-      width: 18px;
-      height: 18px;
-      margin: 0;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      background: var(--bg-panel);
-      cursor: pointer;
-    }
-    .radio-opt input:checked { border: 5px solid var(--green); background: #06120a; }
-    .radio-opt:has(input:checked) { border-color: var(--green-dim); background: rgba(46, 230, 107, 0.06); }
-    .field-error { display: none; font-size: 12.5px; color: var(--red); margin-top: 6px; }
-    .field-error.show { display: block; }
-    .form-success { display: none; text-align: center; padding: 12px 0; }
-    .form-success h3 { font-size: 22px; font-weight: 800; margin: 10px 0 8px; }
-    .form-success p { color: var(--text-dim); font-size: 15px; }
-    .form-card.done form { display: none; }
-    .form-card.done .form-success { display: block; }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
-      gap: 10px;
-      background: var(--green);
-      color: #06120a;
-      font-family: var(--font);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 30px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 0 0 1px var(--green-dim), 0 10px 30px -8px var(--green-glow);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      width: 72%;
+      height: 100%;
+      border-radius: 100px 0 0 100px;
+      background: linear-gradient(180deg, #22c55e, #16a34a);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
     }
-    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px var(--green), 0 14px 34px -8px var(--green-glow); }
-    .btn-primary[disabled] { opacity: 0.7; cursor: wait; transform: none; }
-    form.optin .btn-primary { width: 100%; }
-    .hero-proof { margin-top: 22px; }
 
-    .cta-row { text-align: center; margin-top: 52px; }
-    .cta-row .mono-muted { margin-top: 12px; }
-
-    /* SECTIONS */
-    section { position: relative; z-index: 1; padding: 88px 0; border-top: 1px solid var(--border); }
-    section.alt { background: rgba(24, 31, 22, 0.55); }
-    .section-head { text-align: center; max-width: 720px; margin: 0 auto 52px; }
-    .section-head .mono-label { margin-bottom: 14px; }
-    .section-head h2 {
-      font-size: clamp(26px, 3.6vw, 40px);
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      line-height: 1.18;
-    }
-    .section-head .mono-muted { margin-top: 16px; }
-
-    /* MEET BENICIO */
-    .meet-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
-      align-items: center;
-      max-width: 940px;
+    /* ── HERO ── */
+    .hero { padding: 22px 0 8px; text-align: center; }
+    .wait-box {
+      max-width: 636px;
       margin: 0 auto;
+      background: var(--tint);
+      border: 4px dashed var(--green-dark);
+      border-radius: 18px;
+      padding: 22px 20px 26px;
     }
-    .shot-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .shot-card .shot { padding: 10px; }
-    .shot-card .shot img,
-    .shot-card .shot button img { display: block; width: 100%; border-radius: 8px; }
-    .shot-card .caption {
-      border-top: 1px solid var(--border);
-      padding: 10px 16px;
-      font-family: var(--mono);
-      font-size: 10.5px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-mut);
-      background: var(--bg-panel-2);
-    }
-    .meet-copy p { color: var(--text-dim); font-size: 16.5px; margin-bottom: 16px; }
-    .meet-copy p:last-child { margin-bottom: 0; }
-    .meet-copy strong { color: var(--text); }
-    .stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .stat {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-    }
-    .stat b { display: block; font-family: var(--mono); font-size: 20px; color: var(--green); }
-    .stat span { font-size: 12.5px; color: var(--text-mut); }
+    .wait-box .wait { font-family: var(--head); font-size: clamp(3rem, 9vw, 4.4rem); font-weight: 500; line-height: 1; color: var(--green-dark); }
+    .wait-box p { font-family: var(--head); font-size: clamp(1.25rem, 3.6vw, 1.9rem); font-weight: 600; line-height: 1.25; color: var(--green-dark); margin-top: 6px; }
+    .hero h1 { font-family: var(--head); font-size: clamp(1.7rem, 5vw, 2.3rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.3px; margin: 28px auto 0; max-width: 520px; }
+    .hero .lead-bold { font-family: var(--head); font-size: 1.2rem; font-weight: 700; line-height: 1.5; margin-top: 22px; }
+    .hero .lead { font-size: 1.15rem; color: var(--body); margin-top: 22px; }
+    .price-line { font-family: var(--head); font-size: 1.2rem; font-weight: 700; margin-top: 22px; }
+    .price-line u { text-underline-offset: 4px; }
 
-    .payout-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 56px;
-    }
-    .zoom {
+    .btn {
       display: block;
       width: 100%;
-      padding: 0;
-      border: 0;
-      background: none;
-      cursor: zoom-in;
-    }
-    .payout-grid .shot img { height: 380px; object-fit: cover; object-position: top; }
-    .big-figure { text-align: center; margin-top: 44px; }
-    .big-figure b { font-family: var(--mono); font-size: clamp(34px, 5vw, 48px); color: var(--green); }
-    .big-figure .mono-muted { display: block; margin-top: 6px; }
-
-    /* WHAT WE'LL COVER */
-    .cover-list { display: flex; flex-direction: column; gap: 24px; max-width: 980px; margin: 0 auto; }
-    .cover-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      align-items: center;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 20px 50px -30px rgba(0, 0, 0, 0.8);
-    }
-    .cover-row.flip .cover-media { order: 2; }
-    .cover-media .shot img { aspect-ratio: 8 / 5; object-fit: cover; }
-    .cover-num { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: 0.08em; }
-    .cover-row h3 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; line-height: 1.2; margin: 8px 0 12px; }
-    .cover-row p { color: var(--text-dim); font-size: 16px; }
-
-    /* WALL OF WINS */
-    .wins { column-count: 3; column-gap: 18px; }
-    .win-card {
-      break-inside: avoid;
-      margin-bottom: 18px;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .win-card .win-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--border);
-    }
-    .stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
-    .verified {
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+      color: #fff;
+      font-family: 'Geist', 'Inter', sans-serif;
+      font-size: clamp(1rem, 2.8vw, 1.15rem);
+      font-weight: 600;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--green);
-      background: rgba(46, 230, 107, 0.1);
-      border: 1px solid var(--green-dim);
-      border-radius: 999px;
-      padding: 2px 8px;
-    }
-    .win-card img { display: block; width: 100%; height: auto; }
-    .win-card .win-foot { padding: 12px 14px; border-top: 1px solid var(--border); }
-    .win-card .win-foot b { display: block; font-size: 14px; margin-bottom: 2px; }
-
-    /* FLOATING PROOF */
-    .float-proof {
-      display: none;
-      position: fixed;
-      left: 16px;
-      bottom: 16px;
-      z-index: 40;
-      width: 320px;
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 34px 12px 12px;
-      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
-    }
-    .float-proof.show { opacity: 1; transform: translateY(0); }
-    .float-proof .fp-body { display: flex; gap: 12px; align-items: center; background: none; border: 0; color: inherit; text-align: left; cursor: zoom-in; width: 100%; font-family: var(--font); }
-    .float-proof .fp-thumb { flex: none; width: 56px; height: 56px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
-    .float-proof .fp-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .float-proof .fp-text { font-size: 13px; color: var(--text-dim); line-height: 1.4; }
-    .float-proof .fp-text b { display: block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
-    .float-proof .fp-close {
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      width: 24px;
-      height: 24px;
+      text-align: center;
+      padding: 19px 20px;
       border: 0;
-      border-radius: 50%;
-      background: none;
-      color: var(--text-mut);
-      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
+      margin-top: 24px;
+      box-shadow: 0 8px 20px -8px rgba(22,163,74,0.6);
+      transition: transform .15s, opacity .15s;
     }
-    @media (min-width: 900px) { .float-proof { display: block; } }
+    .btn:hover { transform: translateY(-1px); opacity: 0.94; }
+    .btn.big { font-size: clamp(1.1rem, 3.4vw, 1.4rem); padding: 20px; }
+    .no-thanks { display: block; margin-top: 12px; text-align: center; font-size: 0.78rem; color: var(--text); }
+    .no-thanks:hover { text-decoration: underline; }
 
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 100;
-      background: rgba(0, 0, 0, 0.88);
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
+    .trust { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; }
+    .trust img { width: 30px; height: 30px; border-radius: 8px; display: block; }
+    .trust .t-stars { color: #facc15; font-size: 0.72rem; letter-spacing: 1px; line-height: 1; }
+    .trust .t-label { font-family: var(--head); font-size: 0.78rem; font-weight: 800; line-height: 1.2; text-align: left; }
+    .arrow { display: block; margin: 14px auto 0; }
+
+    /* ── STORY ── */
+    .h2 { font-family: var(--head); font-size: clamp(2rem, 6vw, 2.9rem); font-weight: 700; line-height: 1.16; letter-spacing: -0.5px; text-align: center; }
+    .h2.sm { font-size: clamp(1.6rem, 4.6vw, 2.1rem); font-weight: 600; }
+    .story p { font-size: 1.15rem; color: var(--body); margin-top: 28px; }
+    .story p.b, .card p.b, .panel p.b { color: #000; font-weight: 700; }
+    .story u { text-underline-offset: 4px; }
+    .callout { background: var(--tint); border-left: 5px solid var(--green-dark); padding: 22px 28px; margin-top: 28px; font-size: 1.15rem; font-weight: 700; color: #000; }
+    .section { padding: 16px 0 56px; }
+    .section.tinted { background: radial-gradient(1200px 500px at 0% 0%, #dcfce7 0%, rgba(240,253,244,0) 60%), radial-gradient(1000px 500px at 100% 20%, #dcfce7 0%, rgba(240,253,244,0) 60%), #f6f7f6; padding: 80px 0; }
+
+    .empty-store { margin: 26px auto 0; border-radius: 6px; overflow: hidden; background: #0a0a0a; }
+    .empty-store svg { display: block; width: 100%; height: auto; }
+
+    .card { background: #fff; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 26px 30px 30px; }
+    .card.top { border-top: 5px solid var(--green-dark); }
+    .card p { font-size: 1.15rem; color: var(--body); }
+    .card p + p { margin-top: 28px; }
+    .panel { background: #f6f6f6; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 22px 30px 34px; }
+    .panel p { font-size: 1.15rem; color: var(--body); margin-top: 26px; }
+    .not-box { background: #fff; border: 3px dashed var(--red); border-radius: 10px; padding: 30px 20px; text-align: center; margin-top: 20px; }
+    .not-box .x { width: 54px; height: 54px; border-radius: 50%; background: var(--red); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; }
+    .not-box p { margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--red); }
+
+    /* ── INTRODUCING ── */
+    .intro-head { font-family: var(--head); font-size: clamp(1.8rem, 5vw, 2.3rem); font-weight: 600; text-align: center; margin-bottom: 16px; }
+    .intro-card { text-align: center; padding: 30px 26px 34px; }
+    .mock { max-width: 480px; margin: 0 auto; }
+    .mock svg { display: block; width: 100%; height: auto; }
+    .intro-card h2 { font-family: var(--head); font-size: clamp(2.1rem, 6.4vw, 3rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; color: var(--green-dark); margin: 18px 0 22px; }
+    .gives-head { margin: 44px 0 26px; }
+    .give { background: #fff; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 28px 28px 32px; text-align: center; margin-top: 20px; }
+    .give .tick { width: 54px; height: 54px; border-radius: 50%; background: var(--green-dark); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; }
+    .give h3 { font-size: 1.6rem; font-weight: 700; line-height: 1.2; color: #000; }
+    .give p { font-size: 1.15rem; color: var(--body); margin-top: 18px; }
+    .center p { text-align: center; }
+
+    /* ── PROOF ── */
+    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; align-items: start; }
+    .win-card { background: #fff; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); overflow: hidden; }
+    .win-card img { width: 100%; display: block; }
+    .win-card .win-foot { padding: 10px 12px; }
+    .win-card .win-foot b { display: block; font-size: 0.85rem; margin-bottom: 2px; }
+    .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+
+    /* ── EVERYTHING ── */
+    .item { background: #fff; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 22px 28px 32px; text-align: center; margin-top: 20px; }
+    .item .tab { width: 112px; margin: 0 auto; }
+    .item .tab svg { display: block; width: 100%; height: auto; }
+    .item h3 { font-family: var(--head); font-size: clamp(1.7rem, 5vw, 2.25rem); font-weight: 700; line-height: 1.2; color: var(--green-dark); margin: 22px 0 22px; }
+    .item p { font-size: 1.15rem; color: var(--body); }
+
+    /* ── CHECKOUT ── */
+    .wide { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .co-title { font-family: var(--head); font-size: clamp(1.9rem, 5.2vw, 3rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; text-align: center; }
+    .co-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 36px; align-items: start; }
+    .co-card { background: #fff; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 26px 26px 30px; }
+    .co-card h4 { font-family: 'Open Sans', 'Geist', sans-serif; font-size: 1.15rem; font-weight: 700; margin: 26px 0 6px; }
+    .co-card h4.acc { font-size: 1.5rem; margin-top: 26px; }
+    .co-list { list-style: none; }
+    .co-list li { position: relative; padding-left: 30px; font-family: 'Open Sans', 'Geist', sans-serif; font-size: 1.05rem; line-height: 1.5; margin-top: 10px; color: #1f2937; }
+    .co-list li::before { content: "\2713"; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--green-dark); color: #fff; font-size: 0.72rem; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .co-list.bold li b { color: #0b1b26; }
+    .co-label { display: flex; align-items: center; gap: 18px; font-family: 'Open Sans', 'Geist', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; color: #0b1b26; }
+    .co-label::after { content: ""; flex: 1; height: 1px; background: #0b1b26; }
+    .co-product { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid #cbd5e1; border-radius: 5px; padding: 12px 14px; margin: 12px 0 22px; font-family: 'Open Sans', 'Geist', sans-serif; font-weight: 700; font-size: 0.95rem; }
+    .co-product .radio { flex: none; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #0b1b26; display: flex; align-items: center; justify-content: center; }
+    .co-product .radio::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #0b1b26; }
+    .co-product span.name { flex: 1; text-align: left; }
+    .checkout-embed { min-height: 420px; margin-top: 12px; }
+    .checkout-embed iframe { width: 100%; border: 0; }
+    .checkout-pending { margin-top: 12px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: #f9fafb; color: var(--body); font-size: 0.95rem; }
+    .co-note { text-align: center; font-family: 'Open Sans', 'Geist', sans-serif; font-size: 0.72rem; color: #0b1b26; margin-top: 12px; }
+
+    /* ── GUARANTEE ── */
+    .guarantee { padding: 16px 30px 34px; }
+    .guarantee .seal { width: 104px; margin: 0 auto 10px; }
+    .guarantee .seal svg { display: block; width: 100%; height: auto; }
+    .guarantee h2 { margin-bottom: 6px; }
+    .guarantee .mock { margin-top: 30px; }
+
+    /* ── FOOTER ── */
+    footer { background: #000; color: #a3a3a3; text-align: center; padding: 36px 24px; font-size: 0.95rem; }
+    footer a { color: #a3a3a3; margin: 0 8px; font-size: 0.85rem; }
+    footer a:hover { color: #fff; }
+    .footer-disclaimer { max-width: 700px; margin: 14px auto 0; font-size: 0.72rem; line-height: 1.6; color: #8a8a8a; }
+
+    /* ── LIGHTBOX ── */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; padding: 24px; }
     .lightbox.open { display: flex; }
     .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; }
-    .lightbox-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--bg-panel);
-      color: var(--text);
-      font-size: 22px;
-      cursor: pointer;
-    }
+    .lightbox-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #fff; color: #111; font-size: 22px; cursor: pointer; }
 
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 32px 0;
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-dim);
+    @media (max-width: 900px) {
+      .co-grid { grid-template-columns: 1fr; max-width: 598px; margin-left: auto; margin-right: auto; }
     }
-    footer .links { margin-bottom: 14px; }
-    footer .links a { color: var(--text-dim); text-decoration: none; margin: 0 8px; font-size: 13px; }
-    footer .links a:hover { color: var(--green); }
-    footer .disclaimer { max-width: 680px; margin: 0 auto 14px; font-size: 11.5px; line-height: 1.6; color: var(--text-mut); }
-
-    @media (max-width: 860px) {
-      .meet-grid { grid-template-columns: 1fr; }
-      .payout-grid { grid-template-columns: 1fr 1fr; }
-      .payout-grid .shot img { height: 300px; }
-      .wins { column-count: 2; }
-      .cover-row { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
-      .cover-row.flip .cover-media { order: 0; }
-    }
-    @media (max-width: 560px) {
-      .wrap { padding: 0 16px; }
-      header.hero { padding: 36px 0 64px; }
-      section { padding: 64px 0; }
-      .form-card { padding: 20px; }
-      .stat-row { grid-template-columns: 1fr; }
-      .wins { column-count: 1; }
-    }
-    /* STEPS TIMELINE */
-    .steps-wrap { max-width: 640px; margin: 56px auto 0; text-align: left; }
-    .steps-wrap > .mono-label { text-align: center; margin-bottom: 28px; }
-    .steps {
-      position: relative;
-      padding-left: 64px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      scroll-margin-top: 24px;
-    }
-    .steps::before {
-      content: "";
-      position: absolute;
-      left: 21px;
-      top: 12px;
-      bottom: 12px;
-      width: 1px;
-      background: var(--border);
-    }
-    .step { position: relative; }
-    .step[hidden] { display: none; }
-    .step-num {
-      position: absolute;
-      left: -64px;
-      top: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--green);
-      color: #06120a;
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 0 6px var(--bg);
-    }
-    .step h3 { font-size: 21px; font-weight: 700; line-height: 1.3; margin: 8px 0 8px; }
-    .step p { color: var(--text-dim); font-size: 15.5px; }
-    .step-actions { display: flex; gap: 12px; margin-top: 18px; }
-    .step-actions .btn-primary { flex: 1; }
-    .step-note { margin-top: 10px; font-size: 12.5px; color: var(--text-mut); text-align: center; }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--bg-panel);
-      color: var(--text);
-      font-family: var(--font);
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 30px;
-      border-radius: 8px;
-      border: 1px solid var(--green-dim);
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-    }
-    .btn-secondary:hover { transform: translateY(-1px); border-color: var(--green); }
-    .steps-proof { text-align: center; margin-top: 40px; }
-
-    @media (max-width: 560px) {
-      .steps { padding-left: 52px; }
-      .steps::before { left: 17px; }
-      .step-num { left: -52px; width: 36px; height: 36px; font-size: 11px; }
-      .step-actions { flex-direction: column; }
-    }
-    /* SALES LETTER */
-    .urgent-bar {
-      position: relative;
-      z-index: 2;
-      background: var(--gold);
-      color: #1a1405;
-      text-align: center;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: 0.02em;
-      padding: 10px 16px;
-    }
-    .letter { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    .bump-hero { padding: 44px 0 56px; text-align: center; }
-    .bump-hero .wait { font-size: clamp(30px, 5vw, 46px); font-weight: 800; color: var(--gold); letter-spacing: -0.01em; margin-bottom: 18px; }
-    .bump-hero h1 { font-size: clamp(26px, 4vw, 40px); max-width: 720px; }
-    .bump-hero .hero-sub { max-width: 600px; }
-    .bump-hero .this-is { margin-top: 18px; font-size: 18px; font-weight: 700; }
-    .price-line { margin: 26px 0 22px; font-size: 20px; color: var(--text-dim); }
-    .price-line .now { font-family: var(--mono); font-size: 34px; font-weight: 700; color: var(--green); margin: 0 8px; }
-    .price-line .was { position: relative; font-family: var(--mono); font-size: 20px; color: var(--text-mut); }
-    .price-line .was::after {
-      content: "";
-      position: absolute;
-      left: -3px;
-      right: -3px;
-      top: 50%;
-      height: 2px;
-      background: var(--red);
-      transform: rotate(-8deg);
-    }
-    .live-card {
-      margin-top: 28px;
-      background: var(--bg-panel-2);
-      border: 1px solid var(--gold);
-      border-radius: 16px;
-      padding: 28px;
-    }
-    .live-card .mono-label { color: var(--gold); margin-bottom: 8px; }
-    .live-card h3 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; line-height: 1.25; margin-bottom: 16px; }
-    .live-card .check-list { margin-top: 18px; }
-    .live-card p { font-size: 17px; margin-bottom: 12px; }
-    .live-card p:last-child { margin-bottom: 0; }
-    .deal-badge {
-      display: inline-block;
-      margin-top: 26px;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #1a1405;
-      background: var(--gold);
-      border-radius: 999px;
-      padding: 6px 14px;
-    }
-    .deal-badge + .price-line { margin-top: 14px; }
-    .btn-buy { font-size: 18px; padding: 20px 28px; width: 100%; max-width: 520px; text-transform: none; }
-    .buy-note { margin-top: 12px; }
-    .checkout-embed {
-      max-width: 520px;
-      min-height: 420px;
-      margin: 24px auto 0;
-      text-align: left;
-      scroll-margin-top: 24px;
-    }
-    .checkout-embed iframe { width: 100%; border: 0; }
-    .no-thanks {
-      display: inline-block;
-      margin-top: 18px;
-      color: var(--text-mut);
-      font-size: 14px;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .no-thanks:hover { color: var(--text-dim); }
-
-    .story { padding: 64px 0; border-top: 1px solid var(--border); position: relative; z-index: 1; }
-    .story h2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; margin-bottom: 24px; }
-    .story p { font-size: 18px; color: var(--text-dim); margin-bottom: 18px; line-height: 1.6; }
-    .story p strong { color: var(--text); }
-    .story .big { font-size: 22px; font-weight: 800; color: var(--text); }
-    .story .red { color: var(--red); font-weight: 700; }
-    .story .green { color: var(--green); font-weight: 700; }
-    .story .quote { font-style: italic; color: var(--text); padding-left: 16px; border-left: 3px solid var(--red); margin-bottom: 10px; }
-    .story .timer { font-family: var(--mono); color: var(--gold); font-weight: 700; margin-bottom: 6px; }
-    .notice-card {
-      max-width: 420px;
-      margin: 8px auto 26px;
-      background: var(--bg-panel);
-      border: 1px solid var(--red);
-      border-radius: 14px;
-      padding: 22px;
-      text-align: center;
-    }
-    .notice-card .mono-muted { margin-bottom: 8px; }
-    .notice-card b { display: block; font-size: 22px; }
-    .notice-card span { color: var(--red); font-weight: 600; font-size: 15px; }
-
-    .product-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--green-dim);
-      border-radius: 16px;
-      padding: 32px;
-      margin: 8px 0 24px;
-      box-shadow: 0 20px 60px -24px var(--green-glow);
-    }
-    .product-card .intro { font-size: 16px; color: var(--text-mut); margin-bottom: 6px; }
-    .product-card h2 { font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 12px; }
-    .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 22px 0 0; }
-    .check-list li { position: relative; padding-left: 36px; font-size: 17px; color: var(--text); font-weight: 600; line-height: 1.45; }
-    .check-list li::before {
-      content: "\2713";
-      position: absolute;
-      left: 0;
-      top: 1px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--green);
-      color: #06120a;
-      font-size: 14px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .check-list li span { display: block; color: var(--text-dim); font-weight: 400; font-size: 15.5px; margin-top: 2px; }
-
-    /* PRODUCT MOCKUP + SHOWS + BUNDLE CARDS */
-    .product-card { text-align: center; }
-    .product-mockup { position: relative; max-width: 460px; margin: -6px auto 18px; aspect-ratio: 520 / 400; }
-    .mockup-doc { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
-    .product-card .lead { font-size: 18px; font-weight: 700; color: var(--text); margin: 0 0 12px; }
-    .product-card .lead:last-child { margin-bottom: 0; }
-    .product-card u, .bundle-card u { text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-
-    .shows-head { text-align: center; margin: 40px 0 20px; }
-    .shows-list { display: flex; flex-direction: column; gap: 14px; }
-    .shows-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px 22px;
-      text-align: center;
-      box-shadow: 0 14px 36px -24px rgba(0, 0, 0, 0.9);
-    }
-    .badge-check {
-      position: relative;
-      width: 30px;
-      height: 30px;
-      margin: 0 auto 12px;
-    }
-    .badge-check::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--green);
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.6 2.1 3.3-.4 1.2 3.1 3.1 1.2-.4 3.3L23 12l-2.1 2.6.4 3.3-3.1 1.2-1.2 3.1-3.3-.4L12 23l-2.6-2.1-3.3.4-1.2-3.1-3.1-1.2.4-3.3L1 12l2.1-2.6-.4-3.3 3.1-1.2 1.2-3.1 3.3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
-              mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.6 2.1 3.3-.4 1.2 3.1 3.1 1.2-.4 3.3L23 12l-2.1 2.6.4 3.3-3.1 1.2-1.2 3.1-3.3-.4L12 23l-2.6-2.1-3.3.4-1.2-3.1-3.1-1.2.4-3.3L1 12l2.1-2.6-.4-3.3 3.1-1.2 1.2-3.1 3.3.4z'/%3E%3C/svg%3E") center / contain no-repeat;
-    }
-    .badge-check::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 45%;
-      width: 6px;
-      height: 11px;
-      border: solid #06120a;
-      border-width: 0 2.5px 2.5px 0;
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-    .shows-card h3 { font-size: clamp(19px, 2.4vw, 22px); font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
-    .shows-card mark {
-      color: var(--text);
-      background: linear-gradient(transparent 58%, rgba(245, 196, 81, 0.45) 58%);
-      padding: 0 2px;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-    }
-    .shows-card p { color: var(--text-mut); font-size: 15px; font-weight: 600; margin: 0; }
-
-    .bundle-list { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
-    .bundle-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 28px 30px;
-      text-align: center;
-      box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.9);
-    }
-    .bundle-card:first-child { border-color: var(--green-dim); }
-    .bundle-doc { display: block; width: 100%; max-width: 300px; margin: 0 auto 8px; }
-    .bundle-card .tag {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      color: #1a1405;
-      background: var(--gold);
-      border-radius: 999px;
-      padding: 3px 10px;
-      margin-bottom: 10px;
-    }
-    .bundle-card .tag.main { background: var(--green); color: #06120a; }
-    .bundle-card h3 { font-size: clamp(24px, 3.4vw, 30px); font-weight: 800; color: var(--green); line-height: 1.2; margin-bottom: 10px; }
-    .bundle-card p { color: var(--text-dim); font-size: 16.5px; font-weight: 600; margin: 0 auto; max-width: 520px; }
-
-    .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0 10px; align-items: start; }
-    .proof-grid .win-card { margin: 0; }
-
-
-    .offer-box {
-      text-align: center;
-      background: var(--bg-panel);
-      border: 2px dashed var(--green-dim);
-      border-radius: 18px;
-      padding: 34px 24px;
-      margin-top: 10px;
-    }
-    .offer-box h2 { font-size: clamp(24px, 3.4vw, 32px); margin-bottom: 8px; }
-
-    @media (max-width: 560px) {
-      .letter { padding: 0 16px; }
-      .story p { font-size: 17px; }
-      .product-card { padding: 22px; }
+    @media (max-width: 600px) {
+      .col, .wide { padding: 0 16px; }
+      .story p, .card p, .panel p, .give p, .item p, .hero .lead { font-size: 1.05rem; }
+      .story p { margin-top: 22px; }
+      .card, .panel { padding: 20px 20px 24px; }
+      .section.tinted { padding: 56px 0; }
       .proof-grid { grid-template-columns: 1fr 1fr; }
+      .give h3 { font-size: 1.35rem; }
+      .co-card { padding: 20px 18px 24px; }
     }
-    /* Short copy lines: space between consecutive lines inside cards and the hero */
-    .hero-sub + .hero-sub, .this-is + .this-is, .cover-row p + p, .step p + p, .bundle-card p + p { margin-top: 10px; }
   </style>
 </head>
 <body>
 
-  <div class="urgent-bar">URGENT! Your Registration Is Almost Complete. Read This Page Carefully!</div>
+<div class="band">The Risk Management Bundle</div>
 
-  <header class="bump-hero">
-    <div class="letter">
-      <div class="wait">WAIT! Before You Go...</div>
-      <h1>The #1 Reason Traders Blow Their Funded Accounts Has <span class="accent">Nothing To Do</span> With Their Strategy</h1>
-      <p class="hero-sub">It's taking trades with no risk plan behind them.</p>
-      <p class="hero-sub">One bad trade, one bad day, and the account is gone.</p>
-      <p class="hero-sub">The traders pulling consistent payouts run a risk framework on every single trade.</p>
-      <p class="this-is">This is that framework. Step by step.</p>
-      <p class="this-is">And it's how you get the most out of the masterclass, because we'll use it together, live.</p>
-      <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
-      <div class="price-line">And only <span class="now">$27</span> <span class="was">$50</span> as of <span class="js-today">today</span>.</div>
-        <a class="btn-primary btn-buy" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27 &rarr;</a>
-        <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
+<header class="hero">
+  <div class="col" style="max-width:700px;">
+    <div class="progress"><span>Almost Complete...</span></div>
+    <div class="wait-box" style="margin-top:22px;">
+      <div class="wait">WAIT!</div>
+      <p>Registration Is Almost Complete. Read The Following Page Carefully.</p>
     </div>
-  </header>
-
-  <section class="story">
-    <div class="letter">
-      <h2>Picture This:</h2>
-      <p>It's a few weeks from now.</p>
-      <p>You passed the eval.</p>
-      <p>The funded account is live, and for the first time you actually believe this is going to work.</p>
-      <p>You stack a couple of green days.</p>
-      <p>Your buffer is growing.</p>
-      <p>You start thinking about <strong>your first payout.</strong></p>
-      <p>Then the market opens and moves against you.</p>
-      <p class="timer">&#9201; Down $400.</p>
-      <p class="timer">&#9201; Down $900.</p>
-      <p class="timer">&#9201; Down $1,600.</p>
-      <p>You're sure it will come back, so you hold.</p>
-      <p>Then you add to the position.</p>
-      <p>Then you hold a little longer...</p>
-      <p>Your platform freezes on one message:</p>
-      <div class="notice-card">
-        <div class="mono-muted">Account Notice</div>
-        <b>Account Disabled</b>
-        <span>Rule breach: max loss limit</span>
-      </div>
-      <p class="big">One trade. Weeks of work, gone in under an hour.</p>
-      <p>And then the voice in your head starts:</p>
-      <p class="quote">"Why didn't I just take the stop?"</p>
-      <p class="quote">"Why did I size up on that one?"</p>
-      <p class="quote">"Maybe I'm just not cut out for this..."</p>
-      <p style="margin-top: 26px;">That's the moment most traders quit.</p>
-      <p><span class="red">NOT</span> because their strategy is bad.</p>
-      <p><span class="red">NOT</span> because they can't read a chart.</p>
-      <p class="big">Because nobody ever gave them a risk plan.</p>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="letter">
-      <p>The masterclass shows you the strategy.</p>
-      <p>But <strong>the strategy is only half the game.</strong></p>
-      <p>Payouts aren't made on the entry. <span class="green">They're kept by the risk you manage on every single trade.</span></p>
-      <p>And if you don't know exactly how much to risk, when to stop, and when to walk away for the day...</p>
-      <p>You'll keep handing back accounts that should have paid you.</p>
-      <p>What if instead of hoping the trade comes back...</p>
-      <p>You had a framework that told you exactly what to risk, exactly where to stop, and exactly when you're done for the day?</p>
-      <p class="big">So one bad trade never wipes out your account again.</p>
-
-      <div class="product-card">
-        <div class="product-mockup">
-          <img class="mockup-doc" src="/images/masterclass/doc-risk-guide.svg" alt="The Risk Management Guide" />
-        </div>
-        <div class="intro">Introducing...</div>
-        <div class="mono-label" style="margin-bottom: 8px;">Pre-Masterclass Prep</div>
-        <h2>The <span class="accent">Risk Management Bundle</span></h2>
-        <p class="lead">The exact risk rules I run on <span class="green">every single trade</span>, broken down step by step...</p>
-        <p class="lead">Starting with <u>ZERO experience.</u></p>
-        <p class="lead">This isn't some generic risk lecture you'll forget by next week.</p>
-        <p class="lead">This is a plug-and-play guide you pull up the second you sit down to trade.</p>
-      </div>
-
-      <h2 class="shows-head">It Shows You:</h2>
-      <div class="shows-list">
-        <div class="shows-card">
-          <div class="badge-check" aria-hidden="true"></div>
-          <h3><mark>How to build a risk management framework</mark></h3>
-          <p>(so one bad trade never wipes out your account)</p>
-        </div>
-        <div class="shows-card">
-          <div class="badge-check" aria-hidden="true"></div>
-          <h3><mark>A daily routine that finds setups for you</mark></h3>
-          <p>(without sitting at a screen all day)</p>
-        </div>
-        <div class="shows-card">
-          <div class="badge-check" aria-hidden="true"></div>
-          <h3><mark>How to scale your position sizing as your account grows</mark></h3>
-          <p>(without increasing your risk)</p>
-        </div>
-        <div class="shows-card">
-          <div class="badge-check" aria-hidden="true"></div>
-          <h3><mark>How to learn the system and place your first profitable trades</mark></h3>
-          <p>(even if you've never placed a trade before)</p>
-        </div>
-      </div>
-
-      <p style="margin-top: 30px;">You don't need years of screen time.</p>
-      <p>You don't need to be a "math person."</p>
-      <p>You don't need to figure it out by blowing another account...</p>
-      <p>No guessing your size. No revenge trading.</p>
-      <p>No "one more trade" to get it back.</p>
-      <p class="big">You just follow the guide.</p>
-      <div class="live-card">
-        <div class="mono-label">How To Get The Most Out Of The Masterclass</div>
-        <h3>Showing Up To A Class Is One Thing. Applying It Is A Whole Different Ball Game.</h3>
-        <p>Anyone can sit through a class.</p>
-        <p>Most people watch, nod along, close the tab, and go right back to trading the exact same way they did before.</p>
-        <p>The traders who actually get results from a masterclass do something different.</p>
-        <p><strong>They show up ready.</strong></p>
-        <p><strong>They apply what they learn while it's being taught.</strong></p>
-        <p><strong>And they walk away with a plan instead of a page of notes.</strong></p>
-        <p class="big">That's exactly what the Risk Management Bundle is for.</p>
-        <p>We're using the Risk Management Guide during the live masterclass.</p>
-        <p>At one point in the presentation, I'm going to ask you to pull it out.</p>
-        <p>And we'll work through it together on your own numbers, in real time.</p>
-        <ul class="check-list">
-          <li>Follow along instead of just watching<span>You're using the same tool I'm teaching from</span></li>
-          <li>Build your risk plan while I teach it<span>Not later, not "when you get around to it"</span></li>
-          <li>Leave with a plan you can use on your very next trade<span>So the masterclass actually changes how you trade</span></li>
-        </ul>
-        <p style="margin-top: 22px;">I don't want this to be another class you forget about by next week.</p>
-        <p>I want you to get real results from it.</p>
-        <p><strong>This is how I help you do that.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="letter">
-      <h2>Traders Who Run The Framework <span class="accent">Keep Their Accounts</span></h2>
-      <p>These traders didn't find a magic indicator. They stopped giving it back.</p>
-      <div class="proof-grid">
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t7.png" aria-label="Student result: Passed First Eval"><img src="/images/testimonials/t7.png" alt="Student result: Passed First Eval" loading="lazy" /></button>
-            <div class="win-foot"><b>Passed First Eval</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t1.png" aria-label="Student result: First Payout"><img src="/images/testimonials/t1.png" alt="Student result: First Payout" loading="lazy" /></button>
-            <div class="win-foot"><b>First Payout</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t11.png" aria-label="Student result: $6K Payout Secured"><img src="/images/testimonials/t11.png" alt="Student result: $6K Payout Secured" loading="lazy" /></button>
-            <div class="win-foot"><b>$6K Payout Secured</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t9.png" aria-label="Student result: Passed Funded, $500 Next Day"><img src="/images/testimonials/t9.png" alt="Student result: Passed Funded, $500 Next Day" loading="lazy" /></button>
-            <div class="win-foot"><b>Passed Funded, $500 Next Day</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t12.png" aria-label="Student result: $10,000 Payout, Two Accounts"><img src="/images/testimonials/t12.png" alt="Student result: $10,000 Payout, Two Accounts" loading="lazy" /></button>
-            <div class="win-foot"><b>$10,000 Payout, Two Accounts</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-          <div class="win-card">
-            <button type="button" class="zoom js-zoom" data-src="/images/testimonials/t10.png" aria-label="Student result: Hit $10K On PA Accounts"><img src="/images/testimonials/t10.png" alt="Student result: Hit $10K On PA Accounts" loading="lazy" /></button>
-            <div class="win-foot"><b>Hit $10K On PA Accounts</b><span class="mono-muted" style="font-size:10px;">Results not typical</span></div>
-          </div>
-      </div>
-      <div class="mono-muted" style="text-align: center;">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="letter">
-      <h2>Here's Everything You're Getting:</h2>
-      <div class="bundle-list">
-        <div class="bundle-card">
-          <img class="bundle-doc" src="/images/masterclass/doc-risk-guide.svg" alt="The Risk Management Guide" loading="lazy" />
-          <span class="tag main">THE MAIN GUIDE</span>
-          <h3>The Risk Management Guide</h3>
-          <p>Build a risk management framework so <u>one bad trade never wipes out your account</u>.</p>
-          <p>This is the guide we pull out and use together on the live masterclass.</p>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-doc" src="/images/masterclass/doc-daily-routine.svg" alt="The Daily Setup Routine" loading="lazy" />
-          <span class="tag ">BONUS #1</span>
-          <h3>The Daily Setup Routine</h3>
-          <p>Develop a daily routine that finds setups <u>without sitting at a screen all day</u>.</p>
-          <p>So trading fits around your life instead of taking it over.</p>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-doc" src="/images/masterclass/doc-position-sizing.svg" alt="The Position Sizing Scale Plan" loading="lazy" />
-          <span class="tag ">BONUS #2</span>
-          <h3>The Position Sizing Scale Plan</h3>
-          <p>Scale your position sizing as your account grows <u>without increasing your risk</u>.</p>
-          <p>So your size grows with your account, not your emotions.</p>
-        </div>
-        <div class="bundle-card">
-          <img class="bundle-doc" src="/images/masterclass/doc-first-trades.svg" alt="Your First Trades Walkthrough" loading="lazy" />
-          <span class="tag ">BONUS #3</span>
-          <h3>Your First Trades Walkthrough</h3>
-          <p>Learn the system and <u>place your first profitable trades</u>, step by step.</p>
-          <p>Even if you're starting with zero experience.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="story">
-    <div class="letter">
-      <h2>Let Me Level With You For A Second...</h2>
-      <p>This isn't something I normally hand out for $27.</p>
-      <p>These are the risk rules my students learn inside the mentorship.</p>
-      <p>They're the reason the traders you just scrolled past kept their funded accounts long enough to get paid.</p>
-      <p>But you just registered for the masterclass. <strong>You took action.</strong> You proved you're serious about this.</p>
-      <p>And I want to reward that.</p>
-      <p>And because we're using it live on the masterclass, you'll have it ready the moment I ask you to pull it out.</p>
-      <p>You'll get far more out of the masterclass than someone who just watches.</p>
-      <p>This is a one-time offer.</p>
-      <p>So instead of the <span class="was-inline" style="text-decoration: line-through; color: var(--text-mut);">$50</span> this normally costs, you can get everything on this page today for just <span class="green">$27</span>.</p>
-
-      <div class="offer-box">
-        <h2>Get The Risk Management Bundle Today</h2>
-        <div class="deal-badge">One-Time Offer &middot; 46% Off</div>
-        <div class="price-line">Only <span class="now">$27</span> <span class="was">$50</span></div>
-        <div class="mono-muted buy-note">One-Time Offer &middot; 46% Off &middot; Instant Access</div>
-        <div class="checkout-embed" id="checkout"></div>
-        <div><a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <div class="links">
-        <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a> <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
-      </div>
-      <p class="disclaimer">INCOME DISCLAIMER: The figures and student results shown are not typical and not guarantees of earnings. Results vary based on individual effort, experience, background, and market conditions. Trading involves substantial risk of loss. This masterclass is for educational purposes only and does not constitute financial advice.</p>
-      &copy; 2026 Mind Over Market. All rights reserved.
-    </div>
-  </footer>
-
-  <div class="lightbox js-lightbox" role="dialog" aria-modal="true">
-    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
-    <img src="" alt="" />
   </div>
+  <div class="col">
+    <h1>The #1 Reason Traders Blow Their Funded Accounts Has <span class="acc">Nothing To Do</span> With Their Strategy</h1>
+    <p class="lead-bold">It's taking trades with no risk plan behind them. One bad trade, one bad day, and the account is gone.</p>
+    <p class="lead">This is the complete Risk Management Bundle, so you know exactly what to risk on every trade before the masterclass even starts.</p>
+    <p class="price-line">And it's yours for just <span class="acc">$27</span> as of <u class="js-today">today</u></p>
+    <a class="btn" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27!</a>
+    <svg class="arrow" width="26" height="46" viewBox="0 0 26 46" fill="none" aria-hidden="true"><path d="M13 2v40M3 31l10 11 10-11" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</header>
 
-  <script>
-    /* ---------- Whop embedded checkout ($27 order bump) ---------- */
-    var WHOP_PLAN_ID = 'plan_KJGwJZBA5viqR';
-    var AFTER_PURCHASE_URL = 'https://www.mindovermarket.com/masterclass-next-steps';
+<section class="section story">
+  <div class="col">
+    <h2 class="h2">Picture This...</h2>
+    <p>It's a few weeks after the masterclass.</p>
+    <p>You passed the eval. The funded account is live.</p>
+    <p>And for the first time, you actually believe this is going to work.</p>
+    <p>You stack a couple of green days. Your buffer is growing.</p>
+    <p>Then the market opens and moves against you.</p>
+    <div class="callout">Down $400. Then $900. Then $1,600.</div>
+    <p>You're sure it will come back, so you hold.</p>
+    <p>Then you add to the position.</p>
+    <p>Then you hold a little longer...</p>
+    <p>And your platform freezes on one message.</p>
+    <p class="b">One trade. Weeks of work, gone in under an hour.</p>
 
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var embed = document.getElementById('checkout');
-      embed.setAttribute('data-whop-checkout-plan-id', WHOP_PLAN_ID);
-      embed.setAttribute('data-whop-checkout-theme', 'dark');
-      embed.setAttribute('data-whop-checkout-theme-accent-color', 'green');
-      embed.setAttribute('data-whop-checkout-return-url', AFTER_PURCHASE_URL);
-      if (params.get('email')) embed.setAttribute('data-whop-checkout-prefill-email', params.get('email'));
-      if (params.get('fname')) embed.setAttribute('data-whop-checkout-prefill-name', params.get('fname'));
-      var loader = document.createElement('script');
-      loader.src = 'https://js.whop.com/static/checkout/loader.js';
-      loader.async = true;
-      loader.defer = true;
-      document.body.appendChild(loader);
-    })();
+    <h2 class="h2" style="margin-top:44px;">And That's Where Most Traders Lose.</h2>
+    <div class="empty-store">
+      <svg viewBox="0 0 550 330" role="img" aria-label="Illustration: a trading platform showing an account disabled notice">
+        <defs><linearGradient id="es" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14532d"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs>
+        <rect width="550" height="330" fill="url(#es)"/>
+        <rect x="70" y="46" width="410" height="238" rx="14" fill="#fff"/>
+        <rect x="70" y="46" width="410" height="30" rx="14" fill="#f3f4f6"/><rect x="70" y="62" width="410" height="14" fill="#f3f4f6"/>
+        <circle cx="90" cy="61" r="4.5" fill="#ef4444"/><circle cx="106" cy="61" r="4.5" fill="#f59e0b"/><circle cx="122" cy="61" r="4.5" fill="#22c55e"/>
+        <rect x="150" y="54" width="190" height="14" rx="7" fill="#e5e7eb"/>
+        <rect x="110" y="104" width="330" height="120" rx="10" fill="none" stroke="#f0555a" stroke-width="2.5" stroke-dasharray="9 8"/>
+        <text x="275" y="134" font-family="Geist, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#6b7280" text-anchor="middle">ACCOUNT NOTICE</text>
+        <text x="275" y="168" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#0b1b26" text-anchor="middle">Account Disabled</text>
+        <text x="275" y="196" font-family="Geist, sans-serif" font-size="15" font-weight="600" fill="#f0555a" text-anchor="middle">Rule breach: max loss limit</text>
+        <rect x="110" y="242" width="150" height="12" rx="6" fill="#e5e7eb"/><rect x="110" y="260" width="96" height="10" rx="5" fill="#eef0f2"/>
+      </svg>
+    </div>
+    <p>They learn the strategy. They get excited. They finally know what to trade.</p>
+    <p>And then one bad trade takes the whole account with it.</p>
+    <p>The strategy did its job. The risk plan was never there.</p>
 
-    document.querySelectorAll('.js-today').forEach(function (el) {
-      el.textContent = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date());
-    });
+    <h2 class="h2" style="margin-top:44px;">Here's What <span class="acc">Nobody Tells You.</span></h2>
+    <div class="card top" style="margin-top:26px;">
+      <p>The strategy is only half the game. And it's not the half that keeps your account alive.</p>
+      <p>How much to risk. Where to stop. When to walk away for the day.</p>
+      <p class="b">None of that comes from your entry. It comes from the risk you manage on every single trade.</p>
+      <p>The masterclass shows you the strategy. But the strategy only works for as long as the account is still yours.</p>
+    </div>
+  </div>
+</section>
 
-    /* ---------- Lightbox ---------- */
-    var lightbox = document.querySelector('.js-lightbox');
-    var lightboxImg = lightbox.querySelector('img');
-    lightbox.addEventListener('click', function (e) {
-      if (e.target !== lightboxImg) lightbox.classList.remove('open');
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') lightbox.classList.remove('open');
-    });
-    document.addEventListener('click', function (e) {
-      var z = e.target.closest('.js-zoom');
-      if (!z) return;
-      lightboxImg.src = z.getAttribute('data-src');
-      lightboxImg.alt = z.getAttribute('aria-label') || '';
-      lightbox.classList.add('open');
-    });
+<section class="section tinted">
+  <div class="col">
+    <div class="panel">
+      <h2 class="h2">That's The Moment Most Traders Quit.</h2>
+      <div class="not-box">
+        <div class="x"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <p>...NOT because their strategy is bad.</p>
+      </div>
+      <div class="not-box">
+        <div class="x"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <p>...NOT because they can't read a chart.</p>
+      </div>
+      <p class="b">But because nobody ever gave them a risk plan.</p>
+      <p>The masterclass teaches you the strategy. That's what it's built for and it works.</p>
+      <p>But the strategy only matters while your account is still open.</p>
+      <p>And right now, most traders never keep it that long...</p>
+    </div>
+  </div>
+</section>
 
-    /* ---------- Lead tracking (once per session) ---------- */
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var keys = ['fname', 'email', 'phone'];
-      if (keys.some(function (k) { return params.has(k); })) {
-        keys.forEach(function (k) { params.delete(k); });
-        var qs = params.toString();
-        window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
-      }
-      var tracked = false;
-      try { tracked = window.sessionStorage.getItem('mom_masterclass_lead') === '1'; } catch (e) {}
-      if (tracked) return;
-      if (window.fbq) fbq('track', 'Lead');
-      try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
-    })();
-  </script>
+<section class="section" style="padding-top:56px;">
+  <div class="col">
+    <div class="intro-head">Introducing...</div>
+    <div class="card top intro-card center">
+      <div class="mock js-mock"></div>
+      <h2>The Risk Management Bundle</h2>
+      <p>The complete plug-and-play bundle that gets your risk plan set up, before the masterclass even starts.</p>
+      <p>This isn't more theory to sit through.</p>
+      <p>You're getting the calculator, the checklist and the mini course, so you just follow along and plug in your numbers.</p>
+    </div>
+
+    <h2 class="h2 gives-head">It Gives You:</h2>
+    <div class="give" style="margin-top:0;">
+      <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Your risk worked out for you, not explained to you</h3>
+      <p>(a risk management calculator, so you plug in your numbers and never guess your size again)</p>
+    </div>
+    <div class="give">
+      <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>The foundations in one short mini course</h3>
+      <p>(so you walk into the masterclass already knowing the basics I build on)</p>
+    </div>
+    <div class="give">
+      <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>A real example to follow</h3>
+      <p>(the full interview with a student who is consistently profitable)</p>
+    </div>
+
+    <div class="story center">
+      <p>You don't have to figure it out on your own. You don't have to guess your size. You don't have to learn it by blowing another account.</p>
+    </div>
+    <h2 class="h2 sm" style="margin-top:22px;">You just watch the mini course, run your numbers, and your risk plan is set.</h2>
+  </div>
+</section>
+
+<section class="section tinted">
+  <div class="col">
+    <h2 class="h2 sm">This Is What Happens When Traders Run A Risk Plan.</h2>
+    <div class="proof-grid js-proof"></div>
+    <div class="muted-caps" style="text-align:center;margin-top:14px;">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
+    <h2 class="h2 sm" style="margin-top:34px;">They Didn't Find A Magic Indicator. They Just Stopped Giving It Back.</h2>
+    <div style="max-width:444px;margin:0 auto;">
+      <a class="btn big" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27!</a>
+      <a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:60px;">
+  <div class="col">
+    <h2 class="h2">Here's Everything You're Getting:</h2>
+    <div class="item">
+      <div class="tab js-tab" data-title="Risk Management|Calculator" data-icon="calc"></div>
+      <h3>The Risk Management Calculator</h3>
+      <p>Plug in your numbers and know exactly how much you're risking before you take the trade. No guessing your size, and no doing math while the market is moving.</p>
+    </div>
+    <div class="item">
+      <div class="tab js-tab" data-title="Pre-Market|Routine Checklist" data-icon="list"></div>
+      <h3>Bonus: The Pre-Market Routine Checklist</h3>
+      <p>The checklist to run before the market opens. So you sit down with a plan instead of reacting to the first candle.</p>
+    </div>
+    <div class="item">
+      <div class="tab js-tab" data-title="Trading Foundation|Mini Course" data-icon="play"></div>
+      <h3>The Trading Foundation Mini Course</h3>
+      <p>The foundations of trading in a short course you can watch before the masterclass. So nothing I teach live goes over your head, and you show up ready.</p>
+    </div>
+    <div class="item">
+      <div class="tab js-tab" data-title="The Winner|Debrief" data-icon="film"></div>
+      <h3>The Winner Debrief</h3>
+      <p>A full interview with a student who is consistently profitable. Not a highlight reel but the full conversation: where they started, what they changed, and what happened after.</p>
+    </div>
+
+    <h2 class="h2 sm" style="margin-top:44px;">Let Me Be Straight With You For A Second.</h2>
+    <div class="story">
+      <p>I don't normally give this away for <b style="color:#000;">$27.</b></p>
+      <p>These are the same risk rules I teach my students.</p>
+      <p>But you just registered for the masterclass. You took action. And I want to make sure you walk in with your risk plan already set, not starting from zero.</p>
+      <p>So you can have the calculator, the checklist, the mini course, and the Winner Debrief for just <b style="color:#000;">$27.</b></p>
+      <p>Twenty-seven dollars.</p>
+      <p>Less than one eval reset.</p>
+      <p>Except this changes how you take your very next trade.</p>
+    </div>
+
+    <h2 class="h2 sm" style="margin-top:44px;">But Here's The Catch.</h2>
+    <div class="story">
+      <p>This is a <u>one-time offer on this page.</u></p>
+      <p>This price is for people who just registered and want to walk in prepared.</p>
+      <p>The masterclass will teach you the strategy. But the strategy works better when your risk plan is already set.</p>
+      <p><u>The question is...</u></p>
+      <p>Do you want to walk into the masterclass with the mini course watched, your numbers run, <b style="color:#000;">and your risk plan already set?</b></p>
+      <p>Or do you want to figure it out on your own afterwards, one blown account at a time?</p>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted" id="checkout" style="scroll-margin-top:0;">
+  <div class="wide">
+    <h2 class="co-title">Get The Risk Management Bundle For A One Time Investment Of <span class="acc">Only $27 Today</span></h2>
+    <div class="co-grid">
+      <div class="co-card">
+        <div class="mock js-mock" data-price="1"></div>
+        <h4>Your Current Seat:</h4>
+        <ul class="co-list">
+          <li>Live access to the masterclass</li>
+          <li>Live Q&amp;A at the end</li>
+        </ul>
+        <h4 class="acc">Your $27 Bundle:</h4>
+        <ul class="co-list bold">
+          <li><b>The Risk Management Calculator</b></li>
+          <li><b>Bonus: The Pre-Market Routine Checklist</b></li>
+          <li><b>Live access to the masterclass</b></li>
+          <li><b>Live Q&amp;A at the end</b></li>
+          <li><b>The Trading Foundation Mini Course</b></li>
+          <li><b>The Winner Debrief</b> (full interview with a student who is consistently profitable)</li>
+          <li><b>The "Walk-In Ready" Guarantee</b></li>
+        </ul>
+      </div>
+      <div class="co-card">
+        <div class="co-label">Select Product</div>
+        <div class="co-product"><span class="radio"></span><span class="name">The Risk Management Bundle</span><span>$27</span></div>
+        <div class="co-label">Billing &amp; Payment Information</div>
+        <div class="checkout-embed" id="whop-checkout"></div>
+        <div class="co-note">We Never Share Your Information With Anyone</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px;">
+  <div class="col">
+    <div class="card guarantee">
+      <div class="seal">
+        <svg viewBox="0 0 120 120" role="img" aria-label="14 day money back guarantee">
+          <circle cx="60" cy="60" r="56" fill="#1a1405"/>
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#f5c451" stroke-width="2"/>
+          <circle cx="60" cy="60" r="33" fill="#f5c451"/>
+          <path id="sealTop" d="M18 60a42 42 0 0 1 84 0" fill="none"/>
+          <text font-family="Manrope, sans-serif" font-size="10.5" font-weight="800" fill="#f5c451" letter-spacing="1.5"><textPath href="#sealTop" startOffset="50%" text-anchor="middle">WALK-IN READY</textPath></text>
+          <text x="60" y="108" font-family="Manrope, sans-serif" font-size="9" fill="#f5c451" text-anchor="middle" letter-spacing="3">&#9733;&#9733;&#9733;</text>
+          <text x="60" y="62" font-family="Manrope, sans-serif" font-size="24" font-weight="800" fill="#1a1405" text-anchor="middle">14</text>
+          <text x="60" y="76" font-family="Manrope, sans-serif" font-size="9" font-weight="800" fill="#1a1405" text-anchor="middle" letter-spacing="1">DAYS</text>
+        </svg>
+      </div>
+      <h2 class="h2 sm">You're Backed By Our "Walk-In Ready" Guarantee</h2>
+      <div class="story">
+        <p>Watch the mini course. Run your numbers through the calculator. Show up to the masterclass ready.</p>
+        <p>That's all I'm asking.</p>
+        <p>If you do that and you don't like the masterclass, <b style="color:#000;">email us within 14 days and we'll refund you.</b></p>
+        <p>You walk in ready, or you get your money back.</p>
+      </div>
+      <div class="mock js-mock" data-price="1"></div>
+      <a class="btn big" href="#checkout">Yes! I Want The Risk Management Bundle For Just $27!</a>
+      <a class="no-thanks" href="/masterclass-next-steps">No thanks, I'll figure out risk management on my own</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+    <a href="/terms" target="_blank" rel="noopener">Terms of Service</a>
+  </div>
+  <p class="footer-disclaimer">
+    INCOME DISCLAIMER: The figures and student results shown are not typical and not guarantees of earnings. Results vary based on individual effort, experience, background, and market conditions. Trading involves substantial risk of loss. This masterclass is for educational purposes only and does not constitute financial advice.
+  </p>
+  <p class="footer-disclaimer" style="margin-top:10px;">
+    This website is not endorsed by, affiliated with, or associated with Meta Platforms, Inc. (formerly Facebook, Inc.). Facebook is a trademark of Meta Platforms, Inc.
+  </p>
+  <p style="margin-top:14px;">Copyright &copy; 2026 Mind Over Market. All rights reserved.</p>
+</footer>
+
+<div class="lightbox js-lightbox" role="dialog" aria-modal="true">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" />
+</div>
+
+<script>
+  /* ---------- Whop embedded checkout ($27 order bump) ---------- */
+  var WHOP_PLAN_ID = 'plan_KJGwJZBA5viqR';
+  var AFTER_PURCHASE_URL = 'https://www.mindovermarket.com/masterclass-next-steps';
+
+  var PROOF = [
+    { img: '/images/testimonials/t7.png', title: 'Passed First Eval' },
+    { img: '/images/testimonials/t1.png', title: 'First Payout' },
+    { img: '/images/testimonials/t11.png', title: '$6K Payout Secured' },
+    { img: '/images/testimonials/t9.png', title: 'Passed Funded, $500 Next Day' },
+    { img: '/images/testimonials/t12.png', title: '$10,000 Payout, Two Accounts' },
+    { img: '/images/testimonials/t10.png', title: 'Hit $10K On PA Accounts' }
+  ];
+
+  var params = new URLSearchParams(window.location.search);
+
+  /* ---------- Checkout ---------- */
+  (function () {
+    var embed = document.getElementById('whop-checkout');
+    embed.setAttribute('data-whop-checkout-plan-id', WHOP_PLAN_ID);
+    embed.setAttribute('data-whop-checkout-theme', 'light');
+    embed.setAttribute('data-whop-checkout-theme-accent-color', 'green');
+    embed.setAttribute('data-whop-checkout-return-url', AFTER_PURCHASE_URL);
+    if (params.get('email')) embed.setAttribute('data-whop-checkout-prefill-email', params.get('email'));
+    if (params.get('fname')) embed.setAttribute('data-whop-checkout-prefill-name', params.get('fname'));
+    var loader = document.createElement('script');
+    loader.src = 'https://js.whop.com/static/checkout/loader.js';
+    loader.async = true;
+    loader.defer = true;
+    document.body.appendChild(loader);
+  })();
+
+  document.querySelectorAll('.js-today').forEach(function (el) {
+    el.textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date());
+  });
+
+  /* ---------- Product mockups ---------- */
+  function mockSvg(withPrice) {
+    return '<svg viewBox="0 0 500 ' + (withPrice ? 350 : 310) + '" role="img" aria-label="The Risk Management Bundle: calculator, pre-market checklist, mini course and the Winner Debrief">' +
+      '<defs><linearGradient id="mk' + (withPrice ? 'p' : 'n') + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#bbf7d0"/></linearGradient></defs>' +
+      // laptop
+      '<rect x="140" y="10" width="310" height="212" rx="12" fill="#111"/>' +
+      '<rect x="152" y="22" width="286" height="188" rx="4" fill="#f8fafc"/>' +
+      '<rect x="204" y="36" width="92" height="9" rx="4.5" fill="#16a34a"/>' +
+      '<rect x="204" y="58" width="100" height="24" rx="5" fill="#fff" stroke="#d1d5db"/><rect x="212" y="67" width="44" height="6" rx="3" fill="#e5e7eb"/>' +
+      '<rect x="204" y="90" width="100" height="24" rx="5" fill="#fff" stroke="#d1d5db"/><rect x="212" y="99" width="58" height="6" rx="3" fill="#e5e7eb"/>' +
+      '<rect x="204" y="122" width="100" height="24" rx="5" fill="#fff" stroke="#d1d5db"/><rect x="212" y="131" width="36" height="6" rx="3" fill="#e5e7eb"/>' +
+      '<rect x="318" y="58" width="108" height="88" rx="6" fill="#bbf7d0"/>' +
+      '<text x="372" y="84" font-family="Manrope, sans-serif" font-size="8" font-weight="800" letter-spacing="1.5" fill="#15803d" text-anchor="middle">MAX RISK</text>' +
+      '<text x="372" y="116" font-family="Manrope, sans-serif" font-size="26" font-weight="800" fill="#0b1b26" text-anchor="middle">1%</text>' +
+      '<rect x="340" y="128" width="64" height="6" rx="3" fill="#16a34a"/>' +
+      '<rect x="120" y="222" width="350" height="12" rx="6" fill="#9ca3af"/>' +
+      // book
+      '<rect x="20" y="36" width="170" height="250" rx="4" fill="url(#mk' + (withPrice ? 'p' : 'n') + ')" stroke="#d1d5db"/>' +
+      '<rect x="20" y="36" width="9" height="250" fill="#9ca3af"/>' +
+      '<text x="44" y="84" font-family="Manrope, sans-serif" font-size="19" font-weight="700" fill="#0b1b26">The</text>' +
+      '<text x="44" y="108" font-family="Manrope, sans-serif" font-size="19" font-weight="800" fill="#16a34a">Risk</text>' +
+      '<text x="44" y="132" font-family="Manrope, sans-serif" font-size="19" font-weight="800" fill="#0b1b26">Management</text>' +
+      '<text x="44" y="156" font-family="Manrope, sans-serif" font-size="19" font-weight="800" fill="#0b1b26">Bundle</text>' +
+      '<rect x="44" y="170" width="22" height="3" fill="#16a34a"/>' +
+      '<text x="44" y="194" font-family="Manrope, sans-serif" font-size="7" font-weight="700" letter-spacing="3" fill="#6b7280">MINI COURSE</text>' +
+      // video card
+      '<rect x="300" y="170" width="184" height="116" rx="6" fill="#f0fdf4" stroke="#d1d5db"/>' +
+      '<text x="316" y="200" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#0b1b26">The</text>' +
+      '<text x="316" y="217" font-family="Manrope, sans-serif" font-size="13" font-weight="800" fill="#16a34a">Winner</text>' +
+      '<text x="316" y="234" font-family="Manrope, sans-serif" font-size="13" font-weight="800" fill="#0b1b26">Debrief</text>' +
+      '<circle cx="436" cy="214" r="19" fill="#16a34a"/><path d="M430 204v20l16-10z" fill="#fff"/>' +
+      '<rect x="316" y="262" width="150" height="3" rx="1.5" fill="#d1d5db"/><rect x="316" y="262" width="46" height="3" rx="1.5" fill="#16a34a"/>' +
+      (withPrice ?
+        '<g transform="rotate(-4 250 300)"><rect x="165" y="262" width="170" height="78" rx="4" fill="#16a34a"/>' +
+        '<text x="250" y="290" font-family="Manrope, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">Today Only Price:</text>' +
+        '<text x="250" y="324" font-family="Manrope, sans-serif" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">Only $27</text></g>' : '') +
+      '</svg>';
+  }
+  document.querySelectorAll('.js-mock').forEach(function (el) { el.innerHTML = mockSvg(!!el.getAttribute('data-price')); });
+
+  var TAB_ICONS = {
+    calc: '<rect x="34" y="82" width="52" height="46" rx="6" fill="#16a34a"/><rect x="40" y="88" width="40" height="10" rx="2" fill="#bbf7d0"/><g fill="#fff"><rect x="40" y="104" width="9" height="7" rx="1.5"/><rect x="55.5" y="104" width="9" height="7" rx="1.5"/><rect x="71" y="104" width="9" height="7" rx="1.5"/><rect x="40" y="115" width="9" height="7" rx="1.5"/><rect x="55.5" y="115" width="9" height="7" rx="1.5"/><rect x="71" y="115" width="9" height="7" rx="1.5"/></g>',
+    list: '<g fill="#16a34a"><rect x="34" y="82" width="12" height="12" rx="3"/><rect x="34" y="99" width="12" height="12" rx="3"/><rect x="34" y="116" width="12" height="12" rx="3"/></g><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M37 88l2.5 2.5L43 86"/><path d="M37 105l2.5 2.5L43 103"/><path d="M37 122l2.5 2.5L43 120"/></g><rect x="52" y="85" width="34" height="6" rx="3" fill="#86efac"/><rect x="52" y="102" width="28" height="6" rx="3" fill="#bbf7d0"/><rect x="52" y="119" width="34" height="6" rx="3" fill="#86efac"/>',
+    play: '<rect x="34" y="82" width="52" height="46" rx="9" fill="#16a34a"/><path d="M53 94v22l19-11z" fill="#fff"/>',
+    film: '<rect x="34" y="82" width="52" height="46" rx="6" fill="#16a34a"/><g fill="#fff"><rect x="39" y="87" width="5" height="5" rx="1"/><rect x="49" y="87" width="5" height="5" rx="1"/><rect x="59" y="87" width="5" height="5" rx="1"/><rect x="69" y="87" width="5" height="5" rx="1"/><rect x="79" y="87" width="3" height="5" rx="1"/><rect x="39" y="118" width="5" height="5" rx="1"/><rect x="49" y="118" width="5" height="5" rx="1"/><rect x="59" y="118" width="5" height="5" rx="1"/><rect x="69" y="118" width="5" height="5" rx="1"/><rect x="79" y="118" width="3" height="5" rx="1"/></g><path d="M55 97v16l14-8z" fill="#fff"/>'
+  };
+  document.querySelectorAll('.js-tab').forEach(function (el) {
+    var t = el.getAttribute('data-title').split('|');
+    el.innerHTML = '<svg viewBox="0 0 120 160" aria-hidden="true">' +
+      '<rect x="4" y="4" width="112" height="152" rx="8" fill="#111"/><rect x="10" y="10" width="100" height="140" rx="3" fill="#fff"/>' +
+      '<text x="60" y="34" font-family="Manrope, sans-serif" font-size="8.5" font-weight="800" fill="#16a34a" text-anchor="middle">' + t[0] + '</text>' +
+      '<text x="60" y="46" font-family="Manrope, sans-serif" font-size="8.5" font-weight="800" fill="#16a34a" text-anchor="middle">' + t[1] + '</text>' +
+      '<rect x="32" y="56" width="56" height="9" rx="4.5" fill="#16a34a"/>' +
+      TAB_ICONS[el.getAttribute('data-icon')] +
+      '<rect x="10" y="146" width="100" height="4" fill="#16a34a"/></svg>';
+  });
+
+  /* ---------- Proof + lightbox ---------- */
+  document.querySelector('.js-proof').innerHTML = PROOF.map(function (p) {
+    return '<div class="win-card">' +
+      '<button type="button" class="zoom js-zoom" data-src="' + p.img + '" aria-label="Student result: ' + p.title + '"><img src="' + p.img + '" alt="Student result: ' + p.title + '" loading="lazy" /></button>' +
+      '<div class="win-foot"><b>' + p.title + '</b><span class="muted-caps" style="font-size:0.6rem;">Results not typical</span></div>' +
+      '</div>';
+  }).join('');
+
+  var lightbox = document.querySelector('.js-lightbox');
+  var lightboxImg = lightbox.querySelector('img');
+  lightbox.addEventListener('click', function (e) {
+    if (e.target !== lightboxImg) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest('.js-zoom');
+    if (!z) return;
+    lightboxImg.src = z.getAttribute('data-src');
+    lightboxImg.alt = z.getAttribute('aria-label') || '';
+    lightbox.classList.add('open');
+  });
+
+  /* ---------- Lead tracking (once per session) ---------- */
+  (function () {
+    var keys = ['fname', 'email', 'phone'];
+    if (keys.some(function (k) { return params.has(k); })) {
+      var clean = new URLSearchParams(window.location.search);
+      keys.forEach(function (k) { clean.delete(k); });
+      var qs = clean.toString();
+      window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+    }
+    var tracked = false;
+    try { tracked = window.sessionStorage.getItem('mom_masterclass_lead') === '1'; } catch (e) {}
+    if (tracked) return;
+    if (window.fbq) fbq('track', 'Lead');
+    try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
+  })();
+</script>
 
 </body>
 </html>
