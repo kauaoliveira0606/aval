@@ -517,6 +517,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <img src="" alt="" />
 </div>
 
+<script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements></script>
 <script>
   /* ---------- Whop embedded checkout ($27 order bump) ---------- */
   var WHOP_PLAN_ID = 'plan_KJGwJZBA5viqR';
@@ -533,20 +534,39 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
   var params = new URLSearchParams(window.location.search);
 
-  /* ---------- Checkout ---------- */
+  /* ---------- Checkout (Whop Elements) ---------- */
   (function () {
-    var embed = document.getElementById('whop-checkout');
-    embed.setAttribute('data-whop-checkout-plan-id', WHOP_PLAN_ID);
-    embed.setAttribute('data-whop-checkout-theme', 'light');
-    embed.setAttribute('data-whop-checkout-theme-accent-color', 'green');
-    embed.setAttribute('data-whop-checkout-return-url', AFTER_PURCHASE_URL);
-    if (params.get('email')) embed.setAttribute('data-whop-checkout-prefill-email', params.get('email'));
-    if (params.get('fname')) embed.setAttribute('data-whop-checkout-prefill-name', params.get('fname'));
-    var loader = document.createElement('script');
-    loader.src = 'https://js.whop.com/static/checkout/loader.js';
-    loader.async = true;
-    loader.defer = true;
-    document.body.appendChild(loader);
+    var slot = document.getElementById('whop-checkout');
+    function fallback() {
+      slot.innerHTML = '<div class="checkout-pending">The checkout did not load. <a href="https://whop.com/checkout/' + WHOP_PLAN_ID + '" style="color:#16a34a;font-weight:700;text-decoration:underline;">Open the secure checkout here.</a></div>';
+    }
+    if (typeof window.WhopElements !== 'function') { fallback(); return; }
+
+    var attribution = { source: 'masterclass-confirmation' };
+    [['utm_source', 'utmSource'], ['utm_medium', 'utmMedium'], ['utm_campaign', 'utmCampaign'], ['utm_term', 'utmTerm'], ['utm_content', 'utmContent']].forEach(function (pair) {
+      if (params.get(pair[0])) attribution[pair[1]] = params.get(pair[0]);
+    });
+
+    var defaults = {};
+    if (params.get('fname')) defaults.billingDetails = { name: params.get('fname') };
+    if (/^\+\d{8,15}$/.test(params.get('phone') || '')) defaults.phone = params.get('phone');
+
+    try {
+      var checkout = window.WhopElements().checkout.create({
+        plan: WHOP_PLAN_ID,
+        returnUrl: AFTER_PURCHASE_URL,
+        attribution: attribution,
+        appearance: { theme: { appearance: 'light', accentColor: 'green' } }
+      });
+      checkout.create('checkout', {
+        buyerEmail: params.get('email') || '',
+        defaultValues: defaults,
+        onError: function (e) { console.log('Whop checkout error: ' + (e && e.message)); }
+      }).mount('#whop-checkout');
+    } catch (err) {
+      console.log('Whop checkout failed to start: ' + err.message);
+      fallback();
+    }
   })();
 
   document.querySelectorAll('.js-today').forEach(function (el) {
