@@ -35,40 +35,29 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <meta name="twitter:image" content="https://www.mindovermarket.com/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     :root {
-      --bg: #0a0d0b;
-      --card: #181f16;
-      --border: #2a3826;
-      --text: #ffffff;
-      --text2: #ffffff;
-      --body: #ffffff;
-      --green: #2ee66b;
-      --green-dark: #2ee66b;
-      --green-dim: #1c9a4a;
-      --head: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --card: #ffffff;
+      --border: rgba(0,0,0,0.09);
+      --text: #0b1b26;
+      --text2: #6b7280;
+      --body: #5b5d6b;
+      --green: #16a34a;
+      --green-dark: #16a34a;
+      --head: 'Manrope', sans-serif;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #142b1d;
+      font-family: 'Geist', 'Inter', sans-serif;
+      background: #fcfcfc;
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      background: url('/images/bg-lines.svg') center / cover no-repeat;
-    }
-    body > header, body > section, body > footer { position: relative; z-index: 1; }
 
     a { color: inherit; text-decoration: none; }
     .wide { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
@@ -90,34 +79,38 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .urgency .cd { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
     /* ── HERO ── */
-    .hero { padding: 26px 0 0; text-align: center; }
+    .hero { padding: 26px 0 40px; text-align: center; background:
+        repeating-linear-gradient(115deg, transparent 0 138px, rgba(22,163,74,0.06) 138px 140px),
+        radial-gradient(620px 360px at 26% 22%, rgba(34,197,94,0.16), transparent 70%),
+        radial-gradient(520px 460px at 100% 55%, rgba(34,197,94,0.13), transparent 70%),
+        linear-gradient(180deg, #f1fdf5 0%, #fcfcfc 100%); }
     .hero .top { font-family: var(--head); font-size: 1.15rem; font-weight: 800; color: var(--green-dark); }
-    .hero h1 { font-family: var(--head); font-size: clamp(1.5rem, 3.6vw, 2.4rem); font-weight: 900; line-height: 1.18; letter-spacing: -0.5px; margin-top: 8px; }
+    .hero h1 { font-family: var(--head); font-size: clamp(1.7rem, 4.2vw, 3rem); font-weight: 500; line-height: 1.18; letter-spacing: -0.5px; margin-top: 8px; }
     .hero h1 span { color: var(--green-dark); }
     .hero .sub { font-size: clamp(1rem, 2vw, 1.15rem); color: var(--body); max-width: 760px; margin: 12px auto 0; }
-    .hero .sub b { color: var(--green); }
+    .hero .sub b { color: #000; }
 
-    .video { margin: 20px auto 0; max-width: 900px; background: #0a0a0a; border: 1px solid var(--border); overflow: hidden; border-radius: 6px; }
+    .video { margin: 20px auto 0; max-width: 900px; background: #0a0a0a; overflow: hidden; border-radius: 6px; }
     .video-inner { aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
     .video-play { width: 108px; height: 68px; background: var(--green-dark); display: flex; align-items: center; justify-content: center; }
-    .video-play svg { width: 34px; height: 34px; fill: #06120a; }
+    .video-play svg { width: 34px; height: 34px; fill: #fff; }
     .video-label { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.7); }
 
     .btn {
       display: inline-block;
       width: 100%;
       max-width: 520px;
-      background: var(--green);
-      color: #06120a;
+      background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
+      color: #fff;
       font-size: clamp(1.05rem, 2.8vw, 1.25rem);
-      font-weight: 800;
+      font-weight: 600;
       line-height: 1.2;
       text-transform: uppercase;
       text-align: center;
       padding: 19px 20px;
       border-radius: 6px;
       margin-top: 22px;
-      box-shadow: 0 10px 30px -8px rgba(46, 230, 107, 0.18);
+      box-shadow: 0 8px 20px -8px rgba(22,163,74,0.6);
       transition: transform .15s, opacity .15s;
     }
     .btn:hover { transform: translateY(-1px); opacity: 0.94; }
@@ -125,13 +118,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .cta { text-align: center; }
 
     /* ── WALL ── */
-    .section { padding: 56px 0 0; }
+    .section { padding: 64px 0 0; }
     .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green-dark); text-align: center; }
-    .h2 { font-family: var(--head); font-size: clamp(1.6rem, 4.6vw, 2.3rem); font-weight: 800; line-height: 1.18; letter-spacing: -0.5px; text-align: center; margin-top: 8px; }
+    .h2 { font-family: var(--head); font-size: clamp(1.9rem, 4.8vw, 3.4rem); font-weight: 500; line-height: 1.18; letter-spacing: -0.5px; text-align: center; margin-top: 8px; }
     .h2 span { color: var(--green-dark); }
     .muted { text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text2); margin-top: 10px; }
     .win-cols { columns: 3; column-gap: 16px; margin-top: 28px; }
-    .win-card { break-inside: avoid; margin-bottom: 16px; background: var(--card); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; }
+    .win-card { break-inside: avoid; margin-bottom: 16px; background: var(--card); border: 1px solid #e7ece8; border-radius: 20px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); overflow: hidden; }
     .win-card .win-head { padding: 14px 18px; }
     .win-card .win-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green-dark); margin-bottom: 4px; }
     .win-card .win-title { font-size: 0.92rem; font-weight: 700; }
@@ -141,15 +134,15 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
     /* ── VIDEO TESTIMONIALS ── */
     .vgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 28px; }
-    .vcard { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .vcard { background: var(--card); border: 1px solid #e7ece8; border-radius: 20px; box-shadow: 0 10px 34px -14px rgba(15,23,42,0.16); overflow: hidden; }
     .vcard-head { padding: 16px 18px 12px; }
     .vcard-name { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green); margin-bottom: 6px; }
-    .vcard-title { font-size: 0.95rem; font-weight: 700; line-height: 1.4; }
+    .vcard-title { font-family: var(--head); font-size: 1rem; font-weight: 700; line-height: 1.4; }
     .vcard-video { margin: 0 18px 18px; border-radius: 10px; overflow: hidden; background: #000; }
     .vcard-frame { position: relative; padding-bottom: 56.25%; height: 0; }
     .vcard-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     vturb-smartplayer { display: block; overflow: hidden !important; max-height: 420px !important; }
-    .yt { background: var(--card); border-radius: 8px; border: 1px solid var(--border); overflow: hidden; max-width: 900px; margin: 28px auto 0; }
+    .yt { background: var(--card); border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); overflow: hidden; max-width: 900px; margin: 28px auto 0; }
     .yt .yt-head { padding: 14px 18px; }
     .yt .yt-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
     .yt iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -161,10 +154,10 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .lightbox-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #fff; color: #111; font-size: 22px; cursor: pointer; }
 
     /* ── FOOTER ── */
-    footer { background: #0a0d0b; border-top: 1px solid var(--border); color: #fff; text-align: center; padding: 36px 24px; font-size: 0.95rem; margin-top: 72px; }
-    footer a { color: #fff; margin: 0 8px; font-size: 0.85rem; }
+    footer { background: #000; color: #a3a3a3; text-align: center; padding: 36px 24px; font-size: 0.95rem; margin-top: 72px; }
+    footer a { color: #a3a3a3; margin: 0 8px; font-size: 0.85rem; }
     footer a:hover { color: #fff; }
-    .footer-disclaimer { max-width: 700px; margin: 14px auto 0; font-size: 0.72rem; line-height: 1.6; color: #fff; }
+    .footer-disclaimer { max-width: 700px; margin: 14px auto 0; font-size: 0.72rem; line-height: 1.6; color: #8a8a8a; }
 
     @media (max-width: 760px) { .win-cols { columns: 2; } }
     @media (max-width: 600px) {
