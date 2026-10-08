@@ -162,6 +162,16 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .card.row h3 { margin-top: 0; }
     .card.row p { margin-top: 6px; }
 
+    .cover-list { display: flex; flex-direction: column; gap: 28px; max-width: 1110px; margin: 54px auto 0; }
+    .cover-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 10px 34px -14px rgba(15,23,42,0.16); padding: 26px; text-align: left; }
+    .cover-row.flip .cover-media { order: 2; }
+    .cover-media { background: #0d1711; border-radius: 14px; overflow: hidden; }
+    .cover-media img { display: block; width: 100%; height: auto; }
+    .cover-media .caption { background: #0b1b26; color: #fff; padding: 11px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+    .cover-row h3 { font-family: var(--head); font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; margin-top: 18px; }
+    .cover-row p { font-size: 1.12rem; color: var(--body); line-height: 1.55; margin-top: 12px; }
+    .cover-row p + p { margin-top: 8px; }
+
     /* ── HOST ── */
     .host {
       background:
@@ -258,6 +268,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
     @media (max-width: 900px) {
       .cards { grid-template-columns: 1fr; gap: 20px; max-width: 560px; }
+      .cover-list { max-width: 560px; gap: 20px; }
+      .cover-row { grid-template-columns: 1fr; gap: 18px; padding: 16px 16px 24px; }
+      .cover-row.flip .cover-media { order: 0; }
       .card.row { max-width: 560px; margin-top: 20px; }
       .host-grid { grid-template-columns: 1fr; max-width: 560px; }
       .win-cols { columns: 2; }
@@ -311,31 +324,54 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <div class="wrap">
     <p class="label">What You'll Learn</p>
     <h2 class="h2">On This LIVE Masterclass You'll <span class="acc">Discover…</span></h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-num">01</div>
-        <h3>How To Go From A Gambling Trader To A Disciplined, Robotic Trader</h3>
-        <p>See how to make trading a business instead of a bet.</p>
-        <p>And the three-step risk management framework that makes trading safe.</p>
+    <div class="cover-list">
+      <div class="cover-row">
+        <div class="cover-media">
+          <button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-1.svg" aria-label="Illustration: a funded account balance climbing after the eval, then falling to the max loss limit"><img src="/images/masterclass/cover-1.svg" alt="Illustration: a funded account balance climbing after the eval, then falling to the max loss limit" loading="lazy" /></button>
+          <div class="caption">The Three-Step Risk Management Framework</div>
+        </div>
+        <div>
+          <div class="card-num">01</div>
+          <h3>How To Go From A Gambling Trader To A Disciplined, Robotic Trader</h3>
+          <p>See how to make trading a business instead of a bet.</p>
+          <p>And the three-step risk management framework that makes trading safe.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-num">02</div>
-        <h3>How To Turn A Couple Hundred Dollars A Month Into Thousands Of Dollars A Month</h3>
-        <p>No predicting the market and no trading on a feeling.</p>
-        <p>Just a simple mechanical model with rules you follow the same way every time.</p>
+      <div class="cover-row flip">
+        <div class="cover-media">
+          <button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-2.svg" aria-label="Illustration: a trend continuation entry at a fair value gap on equilibrium"><img src="/images/masterclass/cover-2.svg" alt="Illustration: a trend continuation entry at a fair value gap on equilibrium" loading="lazy" /></button>
+          <div class="caption">A Simple Mechanical Model</div>
+        </div>
+        <div>
+          <div class="card-num">02</div>
+          <h3>How To Turn A Couple Hundred Dollars A Month Into Thousands Of Dollars A Month</h3>
+          <p>No predicting the market and no trading on a feeling.</p>
+          <p>Just a simple mechanical model with rules you follow the same way every time.</p>
+        </div>
       </div>
-      <div class="card">
-        <div class="card-num">03</div>
-        <h3>How To Become Consistently Profitable While Having A Full-Time Job</h3>
-        <p>You don't need to sit at the charts all day.</p>
-        <p>You'll learn how to fit trading around your work instead of the other way around.</p>
+      <div class="cover-row">
+        <div class="cover-media">
+          <button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-3.svg" aria-label="Illustration: random results before the shift, steady results after"><img src="/images/masterclass/cover-3.svg" alt="Illustration: random results before the shift, steady results after" loading="lazy" /></button>
+          <div class="caption">Before And After The Shift</div>
+        </div>
+        <div>
+          <div class="card-num">03</div>
+          <h3>How To Become Consistently Profitable While Having A Full-Time Job</h3>
+          <p>You don't need to sit at the charts all day.</p>
+          <p>You'll learn how to fit trading around your work instead of the other way around.</p>
+        </div>
       </div>
-    </div>
-    <div class="card row">
-      <div class="card-num">04</div>
-      <div>
-        <h3>Live Q&amp;A With Me</h3>
-        <p>Bring your account and your questions and get straight answers.</p>
+      <div class="cover-row flip">
+        <div class="cover-media">
+          <button type="button" class="zoom js-zoom" data-src="/images/masterclass/cover-5.svg" aria-label="Illustration: Benicio live on camera answering student questions"><img src="/images/masterclass/cover-5.svg" alt="Illustration: Benicio live on camera answering student questions" loading="lazy" /></button>
+          <div class="caption">Live Q&amp;A With Benicio</div>
+        </div>
+        <div>
+          <div class="card-num">04</div>
+          <h3>Live Q&amp;A With Me</h3>
+          <p>Bring your account and your questions and get straight answers.</p>
+          <p>No question is too basic.</p>
+        </div>
       </div>
     </div>
     <div class="cta"><a href="#register" class="btn js-open-form">Save My Seat &rarr;</a></div>
@@ -473,7 +509,15 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       { img: '/images/testimonials/t11.webp', title: '$6K Payout Secured' },
       { img: '/images/testimonials/t12.webp', title: '$10,000 Payout, Two Accounts' },
       { img: '/images/testimonials/t13.webp', title: '$35K Month' },
-      { img: '/images/testimonials/t14.webp', title: 'Crossing $100K In Profits' }
+      { img: '/images/testimonials/t14.webp', title: 'Crossing $100K In Profits' },
+      { img: '/images/testimonials/t15.webp', title: 'Landon: 85K Month' },
+      { img: '/images/testimonials/t16.webp', title: 'Isaac: 100K+ In Payouts' },
+      { img: '/images/testimonials/t17.webp', title: 'Nahom: 25K In Payouts, Halfway Through The Month' },
+      { img: '/images/testimonials/t18.webp', title: 'Jonah: Quit His Job' },
+      { img: '/images/testimonials/t19.webp', title: 'Jacob: First Ever Payout, 3 Months In' },
+      { img: '/images/testimonials/t20.webp', title: 'Niels: First Payout' },
+      { img: '/images/testimonials/t21.webp', title: 'Joe: Passed First Eval' },
+      { img: '/images/testimonials/t22.webp', title: 'Ollie: Passed 4 50K Apex Accounts' }
     ];
 
     /* ---------- Schedule + countdown ---------- */
