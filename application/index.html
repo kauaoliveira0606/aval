@@ -103,6 +103,11 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .apply h2 span { color: var(--green-dark); }
     .apply-card { background: #fff; border-radius: 20px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 14px; }
     .apply-form { width: 100%; height: 900px; }
+    /* Typeform's Calendly step only lays out properly when the form is desktop-wide (calendar beside
+       the question) or phone-narrow ("Schedule time" button). In between it collapses to a thin strip,
+       so the form is either wide or phone-width, never in between. */
+    .apply .wide { max-width: 1368px; }
+    @media (max-width: 1239px) { .apply-card { max-width: 500px; margin: 0 auto; } }
 
     /* ── FOOTER ── */
     footer { background: #000; color: #a3a3a3; text-align: center; padding: 36px 24px; font-size: 0.95rem; }
@@ -135,7 +140,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 <section class="apply" id="application">
   <div class="wide">
     <div class="apply-card">
-      <div class="apply-form" data-tf-widget="LMh3lCii" data-tf-opacity="100" data-tf-auto-resize="900,1500" data-tf-transitive-search-params data-tf-iframe-props="title=Strategy Call Application"></div>
+      <div class="apply-form" data-tf-widget="LMh3lCii" data-tf-opacity="100" data-tf-transitive-search-params data-tf-iframe-props="title=Strategy Call Application"></div>
     </div>
   </div>
 </section>
