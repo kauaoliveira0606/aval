@@ -204,56 +204,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .win-card img { width: 100%; display: block; }
     .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 
-    /* ── POPUP FORM ── */
-    .modal { display: none; position: fixed; inset: 0; z-index: 900; background: rgba(11,27,38,0.62); align-items: flex-start; justify-content: center; padding: 24px 16px; overflow-y: auto; }
-    .modal.open { display: flex; }
-    .modal-card { position: relative; width: 100%; max-width: 480px; margin: auto; background: #fff; border-top: 5px solid var(--green-dark); border-radius: 20px; box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5); padding: 30px 28px 26px; text-align: center; }
-    .modal-close { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: #f1f5f2; color: var(--text); font-size: 20px; line-height: 1; cursor: pointer; }
-    .modal-card h2 { font-family: var(--head); font-size: 1.9rem; font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; margin-top: 6px; }
-    .modal-date { font-family: var(--head); font-size: 1.05rem; font-weight: 700; margin-top: 8px; }
-    .fill-note { margin: 8px 0 18px; font-size: 0.92rem; font-weight: 700; color: var(--red); }
-    .fill-note .dot { background: var(--red); margin-right: 8px; vertical-align: middle; }
-
-    form.optin { display: flex; flex-direction: column; gap: 12px; text-align: left; }
-    form.optin input[type="text"], form.optin input[type="email"], form.optin input[type="tel"], form.optin select {
-      width: 100%;
-      background: #f6f8f6;
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-size: 1rem;
-      font-family: 'Geist', 'Inter', sans-serif;
-      color: var(--text);
-      outline: none;
-      min-width: 0;
-      transition: border .15s;
-    }
-    form.optin input:focus, form.optin select:focus { border-color: var(--green-dark); }
-    .phone-row { display: flex; gap: 10px; }
-    .phone-row select { flex: 0 0 108px; width: auto; padding: 14px 10px; cursor: pointer; appearance: none; -webkit-appearance: none; text-align: center; }
-    .phone-row input { flex: 1; }
-    .field-error { display: none; font-size: 0.82rem; font-weight: 600; color: var(--red); margin: -6px 2px 0; }
-    .field-error.show { display: block; }
-    .sms-consent { display: flex; align-items: flex-start; gap: 12px; background: #f6f8f6; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; cursor: pointer; }
-    .sms-consent input {
-      -webkit-appearance: none;
-      appearance: none;
-      flex: none;
-      width: 18px;
-      height: 18px;
-      margin: 2px 0 0;
-      border: 1.5px solid #b6c2b9;
-      border-radius: 4px;
-      background: #fff;
-      cursor: pointer;
-    }
-    .sms-consent input:checked { background: var(--green-dark); border-color: var(--green-dark); box-shadow: inset 0 0 0 3px #fff; }
-    .sms-consent-body { display: block; font-size: 0.74rem; line-height: 1.5; color: var(--body); }
-    .sms-consent-body a { color: var(--green-dark); text-decoration: underline; }
-    form.optin .btn { width: 100%; margin-top: 4px; }
-    .form-note { text-align: center; font-size: 0.72rem; color: var(--text2); margin-top: 14px; }
-    .form-note a { text-decoration: underline; }
-
     /* ── FOOTER ── */
     footer { background: #000; color: #a3a3a3; text-align: center; padding: 36px 24px; font-size: 0.95rem; }
     footer a { color: #a3a3a3; margin: 0 8px; font-size: 0.85rem; }
@@ -292,7 +242,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .stats { gap: 10px; margin: 16px 0 0; }
       .stat b { font-size: 1.25rem; }
       .host-copy p.host-lead { font-size: 1.25rem; }
-      .modal-card { padding: 26px 18px 22px; }
       .btn { padding-left: 24px; padding-right: 24px; }
     }
     @media (max-width: 480px) { .win-cols { columns: 1; } }
@@ -306,7 +255,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <div class="nav">
       <div class="nav-label">Live Masterclass</div>
       <div class="nav-mid">A live masterclass with Benicio Valentin (Aval Trades)</div>
-      <a href="#register" class="btn sm js-open-form">Save My Seat &rarr;</a>
+      <button type="button" class="btn sm wj-embed-button" data-webinarHash="k50k29iz">Save My Seat &rarr;</button>
     </div>
   </div>
 
@@ -315,7 +264,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <h1>Learn <span class="acc">“The One Shift”</span> Trading Strategy I Use To Take Consistent Prop Firm Payouts</h1>
     <p class="hero-sub">No experience needed to get started. Only 1-3 hours a day. Even if you've blown multiple accounts.</p>
     <div class="countdown js-countdown"></div>
-    <a href="#register" class="btn js-open-form">Save My Seat &rarr;</a>
+    <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, I Want To Attend &rarr;</button>
   </div>
 </header>
 
@@ -374,7 +323,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         </div>
       </div>
     </div>
-    <div class="cta"><a href="#register" class="btn js-open-form">Save My Seat &rarr;</a></div>
+    <div class="cta"><button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Reserve My Spot &rarr;</button></div>
   </div>
 </section>
 
@@ -404,7 +353,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <p>I built this while still working a job, and while juggling a personal life.</p>
         <p>So if I did it, you have no excuses not to take action on this now.</p>
         <p>And now I'm helping people like you learn the system that changed my life.</p>
-        <a href="#register" class="btn js-open-form">Save My Seat &rarr;</a>
+        <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Count Me In &rarr;</button>
       </div>
     </div>
   </div>
@@ -417,7 +366,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <h2 class="h2">A Wall Of <span class="acc">Student Wins</span></h2>
     <div class="win-cols js-wins"></div>
     <div class="muted">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
-    <div class="cta"><a href="#register" class="btn js-open-form">Save My Seat &rarr;</a></div>
+    <div class="cta"><button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, I'm In &rarr;</button></div>
   </div>
 </section>
 
@@ -436,58 +385,10 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <p style="margin-top:14px;">Copyright &copy; 2026 Mind Over Market. All rights reserved.</p>
 </footer>
 
-<!-- POPUP FORM -->
-<div class="modal js-modal" id="register" role="dialog" aria-modal="true" aria-label="Save your seat">
-  <div class="modal-card" id="form-card">
-    <button type="button" class="modal-close js-close-form" aria-label="Close">&times;</button>
-    <p class="label">Live Masterclass</p>
-    <h2>Save Your <span class="acc">Seat</span></h2>
-    <div class="modal-date js-event-date">Tuesday &middot; 7:00 PM ET</div>
-    <p class="fill-note"><span class="dot"></span>Register before it fills.</p>
-  </div>
-</div>
-
 <div class="lightbox js-lightbox" role="dialog" aria-modal="true">
   <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
   <img src="" alt="" />
 </div>
-
-<template id="optin-template">
-  <form class="optin" novalidate>
-    <input type="text" data-field="fname" placeholder="First name" autocomplete="given-name" aria-label="First name" required />
-    <div class="field-error" data-error="fname">Enter your first name.</div>
-    <input type="email" data-field="email" placeholder="Email" autocomplete="email" aria-label="Email" required />
-    <div class="field-error" data-error="email">Enter a valid email address.</div>
-    <div class="phone-row">
-      <select data-field="country" aria-label="Country code">
-        <option value="1" data-min="10" data-max="10">🇺🇸 +1</option>
-        <option value="44" data-min="10" data-max="10">🇬🇧 +44</option>
-        <option value="61" data-min="9" data-max="9">🇦🇺 +61</option>
-        <option value="91" data-min="10" data-max="10">🇮🇳 +91</option>
-        <option value="971" data-min="9" data-max="9">🇦🇪 +971</option>
-        <option value="63" data-min="10" data-max="10">🇵🇭 +63</option>
-        <option value="27" data-min="9" data-max="9">🇿🇦 +27</option>
-        <option value="234" data-min="10" data-max="10">🇳🇬 +234</option>
-        <option value="52" data-min="10" data-max="10">🇲🇽 +52</option>
-        <option value="55" data-min="11" data-max="11">🇧🇷 +55</option>
-        <option value="33" data-min="9" data-max="9">🇫🇷 +33</option>
-        <option value="49" data-min="10" data-max="11">🇩🇪 +49</option>
-      </select>
-      <input type="tel" data-field="phone" placeholder="Phone (optional)" autocomplete="tel-national" aria-label="Phone number, optional" />
-    </div>
-    <div class="field-error" data-error="phone">Enter a valid phone number for the selected country.</div>
-    <label class="sms-consent">
-      <input type="checkbox" data-field="smsMarketing" />
-      <span class="sms-consent-body">I agree to receive Marketing SMS messages from Aval Trading. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
-    </label>
-    <label class="sms-consent">
-      <input type="checkbox" data-field="smsTransactional" />
-      <span class="sms-consent-body">I agree to receive Transactional SMS messages from Aval Trading. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/terms" target="_blank">Terms of Service</a>.</span>
-    </label>
-    <button type="submit" class="btn">Save My Seat &rarr;</button>
-  </form>
-  <p class="form-note">By submitting you agree to our <a href="/terms" target="_blank">terms</a> and <a href="/privacy" target="_blank">policies</a>.</p>
-</template>
 
 <script>
     // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
@@ -495,9 +396,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     var MASTERCLASS_HOUR = 19;
     var MASTERCLASS_TIME_LABEL = '7:00 PM ET';
     var MASTERCLASS_SHORT_LABEL = '7 PM ET';
-
-    // Lead destinations. Each receives the same JSON payload.
-    var WEBHOOK_URLS = ['https://hooks.zapier.com/hooks/catch/21143673/4m9mgjc/'];
 
     var TESTIMONIALS = [
       { img: '/images/testimonials/t1.webp', title: 'First Payout' },
@@ -567,12 +465,27 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     function paintSession() {
       document.querySelectorAll('.js-event-date').forEach(function (el) { el.textContent = formatSession(session); });
       document.querySelectorAll('.js-event-short').forEach(function (el) { el.textContent = formatShort(session); });
-      var pill = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric' }).format(session) + ' @7PM ET';
+      var clock = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(session).replace(':00', '').replace(' ', '');
+      var pill = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric' }).format(session) + ' @' + clock + ' ET';
       document.querySelectorAll('.js-event-pill').forEach(function (el) { el.textContent = pill; });
     }
 
     var session = nextSession(new Date());
     paintSession();
+
+    // The real schedule lives in WebinarJam. Ask it for the next session so the date and
+    // countdown here always match the registration form; the weekly rule above is the fallback.
+    fetch('https://event.webinarjam.com/register/k50k29iz/convert-dates', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+      body: 'offset=' + (-(new Date()).getTimezoneOffset()) + '&limit=3&source=bar'
+    }).then(function (r) { return r.json(); }).then(function (data) {
+      var next = (data.registrationDates || []).filter(function (d) { return d.ts * 1000 > Date.now(); })[0];
+      if (!next) return;
+      session = new Date(next.ts * 1000);
+      paintSession();
+      tick();
+    }).catch(function (err) { console.log('WebinarJam schedule unavailable: ' + err.message); });
 
     var countdowns = document.querySelectorAll('.js-countdown');
     function pad(n) { return String(n).padStart(2, '0'); }
@@ -619,85 +532,9 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         '<button type="button" class="zoom js-zoom" data-src="' + t.img + '" aria-label="Student result: ' + t.title + '"><img src="' + t.img + '" alt="Student result: ' + t.title + '" loading="lazy" /></button>' +
         '</div>';
     }).join('');
-
-    /* ---------- Opt-in forms ---------- */
-    var template = document.getElementById('optin-template');
-    var formCard = document.getElementById('form-card');
-    formCard.appendChild(template.content.cloneNode(true));
-    formCard.querySelector('form').addEventListener('submit', function (event) {
-      handleOptinSubmit(event, formCard);
-    });
-
-    /* ---------- Popup ---------- */
-    var modal = document.querySelector('.js-modal');
-    function openForm() {
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      var first = formCard.querySelector('[data-field="fname"]');
-      if (first) first.focus();
-    }
-    function closeForm() {
-      modal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    document.querySelectorAll('.js-open-form').forEach(function (el) {
-      el.addEventListener('click', function (e) { e.preventDefault(); openForm(); });
-    });
-    document.querySelector('.js-close-form').addEventListener('click', closeForm);
-    modal.addEventListener('click', function (e) { if (e.target === modal) closeForm(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeForm(); });
-    if (window.location.hash === '#register') openForm();
-
-    function field(card, name) { return card.querySelector('[data-field="' + name + '"]'); }
-    function showError(card, name, show) { card.querySelector('[data-error="' + name + '"]').classList.toggle('show', show); }
-
-    function handleOptinSubmit(event, card) {
-      event.preventDefault();
-
-      var fname = field(card, 'fname').value.trim();
-      var email = field(card, 'email').value.trim();
-      var country = field(card, 'country');
-      var digits = field(card, 'phone').value.replace(/\D/g, '');
-
-      var fnameOk = fname.length >= 2 && /^[a-zA-Z' -]+$/.test(fname);
-      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      var opt = country.options[country.selectedIndex];
-      var phoneOk = digits.length === 0 || digits.length >= parseInt(opt.getAttribute('data-min'), 10) && digits.length <= parseInt(opt.getAttribute('data-max'), 10);
-
-      showError(card, 'fname', !fnameOk);
-      showError(card, 'email', !emailOk);
-      showError(card, 'phone', !phoneOk);
-      if (!fnameOk || !emailOk || !phoneOk) return;
-
-      var button = card.querySelector('button[type="submit"]');
-      button.disabled = true;
-      button.textContent = 'Saving Your Seat...';
-
-      var phone = digits ? '+' + opt.value + digits : '';
-
-      var payload = JSON.stringify({
-        firstName: fname,
-        email: email,
-        phone: phone,
-        smsConsent: field(card, 'smsMarketing').checked || field(card, 'smsTransactional').checked,
-        smsMarketingConsent: field(card, 'smsMarketing').checked,
-        smsTransactionalConsent: field(card, 'smsTransactional').checked,
-        source: 'masterclass',
-        masterclassDate: session.toISOString(),
-        pageUrl: window.location.href
-      });
-
-      var requests = WEBHOOK_URLS.map(function (url) {
-        return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload })
-          .catch(function (err) { console.log('Webhook failed: ' + url + ' ' + err.message); });
-      });
-
-      var params = new URLSearchParams({ fname: fname, email: email, phone: phone });
-      Promise.allSettled(requests).finally(function () {
-        window.location.href = '/masterclass-confirmation?' + params.toString();
-      });
-    }
   </script>
 
+<!-- WebinarJam registration: opens from every .wj-embed-button on the page -->
+<script src="https://event.webinarjam.com/register/k50k29iz/embed-button?formTemplate=2&formColor=3&buttonText=Yes%2C%20I%20Want%20To%20Attend"></script>
 </body>
 </html>
