@@ -4,7 +4,7 @@
 (function () {
   // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
   // Keep in step with the constants in /masterclass/index.html.
-  var MASTERCLASS_DAY = 6;
+  var MASTERCLASS_DAY = 0;
   var MASTERCLASS_HOUR = 19;
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
