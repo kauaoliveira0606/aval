@@ -666,7 +666,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     var tracked = false;
     try { tracked = window.sessionStorage.getItem('mom_masterclass_lead') === '1'; } catch (e) {}
     if (tracked) return;
-    if (window.fbq) fbq('track', 'Lead');
+    if (window.fbq) { fbq('track', 'CompleteRegistration'); fbq('track', 'Lead'); }
     try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
   })();
 </script>
