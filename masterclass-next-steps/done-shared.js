@@ -4,9 +4,8 @@
 (function () {
   // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
   // Keep in step with the constants in /masterclass/index.html.
-  var MASTERCLASS_DAY = 2;
+  var MASTERCLASS_DAY = 6;
   var MASTERCLASS_HOUR = 19;
-  var MASTERCLASS_TIME_LABEL = '7PM ET';
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
   var EVENT_DETAILS = 'Live masterclass with Benicio Valentin (AvalTrades). Your link to join is in your confirmation email.';
@@ -130,34 +129,50 @@
     return new Date(wallUtc - nyOffset(guess));
   }
 
-  var start = nextSession(new Date());
-  var end = new Date(start.getTime() + MASTERCLASS_MINUTES * 60000);
+  // Paints the date and builds the calendar links for a session start time.
+  function applyStart(start) {
+    var end = new Date(start.getTime() + MASTERCLASS_MINUTES * 60000);
 
-  var dayLabel = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(start);
-  document.querySelectorAll('.js-done-when').forEach(function (el) { el.textContent = dayLabel + ' @' + MASTERCLASS_TIME_LABEL; });
+    var clock = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(start).replace(':00', '').replace(' ', '');
+    var dayLabel = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(start);
+    document.querySelectorAll('.js-done-when').forEach(function (el) { el.textContent = dayLabel + ' @' + clock + ' ET'; });
 
-  /* ---------- Add to calendar ---------- */
-  function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
-  var google = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
-    '&text=' + encodeURIComponent(EVENT_TITLE) +
-    '&dates=' + stamp(start) + '/' + stamp(end) +
-    '&details=' + encodeURIComponent(EVENT_DETAILS);
-  var outlook = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent' +
-    '&subject=' + encodeURIComponent(EVENT_TITLE) +
-    '&startdt=' + encodeURIComponent(start.toISOString()) +
-    '&enddt=' + encodeURIComponent(end.toISOString()) +
-    '&body=' + encodeURIComponent(EVENT_DETAILS);
-  var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mind Over Market//Live Masterclass//EN', 'BEGIN:VEVENT',
-    'UID:masterclass-' + stamp(start) + '@mindovermarket.com', 'DTSTAMP:' + stamp(new Date()),
-    'DTSTART:' + stamp(start), 'DTEND:' + stamp(end),
-    'SUMMARY:' + EVENT_TITLE, 'DESCRIPTION:' + EVENT_DETAILS,
-    'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:' + EVENT_TITLE, 'END:VALARM',
-    'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
-  var icsHref = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+    /* ---------- Add to calendar ---------- */
+    function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+    var google = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+      '&text=' + encodeURIComponent(EVENT_TITLE) +
+      '&dates=' + stamp(start) + '/' + stamp(end) +
+      '&details=' + encodeURIComponent(EVENT_DETAILS);
+    var outlook = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent' +
+      '&subject=' + encodeURIComponent(EVENT_TITLE) +
+      '&startdt=' + encodeURIComponent(start.toISOString()) +
+      '&enddt=' + encodeURIComponent(end.toISOString()) +
+      '&body=' + encodeURIComponent(EVENT_DETAILS);
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mind Over Market//Live Masterclass//EN', 'BEGIN:VEVENT',
+      'UID:masterclass-' + stamp(start) + '@mindovermarket.com', 'DTSTAMP:' + stamp(new Date()),
+      'DTSTART:' + stamp(start), 'DTEND:' + stamp(end),
+      'SUMMARY:' + EVENT_TITLE, 'DESCRIPTION:' + EVENT_DETAILS,
+      'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:' + EVENT_TITLE, 'END:VALARM',
+      'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    var icsHref = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
 
-  document.querySelectorAll('.js-cal-google').forEach(function (a) { a.href = google; });
-  document.querySelectorAll('.js-cal-outlook').forEach(function (a) { a.href = outlook; });
-  document.querySelectorAll('.js-cal-ics').forEach(function (a) { a.href = icsHref; a.setAttribute('download', 'mind-over-market-masterclass.ics'); });
+    document.querySelectorAll('.js-cal-google').forEach(function (a) { a.href = google; });
+    document.querySelectorAll('.js-cal-outlook').forEach(function (a) { a.href = outlook; });
+    document.querySelectorAll('.js-cal-ics').forEach(function (a) { a.href = icsHref; a.setAttribute('download', 'mind-over-market-masterclass.ics'); });
+  }
+  applyStart(nextSession(new Date()));
+
+  // The real schedule lives in WebinarJam. Ask it for the next session so this page matches
+  // the registration form; the weekly rule above is the fallback.
+  fetch('https://event.webinarjam.com/register/k50k29iz/convert-dates', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+    body: 'offset=' + (-(new Date()).getTimezoneOffset()) + '&limit=3&source=bar'
+  }).then(function (r) { return r.json(); }).then(function (data) {
+    var next = (data.registrationDates || []).filter(function (d) { return d.ts * 1000 > Date.now(); })[0];
+    if (next) applyStart(new Date(next.ts * 1000));
+  }).catch(function (err) { console.log('WebinarJam schedule unavailable: ' + err.message); });
+
   document.querySelectorAll('.js-cal-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () { btn.parentNode.querySelector('.js-cal-menu').classList.toggle('open'); });
   });
