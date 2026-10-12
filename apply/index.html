@@ -39,7 +39,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <link rel="dns-prefetch" href="https://scripts.converteai.net">
   <link rel="dns-prefetch" href="https://images.converteai.net">
   <link rel="dns-prefetch" href="https://license.vturb.com">
-  <link rel="preload" href="https://embed.typeform.com/next/embed.js" as="script" />
+  <link rel="preconnect" href="https://embed.typeform.com" />
   <link rel="preconnect" href="https://form.typeform.com" />
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
@@ -574,7 +574,22 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       </div>
       <div class="form-container">
         <div data-tf-live="01KM7DXPHARD2CA50DZZYF9E7Y" style="width:100%;min-height:550px;"></div>
-        <script async src="https://embed.typeform.com/next/embed.js"></script>
+        <script>
+          /* The form starts loading right after the page's first paint, so it never holds the page up. */
+          (function () {
+            var started = false;
+            function start() {
+              if (started) return;
+              started = true;
+              var s = document.createElement('script');
+              s.src = 'https://embed.typeform.com/next/embed.js';
+              s.async = true;
+              document.body.appendChild(s);
+            }
+            requestAnimationFrame(function () { setTimeout(start, 0); });
+            setTimeout(start, 1500);
+          })();
+        </script>
       </div>
     </section>
 
