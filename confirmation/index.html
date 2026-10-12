@@ -35,14 +35,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <link rel="preconnect" href="https://fast.wistia.com" />
   <link rel="preconnect" href="https://fast.wistia.net" />
   <link rel="preconnect" href="https://embed-ssl.wistia.com" />
+  <link rel="preload" href="/images/precall-poster.webp" as="image" fetchpriority="high" />
   <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 900; font-display: swap; src: url(/fonts/inter-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
     @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 900; font-display: swap; src: url(/fonts/inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
   </style>
 
-  <!-- Wistia runtime -->
-  <script src="https://fast.wistia.com/player.js" async></script>
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -152,12 +151,23 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       overflow: hidden;
       border: 1px solid rgba(200, 168, 78, 0.2);
       box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      aspect-ratio: 16 / 9;
+      background: #000;
     }
 
+    /* The poster shows instantly; the player loads on top of it. */
+    .video-container .video-poster,
     .video-container wistia-player {
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
     }
+    .video-container .video-poster { object-fit: cover; }
+
+    /* Placeholder for a player that loads right after the page does. */
+    .video-later { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #0c0c0c; }
 
     /* ── STEPS ── */
     .steps-section {
@@ -620,8 +630,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
     <section class="video-section">
       <div class="video-container">
-        <script src="https://fast.wistia.com/embed/mqqfbmejwo.js" async type="module"></script>
-        <style>wistia-player[media-id='mqqfbmejwo']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/mqqfbmejwo/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+        <img class="video-poster" src="/images/precall-poster.webp" alt="" width="960" height="540" fetchpriority="high" />
         <wistia-player media-id="mqqfbmejwo" aspect="1.7777777777777777"></wistia-player>
       </div>
     </section>
@@ -656,10 +665,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <p>This training breaks down the exact system our students use to go from inconsistent to pulling real payouts. Watch it before your call.</p>
       </div>
       <div class="sales-asset-video">
-        <vturb-smartplayer id="vid-69d40b6b2bff75b6a1d84e96" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
-        <script type="text/javascript">
-          (function(){var s=document.createElement("script");s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69d40b6b2bff75b6a1d84e96/v4/player.js";s.async=!0;document.head.appendChild(s);})();
-        </script>
+        <vturb-smartplayer id="vid-69d40b6b2bff75b6a1d84e96" style="display:block;margin:0 auto;width:100%;" class="js-vturb-later" data-player-src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69d40b6b2bff75b6a1d84e96/v4/player.js"></vturb-smartplayer>
       </div>
     </section>
 
@@ -671,10 +677,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <div class="interviews-grid">
         <div class="interview-card">
           <div class="interview-card-video">
-            <vturb-smartplayer id="vid-69d40f401902832526423f86" style="display:block;width:100%;height:100%;"></vturb-smartplayer>
-            <script type="text/javascript">
-              (function(){var s=document.createElement("script");s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69d40f401902832526423f86/v4/player.js";s.async=!0;document.head.appendChild(s);})();
-            </script>
+            <vturb-smartplayer id="vid-69d40f401902832526423f86" style="display:block;width:100%;height:100%;" class="js-vturb-later" data-player-src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69d40f401902832526423f86/v4/player.js"></vturb-smartplayer>
           </div>
           <div class="interview-card-info">
             <h3>Landon: Years of Blown Accounts to <span class="gold">$100K Months</span></h3>
@@ -683,7 +686,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         </div>
         <div class="interview-card">
           <div class="interview-card-video">
-            <iframe src="https://www.youtube.com/embed/jyE_87ndx9E?si=SqlcdjiEYmlG-yRN" title="Sugar Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
+            <iframe class="js-iframe-later" data-src="https://www.youtube.com/embed/jyE_87ndx9E?si=SqlcdjiEYmlG-yRN" title="Sugar Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
           </div>
           <div class="interview-card-info">
             <h3>Sugar: Blowing Accounts to <span class="gold">$50K+ in Payouts</span></h3>
@@ -724,7 +727,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="testimonial-video">
             <div class="yt-wrapper">
-              <iframe src="https://www.youtube.com/embed/jyE_87ndx9E?si=SqlcdjiEYmlG-yRN" title="Sugar Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
+              <iframe class="js-iframe-later" data-src="https://www.youtube.com/embed/jyE_87ndx9E?si=SqlcdjiEYmlG-yRN" title="Sugar Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
             </div>
           </div>
         </div>
@@ -750,9 +753,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/945110tl5c.js" async type="module"></script>
-              <style>wistia-player[media-id='945110tl5c']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/945110tl5c/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="945110tl5c" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="945110tl5c"></div>
             </div>
           </div>
         </div>
@@ -762,9 +763,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/glkj6wnd4m.js" async type="module"></script>
-              <style>wistia-player[media-id='glkj6wnd4m']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/glkj6wnd4m/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="glkj6wnd4m" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="glkj6wnd4m"></div>
             </div>
           </div>
         </div>
@@ -774,9 +773,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/yakg8gabdy.js" async type="module"></script>
-              <style>wistia-player[media-id='yakg8gabdy']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yakg8gabdy/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="yakg8gabdy" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="yakg8gabdy"></div>
             </div>
           </div>
         </div>
@@ -786,9 +783,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/8bujbleu8p.js" async type="module"></script>
-              <style>wistia-player[media-id='8bujbleu8p']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8bujbleu8p/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="8bujbleu8p" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="8bujbleu8p"></div>
             </div>
           </div>
         </div>
@@ -798,9 +793,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/7wi6gysgnt.js" async type="module"></script>
-              <style>wistia-player[media-id='7wi6gysgnt']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/7wi6gysgnt/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="7wi6gysgnt" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="7wi6gysgnt"></div>
             </div>
           </div>
         </div>
@@ -810,9 +803,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/tcr61sq180.js" async type="module"></script>
-              <style>wistia-player[media-id='tcr61sq180']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/tcr61sq180/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="tcr61sq180" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="tcr61sq180"></div>
             </div>
           </div>
         </div>
@@ -822,9 +813,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
           </div>
           <div class="faq-card-video">
             <div class="faq-video-wrapper">
-              <script src="https://fast.wistia.com/embed/j2l4ddsjf8.js" async type="module"></script>
-              <style>wistia-player[media-id='j2l4ddsjf8']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/j2l4ddsjf8/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
-              <wistia-player media-id="j2l4ddsjf8" aspect="1.7777777777777777"></wistia-player>
+              <div class="video-later js-wistia-later" data-media-id="j2l4ddsjf8"></div>
             </div>
           </div>
         </div>
@@ -839,5 +828,44 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     </footer>
   </div>
 
+  <script>
+    /* Video loading order: the page paints first, then the main pre-call video starts loading, and every
+       other player on the page loads by itself shortly after the page has finished loading. Nothing waits
+       for a scroll or a click. */
+    (function () {
+      function addScript(src, isModule) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.async = true;
+        if (isModule) s.type = 'module';
+        document.head.appendChild(s);
+      }
+      var mainStarted = false;
+      function startMain() {
+        if (mainStarted) return;
+        mainStarted = true;
+        addScript('https://fast.wistia.com/player.js');
+        addScript('https://fast.wistia.com/embed/mqqfbmejwo.js', true);
+      }
+      requestAnimationFrame(function () { setTimeout(startMain, 0); });
+      setTimeout(startMain, 1500);
+
+      function startRest() {
+        startMain();
+        document.querySelectorAll('.js-wistia-later').forEach(function (el) {
+          var id = el.getAttribute('data-media-id');
+          addScript('https://fast.wistia.com/embed/' + id + '.js', true);
+          var player = document.createElement('wistia-player');
+          player.setAttribute('media-id', id);
+          player.setAttribute('aspect', '1.7777777777777777');
+          el.replaceWith(player);
+        });
+        document.querySelectorAll('.js-vturb-later').forEach(function (el) { addScript(el.getAttribute('data-player-src')); });
+        document.querySelectorAll('.js-iframe-later').forEach(function (el) { el.src = el.getAttribute('data-src'); });
+      }
+      function afterLoad() { setTimeout(startRest, 1200); }
+      if (document.readyState === 'complete') afterLoad(); else window.addEventListener('load', afterLoad);
+    })();
+  </script>
 </body>
 </html>

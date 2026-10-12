@@ -33,7 +33,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <meta name="twitter:title" content="Book Your Strategy Call | Mind Over Market" />
   <meta name="twitter:description" content="Book your strategy call with the Mind Over Market team." />
   <meta name="twitter:image" content="https://www.mindovermarket.com/images/logo.png" />
-  <link rel="preload" href="https://embed.typeform.com/next/embed.js" as="script" />
+  <link rel="preconnect" href="https://embed.typeform.com" />
   <link rel="preconnect" href="https://form.typeform.com" />
   <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -112,6 +112,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .apply h2 span { color: var(--green-dark); }
     .apply-card { background: #fff; border-radius: 20px; box-shadow: 0 6px 24px -8px rgba(15,23,42,0.14); padding: 14px; }
     .apply-form { width: 100%; height: 900px; }
+    .apply-form .tf-v1-widget, .apply-form iframe { width: 100%; height: 100%; border: 0; }
     /* Typeform's Calendly step only lays out properly when the form is desktop-wide (calendar beside
        the question) or phone-narrow ("Schedule time" button). In between it collapses to a thin strip,
        so the form is either wide or phone-width, never in between. */
@@ -185,7 +186,22 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <p style="margin-top:14px;">Copyright &copy; 2026 Mind Over Market. All rights reserved.</p>
 </footer>
 
-<script async src="https://embed.typeform.com/next/embed.js"></script>
+<script>
+  /* The form starts loading right after the page's first paint, so it never holds the page up. */
+  (function () {
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      var s = document.createElement('script');
+      s.src = 'https://embed.typeform.com/next/embed.js';
+      s.async = true;
+      document.body.appendChild(s);
+    }
+    requestAnimationFrame(function () { setTimeout(start, 0); });
+    setTimeout(start, 1500);
+  })();
+</script>
 
 </body>
 </html>

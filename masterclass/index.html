@@ -137,18 +137,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .nav-date { font-weight: 500; letter-spacing: 0.3px; color: var(--text); white-space: nowrap; }
     .nav .btn { flex: none; white-space: nowrap; }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 60px;
-      background: #fff;
-      border: 1px solid rgba(22,163,74,0.4);
-      border-radius: 400px;
-      padding: 9px 70px;
-      font-size: 0.82rem;
-      color: var(--text);
-    }
     .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green-dark); animation: pulse 1.4s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
 
@@ -159,9 +147,20 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       line-height: 1.04;
       letter-spacing: -1px;
       max-width: 1010px;
-      margin: 14px auto 0;
+      margin: 0 auto;
+      padding-top: 56px;
     }
     .hero h1 .acc { font-weight: 600; white-space: nowrap; }
+    /* ── TRUST ROW ── */
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 26px; }
+    .trust-badge { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #e5e7eb; border-radius: 100px; padding: 5px 12px 5px 9px; font-size: 0.72rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; }
+    .trust-badge img { width: 22px; height: 22px; border-radius: 6px; display: block; }
+    .trust-badge.whop { padding-left: 5px; }
+    .trust-badge svg { flex: none; color: var(--green); }
+    .trust-badge > span { display: flex; flex-direction: column; align-items: flex-start; }
+    .trust-kicker { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text2); }
+    .trust-stars { color: #f59e0b; font-size: 0.6rem; letter-spacing: 1px; }
+    .firms { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 18px; margin-top: 14px; font-family: var(--head); font-size: 0.92rem; font-weight: 800; letter-spacing: -0.2px; color: #94a3b8; }
     .hero-sub { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--body); max-width: 500px; margin: 30px auto 0; line-height: 1.45; }
 
     .countdown { display: flex; justify-content: center; gap: 9px; margin-top: 26px; }
@@ -262,8 +261,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       .nav-date { font-size: 0.66rem; letter-spacing: 0.2px; line-height: 1.35; }
       .nav-date > span { display: block; }
       .nav-date > .nav-date-sep { display: none; }
-      .pill { margin-top: 36px; padding: 8px 22px; }
       .hero { padding-bottom: 56px; }
+      .hero h1 { padding-top: 34px; }
       .hero h1 .acc { white-space: normal; }
       .cd-cell { width: 74px; }
       .cd-num { font-size: 2rem; }
@@ -291,11 +290,16 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   </div>
 
   <div class="wrap">
-    <div class="pill"><span class="dot"></span><span>LIVE MASTERCLASS: <span class="js-event-pill">Tuesday @7PM ET</span></span></div>
     <h1>Learn <span class="acc">“The One Shift”</span> Trading Strategy I Use To Take Consistent Prop Firm Payouts</h1>
     <p class="hero-sub">No experience needed to get started. Only 1-3 hours a day. Even if you've blown multiple accounts.</p>
     <div class="countdown js-countdown"></div>
     <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, I Want To Attend &rarr;</button>
+    <div class="trust-row">
+      <span class="trust-badge whop"><img src="/images/whop-icon.webp" alt="" /><span><span class="trust-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.7-Star Rated on Whop</span></span>
+      <span class="trust-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l2.4 1.8 3-.2 1 2.8 2.5 1.6-.8 2.9.8 2.9-2.5 1.6-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8-2.5-1.6.8-2.9-.8-2.9 2.5-1.6 1-2.8 3 .2z"/><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8.2 12.3l2.6 2.6 5-5.4"/></svg><span><span class="trust-kicker">Verified by Whop</span>24,262 Students Helped</span></span>
+      <span class="trust-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg><span><span class="trust-kicker">Verified Payouts By</span>Prop Firms</span></span>
+    </div>
+    <div class="firms" aria-label="Prop firms that have paid out our students"><span>Topstep</span><span>Apex Trader Funding</span><span>FundedNext</span><span>Lucid Trading</span><span>Tradeify</span><span>MyFundedFutures</span></div>
   </div>
 </header>
 
@@ -493,9 +497,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     function paintSession() {
       document.querySelectorAll('.js-event-date').forEach(function (el) { el.textContent = formatSession(session); });
       document.querySelectorAll('.js-event-short').forEach(function (el) { el.textContent = formatShort(session); });
-      var clock = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(session).replace(':00', '').replace(' ', '');
-      var pill = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'long', day: 'numeric' }).format(session) + ' @' + clock + ' ET';
-      document.querySelectorAll('.js-event-pill').forEach(function (el) { el.textContent = pill; });
       // Top bar: "Sunday, October 18 · 7:00 PM EST", split into day and time so phones can stack them.
       var navDay = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(session);
       var navTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(session) + ' EST';
