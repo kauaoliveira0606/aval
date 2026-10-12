@@ -10,4 +10,6 @@ Static site. Plain HTML/CSS/JS, one folder per page/funnel step, deployed to Ver
 
 ## Deploy
 
-Pushing to `main` triggers a Vercel deploy. No build step — static files are served as-is.
+Pushing to `main` triggers a Vercel deploy. Vercel runs `npm run build` (`build.mjs`), which copies the site into `dist/` and minifies the HTML, CSS and JS. Source files stay unminified in the repo.
+
+Fonts are self-hosted in `/fonts` (cached for a year). Images are cached in the browser for 7 days, so a replaced image needs a new filename to show up right away.

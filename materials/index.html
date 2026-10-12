@@ -31,9 +31,14 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <meta property="og:title" content="Confirm Your Call | Mind Over Market" />
   <meta property="og:description" content="You're almost in. Watch the training and complete the steps below before your call." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/inter-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(/fonts/jetbrains-mono-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500 700; font-display: swap; src: url(/fonts/jetbrains-mono-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  </style>
 
   <!-- Wistia -->
   <script src="https://fast.wistia.com/player.js" async></script>
@@ -492,12 +497,12 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <div class="story-box">
         <p class="quote">"I went from blowing accounts to hitting $50K in payouts in under 6 months. One shift in how I approached my trades changed everything."</p>
         <div class="proof-grid">
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370479/file/7a3ac9af84265c6e44442ee541949eff.png" alt="Student payout proof — Landon" loading="lazy" />
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370440/file/ae4455476d5d79a08ea235fadd4a5819.png" alt="Student payout proof — Jonah P" loading="lazy" />
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370447/file/05772fd93b868884000f416c336aaab4.png" alt="Student payout proof — Nahom $30K" loading="lazy" />
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370446/file/d54edae8443d8b529888ad769edbbbe7.png" alt="Student payout proof — Keo" loading="lazy" />
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370444/file/7e6fa5669c0ba3db96e145fda75c579e.png" alt="Student payout proof — Isaac $50K" loading="lazy" />
-          <img src="https://statics.myclickfunnels.com/workspace/jQNNOm/image/21370443/file/2f53f61e4931955a91263fc340da5e91.png" alt="Student payout proof — Nahom $25K" loading="lazy" />
+          <img src="/images/proof/landon.webp" alt="Student payout proof — Landon" loading="lazy" />
+          <img src="/images/proof/jonah.webp" alt="Student payout proof — Jonah P" loading="lazy" />
+          <img src="/images/proof/nahom-10k.webp" alt="Student payout proof — Nahom $30K" loading="lazy" />
+          <img src="/images/proof/keo.webp" alt="Student payout proof — Keo" loading="lazy" />
+          <img src="/images/proof/isaac-50k.webp" alt="Student payout proof — Isaac $50K" loading="lazy" />
+          <img src="/images/proof/nahom-25k.webp" alt="Student payout proof — Nahom $25K" loading="lazy" />
         </div>
       </div>
     </div>

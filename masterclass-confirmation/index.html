@@ -28,9 +28,17 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Wait! Before You Go | Mind Over Market" />
   <meta property="og:image" content="https://www.mindovermarket.com/images/logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://cdn.whop.com/elements/amber/elements.js" as="script" />
+  <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'Geist'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/geist-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: 'Geist'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/geist-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 500 800; font-display: swap; src: url(/fonts/manrope-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 500 800; font-display: swap; src: url(/fonts/manrope-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/open-sans-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: 'Open Sans'; font-style: normal; font-weight: 400 700; font-display: swap; src: url(/fonts/open-sans-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  </style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -214,6 +222,10 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .co-product .radio { flex: none; width: 18px; height: 18px; border-radius: 50%; border: 2px solid #0b1b26; display: flex; align-items: center; justify-content: center; }
     .co-product .radio::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #0b1b26; }
     .co-product span.name { flex: 1; text-align: left; }
+    .co-trust { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; margin: 16px 0 14px; padding: 0; }
+    .co-trust li { display: inline-flex; align-items: center; gap: 5px; font-size: 0.76rem; font-weight: 500; color: var(--body); white-space: nowrap; }
+    .co-trust svg { flex: none; color: #111827; }
+    @media (max-width: 600px) { .co-trust { gap: 6px 9px; } .co-trust li { font-size: min(0.72rem, 2.6vw); gap: 4px; } .co-trust svg { width: 14px; height: 14px; } }
     .checkout-embed { min-height: 420px; margin-top: 12px; }
     .checkout-embed iframe { width: 100%; border: 0; }
     .checkout-pending { margin-top: 12px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: #f9fafb; color: var(--body); font-size: 0.95rem; }
@@ -461,6 +473,11 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
         <div class="co-label">Select Product</div>
         <div class="co-product"><span class="radio"></span><span class="name">The Risk Management Bundle</span><span>$27</span></div>
         <div class="co-label">Billing &amp; Payment Information</div>
+        <ul class="co-trust">
+          <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z"/></svg>Instant Access</li>
+          <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.4-2.9 8-7 9.5-4.1-1.500-7-5.100-7-9.500V6z"/><path d="m8.800 12.200 2.300 2.300 4.200-4.500"/></svg>14-Day Guarantee</li>
+          <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.500" width="14" height="10" rx="2"/><path d="M8 10.500V7.500a4 4 0 0 1 8 0v3"/></svg>Secure Checkout</li>
+        </ul>
         <div class="checkout-embed" id="whop-checkout"></div>
         <div class="co-note">We Never Share Your Information With Anyone</div>
       </div>
@@ -517,7 +534,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   <img src="" alt="" />
 </div>
 
-<script src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements></script>
 <script>
   /* ---------- Whop embedded checkout ($27 order bump) ---------- */
   var WHOP_PLAN_ID = 'plan_KJGwJZBA5viqR';
@@ -535,7 +551,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   var params = new URLSearchParams(window.location.search);
 
   /* ---------- Checkout (Whop Elements) ---------- */
-  (function () {
+  /* Runs once elements.js has loaded (it loads async below, so it never holds up the page). */
+  function startWhopCheckout() {
     var slot = document.getElementById('whop-checkout');
     function fallback() {
       slot.innerHTML = '<div class="checkout-pending">The checkout did not load. <a href="https://whop.com/checkout/' + WHOP_PLAN_ID + '" style="color:#16a34a;font-weight:700;text-decoration:underline;">Open the secure checkout here.</a></div>';
@@ -567,7 +584,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       console.log('Whop checkout failed to start: ' + err.message);
       fallback();
     }
-  })();
+  }
 
   document.querySelectorAll('.js-today').forEach(function (el) {
     el.textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date());
@@ -670,6 +687,7 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
   })();
 </script>
+<script async src="https://cdn.whop.com/elements/amber/elements.js" data-whop-elements onload="startWhopCheckout()" onerror="startWhopCheckout()"></script>
 
 </body>
 </html>
