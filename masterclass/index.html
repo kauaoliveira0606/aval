@@ -156,6 +156,16 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .seat-note { margin-top: 18px; font-size: 0.88rem; color: var(--body); }
     .seat-note b { color: var(--text); font-weight: 800; }
 
+    /* ── FAQ ── */
+    .faq { max-width: 760px; margin: 40px auto 0; display: grid; gap: 12px; text-align: left; }
+    .faq-item { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 6px 24px -12px rgba(15,23,42,0.16); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; font-family: var(--head); font-size: 1.02rem; font-weight: 700; color: var(--text); }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; flex: none; width: 26px; height: 26px; border-radius: 50%; background: rgba(22,163,74,0.12); color: var(--green-dark); font-size: 1.1rem; font-weight: 700; line-height: 26px; text-align: center; }
+    .faq-item[open] summary::after { content: "\2212"; }
+    .faq-item p { padding: 0 22px 20px; color: var(--body); line-height: 1.6; }
+    @media (max-width: 600px) { .faq-item summary { padding: 16px 18px; font-size: 0.96rem; } .faq-item p { padding: 0 18px 18px; } }
+
     /* ── FINAL CTA ── */
     .final { background: linear-gradient(180deg, #f3f9f5 0%, #f7f9f8 100%); }
     .cta-box {
@@ -446,6 +456,72 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     <div class="win-cols js-wins"></div>
     <div class="muted">Results not typical &middot; Individual results vary &middot; Trading involves risk of loss</div>
     <div class="cta"><button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, I'm In &rarr;</button></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <p class="label">FAQ</p>
+    <h2 class="h2">Questions People Ask <span class="acc">Before They Register</span></h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>How long is the masterclass?</summary>
+        <p>Plan for 90 minutes. I teach the full framework, then open it up for live Q&amp;A, and we stay on until your questions are answered.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will there be a replay?</summary>
+        <p>No. This is live only, and here's why: I answer questions in real time, and a recording of a Q&amp;A isn't a Q&amp;A. If you want in, show up <span class="js-event-short">Sunday at 7 PM EST</span>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need any experience before the masterclass?</summary>
+        <p>No. We start from zero. You'll see the risk management framework, the model, and how it all fits together, all inside the training. And if you've been trading for a while and still aren't consistent, this is built for you too.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do I need to have ready?</summary>
+        <p>A phone or laptop, internet, and your questions. Your join link comes straight to your email and your phone after you register.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the masterclass actually free?</summary>
+        <p>Yes, it's free, and I'm not going to pretend there's no business behind it. I teach the full framework live, and at the end I'll show you how to go deeper with me if you want. You get the full training either way.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much money do I need to start?</summary>
+        <p>Realistically, a couple hundred dollars. Everything I teach runs through prop firm evaluations, which means you're trading the firm's capital, not your life savings. I'll break down the exact numbers on the masterclass so you can decide with real math.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do I trade?</summary>
+        <p>I trade futures through prop firms. That's what the whole framework is built around, and it's what I've been doing as my main income for over three years.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are these just signals?</summary>
+        <p>No, and I want to be clear about that. I'm not teaching you to copy my trades or follow alerts blindly. You're learning a mechanical model with rules you follow the same way every time, so you can read the market yourself. Signals make you dependent. A system makes you a trader.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I've tried trading before and it didn't work. How is this different?</summary>
+        <p>Most people trade on feel. They predict, they hope, they revenge trade after a loss. This model is mechanical. Fixed rules for risk, fixed rules for entries, the same way every time. That's the difference between running a business and rolling the dice.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why should I trust you?</summary>
+        <p>Fair question. I've been trading for over 5 years, and it's been my main income for over 3. I'm 4.7-star rated on Whop with over 24,000 students helped, and the payouts my students post are verified by the prop firms themselves. I don't teach anything I haven't done myself.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this a get rich quick thing?</summary>
+        <p>No, and if that's what you're looking for, this isn't for you. This is a real skill that takes consistent work. What it gives you is a clear path instead of guessing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>I work a full-time job. Can I actually do this?</summary>
+        <p>Yes, because I built mine the same way. I built this while working a job and juggling a personal life. You don't need to sit at the charts all day. I'll show you how to fit trading around your work instead of the other way around.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need any tech or computer experience?</summary>
+        <p>No. If you can use a phone and browse the internet, you've got the tech skills for this.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How fast until I pass my first eval?</summary>
+        <p>It depends on how fast you execute, but I'll walk you through the exact sequence on the masterclass so you know exactly what to do the moment you start.</p>
+      </details>
+    </div>
   </div>
 </section>
 
