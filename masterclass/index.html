@@ -156,6 +156,28 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .seat-note { margin-top: 18px; font-size: 0.88rem; color: var(--body); }
     .seat-note b { color: var(--text); font-weight: 800; }
 
+    /* ── FINAL CTA ── */
+    .final { background: linear-gradient(180deg, #f3f9f5 0%, #f7f9f8 100%); }
+    .cta-box {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      background:
+        radial-gradient(420px 240px at 12% 0%, rgba(34,197,94,0.16), transparent 70%),
+        linear-gradient(180deg, #f1fdf5 0%, #ffffff 70%);
+      border: 1px solid rgba(22,163,74,0.22);
+      border-radius: 28px;
+      box-shadow: 0 10px 34px -14px rgba(15,23,42,0.22);
+      padding: 56px 32px 48px;
+    }
+    .cta-box h2 { font-family: var(--head); font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 500; letter-spacing: -1.3px; line-height: 1.05; }
+    .cta-box > p { color: var(--body); font-size: 1rem; margin-top: 12px; }
+    .cta-box > p + p { margin-top: 6px; }
+    .cta-box .event-date { font-family: var(--head); font-size: 1.05rem; font-weight: 700; margin-top: 26px; }
+    .cta-box .countdown { margin-top: 16px; }
+    .cta-box .btn { margin-top: 22px; }
+    @media (max-width: 600px) { .cta-box { padding: 40px 18px; border-radius: 22px; } }
+
     /* ── TRUST ROW ── */
     .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
     .trust-badge { display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #e5e7eb; border-radius: 100px; padding: 5px 12px 5px 9px; font-size: 0.72rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; }
@@ -409,6 +431,28 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- FINAL CTA -->
+<section class="section final">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Save Your <span class="acc">Seat</span></h2>
+      <p>This masterclass is happening <span class="js-event-short">Sunday at 7 PM EST</span>.</p>
+      <p>It's live only. &#127873; Receive FREE VIP Gift</p>
+      <div class="event-date js-event-date">Sunday &middot; 7:00 PM EST</div>
+      <div class="countdown js-countdown"></div>
+      <p class="fill-note"><span class="dot"></span>Live only. &#127873; Receive FREE VIP Gift</p>
+      <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, I'm In &rarr;</button>
+      <p class="seat-note"><b class="js-seat-count">264</b> People already saved their seat</p>
+      <div class="trust-row">
+        <span class="trust-badge whop"><img src="/images/whop-icon.webp" alt="" /><span><span class="trust-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.7-Star Rated on Whop</span></span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l2.4 1.8 3-.2 1 2.8 2.5 1.6-.8 2.9.8 2.9-2.5 1.6-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8-2.5-1.6.8-2.9-.8-2.9 2.5-1.6 1-2.8 3 .2z"/><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8.2 12.3l2.6 2.6 5-5.4"/></svg><span><span class="trust-kicker">Verified by Whop</span>24,262 Students Helped</span></span>
+        <span class="trust-badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg><span><span class="trust-kicker">Verified Payouts By</span>Prop Firms</span></span>
+      </div>
+      <div class="firms" aria-label="Prop firms that have paid out our students"><span>Topstep</span><span>Apex Trader Funding</span><span>FundedNext</span><span>Lucid Trading</span><span>Tradeify</span><span>MyFundedFutures</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div>
@@ -433,8 +477,8 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
     var MASTERCLASS_DAY = 0;
     var MASTERCLASS_HOUR = 19;
-    var MASTERCLASS_TIME_LABEL = '7:00 PM ET';
-    var MASTERCLASS_SHORT_LABEL = '7 PM ET';
+    var MASTERCLASS_TIME_LABEL = '7:00 PM EST';
+    var MASTERCLASS_SHORT_LABEL = '7 PM EST';
     // Seats saved: starts at SEATS_BASE on SEATS_SINCE (New York date) and goes up by
     // SEATS_PER_DAY each day. Reset both whenever the webinar is updated.
     var SEATS_BASE = 264;
