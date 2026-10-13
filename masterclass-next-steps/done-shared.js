@@ -20,13 +20,8 @@
   var html = `
   <p class="done-lead">Before you close this tab, complete these three steps to make sure you're <b>fully set up for the masterclass</b></p>
 
-  <!-- PLACEHOLDER VIDEO: swap this block for the real player embed -->
-  <div class="done-video">
-    <div class="done-video-inner">
-      <div class="done-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="done-video-label">Video Coming Soon</div>
-    </div>
-  </div>
+  <!-- VTurb player. Its script is loaded below, since a script tag set through innerHTML never runs. -->
+  <vturb-smartplayer id="vid-6ace5b8f5cf0c310640b80dd" style="display: block; margin: 22px auto 0; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
   <svg class="done-arrow" width="26" height="46" viewBox="0 0 26 46" fill="none" aria-hidden="true"><path d="M13 2v40M3 31l10 11 10-11" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
   <div class="done-step" style="margin-top:18px;">
@@ -96,6 +91,12 @@
   </div>
 `;
   document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = html; });
+
+  // Main video (VTurb).
+  var vt = document.createElement('script');
+  vt.src = 'https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ace5b8f5cf0c310640b80dd/v4/player.js';
+  vt.async = true;
+  document.head.appendChild(vt);
 
   // Intake form (Typeform).
   var tf = document.createElement('script');
