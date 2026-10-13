@@ -12,7 +12,8 @@
 .done-play { width: 108px; height: 68px; background: #16a34a; display: flex; align-items: center; justify-content: center; }
 .done-play svg { width: 34px; height: 34px; fill: #fff; }
 .done-video-label { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.7); }
-.done-arrow { display: block; margin: 14px auto 0; }
+.done-video { margin: 32px auto 0; }
+.done-arrow { display: block; margin: 24px auto 0; }
 
 .done-step { margin-top: 34px; }
 .done-step-pill {
