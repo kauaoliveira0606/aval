@@ -64,7 +64,9 @@
       <p>Check promotions or spam, then drag it into your main inbox so you get every reminder.</p>
     </div>
   </div>
-
+`;
+  // Placeholder question videos. A page opts out with data-no-faq on its .js-done-shared element.
+  var faq = `
   <div class="done-faq">
     <h2>Got <span>Questions?</span></h2>
     <p class="done-faq-sub">We have answers. Check out a couple of the most frequently asked questions.</p>
@@ -92,7 +94,7 @@
     </div>
   </div>
 `;
-  document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = html; });
+  document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = el.hasAttribute('data-no-faq') ? html : html + faq; });
 
   // Main video (VTurb).
   var vt = document.createElement('script');
