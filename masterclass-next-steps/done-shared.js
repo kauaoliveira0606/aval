@@ -65,36 +65,7 @@
     </div>
   </div>
 `;
-  // Placeholder question videos. A page opts out with data-no-faq on its .js-done-shared element.
-  var faq = `
-  <div class="done-faq">
-    <h2>Got <span>Questions?</span></h2>
-    <p class="done-faq-sub">We have answers. Check out a couple of the most frequently asked questions.</p>
-    <div class="done-bk-grid">
-      <!-- PLACEHOLDER: question video 1 -->
-      <div class="done-bk">
-        <div class="done-bk-video"><div class="done-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="done-video-label">Video Coming Soon</div></div>
-        <div class="done-bk-title">Question 1 Coming Soon</div>
-      </div>
-      <!-- PLACEHOLDER: question video 2 -->
-      <div class="done-bk">
-        <div class="done-bk-video"><div class="done-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="done-video-label">Video Coming Soon</div></div>
-        <div class="done-bk-title">Question 2 Coming Soon</div>
-      </div>
-      <!-- PLACEHOLDER: question video 3 -->
-      <div class="done-bk">
-        <div class="done-bk-video"><div class="done-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="done-video-label">Video Coming Soon</div></div>
-        <div class="done-bk-title">Question 3 Coming Soon</div>
-      </div>
-      <!-- PLACEHOLDER: question video 4 -->
-      <div class="done-bk">
-        <div class="done-bk-video"><div class="done-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div><div class="done-video-label">Video Coming Soon</div></div>
-        <div class="done-bk-title">Question 4 Coming Soon</div>
-      </div>
-    </div>
-  </div>
-`;
-  document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = el.hasAttribute('data-no-faq') ? html : html + faq; });
+  document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = html; });
 
   // Main video (VTurb).
   var vt = document.createElement('script');
