@@ -269,10 +269,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .muted { text-align: center; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text2); margin-top: 14px; }
     .win-cols { columns: 3; column-gap: 20px; max-width: 1110px; margin: 44px auto 0; }
     .win-card { break-inside: avoid; margin-bottom: 20px; background: #fff; border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 10px 34px -14px rgba(15,23,42,0.16); overflow: hidden; }
-    .win-card .win-head { padding: 16px 20px 14px; }
-    .win-card .win-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--green-dark); margin-bottom: 4px; }
-    .win-card .win-title { font-family: var(--head); font-size: 1rem; font-weight: 700; }
-    .win-card .win-sub { font-size: 0.8rem; color: var(--text2); margin-top: 2px; }
     .win-card img { width: 100%; display: block; }
     .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 
@@ -728,7 +724,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     /* ---------- Wall of wins ---------- */
     document.querySelector('.js-wins').innerHTML = TESTIMONIALS.map(function (t) {
       return '<div class="win-card">' +
-        '<div class="win-head"><div class="win-tag">Student Win</div><div class="win-title">' + t.title + '</div><div class="win-sub">Results not typical</div></div>' +
         '<button type="button" class="zoom js-zoom" data-src="' + t.img + '" aria-label="Student result: ' + t.title + '"><img src="' + t.img + '" alt="Student result: ' + t.title + '" loading="lazy" /></button>' +
         '</div>';
     }).join('');
