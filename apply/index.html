@@ -51,24 +51,23 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --gold: #C8A84E;
-      --gold-light: #D4B96A;
-      --gold-dark: #A8893A;
-      --bg-primary: #0A0A0A;
-      --bg-secondary: #111111;
-      --bg-card: #161616;
-      --text-primary: #FFFFFF;
-      --text-secondary: #9CA3AF;
-      --text-muted: #5A6270;
-      --border: #1E1E1E;
+      --bg: #0a0d0b;
+      --bg-panel: #181f16;
+      --bg-panel-2: #1d251a;
+      --border: #2a3826;
+      --green: #2ee66b;
+      --green-dim: #1c9a4a;
+      --green-glow: rgba(46, 230, 107, 0.18);
+      --text: #ffffff;
+      --text-dim: #f3f7f3;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      background: #142b1d;
+      color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
@@ -78,46 +77,23 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(200, 168, 78, 0.04) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
-    }
-
-    /* ── STREAK CANVAS ── */
-    #streak-canvas {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      pointer-events: none !important;
-      z-index: 9 !important;
+      background: url('/images/bg-lines.svg') center / cover no-repeat;
     }
 
     .page-wrapper {
       position: relative;
       z-index: 1;
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
-    }
-
-    /* ── NAV ── */
-    .nav {
-      padding: 24px 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .nav img {
-      height: 48px;
-      width: auto;
     }
 
     /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 32px 0 40px;
+      padding: 40px 0 40px;
     }
 
     .hero-logo {
@@ -129,42 +105,33 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       width: auto;
     }
 
-    .callout {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-      opacity: 0.85;
-    }
-
     .hero h1 {
-      font-size: clamp(26px, 4.5vw, 44px);
-      font-weight: 900;
+      font-size: clamp(28px, 4.8vw, 48px);
+      font-weight: 800;
       line-height: 1.12;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-      color: var(--text-primary);
-      text-shadow: 0 2px 12px rgba(200, 168, 78, 0.15), 0 1px 4px rgba(0, 0, 0, 0.4);
+      letter-spacing: -0.02em;
+      max-width: 880px;
+      margin: 0 auto 20px;
+      color: var(--text);
     }
 
-    .hero h1 .gold { color: var(--gold); }
+    .accent { color: var(--green); }
 
     .hero-sub {
-      font-size: clamp(15px, 1.8vw, 17px);
-      color: var(--text-secondary);
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-dim);
       max-width: 620px;
       margin: 0 auto;
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
-    .hero-sub strong { color: var(--text-primary); }
+    .hero-sub strong { color: var(--text); }
 
     /* ── VSL VIDEO ── */
     .vsl-section {
-      padding: 0 0 48px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 0 56px;
     }
 
     @property --border-angle {
@@ -179,15 +146,15 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       padding: 2px;
       background: conic-gradient(
         from var(--border-angle),
-        #A8893A 0%,
-        #C8A84E 12%,
-        #D4B96A 22%,
-        rgba(200, 168, 78, 0.2) 35%,
-        rgba(168, 137, 58, 0.1) 50%,
-        rgba(200, 168, 78, 0.2) 65%,
-        #D4B96A 78%,
-        #C8A84E 88%,
-        #A8893A 100%
+        #1c9a4a 0%,
+        #2ee66b 12%,
+        #7af0a2 22%,
+        rgba(46, 230, 107, 0.2) 35%,
+        rgba(28, 154, 74, 0.1) 50%,
+        rgba(46, 230, 107, 0.2) 65%,
+        #7af0a2 78%,
+        #2ee66b 88%,
+        #1c9a4a 100%
       );
       animation: borderRotate 6s linear infinite;
     }
@@ -200,63 +167,19 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     .vsl-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      background: var(--bg-secondary);
-      border: none;
+      aspect-ratio: 16 / 9;
+      background: var(--bg);
       border-radius: 12px;
       overflow: hidden;
     }
 
-    .vsl-container iframe,
-    .vsl-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .vsl-placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      color: var(--text-muted);
-    }
-
-    .vsl-placeholder .play-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(200, 168, 78, 0.15);
-      border: 2px solid rgba(200, 168, 78, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .vsl-placeholder .play-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--gold);
-      margin-left: 4px;
-    }
-
-    .vsl-placeholder span {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
+    .cta-row { text-align: center; margin-top: 28px; }
 
     /* ── APPLICATION SECTION ── */
     .app-section {
-      padding: 0 0 60px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 0 72px;
     }
 
     .app-section-header {
@@ -265,24 +188,17 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     }
 
     .app-section-header h2 {
-      font-size: clamp(20px, 3vw, 28px);
+      font-size: clamp(22px, 3.2vw, 32px);
       font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-
-    .app-section-header h2 .gold { color: var(--gold); }
-
-    .app-section-header p {
-      font-size: 14px;
-      color: var(--text-secondary);
+      letter-spacing: -0.01em;
+      color: var(--text);
     }
 
     .form-container {
-      border: 1px solid rgba(200, 168, 78, 0.15);
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 24px;
-      background: rgba(22, 22, 22, 0.5);
+      background: var(--bg-panel);
     }
 
     .form-container [data-tf-live] {
@@ -290,203 +206,73 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       min-height: 550px;
     }
 
-    /* ── PROOF SPAM ── */
+    /* ── TESTIMONIALS ── */
     .proof-section {
-      padding: 60px 0;
+      padding: 72px 0 24px;
       border-top: 1px solid var(--border);
     }
 
     .proof-section-header {
       text-align: center;
-      margin-bottom: 40px;
+      max-width: 720px;
+      margin: 0 auto 44px;
     }
 
     .proof-section-header h2 {
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 900;
-      margin-bottom: 8px;
-      color: var(--text-primary);
+      font-size: clamp(24px, 3.4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--text);
     }
 
     .proof-section-header p {
-      font-size: 14px;
-      color: var(--text-secondary);
+      font-size: 16px;
+      color: var(--text-dim);
     }
 
-    /* Proof stat strip */
-    .proof-stats {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      flex-wrap: wrap;
-      padding: 24px 0 40px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 40px;
+    .testimonials {
+      column-count: 3;
+      column-gap: 18px;
     }
 
-    .proof-stat {
-      text-align: center;
-    }
-
-    .proof-stat .number {
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: -0.5px;
-    }
-
-    .proof-stat .label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 2px;
-    }
-
-    /* Video testimonial (Sugar) */
-    .video-testimonial {
-      margin-bottom: 32px;
-    }
-
-    .video-testimonial-label {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .video-testimonial-label span {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .video-testimonial .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
+    .t-card {
+      break-inside: avoid;
+      margin-bottom: 18px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      transition: border-color 0.15s ease;
     }
 
-    .video-testimonial .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+    .t-card:hover { border-color: var(--green-dim); }
 
-    /* Screenshot grid */
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .proof-card {
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      transition: border-color 0.2s;
-    }
-
-    .proof-card:hover {
-      border-color: rgba(200, 168, 78, 0.3);
-    }
-
-    .proof-card img {
+    .t-card img {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
-      max-height: 400px;
-      object-fit: cover;
-      object-position: top;
     }
-
-    .proof-card img.img-broken {
-      display: none !important;
-    }
-
-    .proof-card .proof-card-placeholder.show {
-      display: flex !important;
-    }
-
-    .proof-card .proof-card-placeholder {
-      aspect-ratio: 4/5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 24px;
-      text-align: center;
-    }
-
-    .proof-card .student-name {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
-
-    .proof-card .student-result {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gold);
-    }
-
-    .proof-card .student-detail {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      max-width: 200px;
-    }
-
-    /* Full-width proof card */
-    .proof-card-full {
-      grid-column: 1 / -1;
-      max-width: 480px;
-      justify-self: center;
-    }
-
-    /* Video testimonial card - no max-width cap */
-    .proof-card-full.proof-card-video {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    .proof-card-full img {
-      max-height: 520px;
-    }
-
-    .proof-card-full .proof-card-placeholder {
-      aspect-ratio: auto;
-      padding: 32px;
-    }
-
 
     /* ── BOTTOM CTA ── */
     .bottom-cta {
       text-align: center;
-      padding: 48px 0 60px;
+      padding: 32px 0 72px;
     }
 
     .bottom-cta p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 22px;
     }
 
-    .bottom-cta p strong { color: var(--text-primary); }
+    .bottom-cta p strong { color: var(--text); }
 
     .cta-button {
       display: inline-block;
       padding: 16px 48px;
-      background: var(--gold);
-      color: #0A0A0A;
+      background: var(--green);
+      color: #06120a;
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 800;
@@ -496,12 +282,13 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 0 0 1px var(--green-dim), 0 10px 30px -8px var(--green-glow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .cta-button:hover {
-      background: var(--gold-light);
       transform: translateY(-1px);
+      box-shadow: 0 0 0 1px var(--green), 0 14px 34px -8px var(--green-glow);
     }
 
     .cta-button:active {
@@ -511,42 +298,35 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
     /* ── FOOTER ── */
     .footer {
       border-top: 1px solid var(--border);
-      padding: 24px 0;
+      padding: 28px 0;
       text-align: center;
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.3px;
+      font-size: 11.5px;
+      line-height: 1.6;
+      color: #9aa79a;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .proof-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) {
+      .testimonials { column-count: 2; }
     }
 
     @media (max-width: 640px) {
-      .hero { padding: 24px 0 32px; }
-      .proof-stats { gap: 20px; }
-      .proof-stat .number { font-size: 20px; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .proof-card-full { max-width: 100%; }
+      .hero { padding: 28px 0 32px; }
+      .form-container { padding: 12px; }
+      .testimonials { column-count: 1; }
     }
   </style>
 </head>
 <body>
 
-  <canvas id="streak-canvas"></canvas>
-
   <div class="page-wrapper">
-    <nav class="nav"></nav>
-
     <section class="hero">
       <div class="hero-logo">
         <img src="/images/logo.webp" alt="Mind Over Market" />
       </div>
-      <p class="callout">For traders who keep blowing accounts and can't figure out why</p>
       <h1>
-        One Shift In How You Trade Is Now Helping Multiple Students Go From Inconsistent To
-        <span class="gold">$10K, $30K, Even $100K Months</span> From Prop Firms
+        Learn The One Shift In How You Trade That Is Helping Multiple Students Go From Inconsistent To
+        <span class="accent">$5K-$30K</span> In Prop Firms Payouts
       </h1>
       <p class="hero-sub">
         No new strategy. No more blown accounts. Watch how one shift is helping traders who've tried
@@ -556,21 +336,21 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
     <section class="vsl-section">
       <div class="vsl-border-wrap">
-        <div class="vsl-container" style="padding-bottom:0;aspect-ratio:16/9;">
+        <div class="vsl-container">
           <vturb-smartplayer id="vid-69c986ed96fd2c2d9b2b6987" style="display:block;margin:0 auto;width:100%;"></vturb-smartplayer>
           <script type="text/javascript">
             var s=document.createElement("script");s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/69c986ed96fd2c2d9b2b6987/v4/player.js",s.async=!0,document.head.appendChild(s);
           </script>
         </div>
       </div>
-      <div style="text-align:center;margin-top:24px;">
+      <div class="cta-row">
         <a href="#apply" class="cta-button" onclick="document.querySelector('.app-section').scrollIntoView({behavior:'smooth'});return false;">APPLY NOW</a>
       </div>
     </section>
 
     <section class="app-section" id="apply">
       <div class="app-section-header">
-        <h2>Get Plugged Into The System. <span class="gold">Apply Below</span></h2>
+        <h2>Get Plugged Into The System. <span class="accent">Apply Below</span></h2>
       </div>
       <div class="form-container">
         <div data-tf-live="01KM7DXPHARD2CA50DZZYF9E7Y" style="width:100%;min-height:550px;"></div>
@@ -595,116 +375,33 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
 
     <section class="proof-section">
       <div class="proof-section-header">
-        <h2>They Were Exactly Where You Are. <span style="color:var(--gold);">Look At Them Now.</span></h2>
+        <h2>They Were Exactly Where You Are. <span class="accent">Look At Them Now.</span></h2>
         <p>Real results from traders inside Mind Over Market.</p>
       </div>
 
-      <div class="proof-stats">
-        <div class="proof-stat"><p class="number">$100K+</p><p class="label">Isaac - Total Payouts</p></div>
-        <div class="proof-stat"><p class="number">$100K</p><p class="label">Landon - January</p></div>
-        <div class="proof-stat"><p class="number">$50K+</p><p class="label">Sugar - 7 Months</p></div>
-        <div class="proof-stat"><p class="number">$30K/mo</p><p class="label">Nahom - Topstep + Apex</p></div>
-      </div>
-
-      <div class="proof-grid">
-        <div class="proof-card proof-card-full proof-card-video" style="border:none;background:transparent;">
-          <div class="video-testimonial" style="margin-bottom:0;">
-            <div class="video-testimonial-label"><span>Student Testimonial - Sugar</span></div>
-            <div class="video-wrapper" style="width:100%;max-width:100%;padding-bottom:56.25%;">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/jyE_87ndx9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="proof-card proof-card-full">
-          <img src="/images/proof/landon.webp" alt="Landon — $10K payout, $30K month, two accounts ready for max payouts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Landon</span>
-            <span class="student-result">$10K single payout · $30K month · Max payouts waiting</span>
-            <span class="student-detail">"crazy used to have 10k months, now it's the regular payout!"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/isaac-100k.webp" alt="Isaac — $100K+ in payouts, 10x $5,000 payouts shown" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Isaac</span>
-            <span class="student-result">$100K+ total payouts · $50K months consistently</span>
-            <span class="student-detail">"was so down, depressed... -20k in debt... it was my mindset"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/isaac-50k.webp" alt="Isaac — 50k month again, 5 Topstep payout confirmations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Isaac</span>
-            <span class="student-result">Another $50K month</span>
-            <span class="student-detail">"50k month again! All glory be to God!"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/jonah.webp" alt="JonahP — Quit his job, $5K payout from TopstepTrader" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Jonah</span>
-            <span class="student-result">Quit his job · $5K+ payout</span>
-            <span class="student-detail">"I just quit my job, it's been another W trading week so I decided to full send."</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/nahom-10k.webp" alt="Nahom — $10K payout, $30K month between Topstep and Apex" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Nahom</span>
-            <span class="student-result">$30K month · Topstep + Apex</span>
-            <span class="student-detail">"So blessed, another 10K payout which will put me to 20k for the month"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/nahom-25k.webp" alt="Nahom — $25K in payouts halfway through month, 10 Apex payouts shown" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Nahom</span>
-            <span class="student-result">$25K halfway through the month · 10 Apex payouts</span>
-            <span class="student-detail">"it feels unreal atp. All Glory to God"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/joe.webp" alt="Joe — +$3,600 first eval pass with flawless risk management" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Joe</span>
-            <span class="student-result">+$3,600 first eval pass</span>
-            <span class="student-detail">"I've used FLAWLESS risk management all week"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/keo.webp" alt="Keo — Passed first eval 1 month after learning to trade, Apex 50K certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Keo</span>
-            <span class="student-result">Passed first eval · 1 month after learning to trade</span>
-            <span class="student-detail">"I learnt trading 1 month ago, i just passed my first eval"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/niels.webp" alt="Niels — First payout via FundedNext, hasn't lost a trade in over a month" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Niels</span>
-            <span class="student-result">First payout · Hasn't lost a trade in over a month</span>
-            <span class="student-detail">"I've really discovered a system that works well for me"</span>
-          </div>
-        </div>
-
-        <div class="proof-card">
-          <img src="/images/proof/ollie.webp" alt="Ollie — Passed 4 50K Apex accounts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="proof-card-placeholder" style="display:none;">
-            <span class="student-name">Ollie</span>
-            <span class="student-result">Passed 4 × 50K Apex accounts</span>
-            <span class="student-detail">"Passed 4 50k apex's!"</span>
-          </div>
-        </div>
+      <div class="testimonials">
+        <div class="t-card"><img src="/images/testimonials/t1.webp" alt="Matthew: first ever payout after a year and two months" width="496" height="779" /></div>
+        <div class="t-card"><img src="/images/testimonials/t2.webp" alt="Passed his first funded account in 3 weeks" width="511" height="567" /></div>
+        <div class="t-card"><img src="/images/testimonials/t3.webp" alt="Chris: first $10,000 month" width="506" height="786" /></div>
+        <div class="t-card"><img src="/images/testimonials/t4.webp" alt="Landon: $24,000 in a week" width="499" height="673" /></div>
+        <div class="t-card"><img src="/images/testimonials/t5.webp" alt="Nahom: another $10K payout, $30K month" width="505" height="534" /></div>
+        <div class="t-card"><img src="/images/testimonials/t6.webp" alt="Angelo: second Topstep payout requested" width="496" height="767" /></div>
+        <div class="t-card"><img src="/images/testimonials/t7.webp" alt="Frankie: passed his first eval" width="507" height="361" /></div>
+        <div class="t-card"><img src="/images/testimonials/t8.webp" alt="Elliot: funded 50K Apex account certificate" width="502" height="751" /></div>
+        <div class="t-card"><img src="/images/testimonials/t9.webp" alt="First funded account passed, made $500 the next day" width="500" height="789" /></div>
+        <div class="t-card"><img src="/images/testimonials/t10.webp" alt="Hit $10K on PA accounts" width="492" height="750" /></div>
+        <div class="t-card"><img src="/images/testimonials/t11.webp" alt="$6K payout secured" width="278" height="382" /></div>
+        <div class="t-card"><img src="/images/testimonials/t12.webp" alt="Landon: $10,000 in one payout, $30,000 month" width="482" height="794" /></div>
+        <div class="t-card"><img src="/images/testimonials/t13.webp" alt="Landon: $35K month, bought a new truck" width="508" height="752" /></div>
+        <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Anthony: crossing $100K in profits this year" width="247" height="530" /></div>
+        <div class="t-card"><img src="/images/testimonials/t15.webp" alt="Landon: $85K month, passed 5 more accounts" width="522" height="879" /></div>
+        <div class="t-card"><img src="/images/testimonials/t16.webp" alt="Isaac: $100K+ in payouts" width="340" height="1184" /></div>
+        <div class="t-card"><img src="/images/testimonials/t17.webp" alt="Nahom: 10 payouts approved, halfway through the month" width="1000" height="485" /></div>
+        <div class="t-card"><img src="/images/testimonials/t18.webp" alt="Jonah: quit his job after a $5,000 payout" width="380" height="501" /></div>
+        <div class="t-card"><img src="/images/testimonials/t19.webp" alt="Jacob: first ever payout" width="1000" height="668" /></div>
+        <div class="t-card"><img src="/images/testimonials/t20.webp" alt="Niels: first payout, no losing trade in over a month" width="1000" height="2173" /></div>
+        <div class="t-card"><img src="/images/testimonials/t21.webp" alt="Joe: +$3,600, passed his first eval" width="1000" height="623" /></div>
+        <div class="t-card"><img src="/images/testimonials/t22.webp" alt="Ollie: passed 4 50K Apex accounts" width="657" height="206" /></div>
       </div>
     </section>
 
@@ -717,102 +414,6 @@ src="https://www.facebook.com/tr?id=1069326189417077&ev=PageView&noscript=1"
       <p>Mind Over Market &copy; 2026 - Results vary based on individual effort and market conditions. Application does not guarantee acceptance.</p>
     </footer>
   </div>
-
-  <script>
-    (function() {
-      function handleBrokenImg(img) {
-        img.classList.add('img-broken');
-        var placeholder = img.nextElementSibling;
-        if (placeholder && placeholder.classList.contains('proof-card-placeholder')) {
-          placeholder.classList.add('show');
-        }
-      }
-      var imgs = document.querySelectorAll('.proof-card img');
-      for (var i = 0; i < imgs.length; i++) {
-        if (imgs[i].complete && imgs[i].naturalWidth === 0) { handleBrokenImg(imgs[i]); }
-        imgs[i].addEventListener('error', function() { handleBrokenImg(this); });
-      }
-    })();
-  </script>
-
-  <script>
-    (function() {
-      var c = document.getElementById('streak-canvas');
-      var ctx = c.getContext('2d');
-      function resize() { c.width = window.innerWidth; c.height = window.innerHeight; }
-      resize();
-      window.addEventListener('resize', resize);
-
-      var streaks = [];
-      var golds = [
-        [200, 168, 78],
-        [212, 185, 106],
-        [168, 137, 58]
-      ];
-
-      function makeStreak() {
-        var g = golds[Math.floor(Math.random() * golds.length)];
-        var angle = -25 - Math.random() * 20;
-        var rad = angle * Math.PI / 180;
-        var len = c.width * (0.3 + Math.random() * 0.25);
-        var speed = 0.3 + Math.random() * 0.4;
-        var yPos = Math.random() * c.height;
-        var startX = -len * 0.3;
-        return {
-          x: startX + Math.random() * c.width * 0.5,
-          y: yPos,
-          len: len,
-          angle: rad,
-          speed: speed,
-          color: g,
-          alpha: 0.08 + Math.random() * 0.1,
-          width: 1 + Math.random() * 1.5,
-          fadeIn: 0.05,
-          fadeOut: 0.95,
-          progress: Math.random()
-        };
-      }
-
-      for (var i = 0; i < 7; i++) { streaks.push(makeStreak()); }
-
-      function draw() {
-        ctx.clearRect(0, 0, c.width, c.height);
-        for (var i = 0; i < streaks.length; i++) {
-          var s = streaks[i];
-          s.progress += s.speed / 1000;
-          if (s.progress > 1) { streaks[i] = makeStreak(); streaks[i].progress = 0; continue; }
-
-          var t = s.progress;
-          var opacity = s.alpha;
-          if (t < s.fadeIn) opacity *= t / s.fadeIn;
-          else if (t > s.fadeOut) opacity *= (1 - t) / (1 - s.fadeOut);
-
-          var xOff = (t - 0.5) * c.width * 1.4;
-          var x1 = s.x + xOff;
-          var y1 = s.y + Math.sin(s.angle) * xOff;
-          var x2 = x1 + Math.cos(s.angle) * s.len;
-          var y2 = y1 + Math.sin(s.angle) * s.len;
-
-          var grad = ctx.createLinearGradient(x1, y1, x2, y2);
-          var r = s.color[0], g = s.color[1], b = s.color[2];
-          grad.addColorStop(0, 'rgba(' + r + ',' + g + ',' + b + ',0)');
-          grad.addColorStop(0.3, 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')');
-          grad.addColorStop(0.5, 'rgba(' + r + ',' + g + ',' + b + ',' + (opacity * 1.5) + ')');
-          grad.addColorStop(0.7, 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')');
-          grad.addColorStop(1, 'rgba(' + r + ',' + g + ',' + b + ',0)');
-
-          ctx.beginPath();
-          ctx.moveTo(x1, y1);
-          ctx.lineTo(x2, y2);
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = s.width;
-          ctx.stroke();
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-    })();
-  </script>
 
 </body>
 </html>
