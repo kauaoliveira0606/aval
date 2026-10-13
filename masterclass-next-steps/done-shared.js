@@ -8,7 +8,8 @@
   var MASTERCLASS_HOUR = 19;
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
-  var EVENT_DETAILS = 'Live masterclass with Benicio Valentin (AvalTrades). Your link to join is in your confirmation email.';
+  var EVENT_URL = 'https://event.webinarjam.com/qwk59l/go/live/k50k29izins2s1';
+  var EVENT_DETAILS = 'Join the live masterclass here: ' + EVENT_URL + '\n\nLive masterclass with Benicio Valentin (AvalTrades). Your link is also in your confirmation email.';
 
   var ICON = '<svg class="done-step-icon" width="52" height="58" viewBox="0 0 52 58" fill="none" aria-hidden="true">' +
     '<rect x="3" y="8" width="46" height="47" rx="6" stroke="#16a34a" stroke-width="5"/>' +
@@ -141,19 +142,24 @@
 
     /* ---------- Add to calendar ---------- */
     function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+    // .ics text values: commas, semicolons and line breaks have to be escaped.
+    function icsText(t) { return t.replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n'); }
     var google = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
       '&text=' + encodeURIComponent(EVENT_TITLE) +
       '&dates=' + stamp(start) + '/' + stamp(end) +
-      '&details=' + encodeURIComponent(EVENT_DETAILS);
+      '&details=' + encodeURIComponent(EVENT_DETAILS) +
+      '&location=' + encodeURIComponent(EVENT_URL);
     var outlook = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent' +
       '&subject=' + encodeURIComponent(EVENT_TITLE) +
       '&startdt=' + encodeURIComponent(start.toISOString()) +
       '&enddt=' + encodeURIComponent(end.toISOString()) +
-      '&body=' + encodeURIComponent(EVENT_DETAILS);
+      '&body=' + encodeURIComponent(EVENT_DETAILS.replace(/\n/g, '<br>')) +
+      '&location=' + encodeURIComponent(EVENT_URL);
     var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mind Over Market//Live Masterclass//EN', 'BEGIN:VEVENT',
       'UID:masterclass-' + stamp(start) + '@mindovermarket.com', 'DTSTAMP:' + stamp(new Date()),
       'DTSTART:' + stamp(start), 'DTEND:' + stamp(end),
-      'SUMMARY:' + EVENT_TITLE, 'DESCRIPTION:' + EVENT_DETAILS,
+      'SUMMARY:' + EVENT_TITLE, 'DESCRIPTION:' + icsText(EVENT_DETAILS),
+      'LOCATION:' + icsText(EVENT_URL), 'URL:' + EVENT_URL,
       'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:' + EVENT_TITLE, 'END:VALARM',
       'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
     var icsHref = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
