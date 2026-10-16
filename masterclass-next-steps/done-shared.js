@@ -35,7 +35,7 @@
   }).join('');
 
   var html = `
-  <p class="done-lead">Before you close this tab, complete these ${FAQS.length ? 'four' : 'three'} steps to make sure you're <b>fully set up for the masterclass</b></p>
+  <p class="done-lead">Before you close this tab, complete these __STEPS__ steps to make sure you're <b>fully set up for the masterclass</b></p>
 
   <!-- VTurb player. Its script is loaded below, since a script tag set through innerHTML never runs.
        The wrapper holds the spacing because the player resets its own margin once it loads. -->
@@ -88,7 +88,12 @@
     <div class="done-faq-grid">${faqHtml}</div>
   </div>` : ''}
 `;
-  document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = html; });
+  // A page can add its own steps after these (data-extra-steps), so the count in the lead line includes them.
+  var STEP_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six'];
+  document.querySelectorAll('.js-done-shared').forEach(function (el) {
+    var steps = (FAQS.length ? 4 : 3) + (+el.getAttribute('data-extra-steps') || 0);
+    el.innerHTML = html.replace('__STEPS__', STEP_WORDS[steps]);
+  });
 
   // Main video (VTurb).
   var vt = document.createElement('script');
