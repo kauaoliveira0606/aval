@@ -18,8 +18,20 @@
     '<g fill="#16a34a"><rect x="12" y="28" width="7" height="6" rx="1"/><rect x="22.5" y="28" width="7" height="6" rx="1"/><rect x="33" y="28" width="7" height="6" rx="1"/>' +
     '<rect x="12" y="39" width="7" height="6" rx="1"/><rect x="22.5" y="39" width="7" height="6" rx="1"/><rect x="33" y="39" width="7" height="6" rx="1"/></g></svg>';
 
+  // Step 4 FAQ videos (VTurb), shown two per row. Add one line per video: [title, player id].
+  var FAQS = [
+    ['How much time do you need?', '6ad230e5c1968bdb4858ce48'],
+    ['Why is there no replay?', '6ad230c510de2de20c82165c'],
+    ['What happens in the masterclass?', '6ad230b747bad47720470509'],
+  ];
+
+  var faqHtml = FAQS.map(function (f) {
+    return '<div class="done-faq-item"><div class="done-faq-q">' + f[0] + '</div>' +
+      '<vturb-smartplayer id="vid-' + f[1] + '" style="display: block; margin: 0 auto; width: 100%;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div>';
+  }).join('');
+
   var html = `
-  <p class="done-lead">Before you close this tab, complete these three steps to make sure you're <b>fully set up for the masterclass</b></p>
+  <p class="done-lead">Before you close this tab, complete these ${FAQS.length ? 'four' : 'three'} steps to make sure you're <b>fully set up for the masterclass</b></p>
 
   <!-- VTurb player. Its script is loaded below, since a script tag set through innerHTML never runs.
        The wrapper holds the spacing because the player resets its own margin once it loads. -->
@@ -64,6 +76,13 @@
       <p>Check promotions or spam, then drag it into your main inbox so you get every reminder.</p>
     </div>
   </div>
+
+  ${FAQS.length ? `<div class="done-step">
+    <div class="done-step-pill">STEP 4:</div>
+    ${ICON}
+    <h2>Get Your Questions <span>Answered</span></h2>
+    <div class="done-faq-grid">${faqHtml}</div>
+  </div>` : ''}
 `;
   document.querySelectorAll('.js-done-shared').forEach(function (el) { el.innerHTML = html; });
 
@@ -72,6 +91,14 @@
   vt.src = 'https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ace5b8f5cf0c310640b80dd/v4/player.js';
   vt.async = true;
   document.head.appendChild(vt);
+
+  // Step 4 FAQ videos (VTurb).
+  FAQS.forEach(function (f) {
+    var fs = document.createElement('script');
+    fs.src = 'https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/' + f[1] + '/v4/player.js';
+    fs.async = true;
+    document.head.appendChild(fs);
+  });
 
   // Intake form (Typeform).
   var tf = document.createElement('script');
