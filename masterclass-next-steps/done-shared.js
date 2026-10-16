@@ -26,6 +26,7 @@
     ['How much capital do you need?', '6ad230a820c62309b1716101'],
     ['Do I need prior experience?', '6ad2309cd84c820fad5a362a'],
     ["How do I know you're legit?", '6ad23098c1bda537efa1ee7c'],
+    ['Results people have gotten on this masterclass', '6ad230bf7aeeb084bd48c6fe'],
   ];
 
   var faqHtml = FAQS.map(function (f) {
