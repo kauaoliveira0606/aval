@@ -23,6 +23,7 @@
     ['How much time do you need?', '6ad230e5c1968bdb4858ce48'],
     ['Why is there no replay?', '6ad230c510de2de20c82165c'],
     ['What happens in the masterclass?', '6ad230b747bad47720470509'],
+    ['How much capital do you need?', '6ad230a820c62309b1716101'],
   ];
 
   var faqHtml = FAQS.map(function (f) {
