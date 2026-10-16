@@ -24,6 +24,8 @@
     ['Why is there no replay?', '6ad230c510de2de20c82165c'],
     ['What happens in the masterclass?', '6ad230b747bad47720470509'],
     ['How much capital do you need?', '6ad230a820c62309b1716101'],
+    ['Do I need prior experience?', '6ad2309cd84c820fad5a362a'],
+    ["How do I know you're legit?", '6ad23098c1bda537efa1ee7c'],
   ];
 
   var faqHtml = FAQS.map(function (f) {
