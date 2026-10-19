@@ -15,10 +15,10 @@
   var EVENT_DETAILS = 'Join the live masterclass here: ' + EVENT_URL + '\n\nLive masterclass with Benicio Valentin (AvalTrades). Your link is also in your confirmation email.';
 
   var ICON = '<svg class="done-step-icon" width="52" height="58" viewBox="0 0 52 58" fill="none" aria-hidden="true">' +
-    '<rect x="3" y="8" width="46" height="47" rx="6" stroke="#16a34a" stroke-width="5"/>' +
-    '<rect x="3" y="8" width="46" height="13" fill="#16a34a"/>' +
-    '<rect x="12" y="1" width="6" height="12" rx="2" fill="#16a34a"/><rect x="34" y="1" width="6" height="12" rx="2" fill="#16a34a"/>' +
-    '<g fill="#16a34a"><rect x="12" y="28" width="7" height="6" rx="1"/><rect x="22.5" y="28" width="7" height="6" rx="1"/><rect x="33" y="28" width="7" height="6" rx="1"/>' +
+    '<rect x="3" y="8" width="46" height="47" rx="6" stroke="#d9a93b" stroke-width="5"/>' +
+    '<rect x="3" y="8" width="46" height="13" fill="#d9a93b"/>' +
+    '<rect x="12" y="1" width="6" height="12" rx="2" fill="#d9a93b"/><rect x="34" y="1" width="6" height="12" rx="2" fill="#d9a93b"/>' +
+    '<g fill="#d9a93b"><rect x="12" y="28" width="7" height="6" rx="1"/><rect x="22.5" y="28" width="7" height="6" rx="1"/><rect x="33" y="28" width="7" height="6" rx="1"/>' +
     '<rect x="12" y="39" width="7" height="6" rx="1"/><rect x="22.5" y="39" width="7" height="6" rx="1"/><rect x="33" y="39" width="7" height="6" rx="1"/></g></svg>';
 
   // Step 4 FAQ videos (VTurb), shown two per row. Add one line per video: [title, player id].
@@ -43,7 +43,7 @@
   <!-- VTurb player. Its script is loaded below, since a script tag set through innerHTML never runs.
        The wrapper holds the spacing because the player resets its own margin once it loads. -->
   <div class="done-video"><vturb-smartplayer id="vid-6ace5b8f5cf0c310640b80dd" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div>
-  <svg class="done-arrow" width="26" height="46" viewBox="0 0 26 46" fill="none" aria-hidden="true"><path d="M13 2v40M3 31l10 11 10-11" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg class="done-arrow" width="26" height="46" viewBox="0 0 26 46" fill="none" aria-hidden="true"><path d="M13 2v40M3 31l10 11 10-11" stroke="#d9a93b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
   <div class="done-step" style="margin-top:18px;">
     <div class="done-step-pill">STEP 1:</div>

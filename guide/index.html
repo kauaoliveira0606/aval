@@ -21,7 +21,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1597200888695107');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript><img height="1" width="1" style="display: none"
 src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
@@ -42,21 +42,21 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
   <style>
     :root {
-      --bg: #fcfcfc;
-      --bg-alt: #f3f9f5;
-      --bg-card: #ffffff;
-      --band: #f0fdf4;
-      --border: #e7ece8;
-      --border-2: #d5ddd7;
-      --green: #16a34a;
-      --green-dim: #22c55e;
-      --green-deep: #15803d;
-      --green-glow: rgba(15, 23, 42, 0.16);
-      --gold: #d97706;
-      --red: #dc2626;
-      --text: #0b1b26;
-      --text-dim: #5b5d6b;
-      --text-mut: #6b7280;
+      --bg: #000000;
+      --bg-alt: #111111;
+      --bg-card: #111111;
+      --band: #111111;
+      --border: #2e291f;
+      --border-2: #2e291f;
+      --green: #d9a93b;
+      --green-dim: #d9a93b;
+      --green-deep: #d9a93b;
+      --green-glow: rgba(0, 0, 0, 0.16);
+      --gold: #d9a93b;
+      --red: #ff6b6b;
+      --text: #ffffff;
+      --text-dim: #ffffff;
+      --text-mut: #ffffff;
       --font: 'Geist', 'Inter', sans-serif;
       --mono: 'Geist', 'Inter', sans-serif;
       --head: 'Manrope', sans-serif;
@@ -65,7 +65,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      background: #fcfcfc;
+      background: #000000;
       color: var(--text);
       font-family: var(--font);
       font-size: 17px;
@@ -73,7 +73,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::selection { background: var(--green); color: #fff; }
+    ::selection { background: var(--green); color: #0a0a0a; }
     img { max-width: 100%; }
 
     h1, h2, h3 { font-family: var(--head); }
@@ -81,8 +81,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     /* PROGRESS BAR */
     #progress {
       position: fixed; top: 0; left: 0; height: 3px; width: 0%;
-      background: var(--green); z-index: 1000; transition: width 0.1s linear;
-    }
+      background: var(--green); z-index: 1000; transition: width 0.1s linear; color: #0a0a0a;}
 
     /* TOP STRIP */
     .top-strip {
@@ -96,7 +95,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     /* NAV */
     nav {
       position: sticky; top: 0; z-index: 900;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(17, 17, 17, 0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
@@ -120,10 +119,10 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
     .nav-cta {
-      background: var(--green); color: #fff !important; padding: 9px 16px;
+      background: var(--green); color: #0a0a0a; padding: 9px 16px;
       border-radius: 6px; box-shadow: 0 1px 0 var(--green-deep); transition: background 0.15s !important;
     }
-    .nav-cta:hover { background: #15803d; }
+    .nav-cta:hover { background: #a97c22; color: #0a0a0a;}
     .nav-burger {
       display: none; background: none; border: none; cursor: pointer; padding: 8px;
       flex-direction: column; gap: 5px;
@@ -187,11 +186,10 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     .hero {
       padding: 84px 0 92px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
-      background:
-        repeating-linear-gradient(115deg, transparent 0 138px, rgba(22,163,74,0.06) 138px 140px),
-        radial-gradient(620px 360px at 26% 22%, rgba(34,197,94,0.16), transparent 70%),
-        radial-gradient(520px 460px at 100% 55%, rgba(34,197,94,0.13), transparent 70%),
-        linear-gradient(180deg, #f1fdf5 0%, #f7f9f7 100%);
+      background: repeating-linear-gradient(115deg, transparent 0 138px, rgba(217, 169, 59, 0.06) 138px 140px),
+        radial-gradient(620px 360px at 26% 22%, rgba(217, 169, 59, 0.16), transparent 70%),
+        radial-gradient(520px 460px at 100% 55%, rgba(217, 169, 59, 0.13), transparent 70%),
+        linear-gradient(180deg, #111111 0%, #000000 100%);
     }
     .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 56px; align-items: center; }
     @media (max-width: 940px) { .hero-inner { grid-template-columns: 1fr; gap: 44px; } }
@@ -203,7 +201,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       color: var(--text); background: var(--bg-card);
       border: 1px solid var(--border); padding: 8px 16px; border-radius: 9999px; margin-bottom: 26px;
     }
-    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(34,197,94,0.2); animation: pulse 1.6s ease-out infinite; }
+    .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(217, 169, 59, 0.2); animation: pulse 1.6s ease-out infinite; color: #0a0a0a;}
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
     h1 {
@@ -224,8 +222,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       letter-spacing: 0.03em; padding: 15px 26px; border-radius: 8px; text-decoration: none;
       cursor: pointer; border: 0; transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
     }
-    .btn-primary { background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%); color: #fff; box-shadow: 0 2px 0 var(--green-deep), 0 10px 26px -8px var(--green-glow); }
-    .btn-primary:hover { background: #15803d; transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(180deg, #d9a93b 0%, #a97c22 100%); color: #0a0a0a; box-shadow: 0 2px 0 var(--green-deep), 0 10px 26px -8px var(--green-glow); }
+    .btn-primary:hover { background: #a97c22; transform: translateY(-1px); color: #0a0a0a;}
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-2); }
     .btn-ghost:hover { background: var(--bg-card); border-color: var(--green-dim); }
 
@@ -239,15 +237,15 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
       padding: 26px; box-shadow: 0 24px 48px -20px var(--green-glow); position: relative;
     }
-    .chart-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); border-radius: 12px 12px 0 0; }
+    .chart-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); border-radius: 12px 12px 0 0; color: #0a0a0a;}
     .chart-card .chip-row { display: flex; gap: 10px; margin: 4px 0 16px; flex-wrap: wrap; }
     .chip {
       font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
       padding: 5px 12px; border-radius: 9999px; display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--border);
     }
     .chip .sw { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
-    .chip.liq { color: var(--gold); } .chip.liq .sw { background: var(--gold); }
-    .chip.flow { color: var(--green); } .chip.flow .sw { background: var(--green); }
+    .chip.liq { color: var(--gold); } .chip.liq .sw { background: var(--gold); color: #0a0a0a;}
+    .chip.flow { color: var(--green); } .chip.flow .sw { background: var(--green); color: #0a0a0a;}
     .chart-card svg { width: 100%; height: auto; display: block; }
     .chart-note { margin-top: 14px; font-size: 13.5px; color: var(--text-mut); text-align: center; font-style: italic; }
 
@@ -262,7 +260,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     .placeholder-note {
       font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); border: 1px dashed rgba(217,119,6,0.5); border-radius: 6px;
+      color: var(--gold); border: 1px dashed rgba(217, 169, 59, 0.5); border-radius: 6px;
       padding: 8px 12px; display: inline-block; margin-bottom: 18px;
     }
     .story-copy .lead { margin-bottom: 22px; }
@@ -300,13 +298,12 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       width: 66px; height: 46px; border-radius: 8px; background: var(--green);
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 8px 30px rgba(34,197,94,0.4); transition: transform 0.2s ease; pointer-events: none;
-    }
+      box-shadow: 0 8px 30px rgba(217, 169, 59, 0.4); transition: transform 0.2s ease; pointer-events: none; color: #0a0a0a;}
     .video-facade:hover .play-btn { transform: translate(-50%, -50%) scale(1.08); }
     .video-facade .play-btn::after {
       content: ""; display: block; margin-left: 3px;
       border-style: solid; border-width: 10px 0 10px 17px;
-      border-color: transparent transparent transparent #fff;
+      border-color: transparent transparent transparent #2e291f;
     }
     .section-video { max-width: 780px; margin: 44px auto 0; display: grid; gap: 14px; }
     .section-video .video-caption { justify-content: center; padding-left: 0; }
@@ -320,7 +317,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       border-radius: 12px; overflow: hidden; position: relative;
       box-shadow: 0 20px 44px -22px var(--green-glow);
     }
-    .quote-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); z-index: 2; }
+    .quote-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--green); z-index: 2; color: #0a0a0a;}
     .quote-card .note-photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--border); }
     .quote-card .note-body { padding: 26px 30px 30px; }
     .quote-card .note-label {
@@ -355,7 +352,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     .yes-banner .big-check {
       width: 50px; height: 50px; border-radius: 8px; background: var(--green);
-      display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff;
+      display: flex; align-items: center; justify-content: center; font-size: 24px; color: #0a0a0a;
       flex-shrink: 0; font-weight: 800; box-shadow: 0 2px 0 var(--green-deep);
     }
     .yes-banner > div:last-child { flex: 1; min-width: 260px; }
@@ -384,14 +381,14 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .fail-card, .win-card { border-radius: 10px; padding: 32px; background: var(--bg-card); border: 1px solid var(--border); position: relative; overflow: hidden; }
     .fail-card::before, .win-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
     .fail-card::before { background: var(--red); }
-    .win-card::before { background: var(--green); }
+    .win-card::before { background: var(--green); color: #0a0a0a;}
     .fail-card h3, .win-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 18px; }
     .fail-card h3 .tag, .win-card h3 .tag {
       font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
       text-transform: uppercase; padding: 4px 10px; border-radius: 9999px;
     }
-    .fail-card h3 .tag { border: 1px solid rgba(255,92,92,0.4); color: var(--red); }
-    .win-card h3 .tag { border: 1px solid rgba(34,197,94,0.4); color: var(--green); }
+    .fail-card h3 .tag { border: 1px solid rgba(255, 92, 92, 0.4); color: var(--red); }
+    .win-card h3 .tag { border: 1px solid rgba(217, 169, 59, 0.4); color: var(--green); }
     .fail-card ul, .win-card ul { list-style: none; display: grid; gap: 13px; }
     .fail-card li, .win-card li { display: flex; gap: 12px; font-size: 15px; color: var(--text-dim); line-height: 1.6; }
     .fail-card li::before { content: "\2715"; color: var(--red); font-family: var(--mono); font-weight: 700; flex-shrink: 0; }
@@ -526,7 +523,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       display: flex; align-items: center; justify-content: center; font-size: 15px; color: transparent;
       transition: all 0.2s; margin-top: 2px; font-weight: 800;
     }
-    .check-item.done .box { background: var(--green); border-color: var(--green); color: #fff; }
+    .check-item.done .box { background: var(--green); border-color: var(--green); color: #0a0a0a; }
     .check-item .txt { font-size: 15.5px; color: var(--text-dim); }
     .check-item.done .txt { color: var(--text); }
     .check-item .txt a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--green-dim); }
@@ -634,22 +631,22 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         <line x1="0" y1="156" x2="440" y2="156" stroke="rgba(11,27,38,0.08)" stroke-width="1"/>
         <line x1="0" y1="208" x2="440" y2="208" stroke="rgba(11,27,38,0.08)" stroke-width="1"/>
         <g>
-          <g class="candle" style="animation-delay:0.05s; transform-origin: 22px 190px;"><line x1="22" y1="160" x2="22" y2="214" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="14" y="170" width="16" height="34" rx="2" fill="#dc2626"/></g>
-          <g class="candle" style="animation-delay:0.15s; transform-origin: 54px 185px;"><line x1="54" y1="158" x2="54" y2="208" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="46" y="166" width="16" height="30" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.25s; transform-origin: 86px 175px;"><line x1="86" y1="148" x2="86" y2="198" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="78" y="156" width="16" height="32" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.35s; transform-origin: 118px 172px;"><line x1="118" y1="150" x2="118" y2="196" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="110" y="160" width="16" height="26" rx="2" fill="#dc2626"/></g>
-          <g class="candle" style="animation-delay:0.45s; transform-origin: 150px 160px;"><line x1="150" y1="132" x2="150" y2="184" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="142" y="140" width="16" height="36" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.55s; transform-origin: 182px 145px;"><line x1="182" y1="120" x2="182" y2="170" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="174" y="128" width="16" height="32" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.65s; transform-origin: 214px 142px;"><line x1="214" y1="122" x2="214" y2="164" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="206" y="130" width="16" height="24" rx="2" fill="#dc2626"/></g>
-          <g class="candle" style="animation-delay:0.75s; transform-origin: 246px 130px;"><line x1="246" y1="104" x2="246" y2="156" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="238" y="112" width="16" height="34" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.85s; transform-origin: 278px 115px;"><line x1="278" y1="92" x2="278" y2="142" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="270" y="98" width="16" height="32" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:0.95s; transform-origin: 310px 112px;"><line x1="310" y1="94" x2="310" y2="134" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="302" y="102" width="16" height="22" rx="2" fill="#dc2626"/></g>
-          <g class="candle" style="animation-delay:1.05s; transform-origin: 342px 98px;"><line x1="342" y1="74" x2="342" y2="124" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="334" y="82" width="16" height="32" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:1.15s; transform-origin: 374px 82px;"><line x1="374" y1="58" x2="374" y2="108" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="366" y="64" width="16" height="36" rx="2" fill="#22c55e"/></g>
-          <g class="candle" style="animation-delay:1.25s; transform-origin: 406px 70px;"><line x1="406" y1="46" x2="406" y2="94" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="398" y="52" width="16" height="30" rx="2" fill="#22c55e"/></g>
+          <g class="candle" style="animation-delay: 0.05s; transform-origin: 22px 190px;"><line x1="22" y1="160" x2="22" y2="214" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="14" y="170" width="16" height="34" rx="2" fill="#dc2626"/></g>
+          <g class="candle" style="animation-delay: 0.15s; transform-origin: 54px 185px;"><line x1="54" y1="158" x2="54" y2="208" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="46" y="166" width="16" height="30" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.25s; transform-origin: 86px 175px;"><line x1="86" y1="148" x2="86" y2="198" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="78" y="156" width="16" height="32" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.35s; transform-origin: 118px 172px;"><line x1="118" y1="150" x2="118" y2="196" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="110" y="160" width="16" height="26" rx="2" fill="#dc2626"/></g>
+          <g class="candle" style="animation-delay: 0.45s; transform-origin: 150px 160px;"><line x1="150" y1="132" x2="150" y2="184" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="142" y="140" width="16" height="36" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.55s; transform-origin: 182px 145px;"><line x1="182" y1="120" x2="182" y2="170" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="174" y="128" width="16" height="32" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.65s; transform-origin: 214px 142px;"><line x1="214" y1="122" x2="214" y2="164" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="206" y="130" width="16" height="24" rx="2" fill="#dc2626"/></g>
+          <g class="candle" style="animation-delay: 0.75s; transform-origin: 246px 130px;"><line x1="246" y1="104" x2="246" y2="156" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="238" y="112" width="16" height="34" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.85s; transform-origin: 278px 115px;"><line x1="278" y1="92" x2="278" y2="142" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="270" y="98" width="16" height="32" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 0.95s; transform-origin: 310px 112px;"><line x1="310" y1="94" x2="310" y2="134" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="302" y="102" width="16" height="22" rx="2" fill="#dc2626"/></g>
+          <g class="candle" style="animation-delay: 1.05s; transform-origin: 342px 98px;"><line x1="342" y1="74" x2="342" y2="124" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="334" y="82" width="16" height="32" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 1.15s; transform-origin: 374px 82px;"><line x1="374" y1="58" x2="374" y2="108" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="366" y="64" width="16" height="36" rx="2" fill="#d9a93b"/></g>
+          <g class="candle" style="animation-delay: 1.25s; transform-origin: 406px 70px;"><line x1="406" y1="46" x2="406" y2="94" stroke="rgba(11,27,38,0.3)" stroke-width="2"/><rect x="398" y="52" width="16" height="30" rx="2" fill="#d9a93b"/></g>
         </g>
-        <path class="draw-line" d="M 10 212 C 80 206, 130 196, 190 172 S 310 122, 430 84" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
-        <path class="draw-line" d="M 10 206 C 70 198, 120 184, 180 158 S 300 104, 430 62" fill="none" stroke="#d97706" stroke-width="3" stroke-linecap="round"/>
+        <path class="draw-line" d="M 10 212 C 80 206, 130 196, 190 172 S 310 122, 430 84" fill="none" stroke="#d9a93b" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+        <path class="draw-line" d="M 10 206 C 70 198, 120 184, 180 158 S 300 104, 430 62" fill="none" stroke="#d9a93b" stroke-width="3" stroke-linecap="round"/>
       </svg>
       <div class="chart-note">Read where liquidity sits. Wait for the market to confirm. Take the trade or do nothing.</div>
     </div>
@@ -740,7 +737,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       </div>
     </div>
 
-    <h2 class="reveal" style="margin-top:72px;">Do I Give Signals? <span class="accent">No, And I Never Will.</span></h2>
+    <h2 class="reveal" style="margin-top: 72px;">Do I Give Signals? <span class="accent">No, And I Never Will.</span></h2>
     <p class="lead reveal d1">Someone hands you an entry, it wins, and you feel like a trader for about ten minutes. Then the day comes when they stop sending them.</p>
 
     <div class="split-cards">
@@ -768,7 +765,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <strong>Independent does not mean alone.</strong> On top of the group coaching and live training sessions, you can ask us anything, get your trades reviewed, and work through whatever you are stuck on.
     </div>
 
-    <div class="yes-banner reveal" style="margin-top:56px;">
+    <div class="yes-banner reveal" style="margin-top: 56px;">
       <div class="big-check">&#10003;</div>
       <div>
         <h3>Not a course. A daily trading routine.</h3>
@@ -782,7 +779,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <li class="reveal d3"><span class="time">Always On</span><div class="what"><strong>Community, curriculum and tools</strong><span>The full Mind Over Market curriculum, an active community for accountability, and the tools that support the routine.</span></div></li>
     </ul>
 
-    <h2 class="reveal" style="margin-top:72px;">Why Most Beginners <span class="accent">Fail</span></h2>
+    <h2 class="reveal" style="margin-top: 72px;">Why Most Beginners <span class="accent">Fail</span></h2>
     <p class="lead reveal d1">If you have traded before and walked away thinking you are just bad at it, read this carefully. Most people do not fail because the strategy is wrong. They fail because of when and how they take the trade.</p>
 
     <div class="split-cards">
@@ -912,7 +909,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <div class="interviews-grid">
       <div class="interview-card reveal d1">
         <div class="video-embed">
-          <vturb-smartplayer id="vid-67ebeb7abfcaa80d52d78b31" style="display:block;margin:0 auto;width:100%;"><div class="vturb-player-placeholder" style="position:relative;width:100%;padding:64.98% 0 0;z-index:0;background-color:black;"></div></vturb-smartplayer>
+          <vturb-smartplayer id="vid-67ebeb7abfcaa80d52d78b31" style="display: block;margin: 0 auto;width: 100%;"><div class="vturb-player-placeholder" style="position: relative;width: 100%;padding: 64.98% 0 0;z-index: 0;background-color: #000000;"></div></vturb-smartplayer>
           <script type="text/javascript">
             (function(){var s=document.createElement("script");s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/67ebeb7abfcaa80d52d78b31/v4/player.js";s.async=!0;document.head.appendChild(s);})();
           </script>
@@ -975,10 +972,10 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 <!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="wrap">
-    <div style="text-align:center;">
+    <div style="text-align: center;">
       <span class="eyebrow reveal">Before You Ask</span>
       <h2 class="reveal">Frequently Asked <span class="accent">Questions</span></h2>
-      <p class="lead reveal d1" style="margin:0 auto;">The questions that come up on almost every call. Bring anything not covered here and we will go through it together.</p>
+      <p class="lead reveal d1" style="margin: 0 auto;">The questions that come up on almost every call. Bring anything not covered here and we will go through it together.</p>
     </div>
 
     <div class="faq-list" id="faqList">
@@ -1044,7 +1041,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <div class="sum-card reveal d3"><span class="k">A structured path</span>Your first 90 days follow a <strong>4 phase roadmap</strong>: Foundation, Pattern Recognition, Live Execution, Scaling Consistency.</div>
       <div class="sum-card reveal d3"><span class="k">Accountability built in</span>Weekly end-of-week reviews, tracked metrics, and feedback on your journal and emotional control. <strong>You cannot hide here.</strong></div>
     </div>
-    <div class="roadmap-note reveal" style="margin-top:28px;">
+    <div class="roadmap-note reveal" style="margin-top: 28px;">
       <strong>This is not about a payout next week.</strong> It is about building a skill that pays you for years. The call is where Benicio's team learns your goals and you both decide if this is the right fit.
     </div>
   </div>
@@ -1054,7 +1051,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <div class="wrap">
     <span class="eyebrow reveal">What Happens Next</span>
     <h2 class="reveal">Prep For Your Call</h2>
-    <p class="lead reveal d1" style="margin:0 auto; max-width:640px;">The call runs about 30 to 45 minutes. We cover where you are now, where you want to go, and whether the program is the right fit to get you there. Check each item off as you go:</p>
+    <p class="lead reveal d1" style="margin: 0 auto; max-width: 640px;">The call runs about 30 to 45 minutes. We cover where you are now, where you want to go, and whether the program is the right fit to get you there. Check each item off as you go:</p>
 
     <div class="checklist reveal d2">
       <div class="check-progress" id="checkProgress"><strong>0 of 5</strong> complete</div>
