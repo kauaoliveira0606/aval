@@ -6,6 +6,9 @@
   // Keep in step with the constants in /masterclass/index.html.
   var MASTERCLASS_DAY = 0;
   var MASTERCLASS_HOUR = 19;
+  // Pinned session (New York date). While it is in the future it wins over the weekly rule
+  // and WebinarJam; once it passes, the weekly rule takes over again. Set to '' to unpin.
+  var MASTERCLASS_DATE = '2026-10-25';
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
   var EVENT_URL = 'https://event.webinarjam.com/qwk59l/go/live/k50k29izins2s1';
@@ -130,7 +133,18 @@
     var asUtc = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second);
     return asUtc - Math.floor(date.getTime() / 1000) * 1000;
   }
+  // True while the pinned session is still ahead.
+  function pinActive() {
+    return !!MASTERCLASS_DATE && nextSession(new Date()).getTime() === nextSession(new Date(0)).getTime();
+  }
+
   function nextSession(now) {
+    if (MASTERCLASS_DATE) {
+      var d = MASTERCLASS_DATE.split('-');
+      var pinWall = Date.UTC(+d[0], +d[1] - 1, +d[2], MASTERCLASS_HOUR, 0, 0);
+      var pinned = new Date(pinWall - nyOffset(new Date(pinWall - nyOffset(new Date(pinWall)))));
+      if (pinned > now) return pinned;
+    }
     var p = nyParts(now);
     var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
     var days = (MASTERCLASS_DAY - dow + 7) % 7;
@@ -187,7 +201,7 @@
     body: 'offset=' + (-(new Date()).getTimezoneOffset()) + '&limit=3&source=bar'
   }).then(function (r) { return r.json(); }).then(function (data) {
     var next = (data.registrationDates || []).filter(function (d) { return d.ts * 1000 > Date.now(); })[0];
-    if (next) applyStart(new Date(next.ts * 1000));
+    if (next && !pinActive()) applyStart(new Date(next.ts * 1000));
   }).catch(function (err) { console.log('WebinarJam schedule unavailable: ' + err.message); });
 
   document.querySelectorAll('.js-cal-toggle').forEach(function (btn) {

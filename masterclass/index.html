@@ -538,6 +538,9 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
     var MASTERCLASS_DAY = 0;
     var MASTERCLASS_HOUR = 19;
+    // Pinned session (New York date). While it is in the future it wins over the weekly rule
+    // and WebinarJam; once it passes, the weekly rule takes over again. Set to '' to unpin.
+    var MASTERCLASS_DATE = '2026-10-25';
     var MASTERCLASS_TIME_LABEL = '7:00 PM EST';
     var MASTERCLASS_SHORT_LABEL = '7 PM EST';
     // Seats saved: starts at SEATS_BASE on SEATS_SINCE (New York date) and goes up by
@@ -590,7 +593,18 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       return asUtc - Math.floor(date.getTime() / 1000) * 1000;
     }
 
+    // True while the pinned session is still ahead.
+    function pinActive() {
+      return !!MASTERCLASS_DATE && nextSession(new Date()).getTime() === nextSession(new Date(0)).getTime();
+    }
+
     function nextSession(now) {
+      if (MASTERCLASS_DATE) {
+        var d = MASTERCLASS_DATE.split('-');
+        var pinWall = Date.UTC(+d[0], +d[1] - 1, +d[2], MASTERCLASS_HOUR, 0, 0);
+        var pinned = new Date(pinWall - nyOffset(new Date(pinWall - nyOffset(new Date(pinWall)))));
+        if (pinned > now) return pinned;
+      }
       var p = nyParts(now);
       var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
       var days = (MASTERCLASS_DAY - dow + 7) % 7;
@@ -641,7 +655,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       body: 'offset=' + (-(new Date()).getTimezoneOffset()) + '&limit=3&source=bar'
     }).then(function (r) { return r.json(); }).then(function (data) {
       var next = (data.registrationDates || []).filter(function (d) { return d.ts * 1000 > Date.now(); })[0];
-      if (!next) return;
+      if (!next || pinActive()) return;
       session = new Date(next.ts * 1000);
       paintSession();
       tick();
