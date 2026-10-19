@@ -8,7 +8,7 @@
   var MASTERCLASS_HOUR = 19;
   // Pinned session (New York date). While it is in the future it wins over the weekly rule
   // and WebinarJam; once it passes, the weekly rule takes over again. Set to '' to unpin.
-  var MASTERCLASS_DATE = '2026-10-25';
+  var MASTERCLASS_DATE = '2026-11-01';
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
   var EVENT_URL = 'https://event.webinarjam.com/qwk59l/go/live/k50k29izins2s1';
