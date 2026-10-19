@@ -96,10 +96,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .hero .sub b { color: #000; }
 
     .video { margin: 20px auto 0; max-width: 900px; background: #0a0a0a; overflow: hidden; border-radius: 6px; }
-    .video-inner { aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
-    .video-play { width: 108px; height: 68px; background: var(--green-dark); display: flex; align-items: center; justify-content: center; }
-    .video-play svg { width: 34px; height: 34px; fill: #fff; }
-    .video-label { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.7); }
+    wistia-player { display: block; }
+    wistia-player[media-id='rgud5q0dm6']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rgud5q0dm6/swatch'); display: block; filter: blur(5px); padding-top: 56.25%; }
 
     .btn {
       display: inline-block;
@@ -174,6 +172,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     @media (max-width: 480px) { .win-cols { columns: 1; } }
   </style>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/rgud5q0dm6.js" async type="module"></script>
 </head>
 <body>
 
@@ -186,12 +186,9 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <h1>Watch “The One Shift” Trading Strategy I Use To Take <span>Consistent</span> Prop Firm Payouts</h1>
     <p class="sub">The full masterclass replay: how to go from a gambling trader to a disciplined, robotic trader, the simple mechanical model, and how to do it around a full-time job. <b>Watch it before it comes down.</b></p>
 
-    <!-- PLACEHOLDER VIDEO: swap this block for the replay player embed -->
+    <!-- Replay video (Wistia media rgud5q0dm6) -->
     <div class="video">
-      <div class="video-inner">
-        <div class="video-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        <div class="video-label">Replay Video Coming Soon</div>
-      </div>
+      <wistia-player media-id="rgud5q0dm6" aspect="1.7777777777777777"></wistia-player>
     </div>
 
     <div class="cta">
