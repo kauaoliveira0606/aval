@@ -516,6 +516,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .consent-row span { flex: 1 1 auto; min-width: 0; }
     .consent-row strong { color: var(--green); }
     form.optin button { width: 100%; justify-content: center; }
+    .setup-note { font-size: 13px; line-height: 1.5; color: var(--text-dim); }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
@@ -761,8 +762,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <div class="modal-overlay" id="optin-overlay">
     <div class="modal-card">
       <button type="button" class="modal-close" id="optin-close" aria-label="Close">&times;</button>
-      <h2>Claim Your Free Access</h2>
-      <p>Fill this out and get instant access to the AI tools and the free course.</p>
+      <h2>Claim Your Tools &amp; Program</h2>
+      <p>Put your details below so a real coach can help you get set up.</p>
       <form class="optin" id="optin-form" novalidate>
         <div>
           <input type="text" id="fname" name="fname" placeholder="First name" required />
@@ -799,7 +800,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           </label>
           <div class="field-error" id="funds-error">You must check this box to continue.</div>
         </div>
-        <button type="submit" class="btn-primary">Get Instant Access →</button>
+        <p class="setup-note">🔒 Keep your phone nearby. We're calling you in 2 to 10 minutes from a (645) or (321) number to set you up.</p>
+        <button type="submit" class="btn-primary">CLAIM MY TOOLS &amp; PROGRAM →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
     </div>
