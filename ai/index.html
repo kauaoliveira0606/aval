@@ -183,33 +183,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .mini-badge.badge-yellow { color: #f2c14e; }
     .mini-badge.badge-green { color: var(--green); }
 
-    /* TICKER STRIP */
-    .ticker-strip {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--bg-panel);
-      overflow: hidden;
-      padding: 14px 0;
-    }
-    .ticker-strip .track {
-      display: flex;
-      gap: 48px;
-      white-space: nowrap;
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dim);
-      animation: scroll 28s linear infinite;
-      width: max-content;
-    }
-    .ticker-strip .up { color: var(--green); }
-    .ticker-strip .down { color: var(--red); }
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
 
     /* SECTION SHARED */
     section { position: relative; z-index: 1; padding: 88px 0; }
@@ -615,27 +588,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <p class="trust-line">1,000+ traders inside. $0 course tuition. 10-minute 1-on-1 setup call with our desk.</p>
     </div>
   </header>
-
-  <div class="ticker-strip">
-    <div class="track">
-      <span>ES <span class="up">+0.42%</span></span>
-      <span>NQ <span class="up">+0.61%</span></span>
-      <span>YM <span class="down">-0.18%</span></span>
-      <span>CL <span class="up">+1.03%</span></span>
-      <span>GC <span class="down">-0.24%</span></span>
-      <span>6E <span class="up">+0.47%</span></span>
-      <span>RTY <span class="down">-0.31%</span></span>
-      <span>SI <span class="up">+0.88%</span></span>
-      <span>ES <span class="up">+0.42%</span></span>
-      <span>NQ <span class="up">+0.61%</span></span>
-      <span>YM <span class="down">-0.18%</span></span>
-      <span>CL <span class="up">+1.03%</span></span>
-      <span>GC <span class="down">-0.24%</span></span>
-      <span>6E <span class="up">+0.47%</span></span>
-      <span>RTY <span class="down">-0.31%</span></span>
-      <span>SI <span class="up">+0.88%</span></span>
-    </div>
-  </div>
 
   <section id="value">
     <div class="wrap">
