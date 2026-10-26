@@ -184,6 +184,16 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .welcome-sign { margin-top: 24px; font-weight: 800; font-style: italic; }
     .welcome-sign-role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-top: 6px; }
     @media (max-width: 720px) { .welcome-card { padding: 30px 24px; } }
+    /* CALL REQUIREMENTS */
+    .reqs-card { max-width: 820px; margin: 28px auto 0; background: var(--bg-card); border: 1px solid var(--gold); border-radius: 14px; padding: 36px 44px; }
+    .reqs-card .eyebrow { margin-bottom: 14px; }
+    .reqs-card h2 { font-size: clamp(22px, 3.2vw, 30px); margin-bottom: 12px; }
+    .reqs-card > p { color: var(--text-dim); font-size: 16.5px; }
+    .reqs-list { list-style: none; counter-reset: req; margin-top: 22px; display: grid; gap: 14px; }
+    .reqs-list li { counter-increment: req; position: relative; padding: 16px 18px 16px 62px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--text-dim); font-size: 16px; line-height: 1.55; }
+    .reqs-list li::before { content: counter(req); position: absolute; left: 18px; top: 15px; width: 30px; height: 30px; border-radius: 50%; background: var(--gold); color: #000000; font-family: var(--head); font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+    .reqs-list strong { color: var(--text); }
+    @media (max-width: 720px) { .reqs-card { padding: 28px 20px; } .reqs-list li { padding: 14px 14px 14px 56px; } .reqs-list li::before { left: 14px; } }
 
     .hero {
       padding: 84px 0 92px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
@@ -600,6 +610,18 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <p>Scroll down and go through all of it. If anything is still open, bring it to your game plan call and we will answer it there. I look forward to helping you.</p>
       <div class="welcome-sign">Benicio Valentin</div>
       <div class="welcome-sign-role">Founder, Mind Over Market</div>
+    </div>
+
+    <div class="reqs-card reveal">
+      <span class="eyebrow">Important</span>
+      <h2>4 Requirements For Your Gameplan Call</h2>
+      <p>To make sure this call is valuable for both sides, please respect these 4 rules:</p>
+      <ol class="reqs-list">
+        <li><strong>Be in a quiet room on a computer:</strong> Do not take this call while driving, at the gym, or in a noisy public place. We will be reviewing live chart examples and your past trade history on screen.</li>
+        <li><strong>Show up on time:</strong> Our coaches run back-to-back sessions. If you are more than 5 minutes late, your spot will be canceled and given to someone on the waitlist.</li>
+        <li><strong>Bring your trading numbers:</strong> Have your account size, current drawdowns, and your worst trading habits ready so we can diagnose your exact execution gap.</li>
+        <li><strong>Invite your decision-maker:</strong> If you share financial decisions with a spouse or partner, make sure they are on the call. If we determine you are a mutual fit, we will be walking through the options to join the program together.</li>
+      </ol>
     </div>
   </div>
 </section>
