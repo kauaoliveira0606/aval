@@ -651,8 +651,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       var navDay = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(session);
       var navTime = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(session) + ' EST';
       document.querySelectorAll('.js-event-nav').forEach(function (el) {
-        el.firstChild.textContent = navDay;
-        el.lastChild.textContent = navTime;
+        el.innerHTML = '<span>' + navDay + '</span><span class="nav-date-sep"> &middot; </span><span>' + navTime + '</span>';
       });
     }
 
