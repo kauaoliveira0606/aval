@@ -79,7 +79,7 @@
     <div class="done-step-card">
       <p>Find the email from me with your masterclass details. Don't see it in the next few minutes?</p>
       <p>Check promotions or spam, then drag it into your main inbox so you get every reminder.</p>
-      <p>I will be sending exclusive pre-training breakdowns. So you get the most out of the masterclass.</p>
+      <p>I'll be emailing exclusive pre-training breakdowns before Sunday so you walk into the live room completely prepared.</p>
       <div class="done-mail">
         <a class="done-btn js-mail-gmail" href="https://mail.google.com/mail/u/0/#search/masterclass+in%3Aanywhere" target="_blank" rel="noopener">Open Gmail</a>
         <a class="done-btn done-btn-alt js-mail-apple" href="message://">Open Apple Mail</a>
