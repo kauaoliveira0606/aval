@@ -12,8 +12,7 @@
 .done-play { width: 108px; height: 68px; background: #a97c22; display: flex; align-items: center; justify-content: center; color: #0a0a0a;}
 .done-play svg { width: 34px; height: 34px; fill: #111111; }
 .done-video-label { font-size: 0.9rem; font-weight: 600; color: #ffffff; }
-.done-video { margin: 14px auto 0; }
-.done-noreplay { margin: 30px auto 0; max-width: 400px; background: #f0555a; color: #ffffff; font-family: 'Geist', 'Inter', sans-serif; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; padding: 12px 16px; border-radius: 6px; }
+.done-video { margin: 32px auto 0; }
 .done-arrow { display: block; margin: 24px auto 0; }
 
 .done-step { margin-top: 34px; }
