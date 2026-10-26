@@ -226,7 +226,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .co-trust li { display: inline-flex; align-items: center; gap: 5px; font-size: 0.76rem; font-weight: 500; color: var(--body); white-space: nowrap; }
     .co-trust svg { flex: none; color: #ffffff; }
     @media (max-width: 600px) { .co-trust { gap: 6px 9px; } .co-trust li { font-size: min(0.72rem, 2.6vw); gap: 4px; } .co-trust svg { width: 14px; height: 14px; } }
-    .checkout-embed { min-height: 420px; margin-top: 12px; }
+    /* Whop's light theme draws dark text with no background of its own: give it a white panel so its header reads on the dark card. */
+    .checkout-embed { min-height: 420px; margin-top: 12px; background: #ffffff; border-radius: 8px; padding: 6px 4px; overflow: hidden; }
     .checkout-embed iframe { width: 100%; border: 0; }
     .checkout-pending { margin-top: 12px; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: #111111; color: var(--body); font-size: 0.95rem; }
     .co-note { text-align: center; font-family: 'Open Sans', 'Geist', sans-serif; font-size: 0.72rem; color: #ffffff; margin-top: 12px; }
