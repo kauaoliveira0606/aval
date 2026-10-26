@@ -12,7 +12,8 @@
 .done-play { width: 108px; height: 68px; background: #a97c22; display: flex; align-items: center; justify-content: center; color: #0a0a0a;}
 .done-play svg { width: 34px; height: 34px; fill: #111111; }
 .done-video-label { font-size: 0.9rem; font-weight: 600; color: #ffffff; }
-.done-video { margin: 32px auto 0; }
+.done-video { margin: 14px auto 0; }
+.done-noreplay { margin: 30px auto 0; max-width: 400px; background: #f0555a; color: #ffffff; font-family: 'Geist', 'Inter', sans-serif; font-size: 1.05rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; padding: 12px 16px; border-radius: 6px; }
 .done-arrow { display: block; margin: 24px auto 0; }
 
 .done-step { margin-top: 34px; }
@@ -64,6 +65,9 @@
 .done-cal-menu a:first-child { border-top: 0; }
 .done-cal-menu a:hover { background: #1d1709; }
 .done-form { margin-top: 18px; min-height: 360px; }
+.done-mail { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 22px; }
+.done-mail .done-btn { min-width: 200px; text-align: center; text-decoration: none; }
+.done-btn.done-btn-alt { background: #ffffff; color: #0a0a0a; box-shadow: 0 8px 20px -8px rgba(255, 255, 255, 0.35); }
 
 .done-faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px 16px; margin-top: 24px; text-align: left; }
 .done-faq-q { font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700; line-height: 1.3; color: #ffffff; margin-bottom: 10px; }
@@ -75,4 +79,5 @@
   .done .done-sub, .done .done-lead, .done-step-card p { font-size: 1.05rem; }
   .done-faq-grid { gap: 20px 12px; }
   .done-faq-q { font-size: 0.9rem; }
+  .done-mail .done-btn { width: 100%; }
 }

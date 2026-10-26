@@ -38,10 +38,11 @@
   }).join('');
 
   var html = `
-  <p class="done-lead">Before you close this tab, complete these __STEPS__ steps to make sure you're <b>fully set up for the masterclass</b></p>
+  <p class="done-lead">__LEAD__</p>
 
   <!-- VTurb player. Its script is loaded below, since a script tag set through innerHTML never runs.
        The wrapper holds the spacing because the player resets its own margin once it loads. -->
+  <div class="done-noreplay">LIVE ONLY &middot; NO REPLAYS WILL BE SENT</div>
   <div class="done-video"><vturb-smartplayer id="vid-6ace5b8f5cf0c310640b80dd" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div>
   <svg class="done-arrow" width="26" height="46" viewBox="0 0 26 46" fill="none" aria-hidden="true"><path d="M13 2v40M3 31l10 11 10-11" stroke="#d9a93b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
 
@@ -57,8 +58,6 @@
         <div class="done-cal-menu js-cal-menu">
           <a class="js-cal-google" target="_blank" rel="noopener">&#128197; Google</a>
           <a class="js-cal-ics">&#127822; Apple</a>
-          <a class="js-cal-outlook" target="_blank" rel="noopener">&#128231; Outlook</a>
-          <a class="js-cal-ics">&#11015;&#65039; .ICS Download</a>
         </div>
       </div>
     </div>
@@ -67,9 +66,9 @@
   <div class="done-step">
     <div class="done-step-pill">STEP 2:</div>
     ${ICON}
-    <h2>Fill Out This Short Masterclass <span>Intake Form</span></h2>
+    <h2>Apply For The Live <span>Hot Seat</span></h2>
     <div class="done-step-card">
-      <p>Before we go live, I want to know exactly where you're at so I can cover what you actually need. It takes two minutes.</p>
+      <p>Fill this out if you want Benny to review your charts and blown accounts live on screen.</p>
       <div class="done-form" data-tf-live="01M3R1H2PWCEDWQAE0GD74MXQJ"></div>
     </div>
   </div>
@@ -77,10 +76,15 @@
   <div class="done-step">
     <div class="done-step-pill">STEP 3:</div>
     ${ICON}
-    <h2>Check Your <span>Inbox</span></h2>
+    <h2>Check Your <span>Email</span></h2>
     <div class="done-step-card">
       <p>Find the email from me with your masterclass details. Don't see it in the next few minutes?</p>
       <p>Check promotions or spam, then drag it into your main inbox so you get every reminder.</p>
+      <p>I will be sending exclusive pre-training breakdowns. So you get the most out of the masterclass.</p>
+      <div class="done-mail">
+        <a class="done-btn js-mail-gmail" href="https://mail.google.com/mail/u/0/#search/masterclass+in%3Aanywhere" target="_blank" rel="noopener">Open Gmail</a>
+        <a class="done-btn done-btn-alt js-mail-apple" href="message://">Open Apple Mail</a>
+      </div>
     </div>
   </div>
 
@@ -95,7 +99,10 @@
   var STEP_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six'];
   document.querySelectorAll('.js-done-shared').forEach(function (el) {
     var steps = (FAQS.length ? 4 : 3) + (+el.getAttribute('data-extra-steps') || 0);
-    el.innerHTML = html.replace('__STEPS__', STEP_WORDS[steps]);
+    // A page can set its own lead line with data-lead (__STEPS__ = the count in words, __N__ = as a digit).
+    var lead = el.getAttribute('data-lead') ||
+      "Before you close this tab, complete these __STEPS__ steps to make sure you're <b>fully set up for the masterclass</b>";
+    el.innerHTML = html.replace('__LEAD__', lead).replace('__STEPS__', STEP_WORDS[steps]).replace('__N__', String(steps));
   });
 
   // Main video (VTurb).
@@ -133,23 +140,29 @@
     var asUtc = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second);
     return asUtc - Math.floor(date.getTime() / 1000) * 1000;
   }
-  // True while the pinned session is still ahead.
+  // New York wall-clock time (as UTC fields) turned into a real instant.
+  function fromNyWall(wallUtc) {
+    var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
+    return new Date(wallUtc - nyOffset(guess));
+  }
+  // True while the pinned session is still the next one.
   function pinActive() {
     return !!MASTERCLASS_DATE && nextSession(new Date()).getTime() === nextSession(new Date(0)).getTime();
   }
 
+  // A session stays "next" through the whole day it runs (New York time), so people who are
+  // late still get today's session; it rolls to the following week at midnight. A pinned date
+  // wins until that point; after that the weekly schedule takes over.
+  // Keep in step with /api/masterclass-ics.js.
   function nextSession(now) {
     if (MASTERCLASS_DATE) {
       var d = MASTERCLASS_DATE.split('-');
-      var pinWall = Date.UTC(+d[0], +d[1] - 1, +d[2], MASTERCLASS_HOUR, 0, 0);
-      var pinned = new Date(pinWall - nyOffset(new Date(pinWall - nyOffset(new Date(pinWall)))));
-      if (pinned > now) return pinned;
+      var dayAfter = fromNyWall(Date.UTC(+d[0], +d[1] - 1, +d[2] + 1, 0, 0, 0));
+      if (now < dayAfter) return fromNyWall(Date.UTC(+d[0], +d[1] - 1, +d[2], MASTERCLASS_HOUR, 0, 0));
     }
     var p = nyParts(now);
     var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
     var days = (MASTERCLASS_DAY - dow + 7) % 7;
-    var secsIntoDay = (+p.hour) * 3600 + (+p.minute) * 60 + (+p.second);
-    if (days === 0 && secsIntoDay >= MASTERCLASS_HOUR * 3600) days = 7;
     var wallUtc = Date.UTC(+p.year, +p.month - 1, +p.day + days, MASTERCLASS_HOUR, 0, 0);
     var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
     return new Date(wallUtc - nyOffset(guess));
@@ -165,31 +178,17 @@
 
     /* ---------- Add to calendar ---------- */
     function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
-    // .ics text values: commas, semicolons and line breaks have to be escaped.
-    function icsText(t) { return t.replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n'); }
     var google = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
       '&text=' + encodeURIComponent(EVENT_TITLE) +
       '&dates=' + stamp(start) + '/' + stamp(end) +
       '&details=' + encodeURIComponent(EVENT_DETAILS) +
       '&location=' + encodeURIComponent(EVENT_URL);
-    var outlook = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent' +
-      '&subject=' + encodeURIComponent(EVENT_TITLE) +
-      '&startdt=' + encodeURIComponent(start.toISOString()) +
-      '&enddt=' + encodeURIComponent(end.toISOString()) +
-      '&body=' + encodeURIComponent(EVENT_DETAILS.replace(/\n/g, '<br>')) +
-      '&location=' + encodeURIComponent(EVENT_URL);
-    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mind Over Market//Live Masterclass//EN', 'BEGIN:VEVENT',
-      'UID:masterclass-' + stamp(start) + '@mindovermarket.com', 'DTSTAMP:' + stamp(new Date()),
-      'DTSTART:' + stamp(start), 'DTEND:' + stamp(end),
-      'SUMMARY:' + EVENT_TITLE, 'DESCRIPTION:' + icsText(EVENT_DETAILS),
-      'LOCATION:' + icsText(EVENT_URL), 'URL:' + EVENT_URL,
-      'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:' + EVENT_TITLE, 'END:VALARM',
-      'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
-    var icsHref = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+    // A real .ics URL (not a data: link) so iPhone Safari opens its Add to Calendar sheet.
+    var icsHref = '/api/masterclass-ics?start=' + encodeURIComponent(start.toISOString()) +
+      '&end=' + encodeURIComponent(end.toISOString());
 
     document.querySelectorAll('.js-cal-google').forEach(function (a) { a.href = google; });
-    document.querySelectorAll('.js-cal-outlook').forEach(function (a) { a.href = outlook; });
-    document.querySelectorAll('.js-cal-ics').forEach(function (a) { a.href = icsHref; a.setAttribute('download', 'mind-over-market-masterclass.ics'); });
+    document.querySelectorAll('.js-cal-ics').forEach(function (a) { a.href = icsHref; });
   }
   applyStart(nextSession(new Date()));
 
@@ -203,6 +202,23 @@
     var next = (data.registrationDates || []).filter(function (d) { return d.ts * 1000 > Date.now(); })[0];
     if (next && !pinActive()) applyStart(new Date(next.ts * 1000));
   }).catch(function (err) { console.log('WebinarJam schedule unavailable: ' + err.message); });
+
+  /* ---------- Open email buttons ---------- */
+  // Phones open the mail app itself; desktop Gmail opens the web inbox searched for the email.
+  // Apple Mail (message://) only exists on iPhone, iPad and Mac, so it's hidden elsewhere.
+  var ua = navigator.userAgent;
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/.test(ua);
+  var isMac = !isIOS && /Macintosh/.test(ua);
+  document.querySelectorAll('.js-mail-gmail').forEach(function (a) {
+    if (isIOS) { a.href = 'googlegmail://'; a.removeAttribute('target'); }
+    else if (isAndroid) {
+      a.href = 'intent://#Intent;package=com.google.android.gm;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;S.browser_fallback_url=' +
+        encodeURIComponent('https://mail.google.com/mail/u/0/#inbox') + ';end';
+      a.removeAttribute('target');
+    }
+  });
+  if (!isIOS && !isMac) document.querySelectorAll('.js-mail-apple').forEach(function (a) { a.remove(); });
 
   document.querySelectorAll('.js-cal-toggle').forEach(function (btn) {
     btn.addEventListener('click', function () { btn.parentNode.querySelector('.js-cal-menu').classList.toggle('open'); });

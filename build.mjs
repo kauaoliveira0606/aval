@@ -7,7 +7,7 @@ import CleanCSS from 'clean-css';
 import { minify as terser } from 'terser';
 
 const OUT = 'dist';
-const SKIP = new Set(['.git', '.vercel', '.gitignore', '.DS_Store', 'node_modules', OUT, 'build.mjs', 'package.json', 'package-lock.json', 'vercel.json', 'README.md']);
+const SKIP = new Set(['.git', '.vercel', '.gitignore', '.DS_Store', 'node_modules', OUT, 'build.mjs', 'package.json', 'package-lock.json', 'vercel.json', 'README.md', 'api']);
 
 const htmlOptions = {
   collapseWhitespace: true,
