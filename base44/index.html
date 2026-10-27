@@ -316,57 +316,139 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       color: var(--text-dim);
     }
 
-    /* MODEL GRID */
-    .model-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    /* PROOF STRIP */
+    #proof-strip { padding: 0 0 24px; }
+    .proof-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .proof-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .proof-card img { display: block; width: 100%; height: 200px; object-fit: cover; object-position: top; }
+    .proof-card p { padding: 14px 16px; font-size: 14px; border-top: 1px solid var(--border); }
+    .proof-card strong { color: var(--green); }
+
+    /* PAIN */
+    .pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+    .pain-item {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      border-radius: 12px;
+      padding: 22px 24px;
     }
-    .model-card {
-      position: relative;
+    .pain-item p { font-size: 15.5px; color: var(--text); }
+    .pain-item p + p { margin-top: 6px; font-weight: 700; }
+    .pain-close { text-align: center; font-size: 19px; margin-top: 36px; }
+    .pain-close + .pain-close { margin-top: 6px; }
+    .pain-close strong { color: var(--green); }
+
+    /* RESET TRAP */
+    .fail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .fail-item {
       background: var(--bg-panel);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 26px;
     }
-    .model-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: rgba(217, 169, 59, 0.1);
-      color: var(--green);
-      margin-bottom: 16px;
+    .fail-num { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 12px; }
+    .fail-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .fail-item p { color: var(--text-dim); font-size: 14.5px; }
+    .fail-item p + p { margin-top: 6px; }
+    .reveal-card {
+      max-width: 720px;
+      margin: 40px auto 0;
+      background: var(--bg-panel-2);
+      border: 1px solid #f2c14e;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 20px 60px -30px rgba(217, 169, 59, 0.35);
     }
-    .model-num {
-      position: absolute;
-      top: 22px;
-      right: 22px;
-      font-family: var(--mono);
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .model-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .model-card p { color: var(--text-dim); font-size: 14px; }
+    .reveal-card p { font-size: 17px; line-height: 1.6; }
+    .reveal-card p + p { margin-top: 10px; }
+    .reveal-card p.big { font-size: 22px; font-weight: 800; }
+    .reveal-card strong { color: var(--green); }
 
-    /* CURRICULUM */
-    .modules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    /* ROUTINE */
+    .routine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .routine-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--green);
+      border-radius: 12px;
+      padding: 26px;
     }
-    .module-card {
+    .routine-step { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
+    .routine-card h3 { font-size: 19px; font-weight: 800; margin-bottom: 10px; }
+    .routine-card p { color: var(--text-dim); font-size: 15px; }
+    .routine-card p + p { margin-top: 6px; }
+    .routine-tool { margin-top: auto; padding-top: 18px; font-size: 13px; font-weight: 600; color: var(--green); }
+    .section-head p + p { margin-top: 4px; }
+
+    /* TIMELINE */
+    .timeline { max-width: 720px; margin: 0 auto; position: relative; padding-left: 34px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+    .tl-item {
+      position: relative;
       background: var(--bg-panel);
       border: 1px solid var(--border);
       border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.15s ease;
+      padding: 22px 24px;
+      margin-bottom: 16px;
     }
-    .module-card:hover { border-color: var(--green-dim); }
-    .module-card img { display: block; width: 100%; height: auto; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px #000000, 0 0 10px var(--green);
+    }
+    .tl-days { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green); margin-bottom: 6px; }
+    .tl-item h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+    .tl-item p { color: var(--text-dim); font-size: 15px; }
+
+    /* ACCESS STACK */
+    .stack-item { padding-left: 30px; position: relative; font-weight: 600; }
+    .stack-item::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #0a0a0a;
+      font-size: 12px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .value-row .price { color: var(--green); font-size: 13px; flex-shrink: 0; margin-left: 12px; }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; }
+    .faq-item[open] { border-color: var(--green-dim); }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 52px 20px 24px;
+      font-size: 16.5px;
+      font-weight: 700;
+      position: relative;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); color: var(--green); font-size: 22px; font-weight: 700; }
+    .faq-item[open] summary::after { content: "\2212"; }
+    .faq-a { padding: 0 24px 22px; }
+    .faq-a p { color: var(--text-dim); font-size: 15px; }
+    .faq-a p + p { margin-top: 8px; }
 
     /* TESTIMONIALS */
     .testimonials {
@@ -523,9 +605,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
-      .modules { grid-template-columns: 1fr; }
       .testimonials { column-count: 1; }
-      .model-grid { grid-template-columns: 1fr; }
+      .proof-strip, .pain-list, .fail-grid, .routine-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
     }
 
@@ -590,72 +671,155 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <p class="hero-sub">Watch the 2-minute video below. See how our traders fix their execution, pass accounts, and get consistent payouts - and how Base44 sponsors your entire tuition for $0.</p>
       <vturb-smartplayer id="vid-6ace5b9a55229e07c5686204" style="display: block; margin: 0 auto 40px; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: #000000;"></div></vturb-smartplayer>
       <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ace5b9a55229e07c5686204/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-      <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">GET MY AI TOOLS &amp; SYSTEM →</a>
+      <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       <p class="trust-line">1,000+ traders inside. $0 tuition. 10-minute 1-on-1 setup call with our desk.</p>
     </div>
   </header>
 
-  <section id="curriculum">
+  <section id="proof-strip">
     <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">The Full Program</div>
-        <h2>The full program you just unlocked.</h2>
-      </div>
-      <div class="modules">
-        <div class="module-card"><img src="/images/modules/module-1.webp" alt="Module 1" /></div>
-        <div class="module-card"><img src="/images/modules/module-2.webp" alt="Module 2" /></div>
-        <div class="module-card"><img src="/images/modules/module-3.webp" alt="Module 3" /></div>
-        <div class="module-card"><img src="/images/modules/module-4.webp" alt="Module 4" /></div>
-        <div class="module-card"><img src="/images/modules/module-5.webp" alt="Module 5" /></div>
-        <div class="module-card"><img src="/images/modules/module-6.webp" alt="Module 6" /></div>
+      <div class="proof-strip">
+        <div class="proof-card"><img src="/images/testimonials/t1.webp" alt="Matthew first payout certificate" /><p><strong>Matthew:</strong> First payout ($939.85) after 14 months of struggling.</p></div>
+        <div class="proof-card"><img src="/images/testimonials/t2.webp" alt="Bguy180 passed his first funded account" /><p><strong>Bguy180:</strong> Passed his first funded account in 3 weeks after blowing a few accounts.</p></div>
+        <div class="proof-card"><img src="/images/payouts/p4.webp" alt="Benicio wire withdrawals in the funding portal" style="object-position: center 62%;" /><p><strong>Benicio:</strong> $18,000, $11,000 and $7,000 wire withdrawals from his funding portal.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="model">
+  <section id="pain">
     <div class="wrap">
-      <div class="section-head" style="text-align: left; margin: 0 0 48px;">
-        <div class="section-eyebrow">The Model</div>
-        <h2>Why This Trading System <span class="accent" style="font-style: italic;">Works.</span></h2>
-        <p>You don't need a hundred indicators or a bunch of strategies, you just simply need one repeatable system and the discipline to run it consistently.</p>
+      <div class="section-head">
+        <div class="section-eyebrow">Sound Familiar?</div>
+        <h2>You Don't Have A Strategy Problem.</h2>
       </div>
-      <div class="model-grid">
-        <div class="model-card">
-          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
-          <div class="model-num">01</div>
-          <h3>No Guesswork</h3>
-          <p>A rules-based system. You follow the setup, not your emotions.</p>
+      <div class="pain-list">
+        <div class="pain-item"><p>You take a loss and jump right back in to win it back.</p><p>One revenge trade turns into five.</p></div>
+        <div class="pain-item"><p>Price creeps toward your stop and your stomach drops.</p><p>So you move the stop. Then it hits anyway.</p></div>
+        <div class="pain-item"><p>You stack two great weeks of green days.</p><p>Then you give it all back in 20 minutes.</p></div>
+        <div class="pain-item"><p>You close the laptop swearing tomorrow will be different.</p><p>Tomorrow looks exactly the same.</p></div>
+      </div>
+      <p class="pain-close">That's not a knowledge problem. It's an execution problem.</p>
+      <p class="pain-close"><strong>And execution can be fixed.</strong></p>
+    </div>
+  </section>
+
+  <section id="reset-trap">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The Prop Firm Reset Trap</div>
+        <h2>Why Most Traders Keep Buying New Accounts</h2>
+        <p>Here are the 3 ways most traders try to fix it. And why none of them work.</p>
+      </div>
+      <div class="fail-grid">
+        <div class="fail-item">
+          <div class="fail-num">01</div>
+          <h3>Strategy Hopping &amp; YouTube</h3>
+          <p>You've watched 50 indicator videos. You know the theory.</p>
+          <p>Then the chart goes live and you freeze.</p>
         </div>
-        <div class="model-card">
-          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a4 4 0 014-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
-          <div class="model-num">02</div>
-          <h3>One Repeatable Pattern</h3>
-          <p>You master a single clean setup instead of chasing a hundred.</p>
+        <div class="fail-item">
+          <div class="fail-num">02</div>
+          <h3>Signal Rooms &amp; Bots</h3>
+          <p>You copy someone else's trades with zero skill of your own.</p>
+          <p>The first losing streak blows the account.</p>
         </div>
-        <div class="model-card">
-          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
-          <div class="model-num">03</div>
-          <h3>A Skill For Life</h3>
-          <p>Markets aren't going anywhere. Learn it once, use it forever.</p>
+        <div class="fail-item">
+          <div class="fail-num">03</div>
+          <h3>Staring At Charts For 8 Hours</h3>
+          <p>The longer you sit, the more tired you get.</p>
+          <p>Boredom turns into low-quality trades you never should have taken.</p>
         </div>
-        <div class="model-card">
-          <div class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <div class="model-num">04</div>
-          <h3>Battle-Tested</h3>
-          <p>A system tested and refined through real market conditions, not backtests.</p>
+      </div>
+      <div class="reveal-card">
+        <div class="section-eyebrow">Here's What Nobody Tells You</div>
+        <p class="big">Prop firms don't make their money from payouts.</p>
+        <p>They make it from the $150 reset fees traders pay every time they tilt and blow an account.</p>
+        <p>Every revenge trade keeps that machine running.</p>
+        <p><strong>This system is built to get you out of it.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="routine">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">The Daily Execution Routine</div>
+        <h2>One Simple Routine. 3 Steps. Every Session.</h2>
+        <p>You don't need a hundred indicators.</p>
+        <p>You need one routine you run the same way every time the market opens.</p>
+      </div>
+      <div class="routine-grid">
+        <div class="routine-card">
+          <div class="routine-step">Step 1 · Before The Open</div>
+          <h3>The Pre-Market Risk Plan</h3>
+          <p>Locks your dollar risk and contracts before the market opens.</p>
+          <p>You know your worst-case loss before you ever click enter.</p>
+          <div class="routine-tool">Tools: Pre-Market Risk Calculator, Market Calendar &amp; Plan Builder</div>
+        </div>
+        <div class="routine-card">
+          <div class="routine-step">Step 2 · During The Session</div>
+          <h3>The Hard Stop Execution Rules</h3>
+          <p>You follow one model, take your $400 base hit, and walk away.</p>
+          <p>The Tilt Lock shuts your trading down before you blow your daily account limit.</p>
+          <div class="routine-tool">Tools: The Tilt Lock, Anti-Tilt Checklist</div>
+        </div>
+        <div class="routine-card">
+          <div class="routine-step">Step 3 · After The Close</div>
+          <h3>The Daily Scorecard &amp; Debrief</h3>
+          <p>You grade your discipline at the end of every session, not your P&amp;L.</p>
+          <p>You see exactly where you made or lost money, and why.</p>
+          <div class="routine-tool">Tools: The Daily Trade Debrief &amp; Scorecard</div>
         </div>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
 
-  <section id="why-free">
+  <section id="timeline">
     <div class="wrap">
       <div class="section-head">
-        <div class="section-eyebrow">Real Quick</div>
-        <h2>Wait, Who Are You And What's The Catch?</h2>
+        <div class="section-eyebrow">The 14-Day Payout Timeline</div>
+        <h2>What Happens After You Sign Up</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-days">Days 1 to 3</div>
+          <h3>The Reset Break</h3>
+          <p>You stop overtrading after 10:30 AM.</p>
+          <p>The revenge-trading cycle breaks.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-days">Days 3 to 8</div>
+          <h3>Passing The Account</h3>
+          <p>You stack $400 base hits.</p>
+          <p>You never touch your maximum daily drawdown.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-days">Days 8 to 10</div>
+          <h3>Protecting Funded Capital</h3>
+          <p>You trade real capital with fixed risk.</p>
+          <p>You protect your trailing drawdown cushion.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-days">Days 11 to 14</div>
+          <h3>The First Payout</h3>
+          <p>You hit your required trading days.</p>
+          <p>You request your first payout withdrawal.</p>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Meet Your Mentor</div>
+        <h2>Why I Built This</h2>
       </div>
       <div class="why-free">
         <div class="why-free-header">
@@ -665,54 +829,44 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
             <div class="why-free-role">Founder, Mind Over Market</div>
           </div>
         </div>
-        <p>Let's be totally real.</p>
-        <p>Most trading gurus charge you $3,000 for a course. They take your cash, give you a login, and disappear.</p>
-        <p>I hated that.</p>
-        <p>So I did something different.</p>
-        <p>We built my trading tools on an AI platform called Base44. The software company pays me when traders use their tools.</p>
-        <p>Because they pay me, I don't need to charge you tuition.</p>
-        <p>Here is the deal:</p>
+        <p>I started trading at 15.</p>
+        <p>And for years, I blew account after account.</p>
+        <p>I had the screen time. I knew the patterns.</p>
+        <p>But the second real money was on the line, I broke my own rules.</p>
+        <p class="big">Eventually it hit me. The charts were never my problem.</p>
+        <p>My execution was.</p>
+        <p>So I built a mechanical checklist:</p>
         <ul>
-          <li>You get my complete program for $0.</li>
-          <li>You get my weekly live masterclasses for $0.</li>
-          <li>You get a 1-on-1 setup call with my coach for $0.</li>
+          <li>Risk locked in before the open.</li>
+          <li>Hard stop rules during the session.</li>
+          <li>A scorecard at the end of every day.</li>
         </ul>
-        <p>The only thing you pay is the fee directly to the software company to run your live tools on their servers.</p>
-        <p>That is less than one evaluation fee.</p>
-        <p>Once you see how clean your trading becomes, you will never trade blind again.</p>
+        <p>It took the emotion out of my trading. That's when the payouts started.</p>
+        <p>Mind Over Market is that same checklist, handed to you.</p>
       </div>
-      <img src="/images/trading.webp" alt="How You Get Access" style="display: block; width: 100%; height: auto; border-radius: 14px; margin-top: 24px;" />
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
 
-  <section id="steps">
-    <div class="wrap">
+  <section id="access">
+    <div class="wrap" style="max-width: 720px;">
       <div class="section-head">
-        <div class="section-eyebrow">3 Simple Steps</div>
-        <h2>Get Your Free Access In 3 Steps.</h2>
+        <div class="section-eyebrow">Everything You Unlock</div>
+        <h2>Your System Access Stack</h2>
       </div>
-      <div class="steps-grid">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <h3>Fill Out The Short Form</h3>
-          <p>Fill out the quick form on this page. Takes about 30 seconds.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <h3>A Coach Reaches Out</h3>
-          <p>Right after you apply, a real coach reaches out to get you set up. Keep your phone nearby.</p>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <h3>Start Improving Your Trading</h3>
-          <p>You get instant access to the whole program. Apply the tools the next day the market opens.</p>
-        </div>
+      <div class="value-stack">
+        <div class="value-row"><span class="stack-item">The Complete Execution Course</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Daily Scorecard &amp; Debrief Tool</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Pre-Market Risk Calculator</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Anti-Tilt Checklist</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The 1-on-1 Onboarding Call With A Desk Coach</span><span class="price">Included</span></div>
+        <div class="value-total"><span>How you get access</span><span class="free">ON YOUR CALL</span></div>
       </div>
-      <div class="cta-row" style="margin-top: 0;">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+      <p class="value-note">Your coach unlocks everything for you on your onboarding call.<br />Keep your phone nearby after you sign up.</p>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -740,7 +894,79 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Student testimonial — crossing $100K in profits" loading="lazy" /><div class="t-sum"><h3>Crossing $100K In Profits</h3><p>Crossing $100K in profits this year and asking who to hire as an accountant.</p><div class="t-name">Anthony</div></div></div>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">3 Simple Steps</div>
+        <h2>Get Your Free Access In 3 Steps.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h3>Fill Out The Short Form</h3>
+          <p>Fill out the quick form on this page. Takes about 30 seconds.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h3>A Coach Reaches Out</h3>
+          <p>Right after you apply, a real coach reaches out to get you set up. Keep your phone nearby.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h3>Start Improving Your Trading</h3>
+          <p>You get access to the whole program. Apply the tools the next day the market opens.</p>
+        </div>
+      </div>
+      <div class="cta-row" style="margin-top: 0;">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap" style="max-width: 760px;">
+      <div class="section-head">
+        <div class="section-eyebrow">FAQ</div>
+        <h2>Questions Before You Start</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item">
+          <summary>How is this different from other trading courses?</summary>
+          <div class="faq-a">
+            <p>Most courses teach you more indicators and more theory.</p>
+            <p>This one is 100% focused on execution and discipline. You learn to follow your rules when real money is on the line.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How quickly will I see a difference?</summary>
+          <div class="faq-a">
+            <p>On your very first session.</p>
+            <p>Run the pre-market checklist before the open and you trade with a plan instead of a feeling.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How much time does this take each day?</summary>
+          <div class="faq-a">
+            <p>15 to 30 focused minutes.</p>
+            <p>No more staring at charts for 8 hours.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What if I've already blown multiple prop firm accounts?</summary>
+          <div class="faq-a">
+            <p>Then this was built for you.</p>
+            <p>Accounts don't fail because of bad chart patterns. They fail because there are no hard execution rules.</p>
+            <p>That's exactly what this system gives you.</p>
+          </div>
+        </details>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -748,7 +974,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <div class="modal-overlay" id="optin-overlay">
     <div class="modal-card">
       <button type="button" class="modal-close" id="optin-close" aria-label="Close">&times;</button>
-      <h2>Claim Your Tools &amp; Program</h2>
+      <h2>Claim Your Execution System &amp; Tools</h2>
       <p>Put your details below so a real coach can help you get set up.</p>
       <form class="optin" id="optin-form" novalidate>
         <div>
@@ -779,7 +1005,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           </div>
           <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
         </div>
-        <button type="submit" class="btn-primary">CLAIM MY TOOLS &amp; PROGRAM →</button>
+        <button type="submit" class="btn-primary">CLAIM MY EXECUTION SYSTEM &amp; TOOLS →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
     </div>
