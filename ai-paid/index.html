@@ -442,22 +442,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .faq-a p { color: var(--text-dim); font-size: 15px; }
     .faq-a p + p { margin-top: 8px; }
 
-    /* CURRICULUM */
-    .modules {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .module-card {
-      background: var(--bg-panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.15s ease;
-    }
-    .module-card:hover { border-color: var(--green-dim); }
-    .module-card img { display: block; width: 100%; height: auto; }
-
     /* TESTIMONIALS */
     .testimonials {
       column-count: 3;
@@ -613,7 +597,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
-      .modules { grid-template-columns: 1fr; }
       .testimonials { column-count: 1; }
       .pain-list, .fail-grid, .routine-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
@@ -772,23 +755,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       </div>
       <div class="cta-row">
         <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="curriculum">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">The Full Program</div>
-        <h2>The full program you just unlocked.</h2>
-      </div>
-      <div class="modules">
-        <div class="module-card"><img src="/images/modules/module-1.webp" alt="Module 1" /></div>
-        <div class="module-card"><img src="/images/modules/module-2.webp" alt="Module 2" /></div>
-        <div class="module-card"><img src="/images/modules/module-3.webp" alt="Module 3" /></div>
-        <div class="module-card"><img src="/images/modules/module-4.webp" alt="Module 4" /></div>
-        <div class="module-card"><img src="/images/modules/module-5.webp" alt="Module 5" /></div>
-        <div class="module-card"><img src="/images/modules/module-6.webp" alt="Module 6" /></div>
       </div>
     </div>
   </section>
