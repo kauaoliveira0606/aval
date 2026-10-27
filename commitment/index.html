@@ -31,12 +31,12 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #000000;
-      --card: #111111;
-      --border: rgba(217, 169, 59, 0.18);
-      --text: #ffffff;
-      --text2: #ffffff;
-      --text3: #ffffff;
+      --bg: #ffffff;
+      --card: #fbf8f1;
+      --border: #e6dbc2;
+      --text: #111111;
+      --text2: #111111;
+      --text3: #111111;
       --accent: #f2c14e;
       --accent-hover: #f2c14e;
       --green: #d9a93b;
@@ -67,7 +67,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     /* Title block */
     .page-eyebrow {
       font-size: .65rem; font-weight: 800; letter-spacing: .12em;
-      text-transform: uppercase; color: var(--accent);
+      text-transform: uppercase; color: #9c700c;
       margin-bottom: 8px;
     }
     .page-title { font-size: 2rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
@@ -97,11 +97,11 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .checklist-title { font-size: .9rem; font-weight: 800; color: var(--text); }
     .checklist-counter {
       font-size: .75rem; font-weight: 700;
-      background: #111111; color: var(--text2);
+      background: #fbf8f1; color: var(--text2);
       padding: 4px 12px; border-radius: 20px;
       transition: background .2s, color .2s;
     }
-    .checklist-counter.done { background: #111111; color: var(--green); }
+    .checklist-counter.done { background: #fbf8f1; color: #9c700c; }
 
     .checklist { display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
     .check-item {
@@ -116,11 +116,11 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       transition: border-color .15s, background .15s;
       user-select: none;
     }
-    .check-item:hover { border-color: #5a4618; }
-    .check-item.checked { border-color: var(--accent); background: #000000; }
+    .check-item:hover { border-color: #e6dbc2; }
+    .check-item.checked { border-color: var(--accent); background: #ffffff; }
     .check-box {
       width: 22px; height: 22px; border-radius: 6px;
-      border: 2px solid #2e291f;
+      border: 2px solid #e6dbc2;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; margin-top: 1px;
       transition: background .15s, border-color .15s;
@@ -200,7 +200,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     .cta-btn:hover { background: var(--accent-hover); color: #0a0a0a;}
     .cta-btn:active { transform: scale(.99); }
-    .cta-btn:disabled { background: #111111; cursor: not-allowed; }
+    .cta-btn:disabled { background: #fbf8f1; cursor: not-allowed; }
     .cta-hint {
       text-align: center;
       font-size: .75rem;
@@ -211,7 +211,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     #confirm-view { display: none; text-align: center; padding: 60px 24px; }
     .confirm-icon {
       width: 64px; height: 64px; border-radius: 50%;
-      background: #111111;
+      background: #fbf8f1;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 20px;
     }
@@ -231,9 +231,9 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     /* Error */
     .error-msg {
-      background: #111111; border: 1px solid #6b2626;
+      background: #fbf8f1; border: 1px solid #6b2626;
       border-radius: 9px; padding: 12px 16px;
-      font-size: .78rem; color: #ff6b6b;
+      font-size: .78rem; color: #d63c3c;
       margin-bottom: 14px; display: none;
     }
   </style>
@@ -347,7 +347,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         </div>
         <div class="form-group full">
           <label>Date Signed</label>
-          <input type="text" id="field-date" placeholder="" readonly style="background: #000000;color: var(--text2);cursor: default;" />
+          <input type="text" id="field-date" placeholder="" readonly style="background: #ffffff;color: var(--text2);cursor: default;" />
         </div>
       </div>
 
