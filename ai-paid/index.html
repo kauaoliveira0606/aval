@@ -316,6 +316,14 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       color: var(--text-dim);
     }
 
+    /* PROOF STRIP */
+    #proof-strip { padding: 0 0 24px; }
+    .proof-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .proof-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .proof-card img { display: block; width: 100%; height: 200px; object-fit: cover; object-position: top; }
+    .proof-card p { padding: 14px 16px; font-size: 14px; border-top: 1px solid var(--border); }
+    .proof-card strong { color: var(--green); }
+
     /* PAIN */
     .pain-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
     .pain-item {
@@ -598,7 +606,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     @media (max-width: 720px) {
       .testimonials { column-count: 1; }
-      .pain-list, .fail-grid, .routine-grid { grid-template-columns: 1fr; }
+      .proof-strip, .pain-list, .fail-grid, .routine-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
     }
 
@@ -663,10 +671,20 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <p class="hero-sub">Watch the short 2-minute video below to see the 1 repeatable system our students use to trade 90 minutes a day with prop firms and get consistent payouts</p>
       <vturb-smartplayer id="vid-6ace5b9a55229e07c5686204" style="display: block; margin: 0 auto 40px; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: #000000;"></div></vturb-smartplayer>
       <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ace5b9a55229e07c5686204/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-      <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">GET MY AI TOOLS &amp; SYSTEM →</a>
+      <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       <p class="trust-line">1,000+ traders inside. $0 tuition. 10-minute 1-on-1 setup call with our desk.</p>
     </div>
   </header>
+
+  <section id="proof-strip">
+    <div class="wrap">
+      <div class="proof-strip">
+        <div class="proof-card"><img src="/images/testimonials/t1.webp" alt="Matthew first payout certificate" /><p><strong>Matthew:</strong> First payout ($939.85) after 14 months of struggling.</p></div>
+        <div class="proof-card"><img src="/images/testimonials/t2.webp" alt="Bguy180 passed his first funded account" /><p><strong>Bguy180:</strong> Passed his first funded account in 3 weeks after blowing a few accounts.</p></div>
+        <div class="proof-card"><img src="/images/payouts/p4.webp" alt="Benicio wire withdrawals in the funding portal" style="object-position: center 62%;" /><p><strong>Benicio:</strong> $18,000, $11,000 and $7,000 wire withdrawals from his funding portal.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section id="pain">
     <div class="wrap">
@@ -754,7 +772,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         </div>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -792,7 +810,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         </div>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -827,7 +845,56 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         <p>Mind Over Market is that same checklist, handed to you.</p>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="wrap" style="max-width: 720px;">
+      <div class="section-head">
+        <div class="section-eyebrow">Everything You Unlock</div>
+        <h2>Your System Access Stack</h2>
+      </div>
+      <div class="value-stack">
+        <div class="value-row"><span class="stack-item">The Complete Execution Course</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Daily Scorecard &amp; Debrief Tool</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Pre-Market Risk Calculator</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The Anti-Tilt Checklist</span><span class="price">Included</span></div>
+        <div class="value-row"><span class="stack-item">The 1-on-1 Onboarding Call With A Desk Coach</span><span class="price">Included</span></div>
+        <div class="value-total"><span>How you get access</span><span class="free">ON YOUR CALL</span></div>
+      </div>
+      <p class="value-note">Your coach unlocks everything for you on your onboarding call.<br />Keep your phone nearby after you sign up.</p>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Student Results</div>
+        <h2>1,000+ Students. One Pattern.</h2>
+      </div>
+      <div class="testimonials">
+        <div class="t-card"><img src="/images/testimonials/t1.webp" alt="Student testimonial — first payout" loading="lazy" /><div class="t-sum"><h3>First Payout</h3><p>His first ever payout ($939.85) after a year and two months. One of his 2026 goals, crossed off.</p><div class="t-name">Matthew</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t2.webp" alt="Student testimonial — passed first funded account" loading="lazy" /><div class="t-sum"><h3>Passed His First Funded Account In 3 Weeks</h3><p>He had blown a few accounts and felt defeated. Now he's consistently winning trades.</p><div class="t-name">Bguy180</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t3.webp" alt="Student testimonial — first $10,000 month" loading="lazy" /><div class="t-sum"><h3>First $10K Month</h3><p>Took 5 more payouts this month to hit his first $10K month.</p><div class="t-name">Chris</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t4.webp" alt="Student testimonial — $24,000 in a week" loading="lazy" /><div class="t-sum"><h3>$23,744 Paid Out</h3><p>Started trading with the team a week before this post.</p><div class="t-name">Landon E.</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t5.webp" alt="Student testimonial — $10,000 payout" loading="lazy" /><div class="t-sum"><h3>Another $10K Payout</h3><p>That put him at $20K for the month, with $10K more to request from Apex.</p><div class="t-name">Nahom</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t6.webp" alt="Student testimonial — payout thank you message" loading="lazy" /><div class="t-sum"><h3>Second Payout Requested</h3><p>A $2,030 Topstep payout, then his second request. He says he learned a skill that will change his life.</p><div class="t-name">Angelo</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t7.webp" alt="Student testimonial — passed first eval" loading="lazy" /><div class="t-sum"><h3>Passed His First Eval</h3><p>Passed his first evaluation and thanked Beni for it.</p><div class="t-name">Frankie</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t8.webp" alt="Student testimonial — funded certificate" loading="lazy" /><div class="t-sum"><h3>Funded: $50K Apex Account</h3><p>Got his Apex Trader Funding certificate for a $50K Tradovate account.</p><div class="t-name">Elliot</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t9.webp" alt="Student testimonial — passed funded, made $500 next day" loading="lazy" /><div class="t-sum"><h3>Funded, Then $500 The Next Day</h3><p>Passed his first funded account this week and made $500 the day after.</p><div class="t-name">Matthew H.</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t10.webp" alt="Student testimonial — hit $10K on PA accounts" loading="lazy" /><div class="t-sum"><h3>$10K On His PA Accounts</h3><p>Hit $10K on his funded PA accounts in a single day.</p><div class="t-name">Student</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t11.webp" alt="Student testimonial — $6K payout secured" loading="lazy" /><div class="t-sum"><h3>$6K Payout Secured</h3><p>Just secured a $6K payout on his funded account.</p><div class="t-name">Student</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t12.webp" alt="Student testimonial — $10,000 payout, two accounts" loading="lazy" /><div class="t-sum"><h3>$10K In One Payout</h3><p>A $30K month on the way, with two more accounts ready for max payouts.</p><div class="t-name">Landon</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t13.webp" alt="Student testimonial — $35K month, bought a truck" loading="lazy" /><div class="t-sum"><h3>$35K Month</h3><p>Bought a new truck for his business, all from trading.</p><div class="t-name">Landon</div></div></div>
+        <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Student testimonial — crossing $100K in profits" loading="lazy" /><div class="t-sum"><h3>Crossing $100K In Profits</h3><p>Crossing $100K in profits this year and asking who to hire as an accountant.</p><div class="t-name">Anthony</div></div></div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -856,56 +923,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         </div>
       </div>
       <div class="cta-row" style="margin-top: 0;">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">Student Results</div>
-        <h2>1,000+ Students. One Pattern.</h2>
-      </div>
-      <div class="testimonials">
-        <div class="t-card"><img src="/images/testimonials/t1.webp" alt="Student testimonial — first payout" loading="lazy" /><div class="t-sum"><h3>First Payout</h3><p>His first ever payout ($939.85) after a year and two months. One of his 2026 goals, crossed off.</p><div class="t-name">Matthew</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t2.webp" alt="Student testimonial — passed first funded account" loading="lazy" /><div class="t-sum"><h3>Passed His First Funded Account In 3 Weeks</h3><p>He had blown a few accounts and felt defeated. Now he's consistently winning trades.</p><div class="t-name">Bguy180</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t3.webp" alt="Student testimonial — first $10,000 month" loading="lazy" /><div class="t-sum"><h3>First $10K Month</h3><p>Took 5 more payouts this month to hit his first $10K month.</p><div class="t-name">Chris</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t4.webp" alt="Student testimonial — $24,000 in a week" loading="lazy" /><div class="t-sum"><h3>$23,744 Paid Out</h3><p>Started trading with the team a week before this post.</p><div class="t-name">Landon E.</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t5.webp" alt="Student testimonial — $10,000 payout" loading="lazy" /><div class="t-sum"><h3>Another $10K Payout</h3><p>That put him at $20K for the month, with $10K more to request from Apex.</p><div class="t-name">Nahom</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t6.webp" alt="Student testimonial — payout thank you message" loading="lazy" /><div class="t-sum"><h3>Second Payout Requested</h3><p>A $2,030 Topstep payout, then his second request. He says he learned a skill that will change his life.</p><div class="t-name">Angelo</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t7.webp" alt="Student testimonial — passed first eval" loading="lazy" /><div class="t-sum"><h3>Passed His First Eval</h3><p>Passed his first evaluation and thanked Beni for it.</p><div class="t-name">Frankie</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t8.webp" alt="Student testimonial — funded certificate" loading="lazy" /><div class="t-sum"><h3>Funded: $50K Apex Account</h3><p>Got his Apex Trader Funding certificate for a $50K Tradovate account.</p><div class="t-name">Elliot</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t9.webp" alt="Student testimonial — passed funded, made $500 next day" loading="lazy" /><div class="t-sum"><h3>Funded, Then $500 The Next Day</h3><p>Passed his first funded account this week and made $500 the day after.</p><div class="t-name">Matthew H.</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t10.webp" alt="Student testimonial — hit $10K on PA accounts" loading="lazy" /><div class="t-sum"><h3>$10K On His PA Accounts</h3><p>Hit $10K on his funded PA accounts in a single day.</p><div class="t-name">Student</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t11.webp" alt="Student testimonial — $6K payout secured" loading="lazy" /><div class="t-sum"><h3>$6K Payout Secured</h3><p>Just secured a $6K payout on his funded account.</p><div class="t-name">Student</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t12.webp" alt="Student testimonial — $10,000 payout, two accounts" loading="lazy" /><div class="t-sum"><h3>$10K In One Payout</h3><p>A $30K month on the way, with two more accounts ready for max payouts.</p><div class="t-name">Landon</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t13.webp" alt="Student testimonial — $35K month, bought a truck" loading="lazy" /><div class="t-sum"><h3>$35K Month</h3><p>Bought a new truck for his business, all from trading.</p><div class="t-name">Landon</div></div></div>
-        <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Student testimonial — crossing $100K in profits" loading="lazy" /><div class="t-sum"><h3>Crossing $100K In Profits</h3><p>Crossing $100K in profits this year and asking who to hire as an accountant.</p><div class="t-name">Anthony</div></div></div>
-      </div>
-      <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="access">
-    <div class="wrap" style="max-width: 720px;">
-      <div class="section-head">
-        <div class="section-eyebrow">Everything You Unlock</div>
-        <h2>Your System Access Stack</h2>
-      </div>
-      <div class="value-stack">
-        <div class="value-row"><span class="stack-item">The Complete Execution Course</span><span class="price">Included</span></div>
-        <div class="value-row"><span class="stack-item">The Daily Scorecard &amp; Debrief Tool</span><span class="price">Included</span></div>
-        <div class="value-row"><span class="stack-item">The Pre-Market Risk Calculator</span><span class="price">Included</span></div>
-        <div class="value-row"><span class="stack-item">The Anti-Tilt Checklist</span><span class="price">Included</span></div>
-        <div class="value-row"><span class="stack-item">The 1-on-1 Onboarding Call With A Desk Coach</span><span class="price">Included</span></div>
-        <div class="value-total"><span>How you get access</span><span class="free">ON YOUR CALL</span></div>
-      </div>
-      <p class="value-note">Your coach unlocks everything for you on your onboarding call.<br />Keep your phone nearby after you sign up.</p>
-      <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -948,7 +966,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         </details>
       </div>
       <div class="cta-row">
-        <a href="#optin" class="btn-primary js-open-optin">GET MY AI TOOLS &amp; SYSTEM →</a>
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
@@ -956,7 +974,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <div class="modal-overlay" id="optin-overlay">
     <div class="modal-card">
       <button type="button" class="modal-close" id="optin-close" aria-label="Close">&times;</button>
-      <h2>Claim Your Tools &amp; Program</h2>
+      <h2>Claim Your Execution System &amp; Tools</h2>
       <p>Put your details below so a real coach can help you get set up.</p>
       <form class="optin" id="optin-form" novalidate>
         <div>
@@ -987,7 +1005,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           </div>
           <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
         </div>
-        <button type="submit" class="btn-primary">CLAIM MY TOOLS &amp; PROGRAM →</button>
+        <button type="submit" class="btn-primary">CLAIM MY EXECUTION SYSTEM &amp; TOOLS →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
     </div>
