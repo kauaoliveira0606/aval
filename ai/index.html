@@ -1190,6 +1190,13 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           </div>
           <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
         </div>
+        <div>
+          <label class="consent-row" for="watched">
+            <input type="checkbox" id="watched" name="watched" required />
+            <span>I have watched the full video and understand that there is a small cost to get the AI tools, and I don't pay Benicio (Aval Trades) anything.</span>
+          </label>
+          <div class="field-error" id="watched-error">Please confirm you watched the full video.</div>
+        </div>
         <button type="submit" class="btn-primary">CLAIM MY EXECUTION SYSTEM &amp; TOOLS →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
@@ -1242,12 +1249,14 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       var min = parseInt(opt.getAttribute('data-min'), 10);
       var max = parseInt(opt.getAttribute('data-max'), 10);
       var phoneOk = digits.length >= min && digits.length <= max;
+      var watchedOk = document.getElementById(prefix + 'watched').checked;
 
       document.getElementById(prefix + 'fname-error').classList.toggle('show', !fnameOk);
       document.getElementById(prefix + 'email-error').classList.toggle('show', !emailOk);
       document.getElementById(prefix + 'phone-error').classList.toggle('show', !phoneOk);
+      document.getElementById(prefix + 'watched-error').classList.toggle('show', !watchedOk);
 
-      if (!fnameOk || !emailOk || !phoneOk) return;
+      if (!fnameOk || !emailOk || !phoneOk || !watchedOk) return;
 
       var fullPhone = '+' + opt.value + digits;
 
