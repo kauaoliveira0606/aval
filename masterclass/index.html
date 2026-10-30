@@ -172,8 +172,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .hero .hero-eyebrow-wrap + h1 { padding-top: 0; margin-top: 16px; }
     .fill-note { margin-top: 16px; font-size: 0.85rem; font-weight: 700; color: var(--body); }
     .fill-note .dot { background: var(--red); margin-right: 8px; vertical-align: middle; }
-    .seat-note { margin-top: 18px; font-size: 0.88rem; color: var(--body); }
-    .seat-note b { color: var(--text); font-weight: 800; }
 
     /* ── FAQ ── */
     .faq { max-width: 760px; margin: 40px auto 0; display: grid; gap: 12px; text-align: left; }
@@ -224,7 +222,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .cd-num { font-family: var(--head); font-size: 2.2rem; font-weight: 400; line-height: 1; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
     .cd-lbl { margin-top: 8px; font-size: 0.6rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--body); }
     .hero .wrap > .btn { margin-top: 24px; }
-    .hero .seat-note { margin-top: 14px; }
+    .hero .trust-row { margin-top: 18px; }
 
     /* ── SECTIONS ── */
     .section { padding: 84px 0; }
@@ -361,7 +359,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <p class="cd-label js-countdown-label">Live Event Starts In...</p>
     <div class="countdown js-countdown"></div>
     <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, save my seat.<span class="btn-sub">LIVE ONLY &middot; &#127873; Receive FREE VIP Gift:<br>Pre-Market &amp; Pre-Trade Checklist</span></button>
-    <p class="seat-note"><b class="js-seat-count">264</b> People already saved their seat</p>
     <div class="trust-row">
       <span class="trust-badge whop"><img src="/images/whop-icon.webp" alt="" /><span><span class="trust-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.7-Star Rated on Whop</span></span>
       <span class="trust-badge"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2l2.4 1.8 3-.2 1 2.8 2.5 1.6-.8 2.9.8 2.9-2.5 1.6-1 2.8-3-.2L12 22l-2.4-1.8-3 .2-1-2.8-2.5-1.6.8-2.9-.8-2.9 2.5-1.6 1-2.8 3 .2z"/><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M8.2 12.3l2.6 2.6 5-5.4"/></svg><span><span class="trust-kicker">Verified by Whop</span>24,262 Students Helped</span></span>
@@ -580,11 +577,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     var DATE_TBA = true;
     var MASTERCLASS_TIME_LABEL = '7:00 PM EST';
     var MASTERCLASS_SHORT_LABEL = '7 PM EST';
-    // Seats saved: starts at SEATS_BASE on SEATS_SINCE (New York date) and goes up by
-    // SEATS_PER_DAY each day. Reset both whenever the webinar is updated.
-    var SEATS_BASE = 264;
-    var SEATS_SINCE = '2026-10-12';
-    var SEATS_PER_DAY = 24;
 
     var TESTIMONIALS = [
       { img: '/images/testimonials/t1.webp', title: 'First Payout Secured' },
@@ -688,13 +680,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     setNavH();
     window.addEventListener('resize', setNavH);
     window.addEventListener('load', setNavH);
-
-    (function paintSeats() {
-      var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date());
-      var days = Math.max(0, Math.round((Date.parse(today) - Date.parse(SEATS_SINCE)) / 86400000));
-      var count = (SEATS_BASE + days * SEATS_PER_DAY).toLocaleString('en-US');
-      document.querySelectorAll('.js-seat-count').forEach(function (el) { el.textContent = count; });
-    })();
 
     // The real schedule lives in WebinarJam. Ask it for the next session so the date and
     // countdown here always match the registration form; the weekly rule above is the fallback.
