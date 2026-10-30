@@ -34,9 +34,11 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <meta name="twitter:image" content="https://www.mindovermarket.com/images/logo.png" />
   <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face { font-family: 'Geist'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/geist-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
     @font-face { font-family: 'Geist'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/geist-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
     @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/manrope-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
     @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/manrope-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
   </style>
@@ -71,20 +73,21 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     .btn {
       display: inline-block;
-      background: linear-gradient(180deg, #d9a93b 0%, #a97c22 100%);
+      background: linear-gradient(180deg, #f2c14e 0%, #d9a93b 100%);
       color: #0a0a0a;
-      font-family: 'Geist', 'Inter', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-family: var(--head);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
       line-height: 1.2;
       text-transform: uppercase;
       text-align: center;
-      padding: 17px 40px;
+      padding: 16px 40px;
       border: 0;
-      border-radius: 5px;
+      border-radius: 999px;
       cursor: pointer;
-      box-shadow: 0 8px 20px -8px rgba(217, 169, 59, 0.6);
-      transition: transform .15s, opacity .15s;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(120, 84, 10, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2), 0 10px 24px -8px rgba(169, 124, 34, 0.55);
+      transition: transform .15s, filter .2s;
       position: relative;
       overflow: hidden;
     }
@@ -102,28 +105,31 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     @keyframes btn-shine { 0% { transform: translateX(-100%); } 60%, 100% { transform: translateX(100%); } }
     @media (prefers-reduced-motion: reduce) { .btn::before { animation: none; } }
-    .btn:hover { transform: translateY(-1px); opacity: 0.94; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.04); }
     .btn[disabled] { opacity: 0.7; cursor: wait; transform: none; }
-    .btn.sm { font-size: 0.95rem; padding: 11px 20px; }
+    .btn.sm { font-size: 0.85rem; padding: 11px 20px; }
+    .btn-sub { display: block; margin-top: 4px; font-family: 'Geist', 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0; line-height: 1.3; text-transform: none; }
 
     /* ── HERO ── */
     .hero {
       position: relative;
-      padding: 0 0 80px;
+      padding: calc(16px + var(--nav-h, 66px)) 0 72px;
       text-align: center;
-      background: repeating-linear-gradient(115deg, transparent 0 138px, rgba(217, 169, 59, 0.06) 138px 140px),
-        radial-gradient(620px 360px at 26% 22%, rgba(217, 169, 59, 0.16), transparent 70%),
-        radial-gradient(520px 460px at 100% 55%, rgba(217, 169, 59, 0.13), transparent 70%),
-        linear-gradient(180deg, #fbf8f1 0%, #ffffff 100%);
+      background: repeating-linear-gradient(118deg, transparent 0 150px, rgba(169, 124, 34, 0.09) 150px 152px),
+        radial-gradient(900px 480px at 18% 0%, rgba(217, 169, 59, 0.26), transparent 62%),
+        radial-gradient(760px 520px at 100% 30%, rgba(217, 169, 59, 0.18), transparent 60%),
+        linear-gradient(180deg, #fbf5e6 0%, #fcfaf4 100%);
     }
-    .nav-wrap { position: sticky; top: 0; z-index: 50; padding: 20px 24px 0; }
+    /* Sticky top bar: zero height so it floats over the hero; the hero pads itself by its height (--nav-h). */
+    .nav-wrap { position: sticky; top: 0; z-index: 50; height: 0; padding: 0 24px; display: flow-root; }
     .nav {
       max-width: 1170px;
       margin: 0 auto;
-      background: #fbf8f1;
-      border-radius: 8px;
-      box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.16);
-      padding: 11px 22px;
+      margin-top: 16px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+      padding: 10px 12px 10px 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -140,19 +146,30 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     @keyframes pulse { 0%,100%{opacity: 1} 50%{opacity: .3} }
 
     .hero h1 {
-      font-family: var(--head);
-      font-size: clamp(2.1rem, 5.6vw, 4.6rem);
-      font-weight: 500;
-      line-height: 1.04;
-      letter-spacing: -1px;
-      max-width: 1010px;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 5.2vw, 3.7rem);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -1.4px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding-top: 56px;
+      padding-top: 40px;
     }
-    .hero h1 .acc { font-weight: 600; white-space: nowrap; }
-    .hero-eyebrow-wrap { text-align: center; padding-top: 56px; }
+    .hero h1 .acc { white-space: nowrap; }
+    /* Headline highlight: glossy gold pill behind the key phrase, one pill per wrapped line. */
+    .hl-pill {
+      color: #0a0a0a;
+      background: linear-gradient(180deg, #f2c14e 0%, #d9a93b 100%);
+      padding: 0 0.2em 0.04em;
+      border-radius: 0.2em;
+      white-space: nowrap;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(120, 84, 10, 0.35), 0 10px 24px -8px rgba(169, 124, 34, 0.55);
+    }
+    .hero-eyebrow-wrap { text-align: center; padding-top: 40px; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border: 1px solid rgba(217, 169, 59, 0.45); border-radius: 999px; background: rgba(217, 169, 59, 0.1); font-size: 0.8rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #9c700c; }
-    .hero .hero-eyebrow-wrap + h1 { padding-top: 0; margin-top: 18px; }
+    .hero .hero-eyebrow-wrap + h1 { padding-top: 0; margin-top: 16px; }
     .fill-note { margin-top: 16px; font-size: 0.85rem; font-weight: 700; color: var(--body); }
     .fill-note .dot { background: var(--red); margin-right: 8px; vertical-align: middle; }
     .seat-note { margin-top: 18px; font-size: 0.88rem; color: var(--body); }
@@ -191,20 +208,23 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     /* ── TRUST ROW ── */
     .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; }
-    .trust-badge { display: inline-flex; align-items: center; gap: 6px; background: #fbf8f1; border: 1px solid #e6dbc2; border-radius: 100px; padding: 5px 12px 5px 9px; font-size: 0.72rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; }
+    .trust-badge { display: inline-flex; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #e6dbc2; border-radius: 100px; padding: 5px 12px 5px 9px; font-size: 0.72rem; font-weight: 700; color: var(--text); line-height: 1.2; white-space: nowrap; }
     .trust-badge img { width: 22px; height: 22px; border-radius: 6px; display: block; }
     .trust-badge.whop { padding-left: 5px; }
     .trust-badge svg { flex: none; color: #9c700c; }
     .trust-badge > span { display: flex; flex-direction: column; align-items: flex-start; }
     .trust-kicker { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text2); }
     .trust-stars { color: #9c700c; font-size: 0.6rem; letter-spacing: 1px; }
-    .hero-sub { font-size: clamp(1.05rem, 2vw, 1.3rem); color: var(--body); max-width: 760px; margin: 30px auto 0; line-height: 1.45; }
+    .hero-sub { font-size: clamp(1.02rem, 2vw, 1.22rem); font-weight: 500; color: var(--body); max-width: 760px; margin: 24px auto 0; line-height: 1.5; }
 
-    .countdown { display: flex; justify-content: center; gap: 9px; margin-top: 26px; }
-    .cd-cell { width: 90px; background: #fbf8f1; border-radius: 8px; box-shadow: 0 6px 24px -8px rgba(0, 0, 0, 0.16); padding: 12px 4px 10px; }
-    .cd-num { font-family: var(--head); font-size: 2.5rem; font-weight: 400; line-height: 1.15; font-variant-numeric: tabular-nums; }
-    .cd-lbl { font-size: 0.62rem; letter-spacing: 0.8px; text-transform: uppercase; color: var(--body); }
-    .hero .wrap > .btn { margin-top: 28px; }
+    .cd-label { margin-top: 28px; font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--body); }
+    .countdown { display: flex; justify-content: center; gap: 10px; margin-top: 26px; }
+    .cd-label + .countdown { margin-top: 12px; }
+    .cd-cell { width: 88px; background: #ffffff; border: 1px solid #e6dbc2; border-radius: 10px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); padding: 14px 6px 12px; }
+    .cd-num { font-family: var(--head); font-size: 2.2rem; font-weight: 400; line-height: 1; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+    .cd-lbl { margin-top: 8px; font-size: 0.6rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--body); }
+    .hero .wrap > .btn { margin-top: 24px; }
+    .hero .seat-note { margin-top: 14px; }
 
     /* ── SECTIONS ── */
     .section { padding: 84px 0; }
@@ -285,21 +305,25 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     @media (max-width: 600px) {
       .wrap { padding: 0 16px; }
-      .nav-wrap { padding: 12px 12px 0; }
-      .nav { padding: 9px 12px; }
+      .nav-wrap { padding: 0 14px; }
+      .nav { margin-top: 12px; padding: 8px 8px 8px 16px; }
+      .nav .btn.sm { font-size: 0.74rem; padding: 10px 14px; }
       /* Two tidy lines on phones: the label, then the date. */
       .nav-label { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 0.7rem; }
       .nav-label-colon { display: none; }
       .nav-date { font-size: 0.66rem; letter-spacing: 0.2px; line-height: 1.35; }
       .nav-date > span { display: block; }
       .nav-date > .nav-date-sep { display: none; }
-      .hero { padding-bottom: 56px; }
-      .hero h1 { padding-top: 34px; }
-      .hero-eyebrow-wrap { padding-top: 34px; }
+      .hero { padding: calc(12px + var(--nav-h, 76px)) 0 56px; }
+      .hero h1 { padding-top: 19px; letter-spacing: -0.8px; line-height: 1.18; }
+      .hero-eyebrow-wrap { padding-top: 19px; }
+      .hero .hero-eyebrow-wrap + h1 { margin-top: 14px; }
+      .hl-pill { white-space: normal; }
+      .hero .wrap > .btn { width: 100%; }
       .hero-eyebrow { font-size: 0.66rem; letter-spacing: 0.8px; padding: 7px 12px; }
       .hero h1 .acc { white-space: normal; }
-      .cd-cell { width: 74px; }
-      .cd-num { font-size: 2rem; }
+      .cd-cell { width: 72px; padding: 12px 4px 10px; }
+      .cd-num { font-size: 1.8rem; }
       .section { padding: 56px 0; }
       .card { padding: 24px 22px 26px; }
       .card h3 { font-size: 1.35rem; }
@@ -322,21 +346,21 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 <body>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="nav-wrap">
-    <div class="nav">
-      <span class="nav-label"><span class="nav-label-top"><span class="dot"></span>Live Masterclass<span class="nav-label-colon">:</span></span> <span class="nav-date js-event-nav">Date To Be Announced</span></span>
-      <button type="button" class="btn sm wj-embed-button" data-webinarHash="k50k29iz">Yes, save my seat.</button>
-    </div>
+<div class="nav-wrap">
+  <div class="nav">
+    <span class="nav-label"><span class="nav-label-top"><span class="dot"></span>Live Masterclass<span class="nav-label-colon">:</span></span> <span class="nav-date js-event-nav">Date To Be Announced</span></span>
+    <button type="button" class="btn sm wj-embed-button" data-webinarHash="k50k29iz">Yes, save my seat.</button>
   </div>
+</div>
 
+<header class="hero">
   <div class="wrap">
     <div class="hero-eyebrow-wrap"><span class="hero-eyebrow"><span class="dot"></span>Live Masterclass For Prop Firm Traders</span></div>
-    <h1>The 3-Step System Prop Firm Traders Are Using To Escape <span class="acc">"Evaluation Jail"</span> And <span class="acc">Take Consistent Payouts</span>.</h1>
+    <h1>The 3-Step System Prop Firm Traders Are Using To Escape <span class="acc">"Evaluation Jail"</span> And <span class="hl-pill">Take Consistent Payouts.</span></h1>
     <p class="hero-sub">If you know the setups but keep revenge trading, breaking your rules under pressure, or getting funded only to blow the account before your first payout - this live masterclass shows you the exact mechanical system I use to pull consistent prop firm payouts (Without Quitting Your Day Job Or Staring At Charts All Day)</p>
+    <p class="cd-label js-countdown-label">Live Event Starts In...</p>
     <div class="countdown js-countdown"></div>
-    <p class="fill-note"><span class="dot"></span>LIVE ONLY &middot; &#127873; Receive FREE VIP Gift: Pre-Market &amp; Pre-Trade Checklist</p>
-    <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, save my seat.</button>
+    <button type="button" class="btn wj-embed-button" data-webinarHash="k50k29iz">Yes, save my seat.<span class="btn-sub">LIVE ONLY &middot; &#127873; Receive FREE VIP Gift:<br>Pre-Market &amp; Pre-Trade Checklist</span></button>
     <p class="seat-note"><b class="js-seat-count">264</b> People already saved their seat</p>
     <div class="trust-row">
       <span class="trust-badge whop"><img src="/images/whop-icon.webp" alt="" /><span><span class="trust-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.7-Star Rated on Whop</span></span>
@@ -640,7 +664,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     function paintSession() {
       if (DATE_TBA) {
-        document.querySelectorAll('.js-event-date, .js-countdown').forEach(function (el) { el.style.display = 'none'; });
+        document.querySelectorAll('.js-event-date, .js-countdown, .js-countdown-label').forEach(function (el) { el.style.display = 'none'; });
         document.querySelectorAll('.js-event-short').forEach(function (el) { el.textContent = 'live'; });
         document.querySelectorAll('.js-event-nav').forEach(function (el) { el.textContent = 'Date To Be Announced'; });
         return;
@@ -657,6 +681,13 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
     var session = nextSession(new Date());
     paintSession();
+
+    // The hero pads itself by the top bar's height, which changes on phones.
+    var navBar = document.querySelector('.nav-wrap .nav');
+    function setNavH() { document.documentElement.style.setProperty('--nav-h', navBar.offsetHeight + 'px'); }
+    setNavH();
+    window.addEventListener('resize', setNavH);
+    window.addEventListener('load', setNavH);
 
     (function paintSeats() {
       var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date());
@@ -691,7 +722,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       var s = Math.floor(ms / 1000);
       var cells = [[Math.floor(s / 86400), 'Days'], [Math.floor(s % 86400 / 3600), 'Hours'], [Math.floor(s % 3600 / 60), 'Minutes'], [s % 60, 'Seconds']];
       var html = cells.map(function (c) {
-        return '<div class="cd-cell"><div class="cd-num">' + c[0] + '</div><div class="cd-lbl">' + c[1] + '</div></div>';
+        return '<div class="cd-cell"><div class="cd-num">' + pad(c[0]) + '</div><div class="cd-lbl">' + c[1] + '</div></div>';
       }).join('');
       countdowns.forEach(function (el) { el.innerHTML = html; });
     }
