@@ -7,7 +7,7 @@
 // Schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time. MASTERCLASS_DATE
 // (New York date) pins the next session to that day until it is over.
 // Keep in step with /masterclass-next-steps/done-shared.js.
-const MASTERCLASS_DATE = '2026-11-01';
+const MASTERCLASS_DATE = '2026-11-15';
 const MASTERCLASS_DAY = 0;
 const MASTERCLASS_HOUR = 19;
 
