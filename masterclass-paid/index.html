@@ -835,10 +835,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           return showSeatError('Please check your phone number. Outside the US? Start with + and your country code.');
         }
         if (!data.ok) throw new Error('register failed');
-        // Same query the WebinarJam form used to send: the confirmation page fills checkout from it, then strips it.
-        var next = new URLSearchParams({ fname: fname, email: email, phone: data.phone || '' });
-        utmKeys.forEach(function (k) { if (query.get(k)) next.set(k, query.get(k)); });
-        window.location.href = '/masterclass-confirmation?' + next.toString();
+        // next-steps fires the Meta Lead + CompleteRegistration events off this flag.
+        window.location.href = '/masterclass-next-steps?registered=1';
       }).catch(function () {
         reset();
         showSeatError('Something went wrong saving your seat. Please try again.');

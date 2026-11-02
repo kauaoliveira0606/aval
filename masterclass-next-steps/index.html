@@ -28,6 +28,20 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1597200888695107');
 fbq('track', 'PageView');
+// The masterclass opt-in popup lands here with ?registered=1: count the lead once per session, then drop the flag.
+(function () {
+  var q = new URLSearchParams(window.location.search);
+  if (!q.has('registered')) return;
+  q.delete('registered');
+  var qs = q.toString();
+  window.history.replaceState(window.history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+  var tracked = false;
+  try { tracked = window.sessionStorage.getItem('mom_masterclass_lead') === '1'; } catch (e) {}
+  if (tracked) return;
+  fbq('track', 'CompleteRegistration');
+  fbq('track', 'Lead');
+  try { window.sessionStorage.setItem('mom_masterclass_lead', '1'); } catch (e) {}
+})();
 </script>
 <noscript><img height="1" width="1" style="display: none"
 src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
