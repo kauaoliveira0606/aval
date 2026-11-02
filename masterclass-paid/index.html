@@ -835,7 +835,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           return showSeatError('Please check your phone number. Outside the US? Start with + and your country code.');
         }
         if (!data.ok) throw new Error('register failed');
-        // next-steps fires the Meta Lead + CompleteRegistration events off this flag.
+        // next-steps fires the Meta CompleteRegistration event off this flag.
         window.location.href = '/masterclass-next-steps?registered=1';
       }).catch(function () {
         reset();
