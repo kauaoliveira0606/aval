@@ -750,7 +750,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       <p class="hero-tag">for prop firm traders</p>
       <h1>You Know What To Do On The Charts. <span class="accent">This System Makes You Actually Do It</span></h1>
       <p class="hero-sub">Remove the guesswork, uncertainty, and emotional decisions from your trading. Watch this short breakdown to see how the system and tools work.</p>
-      <p class="video-note">Watch the video before doing anything</p>
       <vturb-smartplayer id="vid-6ae6741602755cc7f5362fa1" style="display: block; margin: 0 auto 40px; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
       <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ae6741602755cc7f5362fa1/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
       <a href="#optin" class="btn-primary js-open-optin" style="margin-top: 40px;">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
@@ -1190,13 +1189,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
           </div>
           <div class="field-error" id="phone-error">Enter a valid phone number for the selected country.</div>
         </div>
-        <div>
-          <label class="consent-row" for="watched">
-            <input type="checkbox" id="watched" name="watched" required />
-            <span>I have watched the full video and understand that there is a small cost to get the AI tools, and I don't pay Benicio (Aval Trades) anything.</span>
-          </label>
-          <div class="field-error" id="watched-error">Please confirm you watched the full video.</div>
-        </div>
         <button type="submit" class="btn-primary">CLAIM MY EXECUTION SYSTEM &amp; TOOLS →</button>
       </form>
       <p class="form-note">A coach reaches out in minutes to set you up.<br /><strong>1,000+</strong> traders already enrolled.</p>
@@ -1252,14 +1244,12 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       var min = parseInt(opt.getAttribute('data-min'), 10);
       var max = parseInt(opt.getAttribute('data-max'), 10);
       var phoneOk = digits.length >= min && digits.length <= max;
-      var watchedOk = document.getElementById(prefix + 'watched').checked;
 
       document.getElementById(prefix + 'fname-error').classList.toggle('show', !fnameOk);
       document.getElementById(prefix + 'email-error').classList.toggle('show', !emailOk);
       document.getElementById(prefix + 'phone-error').classList.toggle('show', !phoneOk);
-      document.getElementById(prefix + 'watched-error').classList.toggle('show', !watchedOk);
 
-      if (!fnameOk || !emailOk || !phoneOk || !watchedOk) return;
+      if (!fnameOk || !emailOk || !phoneOk) return;
 
       var fullPhone = '+' + opt.value + digits;
 
