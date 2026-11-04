@@ -287,6 +287,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     }
     .spoint h4 { font-size: 16.5px; font-weight: 700; margin-bottom: 3px; }
     .spoint p { font-size: 15px; color: var(--text-dim); }
+    .spoint p + p { margin-top: 8px; }
 
     .story-side { position: sticky; top: 90px; display: grid; gap: 18px; }
     .video-caption {
@@ -518,6 +519,48 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .sum-card .k { font-weight: 800; font-size: 17px; color: var(--text); display: block; margin-bottom: 6px; }
     .sum-card strong { color: #9c700c; }
 
+
+    /* STORY NUMBERS */
+    .story-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+    @media (max-width: 560px) { .story-stats { grid-template-columns: 1fr; } }
+    .story-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px; }
+    .story-stat .n { display: block; font-size: 26px; font-weight: 800; color: #9c700c; line-height: 1.1; margin-bottom: 6px; }
+    .story-stat .l { font-size: 13.5px; color: var(--text-dim); line-height: 1.45; display: block; }
+    .story-proof-link { display: inline-block; margin-top: 14px; font-size: 14.5px; font-weight: 700; color: #9c700c; text-decoration: none; border-bottom: 1px solid rgba(156, 112, 12, 0.35); }
+
+    /* WHAT YOU GET */
+    .get-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    @media (max-width: 880px) { .get-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .get-grid { grid-template-columns: 1fr; } }
+    .get-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 24px 22px; display: flex; flex-direction: column; gap: 10px; }
+    .get-card .num { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; color: #9c700c; }
+    .get-card h3 { font-size: 18px; font-weight: 800; line-height: 1.3; }
+    .get-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
+    .get-card .fixes { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-dim); line-height: 1.55; }
+    .get-card .fixes strong { color: var(--text); }
+    .get-card .pkg { align-self: flex-start; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9c700c; border: 1px solid rgba(217, 169, 59, 0.5); border-radius: 999px; padding: 3px 10px; }
+
+    /* THE MONEY QUESTION */
+    .money-h3 { font-size: 22px; font-weight: 800; margin-top: 56px; }
+    .cost-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+    @media (max-width: 880px) { .cost-grid { grid-template-columns: 1fr; } }
+    .cost-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 22px; }
+    .cost-card .k { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .cost-card .v { display: block; font-size: 24px; font-weight: 800; color: #9c700c; margin-bottom: 8px; line-height: 1.2; }
+    .cost-card p { font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
+    .money-math { margin-top: 22px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 24px 26px; max-width: 880px; }
+    .money-math .line { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-dim); }
+    .money-math .line:last-child { border-bottom: none; }
+    .money-math .line strong { color: var(--text); white-space: nowrap; }
+    .money-math .line.total strong { color: #9c700c; font-size: 17px; }
+    .money-stages { list-style: none; display: grid; gap: 12px; margin-top: 22px; max-width: 880px; }
+    .money-stages li { display: grid; grid-template-columns: 150px 1fr; gap: 18px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; }
+    @media (max-width: 600px) { .money-stages li { grid-template-columns: 1fr; gap: 8px; } }
+    .money-stages .when { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9c700c; padding-top: 3px; }
+    .money-stages .what strong { display: block; font-size: 16px; margin-bottom: 4px; }
+    .money-stages .what span { display: block; font-size: 14.5px; color: var(--text-dim); line-height: 1.6; }
+    .money-stages .what .amt { display: inline-block; margin-top: 8px; font-weight: 700; color: var(--text); font-size: 14.5px; }
+
     /* NEXT / CTA */
     .next-section { background: var(--band); color: var(--text); text-align: center; border-top: 1px solid var(--border-2); }
     .next-section .eyebrow { color: #9c700c; }
@@ -589,6 +632,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <div class="nav-links" id="navLinks">
       <a href="#story">The Story</a>
       <a href="#program">The Program</a>
+      <a href="#inside">What You Get</a>
+      <a href="#money">The Money</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#proof">Proof</a>
       <a href="#interviews">Interviews</a>
@@ -692,15 +737,21 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <div class="story-copy">
       <span class="eyebrow reveal">Welcome From Benicio</span>
       <h2 class="reveal">The Story Behind <span class="accent">Mind Over Market</span></h2>
-      <p class="lead reveal d1">I started trading at 15 and spent years treating it like a hobby before it became a profession. This is the short version of how it turned into a repeatable framework, and why I built Mind Over Market around it.</p>
+      <p class="lead reveal d1">I started trading at 15. By 19 I had made my first million from trading. This is the short version of how it turned into a repeatable framework, and why I built Mind Over Market around it.</p>
       <div class="story-points">
         <div class="spoint reveal d1"><div class="ico">1</div><div><h4>Obsessed from the start</h4><p>A friend of the family introduced me to the markets at 15. I was hooked immediately and spent every spare hour on charts, back testing, and learning how price actually moves.</p></div></div>
         <div class="spoint reveal d2"><div class="ico">2</div><div><h4>Years of trial and error</h4><p>For a long time I had the screen time but not the structure. I collected strategies, chased setups, and had nothing repeatable to show for it. The knowledge was there. The process was not.</p></div></div>
         <div class="spoint reveal d3"><div class="ico">3</div><div><h4>The shift to structure</h4><p>Everything changed when I stopped trying to predict the market and built a rules-based framework around it: conditions, continuations, equilibrium, conservative targets. Same market, completely different results.</p></div></div>
         <div class="spoint reveal d4"><div class="ico">4</div><div><h4>Trading like a business</h4><p>Consistent, sized risk. Every trade journaled. Every session reviewed for what worked and why. Metrics instead of guesswork. That is what turned the skill into consistent profitability.</p></div></div>
-        <div class="spoint reveal"><div class="ico">5</div><div><h4>Going full time and building in public</h4><p>Once the process was consistent, I went all in. I documented trades openly, wins and losses, and grew a following on YouTube and Instagram off that transparency.</p></div></div>
+        <div class="spoint reveal"><div class="ico">5</div><div><h4>The results: from 15 to seven figures by 19</h4><p>Four years after my first chart, I crossed $1,000,000 in trading profits. As of April 2026 the total was $1,180,600.</p><p>It has not slowed down. From July 31 to August 31, 2026, I submitted 15 withdrawals from my funding portal for a total of $134,600. That is one month.</p><p>I went full time and documented it in public, wins and losses, on YouTube and Instagram.</p></div></div>
         <div class="spoint reveal"><div class="ico">6</div><div><h4>Building the mentorship</h4><p>I built Mind Over Market to hand serious traders that same structure and accountability, so they can reach professional, consistently profitable trading without the years of trial and error I went through.</p></div></div>
       </div>
+      <div class="story-stats reveal">
+        <div class="story-stat"><span class="n">15</span><span class="l">Age I placed my first trade</span></div>
+        <div class="story-stat"><span class="n">$1,180,600</span><span class="l">Total trading profits as of April 2026</span></div>
+        <div class="story-stat"><span class="n">$134,600</span><span class="l">15 withdrawals, Jul 31 to Aug 31, 2026</span></div>
+      </div>
+      <a class="story-proof-link reveal" href="#proof">See the 15 withdrawal requests &darr;</a>
     </div>
     <div class="story-side">
       <div class="video-caption reveal d1">&#9654; Watch: Benicio's full story</div>
@@ -867,6 +918,79 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- ============ WHAT YOU GET ============ -->
+<section id="inside">
+  <div class="wrap">
+    <span class="eyebrow reveal">The Full Inventory</span>
+    <h2 class="reveal">What You <span class="accent">Actually Get</span></h2>
+    <p class="lead reveal d1">Here is everything inside Mind Over Market.</p>
+    <p class="lead reveal">Every piece, what it is, and the problem it is there to fix.</p>
+    <div class="get-grid">
+      <div class="get-card reveal"><span class="num">01</span><span class="pkg">Full mentorship</span><h3>Onboarding Call and Your Custom 180 Day Roadmap</h3><p>A 1-on-1 kickoff. We look at your experience, your schedule and your accounts, then lay out your plan phase by phase.</p><div class="fixes"><strong>Solves:</strong> Not knowing where to start, or starting in the wrong place.</div></div>
+      <div class="get-card reveal"><span class="num">02</span><h3>The Mind Over Market Curriculum</h3><p>The full course. Risk management and safe order types first. Then the framework, psychology and journaling, at your own pace.</p><div class="fixes"><strong>Solves:</strong> Collecting strategies and half-learning all of them.</div></div>
+      <div class="get-card reveal"><span class="num">03</span><h3>Live Trading Classes, 5 a Week</h3><p>Benicio and the coaches trade live every market day, screen shared. Every decision explained as it happens.</p><div class="fixes"><strong>Solves:</strong> The execution gap. Knowing the setup in a backtest and freezing when it's live.</div></div>
+      <div class="get-card reveal"><span class="num">04</span><span class="pkg">Full mentorship</span><h3>Coaching Calls, 3 a Week</h3><p>Group calls for chart breakdowns and your questions. Your trades reviewed against the framework.</p><div class="fixes"><strong>Solves:</strong> Making the same mistake for months because nobody is looking at your trades.</div></div>
+      <div class="get-card reveal"><span class="num">05</span><span class="pkg">Full mentorship</span><h3>Psychology Sessions, 2 a Week</h3><p>Sessions on what changes when the money is real. Hesitation, revenge trades, forcing it on a funded account.</p><div class="fixes"><strong>Solves:</strong> Eval jail. Passing the eval, then blowing the funded account.</div></div>
+      <div class="get-card reveal"><span class="num">06</span><h3>Your Personal Psychology Coach</h3><p>One coach who learns your patterns and works on them with you directly.</p><div class="fixes"><strong>Solves:</strong> Generic mindset advice that doesn't fit your habits.</div></div>
+      <div class="get-card reveal"><span class="num">07</span><span class="pkg">Full mentorship</span><h3>Six 1-on-1 Calls</h3><p>Private calls with the coaching team across the program. Your journal, your metrics, your next phase.</p><div class="fixes"><strong>Solves:</strong> Getting lost in a group and never getting a plan built for you.</div></div>
+      <div class="get-card reveal"><span class="num">08</span><h3>1-on-1 Chat With the Team</h3><p>A direct line between calls. Send a trade, ask a question, get an answer.</p><div class="fixes"><strong>Solves:</strong> Asking in a dead chat and never hearing back.</div></div>
+      <div class="get-card reveal"><span class="num">09</span><h3>End-of-Week Review and Tracked Metrics</h3><p>Every week you fill out a review. Your win rate, your rule breaks and your consistency get tracked over time.</p><div class="fixes"><strong>Solves:</strong> Not knowing if you're actually getting better.</div></div>
+      <div class="get-card reveal"><span class="num">10</span><h3>The Community</h3><p>Traders at your stage, plus members who sat where you are and now take payouts.</p><div class="fixes"><strong>Solves:</strong> Trading alone and quitting on the first red week.</div></div>
+      <div class="get-card reveal"><span class="num">11</span><h3>In-Person Mastermind, Twice a Year</h3><p>Two live events a year with Benicio, the coaches and other members.</p><div class="fixes"><strong>Solves:</strong> Never being in the room with people already doing what you want to do.</div></div>
+      <div class="get-card reveal"><span class="num">12</span><h3>Access After Your Term</h3><p>When your program term ends, you can keep the live classes and community month to month.</p><div class="fixes"><strong>Solves:</strong> Losing your routine the day the program ends.</div></div>
+    </div>
+    <div class="data-note reveal">
+      <strong>Your package decides the mix.</strong> Pieces marked "Full mentorship" come with the full package. Every package includes the live trading classes and the curriculum. On your call we will go through which one fits your goals.
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE MONEY QUESTION ============ -->
+<section class="alt" id="money">
+  <div class="wrap">
+    <span class="eyebrow reveal">The Economics</span>
+    <h2 class="reveal">The Money <span class="accent">Question</span></h2>
+    <p class="lead reveal d1">You already know what the framework is. The next question is what it pays.</p>
+    <p class="lead reveal">Here are the real numbers. What it costs, what a funded account pays, and what the timeline looks like.</p>
+
+    <h3 class="money-h3 reveal">What it costs to get in the game</h3>
+    <div class="cost-grid">
+      <div class="cost-card reveal d1"><span class="k">Evaluation fee</span><span class="v">About $50 to $170</span><p>A typical monthly fee for a 50K futures evaluation at firms like Apex and Topstep. They run discounts most of the year.</p></div>
+      <div class="cost-card reveal d2"><span class="k">Activation or reset</span><span class="v">About $0 to $150</span><p>Some firms charge a one-time fee when you pass, or a reset if you break a rule. It depends on the firm and the plan.</p></div>
+      <div class="cost-card reveal d3"><span class="k">Personal capital at risk</span><span class="v">$0</span><p>You trade the firm's money. Your downside is the fees above, not a five figure account.</p></div>
+    </div>
+    <p class="payout-disclaim reveal">Plan for more than one eval. Most people fail at least one before they pass. Firm prices change often, so we go through current pricing on your call.</p>
+
+    <h3 class="money-h3 reveal">What a funded account pays</h3>
+    <p class="lead reveal" style="margin-top: 14px;">Once you pass, you trade a funded account and keep most of what you make.</p>
+    <p class="lead reveal">Most firms pay out 80 to 90% of your profits. The catch is the drawdown, usually around $2,000 to $2,500 on a 50K account. One bad day can close it.</p>
+    <p class="lead reveal">That is why risk comes first in this program, and why the target is $250 to $500 a day, not a home run.</p>
+
+    <h3 class="money-h3 reveal">The math on consistent execution</h3>
+    <p class="lead reveal" style="margin-top: 14px;">An example, not a promise. One 50K funded account, a month of the framework run the way it's taught.</p>
+    <div class="money-math reveal">
+      <div class="line"><span>Green days at the $250 to $500 target</span><strong>12 days</strong></div>
+      <div class="line"><span>Net profit after the red days, at a $250 average</span><strong>$3,000</strong></div>
+      <div class="line"><span>Your share at a 90% split</span><strong>$2,700</strong></div>
+      <div class="line"><span>Same trades copied across 3 funded accounts</span><strong>$8,100</strong></div>
+      <div class="line total"><span>Same trades copied across 5 funded accounts</span><strong>$13,500</strong></div>
+    </div>
+    <p class="payout-disclaim reveal">Copying trades across accounts multiplies the losses the same way it multiplies the wins. Firms also cap how many accounts you can hold.</p>
+
+    <h3 class="money-h3 reveal">What the timeline looks like</h3>
+    <ul class="money-stages">
+      <li class="reveal"><span class="when">Days 1 to 120</span><div class="what"><strong>Learn and practice</strong><span>Curriculum, backtesting, live classes. No real money at risk yet.</span><span class="amt">Payouts: $0</span></div></li>
+      <li class="reveal"><span class="when">Days 120 to 180</span><div class="what"><strong>First eval, first funded account</strong><span>Small size, pre-defined risk, every trade reviewed. The goal is your first payout.</span><span class="amt">First payouts on this page: $939.85 to $6,000</span></div></li>
+      <li class="reveal"><span class="when">Month 6 and on</span><div class="what"><strong>One account, consistently</strong><span>Stack the green days and take payouts on a regular schedule.</span><span class="amt">Example range: $1,500 to $3,000 a month</span></div></li>
+      <li class="reveal"><span class="when">Scaling</span><div class="what"><strong>More accounts, same trades</strong><span>Add funded accounts as your consistency proves out.</span><span class="amt">Johnny now runs $10K months as a baseline</span></div></li>
+    </ul>
+
+    <div class="data-note reveal">
+      <strong>This is skill-dependent. Be honest with yourself about that.</strong> Most people who buy an evaluation never take a payout. Some members move faster than this timeline, some take months longer, and the ones who stop doing the work don't get there at all. The math only works when the execution does. Building the execution is the whole point of the program.
+    </div>
+  </div>
+</section>
+
 <!-- ============ ROADMAP ============ -->
 <section id="roadmap">
   <div class="wrap">
@@ -938,6 +1062,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <span class="eyebrow reveal">Receipts</span>
     <h2 class="reveal">Proof of <span class="accent">Payouts</span></h2>
     <p class="lead reveal d1">Straight from the funding portal. Real withdrawal requests, real amounts, nothing cropped out.</p>
+    <p class="lead reveal">These are the 15 withdrawals from the story above: July 31 to August 31, 2026, $134,600 in total.</p>
     <div class="payout-grid">
       <a class="payout-shot reveal d1" href="/images/payouts/p1.webp" target="_blank" rel="noopener">
         <img src="/images/payouts/p1.webp" alt="Payout proof — withdrawal requests in the prop firm funding portal" loading="lazy" />
@@ -1062,7 +1187,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
       </div>
       <div class="faq-item reveal">
         <button class="faq-q">How much capital do I need?<span class="plus">+</span></button>
-        <div class="faq-a"><p>Most students trade funded accounts through a prop firm rather than risking a large personal account. That means the cost to get started is the evaluation fee, not a five figure balance. We will talk through the exact numbers for your situation on the call.</p></div>
+        <div class="faq-a"><p>Most students trade funded accounts through a prop firm rather than risking a large personal account. That means the cost to get started is the evaluation fee, not a five figure balance. The full breakdown of costs, payouts and timeline is in <a href="#money" style="color:#9c700c;font-weight:700;">The Money Question</a> above. We will talk through the exact numbers for your situation on the call.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q">How much time do I need to put in each day?<span class="plus">+</span></button>
