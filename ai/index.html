@@ -596,7 +596,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 14px; }
 
     @media (max-width: 720px) {
-      .testimonials { column-count: 1; }
+      .testimonials { column-count: 2; column-gap: 10px; }
+      .t-card { margin-bottom: 10px; }
       .pain-list, .fail-grid, .routine-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
     }
@@ -757,42 +758,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   </header>
 
 
-  <section id="pain">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">Sound Familiar?</div>
-        <h2>You Don't Have A Strategy Problem.</h2>
-      </div>
-      <div class="pain-list">
-        <div class="pain-item"><p>You take a loss and jump right back in to win it back.</p><p>One revenge trade turns into five.</p></div>
-        <div class="pain-item"><p>Price creeps toward your stop and your stomach drops.</p><p>So you move the stop. Then it hits anyway.</p></div>
-        <div class="pain-item"><p>You stack a few green days.</p><p>Then you give it all back in 20 minutes.</p></div>
-        <div class="pain-item"><p>You close the laptop swearing tomorrow will be different.</p><p>Tomorrow looks exactly the same.</p></div>
-      </div>
-      <div class="visual-card">
-        <svg viewBox="0 0 640 250" role="img" aria-label="Account balance climbs for two weeks, then crashes in 20 minutes">
-          <defs>
-            <linearGradient id="upFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fa85a" stop-opacity="0.22"/><stop offset="1" stop-color="#1fa85a" stop-opacity="0"/></linearGradient>
-          </defs>
-          <g stroke="#ece4d0" stroke-width="1"><line x1="20" y1="50" x2="620" y2="50"/><line x1="20" y1="110" x2="620" y2="110"/><line x1="20" y1="170" x2="620" y2="170"/></g>
-          <path d="M20 200 L70 188 L110 192 L150 170 L190 174 L230 150 L270 140 L310 146 L350 118 L390 104 L430 108 L470 80 L510 60 L510 220 L20 220 Z" fill="url(#upFill)"/>
-          <path d="M20 200 L70 188 L110 192 L150 170 L190 174 L230 150 L270 140 L310 146 L350 118 L390 104 L430 108 L470 80 L510 60" fill="none" stroke="#1fa85a" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M510 60 L530 120 L545 105 L565 190 L585 175 L610 214" fill="none" stroke="#e03c3c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-          <circle cx="510" cy="60" r="7" fill="#1fa85a"/>
-          <circle cx="610" cy="214" r="7" fill="#e03c3c"/>
-          <text x="250" y="66" fill="#111111" font-family="Inter, sans-serif" font-size="26" font-weight="800" text-anchor="middle">2 great weeks of green days</text>
-          <text x="560" y="36" fill="#d63c3c" font-family="Inter, sans-serif" font-size="26" font-weight="800" text-anchor="middle">20 minutes</text>
-          <text x="20" y="244" fill="#111111" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700">WEEK 1</text>
-          <text x="270" y="244" fill="#111111" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700">WEEK 2</text>
-          <text x="620" y="244" fill="#d63c3c" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" text-anchor="end">1 REVENGE TRADE</text>
-        </svg>
-        <p class="visual-cap">Your account balance without hard execution rules</p>
-      </div>
-      <p class="pain-close">That's not a knowledge problem. It's an execution problem.</p>
-      <p class="pain-close"><strong>And execution can be fixed.</strong></p>
-    </div>
-  </section>
-
   <section id="reset-trap">
     <div class="wrap">
       <div class="section-head">
@@ -836,6 +801,56 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         <p class="reset-total">5 tilts = $750 gone</p>
         <p>Every revenge trade keeps that machine running.</p>
         <p><strong>This system is built to get you out of it.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Student Results</div>
+        <h2>1,000+ Students. One Pattern.</h2>
+      </div>
+      <div class="testimonials">
+        <div class="t-card"><img src="/images/testimonials/t1.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t2.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/isaac-100k.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t3.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t4.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/nahom-25k.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/payouts/p1.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t5.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t6.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/keo.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t7.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t8.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/ollie.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t9.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t10.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/isaac-50k.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/payouts/p2.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t11.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t12.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/joe.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t13.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/jonah.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t15.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t16.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/landon.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/payouts/p3.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t17.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t18.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/nahom-10k.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t19.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t20.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/proof/niels.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t21.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/testimonials/t22.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+        <div class="t-card"><img src="/images/payouts/p4.webp" alt="Student result" decoding="async" fetchpriority="low" /></div>
+      </div>
+      <div class="cta-row">
+        <a href="#optin" class="btn-primary js-open-optin">GET THE EXECUTION SYSTEM &amp; TOOLS →</a>
       </div>
     </div>
   </section>
