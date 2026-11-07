@@ -294,6 +294,28 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .why-free p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; }
     .why-free p:last-child { margin-bottom: 0; }
     .why-free strong { color: var(--text); }
+    .vs-card { background: #fff; border: 1px solid #f2c14e; border-radius: 18px; padding: 36px 40px 30px; box-shadow: 0 18px 50px -24px rgba(156,112,12,.35); }
+    .vs-logo { display: block; height: 96px; width: auto; margin: -8px auto 14px; }
+    #value .section-head { max-width: 720px; }
+    .vs-rows { border-top: 1px solid var(--border); padding-top: 12px; }
+    .vs-row { display: flex; align-items: center; gap: 16px; padding: 11px 0; }
+    .vs-name { font-size: 16px; color: var(--text); }
+    .vs-line { flex: 1; height: 1px; background: var(--border); min-width: 20px; }
+    .vs-pill { flex: 0 0 auto; background: linear-gradient(180deg,#2a2a2a,#0a0a0a); color: #fff; font-size: 14px; font-weight: 700; padding: 10px 20px; border-radius: 999px; box-shadow: 0 4px 10px rgba(0,0,0,.18); }
+    .vs-totals { border-top: 1px solid var(--border); margin-top: 14px; padding-top: 14px; }
+    .vs-total .vs-name { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: .01em; }
+    .vs-was { font-size: 28px; font-weight: 800; color: var(--red); text-decoration: line-through; }
+    .vs-free { font-size: 32px; font-weight: 800; color: #1e9e4a; }
+    .vs-warn { text-align: center; margin-top: 18px; font-size: 14px; font-weight: 700; font-style: italic; color: var(--red); }
+    @media (max-width: 560px) {
+      .vs-card { padding: 26px 18px 22px; }
+      .vs-row { gap: 10px; padding: 9px 0; }
+      .vs-name { font-size: 14.5px; }
+      .vs-pill { font-size: 12.5px; padding: 8px 14px; }
+      .vs-total .vs-name { font-size: 14px; }
+      .vs-was { font-size: 22px; }
+      .vs-free { font-size: 26px; }
+    }
     .nocatch { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
     .nocatch .section-eyebrow { text-align: left; }
     .nocatch h2 { font-size: clamp(30px, 4.4vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 14px; color: var(--text); }
@@ -525,18 +547,28 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   <section id="value">
     <div class="wrap">
       <div class="section-head">
-        <h2>Everything You Just Unlocked</h2>
+        <div class="section-eyebrow">Everything You Just Unlocked</div>
+        <h2>Part Of My $5,000 Course. Yours Free.</h2>
       </div>
-      <div class="value-stack">
-        <div class="value-row"><span>The Complete Execution Course</span></div>
-        <div class="value-row"><span>The Daily Scorecard &amp; Debrief Tool</span></div>
-        <div class="value-row"><span>The Pre-Market Risk Calculator</span></div>
-        <div class="value-row"><span>The Anti-Tilt Checklist</span></div>
-        <div class="value-row"><span>Weekly Live Masterclasses</span></div>
-        <div class="value-row"><span>1-on-1 Walkthrough Call With A Coach</span></div>
-        <div class="value-total"><span>Total</span><span class="free">$0 (FREE)</span></div>
+      <div class="vs-card">
+        <img class="vs-logo" src="/images/logo-gold-clear.webp" alt="Mind Over Market" />
+        <div class="vs-rows">
+          <div class="vs-row"><span class="vs-name">The Complete Execution Course</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">Step-By-Step Setup</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">The Trading System</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">Anti-Tilt Mindset Module</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">The Daily Scorecard &amp; Debrief Tool</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">The Pre-Market Risk Calculator</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">The Anti-Tilt Checklist</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">Weekly Live Masterclasses</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+          <div class="vs-row"><span class="vs-name">1-on-1 Onboarding Call With A Coach</span><span class="vs-line"></span><span class="vs-pill">Included</span></div>
+        </div>
+        <div class="vs-totals">
+          <div class="vs-row vs-total"><span class="vs-name">Part Of My $5,000 Course</span><span class="vs-line"></span><span class="vs-was">$5,000</span></div>
+          <div class="vs-row vs-total"><span class="vs-name">Your Price Today</span><span class="vs-line"></span><span class="vs-free">FREE</span></div>
+        </div>
+        <p class="vs-warn">This won't be free forever. Grab it while it's free.</p>
       </div>
-      <p class="value-note">Your coach unlocks everything for you on the call. Keep your phone nearby.</p>
     </div>
   </section>
 
