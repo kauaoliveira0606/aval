@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mind Over Market</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Watch the video to unlock your free access." />
+  <meta name="description" content="Watch the video and claim your free access." />
   <link rel="icon" href="/images/logo.png" type="image/png" />
   <script async src="https://use.mindovermarket.com/api/hub/v1/cmthjvil90003jc0ab0v6dc80"></script>
   <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
@@ -95,8 +95,7 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     <vturb-smartplayer id="vid-6ae6741602755cc7f5362fa1" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
     <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6ae6741602755cc7f5362fa1/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
 
-    <p class="hint" id="hint">👀 Keep watching. Your access button unlocks during the video.</p>
-    <div class="esconder" id="unlock">
+    <div id="unlock">
       <button type="button" class="btn-primary cta js-open-optin">GET FREE ACCESS →</button>
       <p class="proof"><strong>1,000+</strong> people already enrolled.</p>
     </div>
@@ -155,28 +154,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
   </footer>
 
   <script>
-    // ===== Button reveal: seconds of the video actually WATCHED (VTurb counts watch time, not time on page) =====
-    var REVEAL_AT = 60;
-
-    var unlocked = false;
-    function showUnlock() {
-      if (unlocked) return; unlocked = true;
-      document.getElementById('unlock').classList.remove('esconder');
-      document.getElementById('hint').style.display = 'none';
-    }
-    (function waitForPlayer() {
-      var player = document.querySelector('vturb-smartplayer');
-      player.addEventListener('player:ready', function () {
-        player.displayHiddenElements(REVEAL_AT, ['.esconder'], { persist: true });
-      });
-      // When VTurb reveals the button it also has to hide the hint.
-      var mo = new MutationObserver(function () {
-        var u = document.getElementById('unlock');
-        if (!unlocked && getComputedStyle(u).display !== 'none') { obs.disconnect(); showUnlock(); }
-      });
-      var obs = mo; obs.observe(document.getElementById('unlock'), { attributes: true, attributeFilter: ['style', 'class'] });
-    })();
-
     var overlay = document.getElementById('optin-overlay');
     function openOptin(e) { if (e) e.preventDefault(); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
     function closeOptin() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
