@@ -294,6 +294,14 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     .why-free p { color: var(--text-dim); font-size: 15px; margin-bottom: 16px; }
     .why-free p:last-child { margin-bottom: 0; }
     .why-free strong { color: var(--text); }
+    .nocatch { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+    .nocatch .section-eyebrow { text-align: left; }
+    .nocatch h2 { font-size: clamp(30px, 4.4vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; margin-bottom: 14px; color: var(--text); }
+    .nocatch p { color: var(--text); font-size: 16.5px; line-height: 1.6; margin-bottom: 16px; }
+    .nocatch p.nocatch-close { font-weight: 700; margin-bottom: 0; }
+    .nocatch strong { color: var(--text); }
+    .nocatch-photo img { display: block; width: 100%; height: auto; border-radius: 6px; }
+    @media (max-width: 680px) { .nocatch { grid-template-columns: 1fr; gap: 26px; } }
     .why-free ul {
       list-style: none; margin: 0 0 16px; padding: 0;
       display: flex; flex-direction: column; gap: 8px;
@@ -497,38 +505,6 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     </div>
   </section>
 
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">Watch Before Your Call</div>
-        <h2>Your Questions, <em style="color: #9c700c; font-style: italic;">Answered.</em></h2>
-        <p>Quick videos on the questions almost everyone asks before getting started.</p>
-      </div>
-      <div class="faq-grid">
-        <div class="faq-item">
-          <div class="faq-question">What's the catch? How is this actually free?</div>
-          <vturb-smartplayer id="vid-6a94891a9dfe9a38dd344d1d" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
-          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94891a9dfe9a38dd344d1d/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What results can you realistically expect?</div>
-          <vturb-smartplayer id="vid-6a94892062468f935fc968c2" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
-          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94892062468f935fc968c2/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">I've never traded before. Is this beginner friendly?</div>
-          <vturb-smartplayer id="vid-6a94891d3837bbe78abe3276" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
-          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94891d3837bbe78abe3276/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">I'm not too familiar with AI. Can I still make this work?</div>
-          <vturb-smartplayer id="vid-6a9489233837bbe78abe328a" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
-          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a9489233837bbe78abe328a/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="curriculum">
     <div class="wrap">
       <div class="section-head">
@@ -566,24 +542,15 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 
   <section id="why-free">
     <div class="wrap">
-      <div class="section-head">
-        <div class="section-eyebrow">Real Quick</div>
-        <h2>Why We Do A Call Instead Of Just Emailing A Link</h2>
-      </div>
-      <div class="why-free">
-        <div class="why-free-header">
-          <div class="why-free-photo"><img src="/images/benicio-headshot.webp" alt="Benicio Valentin" /></div>
-          <div>
-            <div class="why-free-name">Benicio Valentin</div>
-            <div class="why-free-role">Founder, Mind Over Market</div>
-          </div>
+      <div class="nocatch">
+        <div class="nocatch-text">
+          <div class="section-eyebrow">No Catch</div>
+          <h2>Wait, How Is This Free?</h2>
+          <p>I've had over <strong>2,000 people</strong> pay me to learn this model. So you might be asking, &ldquo;how the hell are you giving this away for free? What's the catch?&rdquo;</p>
+          <p>There is none. I partnered up with a billion-dollar AI company that pays me for giving you access to this. All you need is the single AI tool I use in my trading every day.</p>
+          <p class="nocatch-close">It's a win-win for everyone.</p>
         </div>
-        <p>Most trading programs just send you a login link, leave you to watch 40 hours of videos alone, and never help you again.</p>
-        <p>That's why most traders fail.</p>
-        <p>We do things differently. When you join, a real coach from my team gets on a quick call with you to walk you through the system, set up your scorecard, and show you exactly what to do.</p>
-        <p>No guesswork. No figuring it out on your own.</p>
-        <p>You get the tools, the rules, the weekly live trainings, and someone to help you get started.</p>
-        <p>All you have to do is answer the phone when we call.</p>
+        <div class="nocatch-photo"><img src="/images/benicio-story.webp" alt="Benicio Valentin" width="387" height="516" decoding="async" /></div>
       </div>
     </div>
   </section>
@@ -615,6 +582,38 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         <div class="t-card"><img src="/images/testimonials/t12.webp" alt="Student testimonial — $10,000 payout, two accounts" loading="lazy" /></div>
         <div class="t-card"><img src="/images/testimonials/t13.webp" alt="Student testimonial — $35K month, bought a truck" loading="lazy" /></div>
         <div class="t-card"><img src="/images/testimonials/t14.webp" alt="Student testimonial — crossing $100K in profits" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-eyebrow">Watch Before Your Call</div>
+        <h2>Your Questions, <em style="color: #9c700c; font-style: italic;">Answered.</em></h2>
+        <p>Quick videos on the questions almost everyone asks before getting started.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">What's the catch? How is this actually free?</div>
+          <vturb-smartplayer id="vid-6a94891a9dfe9a38dd344d1d" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
+          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94891a9dfe9a38dd344d1d/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What results can you realistically expect?</div>
+          <vturb-smartplayer id="vid-6a94892062468f935fc968c2" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
+          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94892062468f935fc968c2/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I've never traded before. Is this beginner friendly?</div>
+          <vturb-smartplayer id="vid-6a94891d3837bbe78abe3276" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
+          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a94891d3837bbe78abe3276/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I'm not too familiar with AI. Can I still make this work?</div>
+          <vturb-smartplayer id="vid-6a9489233837bbe78abe328a" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: #ffffff;"></div></vturb-smartplayer>
+          <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/6a9489233837bbe78abe328a/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+        </div>
       </div>
     </div>
   </section>
