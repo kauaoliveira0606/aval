@@ -442,8 +442,16 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 <body>
 
   <div class="urgency-bar">
-    Your coach is calling now from a (645) or (321) number, answer your phone
+    Wait<span id="ub-name"></span>. Your spot isn't locked in yet. Finish the steps below before your free access expires.
   </div>
+  <script>
+    (function () {
+      try {
+        var n = (new URLSearchParams(location.search).get('fname') || '').trim().split(/\s+/)[0];
+        if (n) { n = n.charAt(0).toUpperCase() + n.slice(1).toLowerCase(); document.getElementById('ub-name').textContent = ' ' + n; }
+      } catch (e) {}
+    })();
+  </script>
 
   <header class="hero">
     <div class="wrap">
