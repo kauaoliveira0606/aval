@@ -829,6 +829,8 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
         }
         if (!data.ok) throw new Error('register failed');
         // next-steps fires the Meta CompleteRegistration event off this flag.
+        // First name for the next-steps headline.
+        try { window.sessionStorage.setItem('mom_fname', fname); } catch (e) {}
         window.location.href = '/masterclass-next-steps?registered=1';
       }).catch(function () {
         reset();

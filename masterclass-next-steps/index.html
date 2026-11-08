@@ -87,6 +87,64 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     footer a { color: #111111; margin: 0 8px; font-size: 0.85rem; }
     footer a:hover { color: #111111; }
     .footer-disclaimer { max-width: 700px; margin: 14px auto 0; font-size: 0.72rem; line-height: 1.6; color: #111111; }
+    /* Confirmed view, same setup as ad-ventur.com/masterclass-confirmation?done=1 */
+    .done-topbar { width: 100vw; margin: -40px 0 22px calc(50% - 50vw); padding: 11px 16px; background: rgba(255,255,255,.85); border-bottom: 1px solid #e6dbc2; display: flex; align-items: center; justify-content: center; gap: 9px; font-family: 'Manrope', sans-serif; font-size: .8rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #111111; }
+    .done-topbar i { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 0 0 rgba(239,68,68,.5); animation: doneDot 1.8s infinite; }
+    @keyframes doneDot { 0% { box-shadow: 0 0 0 0 rgba(239,68,68,.5); } 70% { box-shadow: 0 0 0 9px rgba(239,68,68,0); } 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+    .done-progress { height: 22px; border-radius: 999px; background: #fbf8f1; border: 1px solid #e6dbc2; overflow: hidden; margin: 0 auto 26px; }
+    .done-progress-fill { height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, #f2c14e 0%, #d9a93b 100%); display: flex; align-items: center; justify-content: center; animation: doneProgress 1.4s cubic-bezier(.22,1,.36,1) .2s forwards; }
+    .done-progress-fill span { font-family: 'Manrope', sans-serif; font-size: .9rem; font-weight: 800; color: #0a0a0a; }
+    @keyframes doneProgress { to { width: 73%; } }
+    .done h1 .js-done-date { color: #9c700c; }
+    .done .done-lead { display: none; }
+    .done-after-video { font-family: 'Manrope', sans-serif; font-size: .95rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #9c700c; margin-top: 18px; }
+    .done-after-video + .done-arrow { margin-top: 8px; }
+    .done-cal-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; }
+    .done-cal-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 2px solid #d9a93b; border-radius: 8px; background: #ffffff; color: #111111; font-family: 'Manrope', sans-serif; font-size: .98rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: background .15s, transform .15s; }
+    .done-cal-btn:hover { background: #f4eedf; transform: translateY(-1px); }
+    .done-step-card .done-cal-note { text-align: center; margin-top: 16px; }
+    .done-step-card .done-center { text-align: center; }
+    .done-step-card .done-btn { margin-top: 14px; text-decoration: none; }
+    .prep-mock { position: relative; display: block; margin: 8px auto 22px; max-width: 420px; text-decoration: none; color: inherit; transition: transform .25s; }
+    .prep-mock:hover { transform: translateY(-3px); }
+    .prep-sheet { position: absolute; inset: 0; border-radius: 14px; background: #fff; border: 1px solid #e6dbc2; }
+    .prep-sheet-back { transform: rotate(-4deg) translate(-6px, 6px); background: #f4eedf; }
+    .prep-sheet-mid { transform: rotate(2.5deg) translate(5px, 4px); background: #fbf8f1; }
+    .prep-doc { position: relative; display: block; border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid #e6dbc2; box-shadow: 0 22px 44px -22px rgba(156,112,12,.55), 0 2px 6px rgba(17,17,17,.06); text-align: left; }
+    .prep-doc-bar { display: flex; align-items: center; gap: 5px; padding: 9px 12px; background: #fbf8f1; border-bottom: 1px solid #e6dbc2; }
+    .prep-doc-bar > span { width: 8px; height: 8px; border-radius: 50%; background: #e2e8f0; }
+    .prep-doc-bar > span:first-child { background: #f87171; } .prep-doc-bar > span:nth-child(2) { background: #fbbf24; } .prep-doc-bar > span:nth-child(3) { background: #4ade80; }
+    .prep-doc-bar b { margin-left: 8px; font-size: .72rem; font-weight: 600; color: #3d3a33; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .prep-doc-body { display: block; padding: 18px 20px; background: radial-gradient(260px 120px at 100% 0, rgba(242,193,78,.18), transparent 70%), #fff; }
+    .prep-doc-tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #f7ecd0; color: #9c700c; font-family: 'Manrope', sans-serif; font-size: .7rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+    .prep-doc-title { display: block; margin-top: 10px; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.15rem; line-height: 1.25; color: #111111; letter-spacing: -.3px; }
+    .prep-doc-title em { font-style: normal; color: #9c700c; }
+    .prep-doc-list { display: block; margin-top: 12px; }
+    .prep-doc-list > span { display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid #f3eee2; font-size: .92rem; font-weight: 600; color: #111111; }
+    .prep-doc-list i { flex: none; width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(180deg, #f2c14e, #d9a93b); display: flex; align-items: center; justify-content: center; }
+    .prep-doc-read { display: block; margin-top: 10px; font-size: .8rem; font-weight: 700; color: #9c700c; }
+    .mom-results { margin-top: 56px; text-align: center; }
+    .mom-eyebrow { display: inline-block; padding: 6px 14px; border-radius: 999px; background: #f7ecd0; color: #9c700c; font-family: 'Manrope', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; }
+    .mom-results h2 { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: clamp(1.7rem, 5.6vw, 2.5rem); line-height: 1.18; letter-spacing: -.5px; color: #111111; margin-top: 14px; }
+    .mom-results h2 span { color: #9c700c; }
+    .mom-sub { margin-top: 12px; font-size: 1.05rem; color: #111111; }
+    .mom-wins { columns: 2; column-gap: 12px; margin-top: 22px; text-align: left; }
+    .mom-win { break-inside: avoid; margin: 0 0 12px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 30px -20px rgba(17,17,17,.3); border: 1px solid #e6dbc2; }
+    .mom-win figcaption { padding: 12px 14px 10px; }
+    .mom-win figcaption b { display: block; font-family: 'Manrope', sans-serif; font-size: 1.05rem; color: #9c700c; line-height: 1.2; }
+    .mom-win figcaption span { display: block; margin-top: 3px; font-size: .86rem; font-weight: 700; color: #111111; }
+    .mom-win figcaption i { display: block; margin-top: 2px; font-style: normal; font-size: .82rem; color: #3d3a33; line-height: 1.4; }
+    .mom-win img { display: block; width: 100%; height: auto; }
+    .mom-disclaim { margin-top: 10px; font-size: .78rem; color: #3d3a33; }
+    @media (max-width: 600px) {
+      .done-topbar { margin-top: -28px; margin-bottom: 16px; font-size: .74rem; }
+      .done-progress { height: 18px; margin-bottom: 18px; }
+      .done-progress-fill span { font-size: .78rem; }
+      .done h1 { font-size: 1.6rem; line-height: 1.22; letter-spacing: -0.4px; }
+      .done-after-video { font-size: .82rem; margin-top: 14px; }
+      .done-cal-btns { gap: 8px; }
+    }
+    @media (max-width: 420px) { .mom-wins { column-gap: 8px; } .mom-win figcaption { padding: 10px 10px 8px; } }
   </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -101,10 +159,62 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 <!-- No purchase view. Same structure as /masterclass-confirmation-purchase. Only the headline block differs;
      everything below it comes from /masterclass-next-steps/done-shared.js. -->
 <div class="done">
-  <h1>You're Officially <span>Registered!</span></h1>
+  <div class="done-topbar"><i></i>Well done! You took action</div>
+  <div class="done-progress" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"><div class="done-progress-fill"><span>73%</span></div></div>
+  <h1>You're Officially Registered For <span class="js-done-date"></span><span class="js-fname"></span>!</h1>
 
-  <div class="js-done-shared" data-lead="Complete These __N__ Quick Steps To Lock In Your VIP Seat &amp; Be Fully Set Up For The Masterclass"></div>
+  <div class="js-done-shared" data-after-video="Follow the steps below now!" data-cal-buttons data-renumber data-faq-heading="Get Your Questions Answered About The &lt;span&gt;Masterclass&lt;/span&gt;" data-cal-note="We've also sent the masterclass access details to your email. Please open the email and add the event to your calendar NOW so you don't miss the live session."></div>
+
+  <!-- Results section (this page only) -->
+  <section class="mom-results">
+    <div class="mom-eyebrow">Real People. Real Results.</div>
+    <h2>Results Traders Have Gotten With <span>This System</span></h2>
+    <p class="mom-sub">Regular people who stopped guessing, followed fixed rules, and started taking payouts.</p>
+    <div class="mom-wins">
+      <figure class="mom-win"><figcaption><b>$100K+ In Payouts</b><span>Isaac</span><i>Total payouts logged</i></figcaption><img src="/images/testimonials/t16.webp" alt="$100K+ In Payouts: Isaac" /></figure>
+      <figure class="mom-win"><figcaption><b>$85K Month</b><span>Landon</span><i>Passed 5 more accounts</i></figcaption><img src="/images/testimonials/t15.webp" alt="$85K Month: Landon" /></figure>
+      <figure class="mom-win"><figcaption><b>Crossing $100K In Profits</b><span>Anthony</span><i>This year</i></figcaption><img src="/images/testimonials/t14.webp" alt="Crossing $100K In Profits: Anthony" /></figure>
+      <figure class="mom-win"><figcaption><b>$30K Month</b><span>Nahom</span><i>Another $10K payout, Topstep and Apex</i></figcaption><img src="/images/testimonials/t5.webp" alt="$30K Month: Nahom" /></figure>
+      <figure class="mom-win"><figcaption><b>$35K Month</b><span>Landon</span><i>Bought a new truck for his business</i></figcaption><img src="/images/testimonials/t13.webp" alt="$35K Month: Landon" /></figure>
+      <figure class="mom-win"><figcaption><b>10 Payouts Approved</b><span>Nahom</span><i>Halfway through the month</i></figcaption><img src="/images/testimonials/t17.webp" alt="10 Payouts Approved: Nahom" /></figure>
+      <figure class="mom-win"><figcaption><b>First $10,000 Month</b><span>Chris</span><i>Student</i></figcaption><img src="/images/testimonials/t3.webp" alt="First $10,000 Month: Chris" /></figure>
+      <figure class="mom-win"><figcaption><b>Quit His Job</b><span>Jonah</span><i>After a $5,000 payout</i></figcaption><img src="/images/testimonials/t18.webp" alt="Quit His Job: Jonah" /></figure>
+      <figure class="mom-win"><figcaption><b>+$3,600</b><span>Joe</span><i>Passed his first eval</i></figcaption><img src="/images/testimonials/t21.webp" alt="+$3,600: Joe" /></figure>
+      <figure class="mom-win"><figcaption><b>4 Apex Evals Passed</b><span>Ollie</span><i>Four 50K accounts</i></figcaption><img src="/images/testimonials/t22.webp" alt="4 Apex Evals Passed: Ollie" /></figure>
+      <figure class="mom-win"><figcaption><b>First Payout</b><span>Niels</span><i>No losing trade in over a month</i></figcaption><img src="/images/testimonials/t20.webp" alt="First Payout: Niels" /></figure>
+      <figure class="mom-win"><figcaption><b>First Ever Payout</b><span>Matthew</span><i>After a year and two months</i></figcaption><img src="/images/testimonials/t1.webp" alt="First Ever Payout: Matthew" /></figure>
+      <figure class="mom-win"><figcaption><b>Second Topstep Payout</b><span>Angelo</span><i>Payout requested</i></figcaption><img src="/images/testimonials/t6.webp" alt="Second Topstep Payout: Angelo" /></figure>
+      <figure class="mom-win"><figcaption><b>First Funded Account</b><span>Student</span><i>Passed in 3 weeks</i></figcaption><img src="/images/testimonials/t2.webp" alt="First Funded Account: Student" /></figure>
+    </div>
+    <p class="mom-disclaim">Results shown are individual and not typical. Your results depend on your effort, experience, and market conditions. Trading involves risk of loss.</p>
+  </section>
 </div>
+
+<!-- Extra step above "Check Your Email", placed by done-shared.js -->
+<template id="done-before-email">
+  <div class="done-step">
+    <div class="done-step-pill">STEP</div>
+    <svg class="done-step-icon" width="52" height="58" viewBox="0 0 52 58" fill="none" aria-hidden="true"><path d="M10 3h22l13 13v36a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z" stroke="#d9a93b" stroke-width="5" stroke-linejoin="round"/><path d="M31 3v14h14" stroke="#d9a93b" stroke-width="5" stroke-linejoin="round"/><path d="M16 30h20M16 39h20M16 48h12" stroke="#d9a93b" stroke-width="5" stroke-linecap="round"/></svg>
+    <h2>Go Through The <span>Masterclass Overview</span></h2>
+    <div class="done-step-card">
+      <a class="prep-mock" href="/masterclass-prep" target="_blank" rel="noopener" aria-label="Open the masterclass resource document">
+        <span class="prep-sheet prep-sheet-back"></span>
+        <span class="prep-sheet prep-sheet-mid"></span>
+        <span class="prep-doc">
+          <span class="prep-doc-bar"><span></span><span></span><span></span><b>mindovermarket.com/masterclass-prep</b></span>
+          <span class="prep-doc-body">
+            <span class="prep-doc-tag">Masterclass Prep</span>
+            <span class="prep-doc-title">Everything To Get You Ready Before The <em>Masterclass</em></span>
+            <span class="prep-doc-list"><span><i><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>How to show up properly</span><span><i><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Who I am and what I've built</span><span><i><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Proof this is real</span><span><i><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>What we're covering</span><span><i><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6.2l2.6 2.6L10 3.4" stroke="#0a0a0a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Top 5 questions, answered</span></span>
+            <span class="prep-doc-read">5 min read &rarr;</span>
+          </span>
+        </span>
+      </a>
+      <p class="done-center">Everything you need to show up fully prepared before the masterclass is on this document. Make sure to go through it.</p>
+      <div class="done-center"><a class="done-btn" href="/masterclass-prep" target="_blank" rel="noopener">Access Masterclass Resource Document</a></div>
+    </div>
+  </div>
+</template>
 
 <!-- FOOTER -->
 <footer>
@@ -122,6 +232,17 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 </footer>
 
 <script src="/masterclass-next-steps/done-shared.js"></script>
+<script>
+  // First name saved by the masterclass opt-in, for the headline. Without one it ends at the date.
+  (function () {
+    var name = '';
+    try { name = (window.sessionStorage.getItem('mom_fname') || '').trim().split(/\s+/)[0]; } catch (e) {}
+    if (!name) return;
+    var el = document.querySelector('.js-fname');
+    el.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+    el.before(', ');
+  })();
+</script>
 
 </body>
 </html>
