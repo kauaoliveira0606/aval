@@ -12,6 +12,9 @@
   var MASTERCLASS_MINUTES = 60;
   var EVENT_TITLE = 'Mind Over Market Live Masterclass';
   var EVENT_URL = 'https://event.webinarjam.com/qwk59l/go/live/k50k29izins2s1';
+  // Apple Wallet pass (koconsultings.com/wallet, event aval-masterclass). src tells the pages apart.
+  var PASS_URL = 'https://www.koconsultings.com/wallet/e/mom-19ureb?src=' +
+    (location.pathname.indexOf('purchase') > -1 ? 'masterclass-confirmation-purchase' : 'masterclass-next-steps');
   var EVENT_DETAILS = 'Join the live masterclass here: ' + EVENT_URL + '\n\nLive masterclass with Benicio Valentin (AvalTrades). Your link is also in your confirmation email.';
 
   var ICON = '<svg class="done-step-icon" width="52" height="58" viewBox="0 0 52 58" fill="none" aria-hidden="true">' +
@@ -36,6 +39,12 @@
     return '<div class="done-faq-item"><div class="done-faq-q">' + f[0] + '</div>' +
       '<vturb-smartplayer id="vid-' + f[1] + '" style="display: block; margin: 0 auto; width: 100%;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer></div>';
   }).join('');
+
+  var passCss = document.createElement('style');
+  passCss.textContent = '.done-pass{text-align:center;margin:4px 0 16px}' +
+    '.done-pass-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 20px;border-radius:999px;background:#0b0b0b;color:#fff;font-size:1.05rem;font-weight:700;text-decoration:none;transition:transform .15s}' +
+    '.done-pass-btn:hover{transform:translateY(-1px)}';
+  document.head.appendChild(passCss);
 
   var html = `
   <p class="done-lead">__LEAD__</p>
@@ -74,6 +83,16 @@
 
   <div class="done-step">
     <div class="done-step-pill">STEP 3:</div>
+    <svg class="done-step-icon" width="52" height="58" viewBox="0 0 52 58" fill="none" aria-hidden="true"><rect x="4" y="9" width="44" height="42" rx="8" stroke="#d9a93b" stroke-width="5"/><path d="M4 19h36" stroke="#d9a93b" stroke-width="5"/><rect x="30" y="27" width="18" height="12" rx="4" fill="#d9a93b"/></svg>
+    <h2>Get Your <span>Pass</span> On Your Phone</h2>
+    <div class="done-step-card">
+      <div class="done-pass"><a class="done-pass-btn" href="${PASS_URL}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 9h14"/><rect x="14" y="12" width="7" height="4" rx="1.5"/></svg>Get My Pass</a></div>
+      <p style="text-align:center;">Your pass puts the masterclass on your lock screen a few hours before we start, with the join link one tap away. Tap the button to get it onto your iPhone.</p>
+    </div>
+  </div>
+
+  <div class="done-step">
+    <div class="done-step-pill">STEP 4:</div>
     ${ICON}
     <h2>Check Your <span>Email</span></h2>
     <div class="done-step-card">
@@ -88,7 +107,7 @@
   </div>
 
   ${FAQS.length ? `<div class="done-step">
-    <div class="done-step-pill">STEP 4:</div>
+    <div class="done-step-pill">STEP 5:</div>
     ${ICON}
     <h2>Get Your Questions <span>Answered</span></h2>
     <div class="done-faq-grid">${faqHtml}</div>
@@ -97,7 +116,7 @@
   // A page can add its own steps after these (data-extra-steps), so the count in the lead line includes them.
   var STEP_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six'];
   document.querySelectorAll('.js-done-shared').forEach(function (el) {
-    var steps = (FAQS.length ? 4 : 3) + (+el.getAttribute('data-extra-steps') || 0);
+    var steps = (FAQS.length ? 5 : 4) + (+el.getAttribute('data-extra-steps') || 0);
     // A page can set its own lead line with data-lead (__STEPS__ = the count in words, __N__ = as a digit).
     var lead = el.getAttribute('data-lead') ||
       "Before you close this tab, complete these __STEPS__ steps to make sure you're <b>fully set up for the masterclass</b>";
