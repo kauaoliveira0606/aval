@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Masterclass Prep | Mind Over Market</title>
+  <meta name="description" content="Everything you need to show up ready for Benicio's live Mind Over Market masterclass." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/images/logo.png" />
+  <style>
+    @font-face { font-family: 'Manrope'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/manrope-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/fonts/inter-latin.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    :root {
+      --ink: #111111;
+      --body: #1a1a1a;
+      --muted: #3d3a33;
+      --gold: #9c700c;
+      --gold-fill: #d9a93b;
+      --gold-bright: #f2c14e;
+      --tint: #fbf8f1;
+      --tint-2: #f4eedf;
+      --line: #e6dbc2;
+      --card: #ffffff;
+      --head: 'Manrope', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--body);
+      line-height: 1.6;
+      background:
+        radial-gradient(900px 520px at 12% -8%, rgba(242,193,78,.18), transparent 60%),
+        radial-gradient(800px 480px at 95% 4%, rgba(217,169,59,.12), transparent 60%),
+        repeating-linear-gradient(118deg, transparent 0 150px, rgba(217,169,59,.06) 150px 152px),
+        linear-gradient(180deg, #fbf7ec 0, #fdfbf6 900px, #ffffff 100%);
+      overflow-x: clip;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--head); color: var(--ink); letter-spacing: -0.5px; line-height: 1.18; }
+    .g { color: var(--gold); }
+    .hl { color: var(--gold); font-weight: 700; }
+
+    .topbar { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 11px 16px; background: rgba(255,255,255,.8); border-bottom: 1px solid var(--line); font-family: var(--head); font-size: .78rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--ink); }
+    .topbar img { height: 24px; width: auto; }
+
+    .wrap { max-width: 880px; margin: 0 auto; padding: 32px 16px 80px; }
+    .card { background: var(--card); border: 1px solid #f0e8d6; border-radius: 18px; box-shadow: 0 1px 2px rgba(17,17,17,.04), 0 18px 40px -22px rgba(60,45,10,.25); padding: 44px 48px; margin-top: 28px; }
+    .card:first-child { margin-top: 0; }
+    .card > h2 { text-align: center; font-size: clamp(1.6rem, 4.4vw, 2.3rem); }
+    .center { text-align: center; }
+
+    /* Hero */
+    .hero h1 { text-align: center; font-size: clamp(1.8rem, 5vw, 2.6rem); }
+    .eyebrow-link { display: block; text-align: center; margin-top: 22px; font-family: var(--head); font-weight: 700; font-size: 1.1rem; color: var(--gold); }
+    .toc { list-style: none; max-width: 520px; margin: 20px auto 0; }
+    .toc li { display: flex; align-items: center; gap: 12px; padding: 11px 0; font-size: 1.08rem; font-weight: 600; color: var(--ink); border-bottom: 1px solid #f3eee2; }
+    .toc li:last-child { border-bottom: 0; }
+    .toc a { text-decoration: none; }
+    .toc a:hover { color: var(--gold); }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--gold-fill); flex: none; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 28px; counter-reset: step; }
+    .step { border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; display: flex; flex-direction: column; counter-increment: step; }
+    .step-num { background: var(--tint); border-bottom: 1.5px solid var(--line); text-align: center; padding: 10px; font-family: var(--head); font-weight: 800; font-size: 1.25rem; color: var(--gold); }
+    .step-num::before { content: counter(step); }
+    .step-body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+    .step h3 { font-size: 1.12rem; }
+    .step p { margin-top: 8px; font-size: .98rem; }
+    .step .actions { margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 9px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 18px; border-radius: 10px; font-family: var(--head); font-weight: 800; font-size: .98rem; text-decoration: none; cursor: pointer; border: 0; transition: transform .15s, background .15s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-gold { color: #0a0a0a; background: linear-gradient(180deg, #f2c14e, #d9a93b); box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 8px 18px -10px rgba(156,112,12,.7); }
+    .btn-outline { color: var(--ink); background: var(--tint); border: 2px solid var(--gold-fill); }
+    .btn-outline:hover { background: var(--tint-2); }
+
+    /* Hot seat */
+    .hotseat-form { margin-top: 18px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-height: 520px; background: #fff; }
+    .hotseat-form > div { height: 520px; }
+
+    /* Timeline */
+    .timeline { position: relative; margin-top: 30px; padding-left: 34px; }
+    .timeline::before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .tl { position: relative; background: var(--tint); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px; margin-top: 18px; }
+    .tl:first-child { margin-top: 0; }
+    .tl::before { content: ""; position: absolute; left: -31px; top: 30px; width: 14px; height: 14px; border-radius: 50%; background: var(--gold-fill); box-shadow: 0 0 0 4px #fff; }
+    .tl h3 { font-size: clamp(1.25rem, 3.4vw, 1.6rem); }
+    .tl p { margin-top: 10px; font-size: 1.02rem; }
+    .tl .media { margin-top: 16px; display: grid; gap: 12px; }
+    .tl .media img { border-radius: 10px; background: #fff; box-shadow: 0 8px 20px -14px rgba(17,17,17,.35); }
+    .media.four { grid-template-columns: repeat(4, 1fr); }
+    .media.three { grid-template-columns: repeat(3, 1fr); align-items: start; }
+    .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; min-width: 140px; flex: 1; }
+    .stat b { display: block; font-family: var(--head); font-size: 1.5rem; color: var(--gold); line-height: 1.1; }
+    .stat span { font-size: .85rem; color: var(--muted); }
+    .host-row { display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: center; margin-top: 14px; }
+    .host-row img { border-radius: 12px; }
+
+    .callout { margin-top: 26px; background: var(--tint-2); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+    .callout h3 { font-size: 1.15rem; display: flex; gap: 10px; align-items: center; }
+    .video { position: relative; aspect-ratio: 16 / 9; margin-top: 14px; border-radius: 12px; overflow: hidden; background: #000; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .proofs { columns: 3 240px; column-gap: 14px; margin-top: 26px; }
+    .proof { break-inside: avoid; margin: 0 0 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px -18px rgba(17,17,17,.35); }
+    .proof figcaption { padding: 14px 16px 12px; }
+    .proof .num { display: block; font-family: var(--head); font-weight: 800; font-size: 1.3rem; color: var(--gold); line-height: 1.15; }
+    .proof b { display: block; margin-top: 4px; font-size: .92rem; color: var(--ink); }
+    .proof p { margin-top: 3px; font-size: .9rem; color: var(--muted); line-height: 1.45; }
+    .proof img, .proof vturb-smartplayer { display: block; width: 100%; }
+    .disclaim { margin-top: 12px; font-size: .8rem; color: var(--muted); text-align: center; }
+
+    /* Split cards */
+    .split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 0; padding: 0; overflow: hidden; }
+    .split .copy { padding: 40px 40px; }
+    .split .copy h2 { text-align: center; font-size: clamp(1.5rem, 4vw, 2.1rem); }
+    .split .visual { background: var(--tint); display: flex; align-items: center; justify-content: center; padding: 26px; }
+    ul.bul { margin-top: 20px; padding-left: 20px; }
+    ul.bul li { margin-top: 10px; font-size: 1.02rem; }
+    ul.bul li::marker { color: var(--gold-fill); }
+    .viz { width: 100%; max-width: 330px; background: #fff; border: 2px solid var(--ink); border-radius: 18px; padding: 22px 20px; text-align: center; }
+    .viz .big { font-family: var(--head); font-weight: 800; font-size: 2.2rem; color: var(--ink); line-height: 1; }
+    .viz .lbl { font-weight: 700; color: var(--ink); margin-top: 6px; }
+    .pillars { display: grid; gap: 8px; margin-top: 16px; text-align: left; }
+    .pillars div { display: flex; gap: 12px; align-items: center; border-radius: 12px; padding: 12px 14px; font-weight: 700; font-size: .92rem; color: var(--ink); background: var(--tint); border: 1px solid var(--line); }
+    .pillars div i { font-style: normal; font-family: var(--head); font-weight: 800; color: var(--gold); font-size: 1.1rem; flex: none; width: 22px; }
+    .pillars div span { display: block; font-weight: 500; font-size: .82rem; color: var(--muted); }
+    .viz .note { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); font-size: .82rem; color: var(--muted); }
+
+    /* Covering */
+    .checks { list-style: none; margin-top: 24px; }
+    .checks li { display: flex; gap: 12px; margin-top: 14px; font-size: 1.06rem; color: var(--ink); }
+    .checks li::before { content: ""; flex: none; width: 20px; height: 20px; margin-top: 4px; border: 2px solid var(--gold-fill); border-radius: 6px; }
+    .no-box { margin-top: 26px; background: var(--tint-2); border-radius: 14px; padding: 22px 24px; }
+    .no-box h3 { font-size: 1.15rem; }
+    .no-box p { margin-top: 10px; }
+    .no-box .key { font-weight: 700; color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold-fill); text-underline-offset: 3px; }
+
+    /* FAQ */
+    .faq-intro h2 { text-align: left !important; }
+    .faq-intro h2 u { text-decoration-color: var(--gold-fill); text-underline-offset: 6px; }
+    .faq h2 { text-align: left !important; font-size: clamp(1.35rem, 3.6vw, 1.9rem) !important; }
+
+    /* Final steps */
+    .final .steps .step-num { display: none; }
+    .final .circle { width: 48px; height: 48px; margin: 18px auto 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #f2c14e, #d9a93b); color: #0a0a0a; font-family: var(--head); font-weight: 800; font-size: 1.2rem; }
+    .final .circle::before { content: counter(step); }
+    .final .step h3 { text-align: center; margin-top: 10px; }
+
+    footer { max-width: 880px; margin: 0 auto; padding: 0 16px 50px; font-size: .78rem; color: var(--muted); text-align: center; }
+
+    @media (max-width: 720px) {
+      .wrap { padding: 18px 14px 60px; }
+      .card { padding: 28px 18px; border-radius: 16px; margin-top: 20px; }
+      .split { grid-template-columns: 1fr; padding: 0; }
+      .split .copy { padding: 28px 18px; }
+      .split .visual { padding: 20px 16px 24px; }
+      .timeline { padding-left: 24px; }
+      .timeline::before { left: 5px; }
+      .tl { padding: 18px 16px; }
+      .tl::before { left: -25px; }
+      .host-row { grid-template-columns: 1fr; }
+      .host-row img { max-width: 220px; margin: 0 auto; }
+      .media.four { grid-template-columns: 1fr 1fr; }
+      .media.three { grid-template-columns: 1fr 1fr; }
+      .toc li { font-size: 1rem; }
+      .proofs { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar"><img src="/images/logo-gold-clear.webp" alt="" width="24" height="24" />Mind Over Market · Masterclass Prep</div>
+
+<main class="wrap">
+
+  <!-- Hero -->
+  <section class="card hero">
+    <h1>Congrats On Saving Your Seat For The <span class="g">Masterclass!</span> 🎉</h1>
+    <p class="center" style="margin-top:14px;font-size:1.08rem;">Live on <b class="js-when">Sunday, November 8th @ 7:00 PM ET</b></p>
+    <span class="eyebrow-link">Everything to get you ready before the masterclass:</span>
+    <ul class="toc">
+      <li><span class="dot"></span><a href="#steps">How to show up properly</a></li>
+      <li><span class="dot"></span><a href="#who">Who I am and what I've built</a></li>
+      <li><span class="dot"></span><a href="#wins">Proof this is real</a></li>
+      <li><span class="dot"></span><a href="#covering">What we're covering</a></li>
+      <li><span class="dot"></span><a href="#faq">The most common questions I get before this masterclass</a></li>
+    </ul>
+  </section>
+
+  <!-- Steps -->
+  <section class="card" id="steps">
+    <h2>Complete These Simple Steps To <span class="g">Show Up Properly</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Add it to your calendar</h3>
+          <p>We've sent the access details to your email. Add the masterclass to your calendar <b>NOW</b> so you don't miss the live session.</p>
+          <div class="actions">
+            <a class="btn btn-outline js-cal-google" target="_blank" rel="noopener">Google Calendar</a>
+            <a class="btn btn-outline js-cal-ics">Apple Calendar</a>
+            <a class="btn btn-outline js-cal-outlook" target="_blank" rel="noopener">Outlook Calendar</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Apply for the live Hot Seat</h3>
+          <p>I'm picking one person from the room and breaking down their trading live on screen.</p>
+          <p>Their charts, their trades, their exact problem. Apply below if you want it to be you.</p>
+          <div class="actions"><a class="btn btn-gold" href="#hotseat">Apply For The Hot Seat</a></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div>
+        <div class="step-body">
+          <h3>Find my email</h3>
+          <p>Search your inbox for the email from me with your masterclass details.</p>
+          <p>Not there? Check promotions or spam, then drag it into your main inbox so you get every reminder.</p>
+          <div class="actions"><a class="btn btn-gold" href="https://mail.google.com/mail/u/0/#search/masterclass+in%3Aanywhere" target="_blank" rel="noopener">Open Gmail</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hot seat form -->
+  <section class="card" id="hotseat">
+    <h2>Apply For The Live <span class="g">Hot Seat</span></h2>
+    <p class="center" style="margin-top:12px;font-size:1.05rem;">Fill this out if you want me to review your charts and blown accounts live on screen.</p>
+    <div class="hotseat-form"><div data-tf-live="01M3R1H2PWCEDWQAE0GD74MXQJ"></div></div>
+  </section>
+
+  <!-- Who am I -->
+  <section class="card" id="who">
+    <h2>Who Am I?</h2>
+    <div class="timeline">
+      <div class="tl">
+        <h3>My name is Benicio Valentin. Most people know me as <span class="g">Aval Trades</span>, and trading prop firms is my full-time profession:</h3>
+        <div class="host-row">
+          <img src="/images/benicio-headshot.webp" alt="Benicio Valentin, Aval Trades" width="900" height="900" />
+          <div>
+            <p>Five years in, and for over a year most of my income has come from prop firm payouts.</p>
+            <p>I trade a quiet 2-hour window at 8 PM Eastern, with the same mechanical system I'll show you on the masterclass.</p>
+            <div class="stat-row">
+              <div class="stat"><b>$137K</b><span>in payouts in one month</span></div>
+              <div class="stat"><b>24,262</b><span>students helped</span></div>
+              <div class="stat"><b>4.7★</b><span>rated on Whop</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl">
+        <h3>But it wasn't always like this....</h3>
+        <p>I started trading at 15, when my mom's friend introduced me to it.</p>
+        <p>I did it for a year or two straight and never saw results.</p>
+        <p>I gave up a lot of my personal life trying to figure it out. I wasn't healthy. I was distancing myself from God and the people closest to me.</p>
+        <p>Then my dad gave me thousands of dollars to help fund my trading. And I blew every dollar of it.</p>
+      </div>
+
+      <div class="tl">
+        <h3>So I took almost a full year off. When I came back, I came back different...</h3>
+        <p>New mindset, new perspective, and a system instead of guessing.</p>
+        <p>Within a year I was trading with consistency I'd never had before, and taking payouts while I was still in school.</p>
+        <p>Here are some of my own withdrawals straight from the funding portal:</p>
+        <div class="media four">
+          <img src="/images/payouts/p1.webp" alt="Benicio's withdrawal requests in the funding portal" width="1320" height="2868" />
+          <img src="/images/payouts/p2.webp" alt="Benicio's full list of withdrawal requests" width="1320" height="2868" />
+          <img src="/images/payouts/p3.webp" alt="Benicio's withdrawals paid to bank account" width="1320" height="2868" />
+          <img src="/images/payouts/p4.webp" alt="Benicio's wire withdrawals from the funding portal" width="1320" height="2868" />
+        </div>
+      </div>
+
+      <div class="tl">
+        <h3>And I've helped a lot of other traders get out of evaluation jail with this exact system:</h3>
+        <div class="media three">
+          <img src="/images/testimonials/t5.webp" alt="Student win: Nahom, $30K month" />
+          <img src="/images/testimonials/t15.webp" alt="Student win: Landon, $85K month" />
+          <img src="/images/testimonials/t17.webp" alt="Student win: Nahom, 10 payouts approved" />
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>ⓘ Learn more about me and my story by watching this video:</h3>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/fgSUgtsWfmA" title="How I Went From Broke and Lost To A Millionaire at 19 (My Story)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </section>
+
+  <!-- Wins -->
+  <section class="card" id="wins">
+    <h2>Results Traders Have Gotten With <span class="g">This System</span></h2>
+    <p class="center" style="margin-top:12px;font-size:1.05rem;">Regular people who stopped guessing, followed fixed rules, and started taking payouts.</p>
+    <div class="proofs">
+      <figure class="proof"><figcaption><span class="num">Results from this masterclass</span><b>Students</b><p>Hear it from people who sat where you're sitting.</p></figcaption><vturb-smartplayer id="vid-6ad230bf7aeeb084bd48c6fe" data-vturb="6ad230bf7aeeb084bd48c6fe" style="display:block;width:100%;"></vturb-smartplayer></figure>
+      <figure class="proof"><figcaption><span class="num">$100K+ in payouts</span><b>Isaac</b><p>Total payouts logged.</p></figcaption><img src="/images/testimonials/t16.webp" alt="$100K+ in payouts: Isaac" /></figure>
+      <figure class="proof"><figcaption><span class="num">$85K month</span><b>Landon</b><p>Passed 5 more accounts.</p></figcaption><img src="/images/testimonials/t15.webp" alt="$85K month: Landon" /></figure>
+      <figure class="proof"><figcaption><span class="num">$100K in profits</span><b>Anthony</b><p>Crossing $100K this year.</p></figcaption><img src="/images/testimonials/t14.webp" alt="$100K in profits: Anthony" /></figure>
+      <figure class="proof"><figcaption><span class="num">$30K month</span><b>Nahom</b><p>Another $10K payout, Topstep and Apex.</p></figcaption><img src="/images/testimonials/t5.webp" alt="$30K month: Nahom" /></figure>
+      <figure class="proof"><figcaption><span class="num">$35K month</span><b>Landon</b><p>Bought a new truck for his business.</p></figcaption><img src="/images/testimonials/t13.webp" alt="$35K month: Landon" /></figure>
+      <figure class="proof"><figcaption><span class="num">10 payouts approved</span><b>Nahom</b><p>Halfway through the month.</p></figcaption><img src="/images/testimonials/t17.webp" alt="10 payouts approved: Nahom" /></figure>
+      <figure class="proof"><figcaption><span class="num">Quit his job</span><b>Jonah</b><p>After a $5,000 payout.</p></figcaption><img src="/images/testimonials/t18.webp" alt="Quit his job: Jonah" /></figure>
+      <figure class="proof"><figcaption><span class="num">First $10,000 month</span><b>Chris</b><p>Student.</p></figcaption><img src="/images/testimonials/t3.webp" alt="First $10,000 month: Chris" /></figure>
+      <figure class="proof"><figcaption><span class="num">+$3,600</span><b>Joe</b><p>Passed his first eval.</p></figcaption><img src="/images/testimonials/t21.webp" alt="+$3,600: Joe" /></figure>
+      <figure class="proof"><figcaption><span class="num">4 Apex evals passed</span><b>Ollie</b><p>Four 50K accounts.</p></figcaption><img src="/images/testimonials/t22.webp" alt="4 Apex evals passed: Ollie" /></figure>
+      <figure class="proof"><figcaption><span class="num">First payout</span><b>Niels</b><p>No losing trade in over a month.</p></figcaption><img src="/images/testimonials/t20.webp" alt="First payout: Niels" /></figure>
+      <figure class="proof"><figcaption><span class="num">First ever payout</span><b>Matthew</b><p>After a year and two months of trying.</p></figcaption><img src="/images/testimonials/t1.webp" alt="First ever payout: Matthew" /></figure>
+    </div>
+    <div class="callout">
+      <h3>ⓘ Watch Sugar go from blowing accounts to $50K+ in payouts:</h3>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/DE1zyjf7eqw" title="Sugar: blowing accounts to $50K+ in payouts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+    <p class="disclaim">Results shown are individual and not typical. Your results depend on your effort, experience and market conditions. Trading involves risk of loss.</p>
+  </section>
+
+  <!-- Why stuck -->
+  <section class="card split">
+    <div class="copy">
+      <h2>Why most traders stay stuck in <span class="g">evaluation jail</span></h2>
+      <ul class="bul">
+        <li>Most traders think they need <span class="hl">a better strategy</span>.</li>
+        <li>So they keep switching setups, and keep blowing accounts.</li>
+        <li>But strategy is only one of three pillars.</li>
+        <li>The other two are <span class="hl">how you size your risk</span> and <span class="hl">the session you trade</span>.</li>
+        <li>Get those wrong and even a good setup blows the account before your first payout.</li>
+        <li>On the masterclass I'm walking you through all three.</li>
+      </ul>
+    </div>
+    <div class="visual">
+      <div class="viz">
+        <div class="big">3 Pillars</div>
+        <div class="lbl">of consistent payouts</div>
+        <div class="pillars">
+          <div><i>1</i><p>Risk<span>The Worst-Case Scenario Framework</span></p></div>
+          <div><i>2</i><p>Model<span>The OTE Model, one clean entry</span></p></div>
+          <div><i>3</i><p>Session<span>The 8 PM Asia Session Edge</span></p></div>
+        </div>
+        <div class="note">Fixed rules, the same way every time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catch -->
+  <section class="card">
+    <h2>What's the catch? <span class="g">Why are you doing this</span>?</h2>
+    <ul class="bul" style="max-width:720px;margin-left:auto;margin-right:auto;">
+      <li>Let me be upfront about why I'm doing this.</li>
+      <li>At the end of the masterclass, I'm going to show you how to <span class="hl">go deeper with me and my team</span> inside Mind Over Market.</li>
+      <li>But here's the part that matters. <span class="hl">You do not have to join anything.</span></li>
+      <li>Everything I teach on the masterclass, <span class="hl">the risk framework, the OTE Model, the session</span>, you can take it, execute it on your own, and never speak to me again.</li>
+      <li>Genuinely, that's fine. You get the full training either way.</li>
+      <li>I'm only here for the people who want to <span class="hl">stop guessing</span> and do it with someone who's already done it.</li>
+    </ul>
+  </section>
+
+  <!-- Covering -->
+  <section class="card" id="covering">
+    <h2>Here's What We're Covering On <span class="g">The Masterclass</span></h2>
+    <ul class="checks">
+      <li><span><b>The "Worst-Case Scenario" Risk Framework.</b> How to size every trade off your <span class="hl">longest losing streak</span>, so one bad week doesn't blow your funded account</span></li>
+      <li><span><b>The OTE Model, in full.</b> The mechanical setup I used to pull <span class="hl">over $137,000 in payouts in a single month</span>. One entry, one stop-loss rule, zero guessing</span></li>
+      <li><span><b>The 8 PM Asia Session Edge.</b> Why the 9:30 AM New York open is a crowded trap for people with jobs, and how to trade <span class="hl">a quiet 2-hour window at night</span></span></li>
+      <li><span><b>A live trading breakdown.</b> I pick one person from the room and break down <span class="hl">their charts, their trades, their exact problem</span></span></li>
+      <li><span>A <span class="hl">live Q&amp;A</span> with me at the end. We stay on until every question is answered.</span></li>
+    </ul>
+    <div class="no-box">
+      <h3>And No...</h3>
+      <p>You don't need to stare at charts all day...</p>
+      <p>You don't need to quit your job or have a massive bankroll...</p>
+      <p>You don't need another indicator or another strategy to switch to...</p>
+      <p class="key">You just need fixed rules for risk, one mechanical entry, and the right session to trade it in</p>
+      <p>(which is exactly what I'll be showing you live on the masterclass)</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card faq-intro" id="faq">
+    <h2>Now let me answer the <u>top 5 most common questions</u> I get asked before a masterclass like this...</h2>
+  </section>
+
+  <section class="card faq">
+    <h2>1) Is this just another strategy course?</h2>
+    <ul class="bul">
+      <li>No. Strategy is one of three pillars.</li>
+      <li>The other two, risk management and the session you trade, are why most traders stay stuck even after they find a setup they like.</li>
+      <li>Most people trade on feel. They predict, they hope, they revenge trade after a loss.</li>
+      <li>This is mechanical. <em>Fixed rules for risk, fixed rules for entries, the same way every time.</em></li>
+    </ul>
+  </section>
+
+  <section class="card faq">
+    <h2>2) I've blown accounts before. How is this different?</h2>
+    <ul class="bul">
+      <li>Blown accounts almost never come from a bad setup. They come from sizing and from breaking your rules under pressure.</li>
+      <li>I blew every dollar my dad gave me before I figured that out.</li>
+      <li>The risk framework sizes every trade off your worst losing streak, so a rough week is survivable.</li>
+      <li>I'll show you exactly how on the masterclass.</li>
+    </ul>
+  </section>
+
+  <section class="card faq">
+    <h2>3) I work a full-time job. Can I actually do this?</h2>
+    <ul class="bul">
+      <li>Yes, because I built mine the same way.</li>
+      <li>I trade the Asia session at 8 PM Eastern, after the workday is done.</li>
+      <li>About 2 focused hours a night is enough when you're following fixed rules instead of guessing.</li>
+      <li>Don't quit your job to start this. Build it around your schedule first.</li>
+    </ul>
+  </section>
+
+  <section class="card faq">
+    <h2>4) Do I need experience or a lot of money?</h2>
+    <ul class="bul">
+      <li>The masterclass is built for traders who are already in the game, or who stepped away after blowing accounts.</li>
+      <li>Brand new? You'll still get value from the framework. Come ready to take notes.</li>
+      <li>With prop firms you trade the firm's capital, not your own savings.</li>
+      <li>And trading always involves risk. What you control is <em>the size of each loss</em>, which is exactly what the risk framework fixes.</li>
+    </ul>
+  </section>
+
+  <section class="card faq">
+    <h2>5) Will there be a replay?</h2>
+    <ul class="bul">
+      <li>No. This is live only.</li>
+      <li>I answer questions in real time and break down a real attendee's trading live. A recording of that isn't the same as being in the room.</li>
+      <li>If you want in, show up live on <b class="js-when">Sunday, November 8th @ 7:00 PM ET</b>.</li>
+    </ul>
+  </section>
+
+  <!-- Final -->
+  <section class="card final">
+    <h2>See You On The <span class="g">Masterclass!!</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num"></div><div class="circle"></div>
+        <div class="step-body">
+          <h3>Add the event to your calendar</h3>
+          <div class="actions">
+            <a class="btn btn-outline js-cal-google" target="_blank" rel="noopener">Google Calendar</a>
+            <a class="btn btn-outline js-cal-ics">Apple Calendar</a>
+            <a class="btn btn-outline js-cal-outlook" target="_blank" rel="noopener">Outlook Calendar</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div><div class="circle"></div>
+        <div class="step-body">
+          <h3>Apply for the Hot Seat</h3>
+          <div class="actions"><a class="btn btn-outline" href="#hotseat">Apply Now</a></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num"></div><div class="circle"></div>
+        <div class="step-body">
+          <h3>Show up live</h3>
+          <p class="center"><b class="js-when">Sunday, November 8th @ 7:00 PM ET</b></p>
+          <div class="actions"><a class="btn btn-gold js-join" target="_blank" rel="noopener">Masterclass Link</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  INCOME DISCLAIMER: The figures and student results shown are not typical and not guarantees of earnings. Results vary based on individual effort, experience, background, and market conditions. Trading involves substantial risk of loss. This masterclass is for educational purposes only and does not constitute financial advice.<br /><br />
+  Copyright © 2026 Mind Over Market. All rights reserved.
+</footer>
+
+<script>
+(function () {
+  // Masterclass schedule. Keep in step with /masterclass-next-steps/done-shared.js and /api/masterclass-ics.js.
+  var MASTERCLASS_DATE = '2026-11-08';
+  var MASTERCLASS_DAY = 0;
+  var MASTERCLASS_HOUR = 19;
+  var MASTERCLASS_MINUTES = 60;
+  var EVENT_TITLE = 'Mind Over Market Live Masterclass';
+  var JOIN_URL = 'https://event.webinarjam.com/qwk59l/go/live/k50k29izins2s1';
+  var EVENT_DETAILS = 'Join the live masterclass here: ' + JOIN_URL + '\n\nLive masterclass with Benicio Valentin (AvalTrades). Your link is also in your confirmation email.';
+
+  function nyParts(date) {
+    var out = {};
+    new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', weekday: 'short' })
+      .formatToParts(date).forEach(function (p) { out[p.type] = p.value; });
+    return out;
+  }
+  function nyOffset(date) {
+    var p = nyParts(date);
+    return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second) - Math.floor(date.getTime() / 1000) * 1000;
+  }
+  function nyWallUtc(wallUtc) {
+    var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
+    return new Date(wallUtc - nyOffset(guess));
+  }
+  function nyWall(ymd, hour) { var d = ymd.split('-'); return nyWallUtc(Date.UTC(+d[0], +d[1] - 1, +d[2], hour, 0, 0)); }
+  function nyDayAfter(date) { var p = nyParts(date); return nyWallUtc(Date.UTC(+p.year, +p.month - 1, +p.day + 1, 0, 0, 0)); }
+  function nextSession(now) {
+    if (MASTERCLASS_DATE) {
+      var fixed = nyWall(MASTERCLASS_DATE, MASTERCLASS_HOUR);
+      if (nyDayAfter(fixed).getTime() > now.getTime()) return fixed;
+    }
+    var p = nyParts(now);
+    var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+    var s = nyWallUtc(Date.UTC(+p.year, +p.month - 1, +p.day + (MASTERCLASS_DAY - dow + 7) % 7, MASTERCLASS_HOUR, 0, 0));
+    if (nyDayAfter(s).getTime() <= now.getTime()) s = new Date(s.getTime() + 7 * 864e5);
+    return s;
+  }
+
+  var start = nextSession(new Date());
+  var end = new Date(start.getTime() + MASTERCLASS_MINUTES * 60000);
+
+  // "Sunday, November 8th @ 7:00 PM ET"
+  var parts = {};
+  new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })
+    .formatToParts(start).forEach(function (x) { parts[x.type] = x.value; });
+  var d = +parts.day, sfx = (d % 100 >= 11 && d % 100 <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[d % 10] || 'th');
+  var label = parts.weekday + ', ' + parts.month + ' ' + d + sfx + ' @ ' + parts.hour + ':' + parts.minute + ' ' + parts.dayPeriod + ' ET';
+  document.querySelectorAll('.js-when').forEach(function (el) { el.textContent = label; });
+
+  function stamp(x) { return x.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+  var enc = encodeURIComponent;
+  var links = {
+    google: 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + enc(EVENT_TITLE) + '&dates=' + stamp(start) + '/' + stamp(end) + '&details=' + enc(EVENT_DETAILS) + '&location=' + enc(JOIN_URL),
+    outlook: 'https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&subject=' + enc(EVENT_TITLE) + '&startdt=' + enc(start.toISOString()) + '&enddt=' + enc(end.toISOString()) + '&body=' + enc(EVENT_DETAILS) + '&location=' + enc(JOIN_URL),
+    // A real .ics URL (not a data: link) so iPhone Safari opens its Add to Calendar sheet.
+    ics: '/api/masterclass-ics?start=' + enc(start.toISOString()) + '&end=' + enc(end.toISOString())
+  };
+  Object.keys(links).forEach(function (k) {
+    document.querySelectorAll('.js-cal-' + k).forEach(function (a) { a.href = links[k]; });
+  });
+  document.querySelectorAll('.js-join').forEach(function (a) { a.href = JOIN_URL; });
+
+  // Hot Seat form (Typeform).
+  var tf = document.createElement('script');
+  tf.src = 'https://embed.typeform.com/next/embed.js';
+  tf.async = true;
+  document.head.appendChild(tf);
+
+  // VTurb players for the proof videos.
+  document.querySelectorAll('vturb-smartplayer[data-vturb]').forEach(function (el) {
+    var v = document.createElement('script');
+    v.src = 'https://scripts.converteai.net/d45760cb-3951-477f-9bee-846f01ee39f4/players/' + el.getAttribute('data-vturb') + '/v4/player.js';
+    v.async = true;
+    document.head.appendChild(v);
+  });
+})();
+</script>
+</body>
+</html>
