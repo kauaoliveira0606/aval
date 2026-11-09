@@ -181,7 +181,7 @@
   <!-- Hero -->
   <section class="card hero">
     <h1>Congrats On Saving Your Seat For The <span class="g">Masterclass!</span> 🎉</h1>
-    <p class="center" style="margin-top:14px;font-size:1.08rem;">Live on <b class="js-when">Sunday, November 8th @ 7:00 PM ET</b></p>
+    <p class="center" style="margin-top:14px;font-size:1.08rem;">Live on <b class="js-when">Sunday, December 6th @ 7:00 PM ET</b></p>
     <span class="eyebrow-link">Everything to get you ready before the masterclass:</span>
     <ul class="toc">
       <li><span class="dot"></span><a href="#steps">How to show up properly</a></li>
@@ -427,7 +427,7 @@
     <ul class="bul">
       <li>No. This is live only.</li>
       <li>I answer questions in real time and break down a real attendee's trading live. A recording of that isn't the same as being in the room.</li>
-      <li>If you want in, show up live on <b class="js-when">Sunday, November 8th @ 7:00 PM ET</b>.</li>
+      <li>If you want in, show up live on <b class="js-when">Sunday, December 6th @ 7:00 PM ET</b>.</li>
     </ul>
   </section>
 
@@ -464,7 +464,7 @@
         <div class="step-num"></div><div class="circle"></div>
         <div class="step-body">
           <h3>Show up live</h3>
-          <p class="center"><b class="js-when">Sunday, November 8th @ 7:00 PM ET</b></p>
+          <p class="center"><b class="js-when">Sunday, December 6th @ 7:00 PM ET</b></p>
           <div class="actions"><a class="btn btn-gold js-join" target="_blank" rel="noopener">Masterclass Link</a></div>
         </div>
       </div>
@@ -481,7 +481,7 @@
 <script>
 (function () {
   // Masterclass schedule. Keep in step with /masterclass-next-steps/done-shared.js and /api/masterclass-ics.js.
-  var MASTERCLASS_DATE = '2026-11-08';
+  var MASTERCLASS_DATE = '2026-12-06';
   var MASTERCLASS_DAY = 0;
   var MASTERCLASS_HOUR = 19;
   var MASTERCLASS_MINUTES = 60;
@@ -526,7 +526,7 @@
   var start = nextSession(new Date());
   var end = new Date(start.getTime() + MASTERCLASS_MINUTES * 60000);
 
-  // "Sunday, November 8th @ 7:00 PM ET"
+  // "Sunday, December 6th @ 7:00 PM ET"
   var parts = {};
   new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })
     .formatToParts(start).forEach(function (x) { parts[x.type] = x.value; });
