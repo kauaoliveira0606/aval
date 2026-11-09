@@ -280,9 +280,10 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
 </div>
 
 <script>
-  // Masterclass schedule: weekly, day of week (0 = Sunday) at HOUR:00 New York time.
-  // The replay comes down REPLAY_HOURS after the most recent session started.
-  var MASTERCLASS_DAY = 0;
+  // Masterclass sessions (New York dates, at HOUR:00 New York time). Add each new date here,
+  // same as MASTERCLASS_DATE in done-shared.js. The countdown runs REPLAY_HOURS after the most
+  // recent listed session started; no countdown between sessions.
+  var SESSIONS = ['2026-10-18', '2026-11-08', '2026-12-06'];
   var MASTERCLASS_HOUR = 19;
   var REPLAY_HOURS = 48;
 
@@ -331,19 +332,21 @@ src="https://www.facebook.com/tr?id=1597200888695107&ev=PageView&noscript=1"
     return asUtc - Math.floor(date.getTime() / 1000) * 1000;
   }
 
-  // Start of the most recent session at or before `now`.
+  // Start of the most recent listed session at or before `now` (null before the first one).
   function lastSession(now) {
-    var p = nyParts(now);
-    var dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
-    var back = (dow - MASTERCLASS_DAY + 7) % 7;
-    var secsIntoDay = (+p.hour) * 3600 + (+p.minute) * 60 + (+p.second);
-    if (back === 0 && secsIntoDay < MASTERCLASS_HOUR * 3600) back = 7;
-    var wallUtc = Date.UTC(+p.year, +p.month - 1, +p.day - back, MASTERCLASS_HOUR, 0, 0);
-    var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
-    return new Date(wallUtc - nyOffset(guess));
+    var last = null;
+    SESSIONS.forEach(function (d) {
+      var x = d.split('-');
+      var wallUtc = Date.UTC(+x[0], +x[1] - 1, +x[2], MASTERCLASS_HOUR, 0, 0);
+      var guess = new Date(wallUtc - nyOffset(new Date(wallUtc)));
+      var start = new Date(wallUtc - nyOffset(guess));
+      if (start <= now) last = start;
+    });
+    return last;
   }
 
-  var deadline = new Date(lastSession(new Date()).getTime() + REPLAY_HOURS * 3600000);
+  var last = lastSession(new Date());
+  var deadline = new Date(last ? last.getTime() + REPLAY_HOURS * 3600000 : 0);
   var cdWrap = document.querySelector('.js-cd-wrap');
   var cd = document.querySelector('.js-cd');
   function pad(n) { return String(n).padStart(2, '0'); }
